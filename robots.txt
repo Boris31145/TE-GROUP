@@ -1,0 +1,18 @@
+# robots.txt — ОсОО «ТЕ ГРУПП»
+# https://tegroup.cc/
+
+User-agent: *
+Allow: /
+
+# Запрещаем индексировать служебные файлы
+Disallow: /yandex_d66a1c6207186643.html
+Disallow: /te-group.html
+
+# Карта сайта
+Sitemap: https://tegroup.cc/sitemap.xml
+
+# Яндекс — чуть агрессивнее можно
+User-agent: Yandex
+Allow: /
+Crawl-delay: 1
+Sitemap: https://tegroup.cc/sitemap.xml
