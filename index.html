@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <meta name="theme-color" content="#0b1d4e"/>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230b1d4e'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Arial,sans-serif' font-weight='800' font-size='16' fill='%23c9a227'%3ETE%3C/text%3E%3C/svg%3E"/>
-  <title>Доставка грузов из Китая в Россию и ЕАЭС | Таможенный брокер Бишкек — TE GROUP</title>
-  <meta name="description" content="Доставка грузов из Китая, Турции, ОАЭ в Россию, Казахстан и ЕАЭС. Таможенный брокер в Бишкеке — полный цикл ВЭД под ключ. ОсОО «ТЕ ГРУПП»."/>
+  <title>Импорт товаров в Россию через ЕАЭС | Логистика и таможня под ключ — TE GROUP</title>
+  <meta name="description" content="Импорт в Россию из Китая, Турции, ОАЭ и Израиля через ЕАЭС. Таможенное оформление в Кыргызстане, доставка до склада в РФ. Законно, управляемо, под ключ. ОсОО «ТЕ ГРУПП»."/>
 
   <!-- ═══ SEO: Canonical & Robots ═══ -->
   <link rel="canonical" href="https://tegroup.cc/"/>
@@ -22,8 +22,8 @@
   <meta property="og:type" content="website"/>
   <meta property="og:locale" content="ru_RU"/>
   <meta property="og:site_name" content="ТЕ ГРУПП · Международная логистика"/>
-  <meta property="og:title" content="Доставка грузов из Китая в Россию и ЕАЭС | Таможенный брокер Бишкек — TE GROUP"/>
-  <meta property="og:description" content="ОсОО «ТЕ ГРУПП» — доставка грузов из Китая, Турции, ОАЭ и Израиля. Таможенное оформление ЕАЭС. Бишкек, Кыргызстан."/>
+  <meta property="og:title" content="Импорт товаров в Россию через ЕАЭС | Логистика и таможня под ключ — TE GROUP"/>
+  <meta property="og:description" content="Импорт в Россию из Китая, Турции, ОАЭ и Израиля через ЕАЭС. Таможенное оформление, доставка до склада. Законно, управляемо, под ключ."/>
   <meta property="og:url" content="https://tegroup.cc/"/>
   <meta property="og:image" content="https://tegroup.cc/og-image.jpg"/>
   <meta property="og:image:width" content="1200"/>
@@ -467,6 +467,27 @@
     /* Wide feature card */
     .svc-card.wide { grid-column: span 2; display: flex; gap: 40px; align-items: center; }
     .svc-card.wide .svc-icon { flex-shrink: 0; width: 64px; height: 64px; }
+
+    /* ================================================================
+       WHY EAEU
+    ================================================================ */
+    .eaeu-section { background: linear-gradient(135deg, #0d2357 0%, #0b1d4e 50%, #091840 100%); padding: 100px 0; overflow: hidden; position: relative; }
+    .eaeu-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 30% 50%, rgba(201,162,39,.06) 0%, transparent 70%); pointer-events: none; }
+    .eaeu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; position: relative; z-index: 2; }
+    .eaeu-left .tag { background: rgba(201,162,39,.15); color: #c9a227; }
+    .eaeu-left h2 { color: #fff; margin-bottom: 16px; }
+    .eaeu-left p { color: rgba(255,255,255,.65); font-size: 15px; line-height: 1.7; max-width: 440px; }
+    .eaeu-cards { display: flex; flex-direction: column; gap: 16px; }
+    .eaeu-card { display: flex; gap: 18px; align-items: flex-start; padding: 22px 24px; border-radius: 14px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.07); transition: background .2s, border-color .2s; }
+    .eaeu-card:hover { background: rgba(201,162,39,.06); border-color: rgba(201,162,39,.2); }
+    .eaeu-num { flex-shrink: 0; width: 36px; height: 36px; border-radius: 10px; background: rgba(201,162,39,.12); color: #c9a227; font-weight: 800; font-size: 14px; display: flex; align-items: center; justify-content: center; }
+    .eaeu-card-text { color: rgba(255,255,255,.85); font-size: 14px; line-height: 1.55; }
+    .eaeu-card-text strong { color: #fff; font-weight: 700; display: block; margin-bottom: 3px; font-size: 15px; }
+
+    @media (max-width: 768px) {
+      .eaeu-grid { grid-template-columns: 1fr; gap: 36px; }
+      .eaeu-section { padding: 72px 0; }
+    }
 
     /* ================================================================
        GEOGRAPHY
@@ -918,17 +939,21 @@
         <div class="hero-sup">
           <div class="hero-sup-text">
             ОсОО «ТЕ ГРУПП»
-            <span class="hero-sup-loc">Бишкек, Кыргызстан</span>
+            <span class="hero-sup-loc">Таможенный брокер ЕАЭС (Кыргызстан)</span>
           </div>
         </div>
 
         <h1 style="animation:slide-in-l .8s ease both .1s">
-          Товары из Китая<br>и <span class="line-gold">всего мира</span><br>— точно и в срок
+          Импорт в <span class="line-gold">Россию</span> через&nbsp;ЕАЭС<br>Логистика и таможня под&nbsp;ключ
         </h1>
         <p class="hero-lead" style="animation:slide-in-l .8s ease both .2s">
-          Поставки под ключ: от фабрики до вашего склада.
-          Таможенное оформление в ЕАЭС, мультимодальная
-          логистика, персональный менеджер на каждом этапе.
+          Поставки из Китая, Турции, ОАЭ и Израиля
+          с оформлением через Кыргызстан и&nbsp;страны ЕАЭС
+          для законного ввоза в Российскую Федерацию.
+        </p>
+        <p class="hero-lead" style="animation:slide-in-l .8s ease both .25s;font-size:15px;opacity:.85;margin-top:6px;">
+          Работаем с российскими компаниями.
+          Закрываем логистику, документы и таможенное оформление.
         </p>
         <div class="hero-btns" style="animation:slide-in-l .8s ease both .3s">
           <button onclick="openCTA()" class="btn btn-navy" style="cursor:pointer;border:none;">
@@ -1020,7 +1045,7 @@
             </text>
             <text x="200" y="306" text-anchor="middle" fill="rgba(255,255,255,.3)"
                   font-size="9" font-family="Inter,sans-serif" letter-spacing="1.5">
-              INTERNATIONAL SUPPLY
+              IMPORT TO RUSSIA VIA EAEU
             </text>
 
             <!-- Floating city labels -->
@@ -1049,8 +1074,8 @@
   <div class="container" style="position:relative;z-index:2;">
     <div class="about-strip-inner">
       <div class="about-tagline">
-        Работаем с <em>Китаем, Турцией, ОАЭ</em><br>
-        и другими странами — от запроса<br>до вашего склада
+        Заводим товар <em>в Россию</em> через&nbsp;ЕАЭС<br>
+        от фабрики до вашего склада
       </div>
       <div class="about-divider"></div>
       <div class="about-kpis">
@@ -1171,6 +1196,67 @@
         <div class="svc-n">06</div>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+     WHY EAEU
+================================================================ -->
+<section class="eaeu-section">
+  <div class="container">
+    <div class="eaeu-grid">
+      <div class="eaeu-left reveal">
+        <span class="tag">Стратегия</span>
+        <h2>Почему через ЕАЭС?</h2>
+        <p>
+          Евразийский экономический союз — это не просто политическое объединение.
+          Это <strong style="color:#c9a227">механизм</strong>, который позволяет вашему бизнесу
+          импортировать товары в Россию законно, с оптимизированной пошлиной
+          и минимальными рисками.
+        </p>
+        <p style="margin-top:14px;">
+          Таможенное оформление в Кыргызстане — одно из самых выгодных
+          на территории ЕАЭС для последующей продажи товаров в России.
+        </p>
+      </div>
+      <div class="eaeu-cards reveal">
+        <div class="eaeu-card">
+          <div class="eaeu-num">01</div>
+          <div class="eaeu-card-text">
+            <strong>Законный механизм поставки</strong>
+            Товар оформляется в рамках договора ЕАЭС — без серых схем, с полным пакетом документов для ФНС и бухгалтерии.
+          </div>
+        </div>
+        <div class="eaeu-card">
+          <div class="eaeu-num">02</div>
+          <div class="eaeu-card-text">
+            <strong>Оптимизация таможенных платежей</strong>
+            Ставки пошлин и НДС при оформлении через Кыргызстан позволяют легально снизить стоимость импорта.
+          </div>
+        </div>
+        <div class="eaeu-card">
+          <div class="eaeu-num">03</div>
+          <div class="eaeu-card-text">
+            <strong>Снижение логистических рисков</strong>
+            Проверенные маршруты, собственные партнёры на каждом этапе — от погрузки до склада в РФ.
+          </div>
+        </div>
+        <div class="eaeu-card">
+          <div class="eaeu-num">04</div>
+          <div class="eaeu-card-text">
+            <strong>Работа с санкционными ограничениями</strong>
+            Знаем, какие товары проходят, какие — нет. Консультируем по рискам до заключения контракта.
+          </div>
+        </div>
+        <div class="eaeu-card">
+          <div class="eaeu-num">05</div>
+          <div class="eaeu-card-text">
+            <strong>Опыт с российскими юрлицами</strong>
+            Работаем с ИП и ООО из РФ. Готовим документы под российские требования: декларации, сертификаты EAC, инвойсы.
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
