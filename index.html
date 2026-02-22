@@ -406,7 +406,7 @@
       position: relative; overflow: hidden;
       min-height: 100vh; display: flex; align-items: center;
       padding-top: var(--nav-h);
-      background: var(--white);
+      background: linear-gradient(175deg, var(--white) 60%, var(--bg) 100%);
     }
 
     /* Subtle diagonal light stripes — like premium paper texture */
@@ -478,6 +478,7 @@
       line-height: 1.7; margin-bottom: 32px;
     }
     .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 44px; }
+    .hero-btns .btn { padding: 18px 42px; font-size: 14px; }
 
     .hero-stats {
       display: grid; grid-template-columns: repeat(3,1fr);
@@ -762,7 +763,8 @@
 
     /* ── Планшет ≤1100px ── */
     @media (max-width: 1100px) {
-      .hero-inner         { grid-template-columns: 1fr; }
+      .hero               { min-height: auto; }
+      .hero-inner         { grid-template-columns: 1fr; min-height: auto; }
       .hero-split-right   { display: none; }
       .hero-right         { display: none; }
       .hero-left          { padding: 72px 0; }
@@ -1048,15 +1050,15 @@
 
         <div class="hero-stats" style="animation:slide-in-l .8s ease both .4s">
           <div class="hero-stat">
-            <b><span class="count" data-target="5">0</span><em>+</em></b>
+            <b><span class="count" data-target="5">5+</span></b>
             <span>Лет опыта</span>
           </div>
           <div class="hero-stat">
-            <b><span class="count" data-target="15">0</span><em>+</em></b>
+            <b><span class="count" data-target="15">15+</span></b>
             <span>Стран поставок</span>
           </div>
           <div class="hero-stat">
-            <b><span class="count" data-target="500">0</span><em>+</em></b>
+            <b><span class="count" data-target="500">500+</span></b>
             <span>Выполнено проектов</span>
           </div>
         </div>
