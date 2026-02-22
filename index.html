@@ -399,7 +399,7 @@
     .hero-stat + .hero-stat { border-left: 1px solid var(--border); padding-left: 28px; }
     .hero-stat b { display: block; font-size: clamp(26px,3vw,36px); font-weight: 900; color: var(--navy); line-height: 1; }
     .hero-stat b em { font-style: normal; color: var(--gold); }
-    .hero-stat span { font-size: 12px; text-transform: uppercase; letter-spacing: .07em; color: var(--muted); margin-top: 4px; display: block; }
+    .hero-stat > span { font-size: 12px; text-transform: uppercase; letter-spacing: .07em; color: var(--muted); margin-top: 4px; display: block; }
 
     /* Right col — navy background, animated map */
     .hero-right {
@@ -485,7 +485,8 @@
       transition: padding-left .25s;
     }
     .route-row:first-child { border-top: 1px solid rgba(255,255,255,.07); }
-    .route-row:hover { padding-left: 8px; }
+    .route-row:hover { padding-left: 8px; background: rgba(201,162,39,.06); border-radius: 8px; }
+    a.route-row { cursor: pointer; }
     .r-flag { font-size: 22px; flex-shrink: 0; }
     .r-info { flex: 1; }
     .r-country { font-size: 14px; font-weight: 700; color: #fff; }
@@ -1194,7 +1195,7 @@
         </div>
 
         <div class="routes-list">
-          <div class="route-row reveal">
+          <a href="/china-import/" class="route-row reveal" style="text-decoration:none;color:inherit;">
             <div class="r-flag">🇨🇳</div>
             <div class="r-info">
               <div class="r-country">Китай</div>
@@ -1204,9 +1205,9 @@
               <div class="r-arrow">→ Бишкек</div>
               <div class="r-time">14–35 дней</div>
             </div>
-          </div>
+          </a>
 
-          <div class="route-row reveal reveal-d1">
+          <a href="/turkey-import/" class="route-row reveal reveal-d1" style="text-decoration:none;color:inherit;">
             <div class="r-flag">🇹🇷</div>
             <div class="r-info">
               <div class="r-country">Турция</div>
@@ -1216,9 +1217,9 @@
               <div class="r-arrow">→ Бишкек</div>
               <div class="r-time">7–18 дней</div>
             </div>
-          </div>
+          </a>
 
-          <div class="route-row reveal reveal-d2">
+          <a href="/uae-import/" class="route-row reveal reveal-d2" style="text-decoration:none;color:inherit;">
             <div class="r-flag">🇦🇪</div>
             <div class="r-info">
               <div class="r-country">ОАЭ</div>
@@ -1228,9 +1229,9 @@
               <div class="r-arrow">→ Бишкек</div>
               <div class="r-time">5–12 дней</div>
             </div>
-          </div>
+          </a>
 
-          <div class="route-row reveal reveal-d3">
+          <a href="/israel-import/" class="route-row reveal reveal-d3" style="text-decoration:none;color:inherit;">
             <div class="r-flag">🇮🇱</div>
             <div class="r-info">
               <div class="r-country">Израиль</div>
@@ -1240,7 +1241,7 @@
               <div class="r-arrow">→ Бишкек</div>
               <div class="r-time">по запросу</div>
             </div>
-          </div>
+          </a>
 
           <div class="route-row reveal reveal-d3">
             <div class="r-flag">🌍</div>
@@ -1507,6 +1508,79 @@
         </a>
         <a href="mailto:oootegroup@gmail.com" class="btn-navy-outline">Написать письмо</a>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+     FAQ
+================================================================ -->
+<section class="section" style="background:var(--white);position:relative;">
+  <div class="container">
+    <div class="reveal" style="margin-bottom:40px;">
+      <span class="tag">Вопросы и ответы</span>
+      <h2>Частые вопросы</h2>
+      <p style="margin-top:8px;max-width:480px;">Ответы на самые популярные вопросы о доставке грузов из-за рубежа и таможенном оформлении в ЕАЭС.</p>
+    </div>
+
+    <div class="reveal" itemscope itemtype="https://schema.org/FAQPage" style="max-width:820px;">
+
+      <div style="border-top:1px solid var(--border2);padding:1.25rem 0" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem" itemprop="name">Почему таможенное оформление через Кыргызстан выгоднее, чем напрямую в Россию?</h3>
+        <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+          <p style="font-size:14px;color:var(--muted);margin:0" itemprop="text">Кыргызстан — полноправный член ЕАЭС. Таможенные ставки едины, но стоимость оформления, хранения и услуг брокера в Бишкеке значительно ниже. Товар после выпуска свободно перемещается по всей территории ЕАЭС, включая Россию, без повторного декларирования. Экономия для импортёра — 15–30%.</p>
+        </div>
+      </div>
+
+      <div style="border-top:1px solid var(--border2);padding:1.25rem 0" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem" itemprop="name">Какие страны вы обслуживаете?</h3>
+        <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+          <p style="font-size:14px;color:var(--muted);margin:0" itemprop="text">Основные направления: Китай, Турция, ОАЭ, Израиль. Также работаем с Европой (Германия, Польша, Италия), Южной Кореей, Японией и другими странами. Если ваш поставщик находится в стране, которой нет в списке — свяжитесь с нами, мы найдём решение.</p>
+        </div>
+      </div>
+
+      <div style="border-top:1px solid var(--border2);padding:1.25rem 0" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem" itemprop="name">Работаете ли вы с физическими лицами или только с юрлицами?</h3>
+        <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+          <p style="font-size:14px;color:var(--muted);margin:0" itemprop="text">Мы работаем как с юридическими, так и с физическими лицами. Для коммерческих партий оформляем полный пакет документов (ГТД, EAC). Для физлиц помогаем с ввозом в рамках нормы беспошлинного ввоза или оформляем как коммерческий импорт — в зависимости от объёма.</p>
+        </div>
+      </div>
+
+      <div style="border-top:1px solid var(--border2);padding:1.25rem 0" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem" itemprop="name">Какой минимальный объём груза вы принимаете?</h3>
+        <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+          <p style="font-size:14px;color:var(--muted);margin:0" itemprop="text">Минимальный объём для сборного груза — от 50 кг. Для отдельных направлений (авиа из ОАЭ) — от 10 кг. Мы консолидируем небольшие партии разных клиентов на складе, что снижает стоимость доставки для каждого.</p>
+        </div>
+      </div>
+
+      <div style="border-top:1px solid var(--border2);padding:1.25rem 0" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem" itemprop="name">Что входит в услугу «доставка под ключ»?</h3>
+        <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+          <p style="font-size:14px;color:var(--muted);margin:0" itemprop="text">Полный цикл: закупка у поставщика, контроль качества, погрузка, международная перевозка (авто/ЖД/авиа/море), таможенное оформление в Бишкеке, сертификация EAC (при необходимости), доставка до вашего склада в России или другой стране ЕАЭС. Один договор, один менеджер, одна цена.</p>
+        </div>
+      </div>
+
+      <div style="border-top:1px solid var(--border2);padding:1.25rem 0" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem" itemprop="name">Какие гарантии безопасности груза вы даёте?</h3>
+        <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+          <p style="font-size:14px;color:var(--muted);margin:0" itemprop="text">Каждый груз страхуется на полную инвойсовую стоимость. Мы контролируем условия перевозки, используем GPS-трекинг, оформляем акты приёмки с фотофиксацией. В случае повреждения или утери — полная компенсация по страховке. За 5 лет работы процент повреждений — менее 0,3%.</p>
+        </div>
+      </div>
+
+      <div style="border-top:1px solid var(--border2);padding:1.25rem 0" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem" itemprop="name">Сколько времени занимает расчёт стоимости?</h3>
+        <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+          <p style="font-size:14px;color:var(--muted);margin:0" itemprop="text">Предварительный расчёт — 1–2 часа после получения инвойса или описания груза. Для сложных случаев (негабарит, опасные грузы, мультимодальные маршруты) — до 1 рабочего дня. Расчёт бесплатный и ни к чему не обязывает.</p>
+        </div>
+      </div>
+
+      <div style="border-top:1px solid var(--border2);border-bottom:1px solid var(--border2);padding:1.25rem 0" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem" itemprop="name">А что если я ошибусь в документах или декларации?</h3>
+        <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+          <p style="font-size:14px;color:var(--muted);margin:0" itemprop="text">Именно для этого нужен таможенный брокер. Ошибка в коде ТН ВЭД обходится в 50–200% от стоимости товара штрафом. Мы берём всю документацию и классификацию на себя, несём солидарную ответственность по закону и застрахованы на случай ошибок. Вы просто отправляете нам инвойс — мы делаем всё остальное.</p>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
