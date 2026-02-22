@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Главная страница -->
+  <url>
+    <loc>https://tegroup.cc/</loc>
+    <lastmod>2026-02-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Доставка из Китая — приоритет максимальный (70% спроса) -->
+  <url>
+    <loc>https://tegroup.cc/china-import/</loc>
+    <lastmod>2026-02-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Таможенное оформление — высокочастотный запрос -->
+  <url>
+    <loc>https://tegroup.cc/customs-clearance/</loc>
+    <lastmod>2026-02-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Поставки из Турции -->
+  <url>
+    <loc>https://tegroup.cc/turkey-import/</loc>
+    <lastmod>2026-02-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Импорт из ОАЭ -->
+  <url>
+    <loc>https://tegroup.cc/uae-import/</loc>
+    <lastmod>2026-02-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Импорт из Израиля -->
+  <url>
+    <loc>https://tegroup.cc/israel-import/</loc>
+    <lastmod>2026-02-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>
