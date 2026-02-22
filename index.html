@@ -712,12 +712,12 @@
       .hero-btns          { flex-direction: column; }
       .hero-btns .btn     { width: 100%; justify-content: center; }
       .hero-stats         { grid-template-columns: 1fr; gap: 0; }
-      .hero-stat          { border-right: none !important; padding: 16px 0; }
+      .hero-stat          { border-right: none !important; border-left: none !important; padding: 16px 0 !important; }
       .hero-stat + .hero-stat { border-top: 1px solid var(--border); }
 
       /* Услуги */
       .svc-grid           { grid-template-columns: 1fr; }
-      .svc-card.wide      { grid-column: span 1; flex-direction: column; }
+      .svc-card.wide      { grid-column: span 1; flex-direction: column; align-items: flex-start; }
 
       /* Процесс */
       .process-steps      { grid-template-columns: 1fr; }
@@ -730,7 +730,8 @@
       .geo-section        { padding: 56px 0; }
 
       /* About strip */
-      .about-strip-inner  { flex-direction: column; }
+      .about-strip-inner  { flex-direction: column; align-items: flex-start; }
+      .about-tagline      { text-align: left; }
       .about-divider      { width: 40px; height: 1px; }
       .about-kpis         { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; width: 100%; }
       .about-kpi          { text-align: left; }
