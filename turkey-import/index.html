@@ -111,15 +111,26 @@
     .nav-links a{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);transition:color .2s;position:relative;padding-bottom:2px}
     .nav-links a.active,.nav-links a:hover{color:var(--navy)}
     .nav-links a.active::after{content:"";position:absolute;bottom:-2px;left:0;right:0;height:1.5px;background:var(--gold)}
-    .burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:36px;height:36px;background:none;border:none;padding:4px}
-    .burger span{display:block;width:22px;height:2px;background:var(--navy);border-radius:2px;transition:.3s}
+    .burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:42px;height:42px;background:var(--gold-pale,rgba(201,162,39,.08));border:1.5px solid var(--gold);border-radius:10px;padding:8px;animation:burger-pulse 2.5s ease-in-out infinite;box-shadow:0 2px 12px rgba(201,162,39,.25);transition:background .2s,box-shadow .2s,transform .2s}
+    .burger:hover{background:var(--gold);transform:scale(1.08);box-shadow:0 4px 18px rgba(201,162,39,.4)}
+    .burger:hover span{background:#fff}
+    @keyframes burger-pulse{0%,100%{box-shadow:0 2px 12px rgba(201,162,39,.25)}50%{box-shadow:0 4px 20px rgba(201,162,39,.5)}}
+    .burger span{display:block;width:20px;height:2px;background:var(--gold);border-radius:2px;transition:.3s}
+    .burger.open{animation:none;background:var(--navy);border-color:var(--navy)}
+    .burger.open span{background:#fff}
     .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
     .burger.open span:nth-child(2){opacity:0}
     .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
     .mob-menu{display:none;position:fixed;top:var(--nav-h);left:0;right:0;z-index:299;background:rgba(255,255,255,.98);border-bottom:2px solid var(--gold);padding:8px 28px 24px;flex-direction:column;box-shadow:var(--sh-lg)}
     .mob-menu.open{display:flex}
-    .mob-menu a{padding:13px 0;border-bottom:1px solid var(--border2);font-size:14px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+    .mob-menu a{padding:13px 0;border-bottom:1px solid var(--border2);font-size:14px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;transition:.2s}
+    .mob-menu a:hover{color:var(--navy);padding-left:8px}
     .mob-menu a:last-child{border-bottom:none;color:var(--gold);font-weight:700;padding-top:18px}
+    .mob-home{font-weight:800!important;color:var(--navy)!important;position:relative;display:flex;align-items:center;gap:8px}
+    .mob-home::before{content:"\2190";display:inline-block;animation:home-arrow 1.5s ease-in-out infinite;font-size:16px;color:var(--gold)}
+    @keyframes home-arrow{0%,100%{transform:translateX(0)}50%{transform:translateX(-5px)}}
+    .mob-home::after{content:"";position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),transparent);animation:home-line 2s ease-in-out infinite}
+    @keyframes home-line{0%,100%{opacity:.3}50%{opacity:1}}
 
     .page-header{margin-top:var(--nav-h);padding:72px 0 68px;background:var(--white);position:relative;overflow:hidden;border-top:5px solid var(--nc)}
     .page-header::before{content:"";position:absolute;right:0;top:0;bottom:0;width:55%;background:radial-gradient(ellipse at 85% 50%,rgba(198,40,40,.07) 0%,transparent 65%);z-index:0;pointer-events:none}
@@ -272,6 +283,7 @@
 </nav>
 
 <div class="mob-menu" id="mob-menu">
+  <a href="/" class="mob-home">Главная</a>
   <a href="/china-import/">Импорт из Китая</a>
   <a href="/turkey-import/">Импорт из Турции</a>
   <a href="/uae-import/">Импорт из ОАЭ</a>
@@ -427,72 +439,72 @@
         </div>
 
         <!-- ═══ FAQ ═══ -->
-        <div class="reveal" style="margin-top:2.5rem" itemscope itemtype="https://schema.org/FAQPage">
+        <div class="reveal" style="margin-top:2.5rem">
           <h2>Частые вопросы по доставке из Турции</h2>
-          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem" itemprop="name">Сколько дней идёт груз из Турции в Бишкек?</h3>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-              <p style="font-size:14px;color:var(--navy-mid);margin:0" itemprop="text">Автодоставка из Стамбула до Бишкека занимает 8–14 дней в зависимости от маршрута и загруженности границ. Авиадоставка — 2–3 рабочих дня. Мы заранее предупреждаем о задержках и предоставляем онлайн-трекинг груза.</p>
+          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0">
+            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem">Сколько дней идёт груз из Турции в Бишкек?</h3>
+            <div>
+              <p style="font-size:14px;color:var(--navy-mid);margin:0">Автодоставка из Стамбула до Бишкека занимает 8–14 дней в зависимости от маршрута и загруженности границ. Авиадоставка — 2–3 рабочих дня. Мы заранее предупреждаем о задержках и предоставляем онлайн-трекинг груза.</p>
             </div>
           </div>
-          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem" itemprop="name">Какие товары чаще всего везут из Турции в Кыргызстан?</h3>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-              <p style="font-size:14px;color:var(--navy-mid);margin:0" itemprop="text">Наиболее популярные категории: текстиль и одежда (Бурса, Стамбул), стройматериалы — керамическая плитка, сантехника, профиль (Бурса, Измир), продукты питания, бытовая химия и фурнитура. Также растёт спрос на турецкое промышленное оборудование.</p>
+          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0">
+            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem">Какие товары чаще всего везут из Турции в Кыргызстан?</h3>
+            <div>
+              <p style="font-size:14px;color:var(--navy-mid);margin:0">Наиболее популярные категории: текстиль и одежда (Бурса, Стамбул), стройматериалы — керамическая плитка, сантехника, профиль (Бурса, Измир), продукты питания, бытовая химия и фурнитура. Также растёт спрос на турецкое промышленное оборудование.</p>
             </div>
           </div>
-          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem" itemprop="name">Как оплатить турецкому поставщику?</h3>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-              <p style="font-size:14px;color:var(--navy-mid);margin:0" itemprop="text">Мы осуществляем платежи в турецких лирах (TRY), долларах (USD) и евро (EUR) напрямую поставщику. Это исключает необходимость самостоятельно открывать иностранный счёт или искать посредников для перевода.</p>
+          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0">
+            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem">Как оплатить турецкому поставщику?</h3>
+            <div>
+              <p style="font-size:14px;color:var(--navy-mid);margin:0">Мы осуществляем платежи в турецких лирах (TRY), долларах (USD) и евро (EUR) напрямую поставщику. Это исключает необходимость самостоятельно открывать иностранный счёт или искать посредников для перевода.</p>
             </div>
           </div>
-          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem" itemprop="name">Нужна ли лицензия для импорта из Турции?</h3>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-              <p style="font-size:14px;color:var(--navy-mid);margin:0" itemprop="text">Большинство товаров не требует лицензий. Исключения: продукты питания (фитосанитарный контроль), медицинские изделия (разрешение Минздрава), химикаты (спецразрешения). Мы заранее проверяем нормативные требования для вашего товара.</p>
+          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0">
+            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem">Нужна ли лицензия для импорта из Турции?</h3>
+            <div>
+              <p style="font-size:14px;color:var(--navy-mid);margin:0">Большинство товаров не требует лицензий. Исключения: продукты питания (фитосанитарный контроль), медицинские изделия (разрешение Минздрава), химикаты (спецразрешения). Мы заранее проверяем нормативные требования для вашего товара.</p>
             </div>
           </div>
-          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem" itemprop="name">А что если груз тяжёлый или негабаритный — вы возьмётесь?</h3>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-              <p style="font-size:14px;color:var(--navy-mid);margin:0" itemprop="text">Да. Мы перевозим негабаритные грузы (станки, промышленное оборудование, спецтехника) из Турции на низкорамных платформах и в open-top контейнерах. Рассчитываем оптимальный маршрут с учётом габаритов, согласовываем разрешения на проезд и обеспечиваем крепление и погрузку.</p>
+          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0">
+            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem">А что если груз тяжёлый или негабаритный — вы возьмётесь?</h3>
+            <div>
+              <p style="font-size:14px;color:var(--navy-mid);margin:0">Да. Мы перевозим негабаритные грузы (станки, промышленное оборудование, спецтехника) из Турции на низкорамных платформах и в open-top контейнерах. Рассчитываем оптимальный маршрут с учётом габаритов, согласовываем разрешения на проезд и обеспечиваем крепление и погрузку.</p>
             </div>
           </div>
-          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem" itemprop="name">Какие документы нужны для доставки из Турции?</h3>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-              <p style="font-size:14px;color:var(--navy-mid);margin:0" itemprop="text">Минимальный пакет: инвойс (фактура), упаковочный лист (packing list), транспортная накладная (CMR или AWB). Для отдельных категорий — сертификат происхождения (EUR.1 или формы А), фитосанитарный сертификат, декларация соответствия EAC. Мы составляем полный список необходимых документов для вашего товара до отгрузки.</p>
+          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0">
+            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem">Какие документы нужны для доставки из Турции?</h3>
+            <div>
+              <p style="font-size:14px;color:var(--navy-mid);margin:0">Минимальный пакет: инвойс (фактура), упаковочный лист (packing list), транспортная накладная (CMR или AWB). Для отдельных категорий — сертификат происхождения (EUR.1 или формы А), фитосанитарный сертификат, декларация соответствия EAC. Мы составляем полный список необходимых документов для вашего товара до отгрузки.</p>
             </div>
           </div>
-          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem" itemprop="name">Можно ли растаможить турецкий груз в Бишкеке и отправить в Россию?</h3>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-              <p style="font-size:14px;color:var(--navy-mid);margin:0" itemprop="text">Да, именно так работает наша основная схема. Растаможка в Кыргызстане обходится дешевле, чем на территории РФ, при этом товар с выпуском ЕАЭС свободно пересекает границу России без повторного декларирования. Экономия может составить 15–25% на пошлинах и услугах.</p>
+          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0">
+            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem">Можно ли растаможить турецкий груз в Бишкеке и отправить в Россию?</h3>
+            <div>
+              <p style="font-size:14px;color:var(--navy-mid);margin:0">Да, именно так работает наша основная схема. Растаможка в Кыргызстане обходится дешевле, чем на территории РФ, при этом товар с выпуском ЕАЭС свободно пересекает границу России без повторного декларирования. Экономия может составить 15–25% на пошлинах и услугах.</p>
             </div>
           </div>
-          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem" itemprop="name">Что будет, если турецкий поставщик отправит не тот товар?</h3>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-              <p style="font-size:14px;color:var(--navy-mid);margin:0" itemprop="text">Мы рекомендуем заказывать инспекцию перед отгрузкой — наш агент проверяет соответствие товара заказу прямо на складе поставщика. Если несоответствие выявлено уже в Бишкеке, мы фиксируем его актом приёмки и помогаем в переговорах с поставщиком: вплоть до возврата и замены партии.</p>
+          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0">
+            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem">Что будет, если турецкий поставщик отправит не тот товар?</h3>
+            <div>
+              <p style="font-size:14px;color:var(--navy-mid);margin:0">Мы рекомендуем заказывать инспекцию перед отгрузкой — наш агент проверяет соответствие товара заказу прямо на складе поставщика. Если несоответствие выявлено уже в Бишкеке, мы фиксируем его актом приёмки и помогаем в переговорах с поставщиком: вплоть до возврата и замены партии.</p>
             </div>
           </div>
-          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem" itemprop="name">Есть ли санкционные ограничения на турецкие товары?</h3>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-              <p style="font-size:14px;color:var(--navy-mid);margin:0" itemprop="text">На данный момент прямых санкций на торговлю между Турцией и странами ЕАЭС нет. Однако отдельные товары (электроника с ограничениями экспорта, товары двойного назначения) могут подпадать под международные режимы контроля. Мы проверяем каждую позицию на соответствие действующим требованиям.</p>
+          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0">
+            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem">Есть ли санкционные ограничения на турецкие товары?</h3>
+            <div>
+              <p style="font-size:14px;color:var(--navy-mid);margin:0">На данный момент прямых санкций на торговлю между Турцией и странами ЕАЭС нет. Однако отдельные товары (электроника с ограничениями экспорта, товары двойного назначения) могут подпадать под международные режимы контроля. Мы проверяем каждую позицию на соответствие действующим требованиям.</p>
             </div>
           </div>
-          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem" itemprop="name">Можно ли забрать товар напрямую с турецкого завода?</h3>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-              <p style="font-size:14px;color:var(--navy-mid);margin:0" itemprop="text">Да. Мы работаем на условиях EXW (забор с завода/склада поставщика), FCA, FOB. Наш транспорт приезжает непосредственно на производство, производит погрузку и оформляет транспортные документы. Вам не нужно самостоятельно организовывать внутритурецкую логистику.</p>
+          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0">
+            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem">Можно ли забрать товар напрямую с турецкого завода?</h3>
+            <div>
+              <p style="font-size:14px;color:var(--navy-mid);margin:0">Да. Мы работаем на условиях EXW (забор с завода/склада поставщика), FCA, FOB. Наш транспорт приезжает непосредственно на производство, производит погрузку и оформляет транспортные документы. Вам не нужно самостоятельно организовывать внутритурецкую логистику.</p>
             </div>
           </div>
-          <div style="border-top:1px solid #e8ecf4;border-bottom:1px solid #e8ecf4;padding:1.25rem 0" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem" itemprop="name">Как рассчитать итоговую стоимость доставки из Турции?</h3>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-              <p style="font-size:14px;color:var(--navy-mid);margin:0" itemprop="text">Итоговая цена складывается из: стоимости транспортировки (зависит от веса, объёма и маршрута), таможенных пошлин (5–15% от инвойсовой стоимости), услуг брокера, сертификации (если требуется) и доставки до конечного адреса. Отправьте нам инвойс — и мы подготовим полную калькуляцию за 1–2 часа.</p>
+          <div style="border-top:1px solid #e8ecf4;border-bottom:1px solid #e8ecf4;padding:1.25rem 0">
+            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem">Как рассчитать итоговую стоимость доставки из Турции?</h3>
+            <div>
+              <p style="font-size:14px;color:var(--navy-mid);margin:0">Итоговая цена складывается из: стоимости транспортировки (зависит от веса, объёма и маршрута), таможенных пошлин (5–15% от инвойсовой стоимости), услуг брокера, сертификации (если требуется) и доставки до конечного адреса. Отправьте нам инвойс — и мы подготовим полную калькуляцию за 1–2 часа.</p>
             </div>
           </div>
         </div>

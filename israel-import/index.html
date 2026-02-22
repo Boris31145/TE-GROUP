@@ -115,15 +115,26 @@
     .nav-links a{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);transition:color .2s;position:relative;padding-bottom:2px}
     .nav-links a.active,.nav-links a:hover{color:var(--navy)}
     .nav-links a.active::after{content:"";position:absolute;bottom:-2px;left:0;right:0;height:1.5px;background:var(--gold)}
-    .burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:36px;height:36px;background:none;border:none;padding:4px}
-    .burger span{display:block;width:22px;height:2px;background:var(--navy);border-radius:2px;transition:.3s}
+    .burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:42px;height:42px;background:var(--gold-pale,rgba(201,162,39,.08));border:1.5px solid var(--gold);border-radius:10px;padding:8px;animation:burger-pulse 2.5s ease-in-out infinite;box-shadow:0 2px 12px rgba(201,162,39,.25);transition:background .2s,box-shadow .2s,transform .2s}
+    .burger:hover{background:var(--gold);transform:scale(1.08);box-shadow:0 4px 18px rgba(201,162,39,.4)}
+    .burger:hover span{background:#fff}
+    @keyframes burger-pulse{0%,100%{box-shadow:0 2px 12px rgba(201,162,39,.25)}50%{box-shadow:0 4px 20px rgba(201,162,39,.5)}}
+    .burger span{display:block;width:20px;height:2px;background:var(--gold);border-radius:2px;transition:.3s}
+    .burger.open{animation:none;background:var(--navy);border-color:var(--navy)}
+    .burger.open span{background:#fff}
     .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
     .burger.open span:nth-child(2){opacity:0}
     .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
     .mob-menu{display:none;position:fixed;top:var(--nav-h);left:0;right:0;z-index:299;background:rgba(255,255,255,.98);border-bottom:2px solid var(--gold);padding:8px 28px 24px;flex-direction:column;box-shadow:var(--sh-lg)}
     .mob-menu.open{display:flex}
-    .mob-menu a{padding:13px 0;border-bottom:1px solid var(--border2);font-size:14px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+    .mob-menu a{padding:13px 0;border-bottom:1px solid var(--border2);font-size:14px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;transition:.2s}
+    .mob-menu a:hover{color:var(--navy);padding-left:8px}
     .mob-menu a:last-child{border-bottom:none;color:var(--gold);font-weight:700;padding-top:18px}
+    .mob-home{font-weight:800!important;color:var(--navy)!important;position:relative;display:flex;align-items:center;gap:8px}
+    .mob-home::before{content:"\2190";display:inline-block;animation:home-arrow 1.5s ease-in-out infinite;font-size:16px;color:var(--gold)}
+    @keyframes home-arrow{0%,100%{transform:translateX(0)}50%{transform:translateX(-5px)}}
+    .mob-home::after{content:"";position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),transparent);animation:home-line 2s ease-in-out infinite}
+    @keyframes home-line{0%,100%{opacity:.3}50%{opacity:1}}
 
     .page-header{margin-top:var(--nav-h);padding:72px 0 68px;background:var(--white);position:relative;overflow:hidden;border-top:5px solid var(--nc)}
     .page-header::before{content:"";position:absolute;right:0;top:0;bottom:0;width:55%;background:radial-gradient(ellipse at 85% 50%,rgba(21,101,192,.07) 0%,transparent 65%);z-index:0;pointer-events:none}
@@ -280,6 +291,7 @@
 </nav>
 
 <div class="mob-menu" id="mob-menu">
+  <a href="/" class="mob-home">Главная</a>
   <a href="/china-import/">Импорт из Китая</a>
   <a href="/turkey-import/">Импорт из Турции</a>
   <a href="/uae-import/">Импорт из ОАЭ</a>
@@ -434,72 +446,72 @@
         </div>
 
         <!-- ═══ FAQ ═══ -->
-        <div class="reveal" style="margin-top:2.5rem" itemscope itemtype="https://schema.org/FAQPage">
+        <div class="reveal" style="margin-top:2.5rem">
           <h2>Частые вопросы по доставке из Израиля</h2>
-          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem" itemprop="name">Что можно импортировать из Израиля в Кыргызстан?</h3>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-              <p style="font-size:14px;color:var(--navy-mid);margin:0" itemprop="text">Основные категории: системы капельного орошения и агротехнологии (Netafim, Plastro), медицинская диагностическая техника, промышленная электроника и программируемые контроллеры, системы безопасности и видеонаблюдения, фармацевтика. Для каждой категории — своя схема оформления.</p>
+          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0">
+            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem">Что можно импортировать из Израиля в Кыргызстан?</h3>
+            <div>
+              <p style="font-size:14px;color:var(--navy-mid);margin:0">Основные категории: системы капельного орошения и агротехнологии (Netafim, Plastro), медицинская диагностическая техника, промышленная электроника и программируемые контроллеры, системы безопасности и видеонаблюдения, фармацевтика. Для каждой категории — своя схема оформления.</p>
             </div>
           </div>
-          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem" itemprop="name">Сколько стоит и сколько идёт доставка из Израиля в Бишкек?</h3>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-              <p style="font-size:14px;color:var(--navy-mid);margin:0" itemprop="text">Авиадоставка (через Стамбул или Алматы) — 3–6 дней, от $5–8/кг. Мультимодальная схема (море + авто) — 18–28 дней, от $1,2–2/кг. Точный расчёт зависит от веса, объёма и категории товара.</p>
+          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0">
+            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem">Сколько стоит и сколько идёт доставка из Израиля в Бишкек?</h3>
+            <div>
+              <p style="font-size:14px;color:var(--navy-mid);margin:0">Авиадоставка (через Стамбул или Алматы) — 3–6 дней, от $5–8/кг. Мультимодальная схема (море + авто) — 18–28 дней, от $1,2–2/кг. Точный расчёт зависит от веса, объёма и категории товара.</p>
             </div>
           </div>
-          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem" itemprop="name">Нужны ли специальные разрешения для медоборудования из Израиля?</h3>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-              <p style="font-size:14px;color:var(--navy-mid);margin:0" itemprop="text">Да. Медицинские изделия и оборудование требуют регистрационного удостоверения Минздрава КР или сертификата соответствия ТР ТС. Мы помогаем пройти эту процедуру и координируем оформление документов до прибытия груза.</p>
+          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0">
+            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem">Нужны ли специальные разрешения для медоборудования из Израиля?</h3>
+            <div>
+              <p style="font-size:14px;color:var(--navy-mid);margin:0">Да. Медицинские изделия и оборудование требуют регистрационного удостоверения Минздрава КР или сертификата соответствия ТР ТС. Мы помогаем пройти эту процедуру и координируем оформление документов до прибытия груза.</p>
             </div>
           </div>
-          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem" itemprop="name">Можно ли оплатить израильскому поставщику в долларах?</h3>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-              <p style="font-size:14px;color:var(--navy-mid);margin:0" itemprop="text">Да. Израильские компании принимают оплату в USD и EUR. «ТЕ ГРУПП» осуществляет международные платежи от имени клиента, что избавляет от необходимости самостоятельно открывать валютный счёт или искать платёжных посредников.</p>
+          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0">
+            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem">Можно ли оплатить израильскому поставщику в долларах?</h3>
+            <div>
+              <p style="font-size:14px;color:var(--navy-mid);margin:0">Да. Израильские компании принимают оплату в USD и EUR. «ТЕ ГРУПП» осуществляет международные платежи от имени клиента, что избавляет от необходимости самостоятельно открывать валютный счёт или искать платёжных посредников.</p>
             </div>
           </div>
-          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem" itemprop="name">Есть ли санкционные ограничения на торговлю с Израилем?</h3>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-              <p style="font-size:14px;color:var(--navy-mid);margin:0" itemprop="text">Прямых торговых санкций между Израилем и странами ЕАЭС нет. Однако на отдельные категории — военные технологии, товары двойного назначения, определённое ПО — действуют международные экспортные ограничения. Мы проверяем каждую товарную позицию на соответствие требованиям до заключения сделки.</p>
+          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0">
+            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem">Есть ли санкционные ограничения на торговлю с Израилем?</h3>
+            <div>
+              <p style="font-size:14px;color:var(--navy-mid);margin:0">Прямых торговых санкций между Израилем и странами ЕАЭС нет. Однако на отдельные категории — военные технологии, товары двойного назначения, определённое ПО — действуют международные экспортные ограничения. Мы проверяем каждую товарную позицию на соответствие требованиям до заключения сделки.</p>
             </div>
           </div>
-          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem" itemprop="name">Как доставить медицинское оборудование из Израиля в Россию?</h3>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-              <p style="font-size:14px;color:var(--navy-mid);margin:0" itemprop="text">Для медоборудования требуется регистрационное удостоверение Росздравнадзора (или его аналог в ЕАЭС), а также декларация соответствия. Мы координируем весь процесс: от упаковки в соответствии с требованиями (температурный режим, стерильность) до получения разрешительных документов и растаможки в Бишкеке.</p>
+          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0">
+            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem">Как доставить медицинское оборудование из Израиля в Россию?</h3>
+            <div>
+              <p style="font-size:14px;color:var(--navy-mid);margin:0">Для медоборудования требуется регистрационное удостоверение Росздравнадзора (или его аналог в ЕАЭС), а также декларация соответствия. Мы координируем весь процесс: от упаковки в соответствии с требованиями (температурный режим, стерильность) до получения разрешительных документов и растаможки в Бишкеке.</p>
             </div>
           </div>
-          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem" itemprop="name">Какие маршруты доставки из Израиля доступны?</h3>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-              <p style="font-size:14px;color:var(--navy-mid);margin:0" itemprop="text">Основные маршруты: авиа через Тель-Авив (3–5 дней), морем через порт Ашдод или Хайфу с перевалкой в Турции (12–20 дней). Выбор зависит от объёма и срочности. Для небольших партий выгоднее авиа, для контейнерных объёмов — морской маршрут.</p>
+          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0">
+            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem">Какие маршруты доставки из Израиля доступны?</h3>
+            <div>
+              <p style="font-size:14px;color:var(--navy-mid);margin:0">Основные маршруты: авиа через Тель-Авив (3–5 дней), морем через порт Ашдод или Хайфу с перевалкой в Турции (12–20 дней). Выбор зависит от объёма и срочности. Для небольших партий выгоднее авиа, для контейнерных объёмов — морской маршрут.</p>
             </div>
           </div>
-          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem" itemprop="name">Какие агротехнологии можно импортировать из Израиля?</h3>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-              <p style="font-size:14px;color:var(--navy-mid);margin:0" itemprop="text">Израиль — мировой лидер в агротехнологиях: системы капельного орошения (Netafim и аналоги), тепличное оборудование, удобрения, семена, системы мониторинга почвы. Мы доставляем эту продукцию с полным комплектом документов, включая фитосанитарные сертификаты.</p>
+          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0">
+            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem">Какие агротехнологии можно импортировать из Израиля?</h3>
+            <div>
+              <p style="font-size:14px;color:var(--navy-mid);margin:0">Израиль — мировой лидер в агротехнологиях: системы капельного орошения (Netafim и аналоги), тепличное оборудование, удобрения, семена, системы мониторинга почвы. Мы доставляем эту продукцию с полным комплектом документов, включая фитосанитарные сертификаты.</p>
             </div>
           </div>
-          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem" itemprop="name">Что если груз повредят при перевозке из Израиля?</h3>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-              <p style="font-size:14px;color:var(--navy-mid);margin:0" itemprop="text">Мы оформляем страховку на полную стоимость груза. При обнаружении повреждения составляется акт с фото- и видеофиксацией. Страховая выплата покрывает ущерб. Для хрупких грузов (оптика, медтехника, электроника) мы используем специальную упаковку и контролируем условия хранения на каждом этапе.</p>
+          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0">
+            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem">Что если груз повредят при перевозке из Израиля?</h3>
+            <div>
+              <p style="font-size:14px;color:var(--navy-mid);margin:0">Мы оформляем страховку на полную стоимость груза. При обнаружении повреждения составляется акт с фото- и видеофиксацией. Страховая выплата покрывает ущерб. Для хрупких грузов (оптика, медтехника, электроника) мы используем специальную упаковку и контролируем условия хранения на каждом этапе.</p>
             </div>
           </div>
-          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem" itemprop="name">Нужна ли виза для деловой поездки в Израиль для переговоров?</h3>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-              <p style="font-size:14px;color:var(--navy-mid);margin:0" itemprop="text">Для граждан РФ и Кыргызстана виза в Израиль не требуется при сроке пребывания до 90 дней. Однако вы можете не ехать лично: мы организуем удалённые переговоры, верификацию поставщика и инспекцию товара силами нашего представителя на месте.</p>
+          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0">
+            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem">Нужна ли виза для деловой поездки в Израиль для переговоров?</h3>
+            <div>
+              <p style="font-size:14px;color:var(--navy-mid);margin:0">Для граждан РФ и Кыргызстана виза в Израиль не требуется при сроке пребывания до 90 дней. Однако вы можете не ехать лично: мы организуем удалённые переговоры, верификацию поставщика и инспекцию товара силами нашего представителя на месте.</p>
             </div>
           </div>
-          <div style="border-top:1px solid #e8ecf4;border-bottom:1px solid #e8ecf4;padding:1.25rem 0" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem" itemprop="name">Как рассчитать пошлины на товары из Израиля?</h3>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-              <p style="font-size:14px;color:var(--navy-mid);margin:0" itemprop="text">Ставка пошлины зависит от кода ТН ВЭД товара и его инвойсовой стоимости. Средний диапазон — 0–15%. Мы предоставляем предварительный расчёт пошлин и налогов бесплатно до начала работы — вы точно знаете итоговую стоимость ещё до покупки товара.</p>
+          <div style="border-top:1px solid #e8ecf4;border-bottom:1px solid #e8ecf4;padding:1.25rem 0">
+            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem">Как рассчитать пошлины на товары из Израиля?</h3>
+            <div>
+              <p style="font-size:14px;color:var(--navy-mid);margin:0">Ставка пошлины зависит от кода ТН ВЭД товара и его инвойсовой стоимости. Средний диапазон — 0–15%. Мы предоставляем предварительный расчёт пошлин и налогов бесплатно до начала работы — вы точно знаете итоговую стоимость ещё до покупки товара.</p>
             </div>
           </div>
         </div>

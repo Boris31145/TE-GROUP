@@ -112,15 +112,26 @@
     .nav-links a{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);transition:color .2s;position:relative;padding-bottom:2px}
     .nav-links a.active,.nav-links a:hover{color:var(--navy)}
     .nav-links a.active::after{content:"";position:absolute;bottom:-2px;left:0;right:0;height:1.5px;background:var(--gold)}
-    .burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:36px;height:36px;background:none;border:none;padding:4px}
-    .burger span{display:block;width:22px;height:2px;background:var(--navy);border-radius:2px;transition:.3s}
+    .burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:42px;height:42px;background:var(--gold-pale,rgba(201,162,39,.08));border:1.5px solid var(--gold);border-radius:10px;padding:8px;animation:burger-pulse 2.5s ease-in-out infinite;box-shadow:0 2px 12px rgba(201,162,39,.25);transition:background .2s,box-shadow .2s,transform .2s}
+    .burger:hover{background:var(--gold);transform:scale(1.08);box-shadow:0 4px 18px rgba(201,162,39,.4)}
+    .burger:hover span{background:#fff}
+    @keyframes burger-pulse{0%,100%{box-shadow:0 2px 12px rgba(201,162,39,.25)}50%{box-shadow:0 4px 20px rgba(201,162,39,.5)}}
+    .burger span{display:block;width:20px;height:2px;background:var(--gold);border-radius:2px;transition:.3s}
+    .burger.open{animation:none;background:var(--navy);border-color:var(--navy)}
+    .burger.open span{background:#fff}
     .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
     .burger.open span:nth-child(2){opacity:0}
     .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
     .mob-menu{display:none;position:fixed;top:var(--nav-h);left:0;right:0;z-index:299;background:rgba(255,255,255,.98);border-bottom:2px solid var(--gold);padding:8px 28px 24px;flex-direction:column;box-shadow:var(--sh-lg)}
     .mob-menu.open{display:flex}
-    .mob-menu a{padding:13px 0;border-bottom:1px solid var(--border2);font-size:14px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+    .mob-menu a{padding:13px 0;border-bottom:1px solid var(--border2);font-size:14px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;transition:.2s}
+    .mob-menu a:hover{color:var(--navy);padding-left:8px}
     .mob-menu a:last-child{border-bottom:none;color:var(--gold);font-weight:700;padding-top:18px}
+    .mob-home{font-weight:800!important;color:var(--navy)!important;position:relative;display:flex;align-items:center;gap:8px}
+    .mob-home::before{content:"\2190";display:inline-block;animation:home-arrow 1.5s ease-in-out infinite;font-size:16px;color:var(--gold)}
+    @keyframes home-arrow{0%,100%{transform:translateX(0)}50%{transform:translateX(-5px)}}
+    .mob-home::after{content:"";position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),transparent);animation:home-line 2s ease-in-out infinite}
+    @keyframes home-line{0%,100%{opacity:.3}50%{opacity:1}}
 
     /* ── PAGE HEADER ── */
     .page-header{
@@ -306,6 +317,7 @@
 </nav>
 
 <div class="mob-menu" id="mob-menu">
+  <a href="/" class="mob-home">Главная</a>
   <a href="/china-import/">Импорт из Китая</a>
   <a href="/turkey-import/">Импорт из Турции</a>
   <a href="/uae-import/">Импорт из ОАЭ</a>
@@ -478,72 +490,72 @@
         </div>
 
         <!-- ═══ FAQ ═══ -->
-        <div class="reveal" style="margin-top:2.5rem" itemscope itemtype="https://schema.org/FAQPage">
+        <div class="reveal" style="margin-top:2.5rem">
           <h2>Частые вопросы по доставке из Китая</h2>
-          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem" itemprop="name">Сколько стоит доставка грузов из Китая в Бишкек?</h3>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-              <p style="font-size:14px;color:var(--navy-mid);margin:0" itemprop="text">Стоимость зависит от способа доставки и объёма груза. Автодоставка — от $1,2/кг (12–18 дней), ЖД — от $0,8/кг (18–25 дней), авиа — от $4/кг (3–5 дней). Для точного расчёта отправьте инвойс или укажите параметры груза — мы ответим в течение часа.</p>
+          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0">
+            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem">Сколько стоит доставка грузов из Китая в Бишкек?</h3>
+            <div>
+              <p style="font-size:14px;color:var(--navy-mid);margin:0">Стоимость зависит от способа доставки и объёма груза. Автодоставка — от $1,2/кг (12–18 дней), ЖД — от $0,8/кг (18–25 дней), авиа — от $4/кг (3–5 дней). Для точного расчёта отправьте инвойс или укажите параметры груза — мы ответим в течение часа.</p>
             </div>
           </div>
-          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem" itemprop="name">Сколько времени занимает доставка из Китая в Кыргызстан?</h3>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-              <p style="font-size:14px;color:var(--navy-mid);margin:0" itemprop="text">Срок зависит от маршрута: авто из Иу до Бишкека — 12–18 дней, ЖД (контейнер) — 18–25 дней, авиа — 3–5 рабочих дней. При сборном грузе добавляется 3–7 дней на консолидацию на складе.</p>
+          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0">
+            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem">Сколько времени занимает доставка из Китая в Кыргызстан?</h3>
+            <div>
+              <p style="font-size:14px;color:var(--navy-mid);margin:0">Срок зависит от маршрута: авто из Иу до Бишкека — 12–18 дней, ЖД (контейнер) — 18–25 дней, авиа — 3–5 рабочих дней. При сборном грузе добавляется 3–7 дней на консолидацию на складе.</p>
             </div>
           </div>
-          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem" itemprop="name">Нужен ли таможенный брокер при доставке из Китая?</h3>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-              <p style="font-size:14px;color:var(--navy-mid);margin:0" itemprop="text">Да. При коммерческом ввозе необходимо таможенное декларирование, уплата пошлин и оформление ДТ. «ТЕ ГРУПП» является таможенным представителем и берёт оформление полностью на себя — вам не нужно разбираться в кодах ТН ВЭД и таможенных регламентах ЕАЭС.</p>
+          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0">
+            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem">Нужен ли таможенный брокер при доставке из Китая?</h3>
+            <div>
+              <p style="font-size:14px;color:var(--navy-mid);margin:0">Да. При коммерческом ввозе необходимо таможенное декларирование, уплата пошлин и оформление ДТ. «ТЕ ГРУПП» является таможенным представителем и берёт оформление полностью на себя — вам не нужно разбираться в кодах ТН ВЭД и таможенных регламентах ЕАЭС.</p>
             </div>
           </div>
-          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem" itemprop="name">Можно ли доставить небольшой сборный груз из Китая?</h3>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-              <p style="font-size:14px;color:var(--navy-mid);margin:0" itemprop="text">Да. Мы принимаем сборные грузы (LCL) от 50 кг. Ваш товар консолидируется на нашем складе в Иу или Гуанчжоу вместе с грузами других клиентов, что значительно снижает стоимость доставки небольших партий.</p>
+          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0">
+            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem">Можно ли доставить небольшой сборный груз из Китая?</h3>
+            <div>
+              <p style="font-size:14px;color:var(--navy-mid);margin:0">Да. Мы принимаем сборные грузы (LCL) от 50 кг. Ваш товар консолидируется на нашем складе в Иу или Гуанчжоу вместе с грузами других клиентов, что значительно снижает стоимость доставки небольших партий.</p>
             </div>
           </div>
-          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem" itemprop="name">Какие товары нельзя ввозить из Китая?</h3>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-              <p style="font-size:14px;color:var(--navy-mid);margin:0" itemprop="text">Запрещены к ввозу: оружие, наркотические вещества, контрафакт, отдельные виды химикатов и товары двойного назначения без лицензии. Ограничения действуют на батареи большой ёмкости, некоторые лекарства и продукты питания без фитосанитарного сертификата. Мы заранее проверяем ваш товар на соответствие требованиям ЕАЭС и предупреждаем о возможных рисках.</p>
+          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0">
+            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem">Какие товары нельзя ввозить из Китая?</h3>
+            <div>
+              <p style="font-size:14px;color:var(--navy-mid);margin:0">Запрещены к ввозу: оружие, наркотические вещества, контрафакт, отдельные виды химикатов и товары двойного назначения без лицензии. Ограничения действуют на батареи большой ёмкости, некоторые лекарства и продукты питания без фитосанитарного сертификата. Мы заранее проверяем ваш товар на соответствие требованиям ЕАЭС и предупреждаем о возможных рисках.</p>
             </div>
           </div>
-          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem" itemprop="name">Что будет, если я ошибусь в декларации или укажу неверный код ТН ВЭД?</h3>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-              <p style="font-size:14px;color:var(--navy-mid);margin:0" itemprop="text">Ошибка в коде ТН ВЭД — это штраф от 50% до 200% стоимости товара, задержка груза на таможне и возможная конфискация. Именно поэтому мы берём классификацию на себя: наши брокеры подбирают код по описанию товара, согласовывают его до подачи декларации и несут ответственность за правильность оформления.</p>
+          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0">
+            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem">Что будет, если я ошибусь в декларации или укажу неверный код ТН ВЭД?</h3>
+            <div>
+              <p style="font-size:14px;color:var(--navy-mid);margin:0">Ошибка в коде ТН ВЭД — это штраф от 50% до 200% стоимости товара, задержка груза на таможне и возможная конфискация. Именно поэтому мы берём классификацию на себя: наши брокеры подбирают код по описанию товара, согласовывают его до подачи декларации и несут ответственность за правильность оформления.</p>
             </div>
           </div>
-          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem" itemprop="name">Нужен ли сертификат EAC для товаров из Китая?</h3>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-              <p style="font-size:14px;color:var(--navy-mid);margin:0" itemprop="text">Для большинства потребительских товаров (электроника, одежда, детские товары, стройматериалы) сертификат или декларация соответствия EAC обязательны. Без этого документа товар не пройдёт таможню и не может легально продаваться в странах ЕАЭС. Мы организуем сертификацию «под ключ» — от подбора лаборатории до получения готового документа.</p>
+          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0">
+            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem">Нужен ли сертификат EAC для товаров из Китая?</h3>
+            <div>
+              <p style="font-size:14px;color:var(--navy-mid);margin:0">Для большинства потребительских товаров (электроника, одежда, детские товары, стройматериалы) сертификат или декларация соответствия EAC обязательны. Без этого документа товар не пройдёт таможню и не может легально продаваться в странах ЕАЭС. Мы организуем сертификацию «под ключ» — от подбора лаборатории до получения готового документа.</p>
             </div>
           </div>
-          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem" itemprop="name">Как проверить поставщика в Китае перед оплатой?</h3>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-              <p style="font-size:14px;color:var(--navy-mid);margin:0" itemprop="text">Мы проводим верификацию фабрик: проверяем бизнес-лицензию, историю экспорта, реальное наличие производства. По запросу организуем аудит на месте и инспекцию товара перед отгрузкой (PSI). Это исключает риск работы с посредниками и мошенниками — вы платите только реальному производителю.</p>
+          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0">
+            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem">Как проверить поставщика в Китае перед оплатой?</h3>
+            <div>
+              <p style="font-size:14px;color:var(--navy-mid);margin:0">Мы проводим верификацию фабрик: проверяем бизнес-лицензию, историю экспорта, реальное наличие производства. По запросу организуем аудит на месте и инспекцию товара перед отгрузкой (PSI). Это исключает риск работы с посредниками и мошенниками — вы платите только реальному производителю.</p>
             </div>
           </div>
-          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem" itemprop="name">Чем доставка через Бишкек выгоднее, чем напрямую в Россию?</h3>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-              <p style="font-size:14px;color:var(--navy-mid);margin:0" itemprop="text">Кыргызстан — член ЕАЭС с одними из самых низких таможенных ставок и упрощённым режимом оформления. Растаможив груз в Бишкеке, вы легально ввозите его в Россию без повторного декларирования. Экономия на пошлинах и услугах брокера может достигать 15–30% по сравнению с оформлением напрямую через российскую таможню.</p>
+          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0">
+            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem">Чем доставка через Бишкек выгоднее, чем напрямую в Россию?</h3>
+            <div>
+              <p style="font-size:14px;color:var(--navy-mid);margin:0">Кыргызстан — член ЕАЭС с одними из самых низких таможенных ставок и упрощённым режимом оформления. Растаможив груз в Бишкеке, вы легально ввозите его в Россию без повторного декларирования. Экономия на пошлинах и услугах брокера может достигать 15–30% по сравнению с оформлением напрямую через российскую таможню.</p>
             </div>
           </div>
-          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem" itemprop="name">Можно ли застраховать груз из Китая?</h3>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-              <p style="font-size:14px;color:var(--navy-mid);margin:0" itemprop="text">Да. Мы оформляем страховку на полную стоимость груза — от повреждения, утери и форс-мажорных обстоятельств. Стоимость страхования составляет 0,3–0,5% от инвойсовой стоимости товара. При возникновении страхового случая мы берём на себя оформление документов и взаимодействие со страховой компанией.</p>
+          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0">
+            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem">Можно ли застраховать груз из Китая?</h3>
+            <div>
+              <p style="font-size:14px;color:var(--navy-mid);margin:0">Да. Мы оформляем страховку на полную стоимость груза — от повреждения, утери и форс-мажорных обстоятельств. Стоимость страхования составляет 0,3–0,5% от инвойсовой стоимости товара. При возникновении страхового случая мы берём на себя оформление документов и взаимодействие со страховой компанией.</p>
             </div>
           </div>
-          <div style="border-top:1px solid #e8ecf4;border-bottom:1px solid #e8ecf4;padding:1.25rem 0" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem" itemprop="name">Что делать, если товар из Китая пришёл с браком или недовложением?</h3>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-              <p style="font-size:14px;color:var(--navy-mid);margin:0" itemprop="text">Если заказана инспекция PSI — брак выявляется ещё до отгрузки, и поставщик обязан заменить товар. Если дефект обнаружен при приёмке в Бишкеке, мы фиксируем его актом, фото- и видеоотчётом и помогаем составить претензию поставщику. В большинстве случаев удаётся добиться компенсации или замены партии.</p>
+          <div style="border-top:1px solid #e8ecf4;border-bottom:1px solid #e8ecf4;padding:1.25rem 0">
+            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem">Что делать, если товар из Китая пришёл с браком или недовложением?</h3>
+            <div>
+              <p style="font-size:14px;color:var(--navy-mid);margin:0">Если заказана инспекция PSI — брак выявляется ещё до отгрузки, и поставщик обязан заменить товар. Если дефект обнаружен при приёмке в Бишкеке, мы фиксируем его актом, фото- и видеоотчётом и помогаем составить претензию поставщику. В большинстве случаев удаётся добиться компенсации или замены партии.</p>
             </div>
           </div>
         </div>

@@ -132,8 +132,13 @@
     .nav-links a.active::after { content: ""; position: absolute; bottom: -2px; left: 0; right: 0; height: 1.5px; background: var(--gold); }
     .nav-links a:hover { color: var(--navy); }
 
-    .nav-burger { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 36px; height: 36px; background: none; border: none; padding: 4px; }
-    .nav-burger span { display: block; width: 22px; height: 2px; background: var(--navy); border-radius: 2px; transition: .3s; }
+    .nav-burger { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 42px; height: 42px; background: rgba(201,162,39,.08); border: 1.5px solid var(--gold); border-radius: 10px; padding: 8px; animation: burger-pulse 2.5s ease-in-out infinite; box-shadow: 0 2px 12px rgba(201,162,39,.25); transition: background .2s, box-shadow .2s, transform .2s; }
+    .nav-burger:hover { background: var(--gold); transform: scale(1.08); box-shadow: 0 4px 18px rgba(201,162,39,.4); }
+    .nav-burger:hover span { background: #fff; }
+    @keyframes burger-pulse { 0%,100%{box-shadow:0 2px 12px rgba(201,162,39,.25)} 50%{box-shadow:0 4px 20px rgba(201,162,39,.5)} }
+    .nav-burger span { display: block; width: 20px; height: 2px; background: var(--gold); border-radius: 2px; transition: .3s; }
+    .nav-burger.open { animation: none; background: var(--navy); border-color: var(--navy); }
+    .nav-burger.open span { background: #fff; }
     .nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
     .nav-burger.open span:nth-child(2) { opacity: 0; }
     .nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
@@ -141,7 +146,13 @@
     .mob-menu { display: none; position: fixed; top: var(--nav-h); left: 0; right: 0; z-index: 299; background: rgba(255,255,255,.98); border-bottom: 2px solid var(--gold); padding: 8px 28px 24px; flex-direction: column; box-shadow: var(--shadow-lg); }
     .mob-menu.open { display: flex; }
     .mob-menu a { padding: 14px 0; border-bottom: 1px solid var(--border2); font-size: 14px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; transition: .2s; }
+    .mob-menu a:hover { color: var(--navy); padding-left: 8px; }
     .mob-menu a:last-child { border-bottom: none; color: var(--gold); font-weight: 700; padding-top: 20px; }
+    .mob-home { font-weight: 800 !important; color: var(--navy) !important; position: relative; display: flex; align-items: center; gap: 8px; }
+    .mob-home::before { content: "\2190"; display: inline-block; animation: home-arrow 1.5s ease-in-out infinite; font-size: 16px; color: var(--gold); }
+    @keyframes home-arrow { 0%,100%{transform:translateX(0)} 50%{transform:translateX(-5px)} }
+    .mob-home::after { content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--gold), transparent); animation: home-line 2s ease-in-out infinite; }
+    @keyframes home-line { 0%,100%{opacity:.3} 50%{opacity:1} }
     
     .breadcrumbs { font-size: 12px; color: var(--muted); margin-bottom: 24px; text-transform: uppercase; letter-spacing: .05em; }
     .breadcrumbs a { border-bottom: 1px solid rgba(11,29,78,.1); }
@@ -281,6 +292,7 @@
 </nav>
 
 <div class="mob-menu" id="mob-menu">
+  <a href="/" class="mob-link mob-home">Главная</a>
   <a href="/china-import/" class="mob-link">Импорт из Китая</a>
   <a href="/turkey-import/" class="mob-link">Импорт из Турции</a>
   <a href="/uae-import/" class="mob-link">Импорт из ОАЭ</a>
@@ -432,90 +444,90 @@
         </div>
 
         <!-- ═══ FAQ ═══ -->
-        <div class="reveal" style="margin-top:2.5rem" itemscope itemtype="https://schema.org/FAQPage">
+        <div class="reveal" style="margin-top:2.5rem">
           <h2>Частые вопросы по таможенному оформлению</h2>
-          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem" itemprop="name">Сколько стоит таможенное оформление груза в Бишкеке?</h3>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-              <p style="font-size:14px;color:var(--navy-mid);margin:0" itemprop="text">Стоимость услуг таможенного брокера зависит от типа груза, количества деклараций и сложности оформления. Таможенная пошлина рассчитывается отдельно по коду ТН ВЭД. Для получения точного расчёта отправьте нам инвойс или описание товара.</p>
+          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0">
+            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem">Сколько стоит таможенное оформление груза в Бишкеке?</h3>
+            <div>
+              <p style="font-size:14px;color:var(--navy-mid);margin:0">Стоимость услуг таможенного брокера зависит от типа груза, количества деклараций и сложности оформления. Таможенная пошлина рассчитывается отдельно по коду ТН ВЭД. Для получения точного расчёта отправьте нам инвойс или описание товара.</p>
             </div>
           </div>
-          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem" itemprop="name">Что такое ТН ВЭД и зачем нужен таможенный брокер?</h3>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-              <p style="font-size:14px;color:var(--navy-mid);margin:0" itemprop="text">ТН ВЭД — единый классификатор товаров, действующий на территории ЕАЭС. Каждому коду соответствует своя ставка пошлины. Неправильная классификация — самая частая причина задержки грузов. Таможенный брокер знает актуальную практику применения кодов и несёт ответственность за точность декларации.</p>
+          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0">
+            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem">Что такое ТН ВЭД и зачем нужен таможенный брокер?</h3>
+            <div>
+              <p style="font-size:14px;color:var(--navy-mid);margin:0">ТН ВЭД — единый классификатор товаров, действующий на территории ЕАЭС. Каждому коду соответствует своя ставка пошлины. Неправильная классификация — самая частая причина задержки грузов. Таможенный брокер знает актуальную практику применения кодов и несёт ответственность за точность декларации.</p>
             </div>
           </div>
-          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem" itemprop="name">Сколько времени занимает таможенное оформление?</h3>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-              <p style="font-size:14px;color:var(--navy-mid);margin:0" itemprop="text">При наличии полного комплекта документов — от нескольких часов до 1 рабочего дня. «ТЕ ГРУПП» готовит документы заблаговременно, до прибытия груза на таможенный пост, что позволяет избежать простоев транспорта.</p>
+          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0">
+            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem">Сколько времени занимает таможенное оформление?</h3>
+            <div>
+              <p style="font-size:14px;color:var(--navy-mid);margin:0">При наличии полного комплекта документов — от нескольких часов до 1 рабочего дня. «ТЕ ГРУПП» готовит документы заблаговременно, до прибытия груза на таможенный пост, что позволяет избежать простоев транспорта.</p>
             </div>
           </div>
-          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem" itemprop="name">Какие документы нужны для растаможки груза?</h3>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-              <p style="font-size:14px;color:var(--navy-mid);margin:0" itemprop="text">Стандартный пакет: контракт с поставщиком, инвойс, упаковочный лист (packing list), транспортные документы (CMR, коносамент или авианакладная). Для ряда товаров могут потребоваться сертификаты происхождения или разрешения Минздрава. Мы проверяем комплектность до отгрузки.</p>
+          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0">
+            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem">Какие документы нужны для растаможки груза?</h3>
+            <div>
+              <p style="font-size:14px;color:var(--navy-mid);margin:0">Стандартный пакет: контракт с поставщиком, инвойс, упаковочный лист (packing list), транспортные документы (CMR, коносамент или авианакладная). Для ряда товаров могут потребоваться сертификаты происхождения или разрешения Минздрава. Мы проверяем комплектность до отгрузки.</p>
             </div>
           </div>
-          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem" itemprop="name">Почему растаможка в Бишкеке выгоднее, чем в Москве?</h3>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-              <p style="font-size:14px;color:var(--navy-mid);margin:0" itemprop="text">Кыргызстан — полноправный член ЕАЭС. Таможенные ставки едины, но стоимость услуг брокера, складского хранения и оформления в Бишкеке значительно ниже. Кроме того, таможенная стоимость товаров в КР оценивается лояльнее. Итоговая экономия для импортёра составляет 15–30% по сравнению с оформлением через московскую таможню. После выпуска товар свободно перемещается по всей территории ЕАЭС.</p>
+          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0">
+            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem">Почему растаможка в Бишкеке выгоднее, чем в Москве?</h3>
+            <div>
+              <p style="font-size:14px;color:var(--navy-mid);margin:0">Кыргызстан — полноправный член ЕАЭС. Таможенные ставки едины, но стоимость услуг брокера, складского хранения и оформления в Бишкеке значительно ниже. Кроме того, таможенная стоимость товаров в КР оценивается лояльнее. Итоговая экономия для импортёра составляет 15–30% по сравнению с оформлением через московскую таможню. После выпуска товар свободно перемещается по всей территории ЕАЭС.</p>
             </div>
           </div>
-          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem" itemprop="name">Что будет, если я ошибусь в коде ТН ВЭД?</h3>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-              <p style="font-size:14px;color:var(--navy-mid);margin:0" itemprop="text">Последствия серьёзные: штраф от 50% до 200% стоимости товара, доначисление пошлин, задержка груза на неопределённый срок, в худшем случае — конфискация. Именно поэтому мы берём классификацию на себя. Наши специалисты подбирают код ТН ВЭД до подачи декларации, согласовывают его с таможенным органом и несут ответственность за правильность оформления.</p>
+          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0">
+            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem">Что будет, если я ошибусь в коде ТН ВЭД?</h3>
+            <div>
+              <p style="font-size:14px;color:var(--navy-mid);margin:0">Последствия серьёзные: штраф от 50% до 200% стоимости товара, доначисление пошлин, задержка груза на неопределённый срок, в худшем случае — конфискация. Именно поэтому мы берём классификацию на себя. Наши специалисты подбирают код ТН ВЭД до подачи декларации, согласовывают его с таможенным органом и несут ответственность за правильность оформления.</p>
             </div>
           </div>
-          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem" itemprop="name">Можно ли легально снизить таможенные пошлины?</h3>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-              <p style="font-size:14px;color:var(--navy-mid);margin:0" itemprop="text">Да. Законные способы оптимизации: правильная классификация товара (разные коды — разные ставки), применение преференциальных ставок по соглашениям о свободной торговле, использование режима «свободный склад» в ЕАЭС. Мы анализируем каждый случай и подбираем оптимальную схему оформления в рамках законодательства.</p>
+          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0">
+            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem">Можно ли легально снизить таможенные пошлины?</h3>
+            <div>
+              <p style="font-size:14px;color:var(--navy-mid);margin:0">Да. Законные способы оптимизации: правильная классификация товара (разные коды — разные ставки), применение преференциальных ставок по соглашениям о свободной торговле, использование режима «свободный склад» в ЕАЭС. Мы анализируем каждый случай и подбираем оптимальную схему оформления в рамках законодательства.</p>
             </div>
           </div>
-          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem" itemprop="name">Что такое сертификат EAC и когда он обязателен?</h3>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-              <p style="font-size:14px;color:var(--navy-mid);margin:0" itemprop="text">EAC (Евразийское соответствие) — обязательная маркировка для товаров, подлежащих техническому регулированию ЕАЭС. Без сертификата или декларации EAC товар невозможно легально выпустить с таможни и продавать на территории России, Казахстана, Беларуси, Армении и Кыргызстана. Мы оформляем EAC «под ключ»: подбор технического регламента, лаборатория, протоколы испытаний, готовый документ.</p>
+          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0">
+            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem">Что такое сертификат EAC и когда он обязателен?</h3>
+            <div>
+              <p style="font-size:14px;color:var(--navy-mid);margin:0">EAC (Евразийское соответствие) — обязательная маркировка для товаров, подлежащих техническому регулированию ЕАЭС. Без сертификата или декларации EAC товар невозможно легально выпустить с таможни и продавать на территории России, Казахстана, Беларуси, Армении и Кыргызстана. Мы оформляем EAC «под ключ»: подбор технического регламента, лаборатория, протоколы испытаний, готовый документ.</p>
             </div>
           </div>
-          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem" itemprop="name">Что делать, если таможня задержала груз?</h3>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-              <p style="font-size:14px;color:var(--navy-mid);margin:0" itemprop="text">Самые частые причины задержки: неполный пакет документов, подозрение на занижение стоимости, несоответствие товара декларации. Наш брокер присутствует при каждом досмотре, оперативно предоставляет дополнительные документы и ведёт переговоры с таможней. В 95% случаев вопрос решается в течение 1–2 рабочих дней.</p>
+          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0">
+            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem">Что делать, если таможня задержала груз?</h3>
+            <div>
+              <p style="font-size:14px;color:var(--navy-mid);margin:0">Самые частые причины задержки: неполный пакет документов, подозрение на занижение стоимости, несоответствие товара декларации. Наш брокер присутствует при каждом досмотре, оперативно предоставляет дополнительные документы и ведёт переговоры с таможней. В 95% случаев вопрос решается в течение 1–2 рабочих дней.</p>
             </div>
           </div>
-          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem" itemprop="name">Какие типичные ошибки совершают при самостоятельной растаможке?</h3>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-              <p style="font-size:14px;color:var(--navy-mid);margin:0" itemprop="text">Топ-5 ошибок: неправильный код ТН ВЭД (ведёт к штрафу), занижение таможенной стоимости (корректировка и доплата), отсутствие сертификата EAC (отказ в выпуске), неполный пакет документов (задержка на посту), незнание таможенных режимов (переплата пошлин). Профессиональный брокер исключает все эти риски.</p>
+          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0">
+            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem">Какие типичные ошибки совершают при самостоятельной растаможке?</h3>
+            <div>
+              <p style="font-size:14px;color:var(--navy-mid);margin:0">Топ-5 ошибок: неправильный код ТН ВЭД (ведёт к штрафу), занижение таможенной стоимости (корректировка и доплата), отсутствие сертификата EAC (отказ в выпуске), неполный пакет документов (задержка на посту), незнание таможенных режимов (переплата пошлин). Профессиональный брокер исключает все эти риски.</p>
             </div>
           </div>
-          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem" itemprop="name">Как растаможить груз для продажи на маркетплейсах (Wildberries, Ozon)?</h3>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-              <p style="font-size:14px;color:var(--navy-mid);margin:0" itemprop="text">Для продажи на российских маркетплейсах товар должен быть: официально ввезён (декларация), иметь сертификат/декларацию EAC, маркировку на русском языке и штрихкод. Мы обеспечиваем полный цикл — от растаможки до подготовки документов для маркетплейса. Это одно из самых востребованных направлений: 40% наших клиентов — продавцы на WB и Ozon.</p>
+          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0">
+            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem">Как растаможить груз для продажи на маркетплейсах (Wildberries, Ozon)?</h3>
+            <div>
+              <p style="font-size:14px;color:var(--navy-mid);margin:0">Для продажи на российских маркетплейсах товар должен быть: официально ввезён (декларация), иметь сертификат/декларацию EAC, маркировку на русском языке и штрихкод. Мы обеспечиваем полный цикл — от растаможки до подготовки документов для маркетплейса. Это одно из самых востребованных направлений: 40% наших клиентов — продавцы на WB и Ozon.</p>
             </div>
           </div>
-          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem" itemprop="name">Можно ли растаможить сложный груз (оборудование, химия, продукты)?</h3>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-              <p style="font-size:14px;color:var(--navy-mid);margin:0" itemprop="text">Да. Мы имеем опыт оформления: промышленного оборудования (с получением разрешений Ростехнадзора), химических веществ (ФСТЭК, Роспотребнадзор), продуктов питания (Россельхознадзор, ветеринарные сертификаты), медицинских изделий (Росздравнадзор). Для каждой категории подбирается индивидуальная схема оформления.</p>
+          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0">
+            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem">Можно ли растаможить сложный груз (оборудование, химия, продукты)?</h3>
+            <div>
+              <p style="font-size:14px;color:var(--navy-mid);margin:0">Да. Мы имеем опыт оформления: промышленного оборудования (с получением разрешений Ростехнадзора), химических веществ (ФСТЭК, Роспотребнадзор), продуктов питания (Россельхознадзор, ветеринарные сертификаты), медицинских изделий (Росздравнадзор). Для каждой категории подбирается индивидуальная схема оформления.</p>
             </div>
           </div>
-          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem" itemprop="name">Сколько стоит растаможить контейнер из Китая в Бишкеке?</h3>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-              <p style="font-size:14px;color:var(--navy-mid);margin:0" itemprop="text">Стоимость складывается из: таможенная пошлина (5–15% в зависимости от товара), НДС (12% в КР), услуги брокера, складское хранение. Для 20-футового контейнера из Китая (средняя стоимость товара $15 000–$40 000) общие затраты на растаможку начинаются от $2 000–$3 000. Мы делаем точный расчёт бесплатно — отправьте инвойс.</p>
+          <div style="border-top:1px solid #e8ecf4;padding:1.25rem 0">
+            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem">Сколько стоит растаможить контейнер из Китая в Бишкеке?</h3>
+            <div>
+              <p style="font-size:14px;color:var(--navy-mid);margin:0">Стоимость складывается из: таможенная пошлина (5–15% в зависимости от товара), НДС (12% в КР), услуги брокера, складское хранение. Для 20-футового контейнера из Китая (средняя стоимость товара $15 000–$40 000) общие затраты на растаможку начинаются от $2 000–$3 000. Мы делаем точный расчёт бесплатно — отправьте инвойс.</p>
             </div>
           </div>
-          <div style="border-top:1px solid #e8ecf4;border-bottom:1px solid #e8ecf4;padding:1.25rem 0" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem" itemprop="name">Кто несёт ответственность, если таможня выставит претензии?</h3>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-              <p style="font-size:14px;color:var(--navy-mid);margin:0" itemprop="text">Таможенный представитель (брокер) несёт солидарную ответственность с декларантом по Таможенному кодексу ЕАЭС. Это значит, что «ТЕ ГРУПП» отвечает за правильность декларирования наравне с вами. Мы застрахованы на сумму более 20 млн сомов, что покрывает возможные риски.</p>
+          <div style="border-top:1px solid #e8ecf4;border-bottom:1px solid #e8ecf4;padding:1.25rem 0">
+            <h3 style="font-size:16px;font-weight:600;color:var(--navy);margin:0 0 .5rem">Кто несёт ответственность, если таможня выставит претензии?</h3>
+            <div>
+              <p style="font-size:14px;color:var(--navy-mid);margin:0">Таможенный представитель (брокер) несёт солидарную ответственность с декларантом по Таможенному кодексу ЕАЭС. Это значит, что «ТЕ ГРУПП» отвечает за правильность декларирования наравне с вами. Мы застрахованы на сумму более 20 млн сомов, что покрывает возможные риски.</p>
             </div>
           </div>
         </div>
