@@ -25,7 +25,8 @@
   <meta property="og:title" content="Импорт в Россию через ЕАЭС — доставка и таможня под ключ | TE GROUP"/>
   <meta property="og:description" content="Поставка и таможенное оформление грузов в Россию из Китая, Турции, ОАЭ и Израиля — под ключ для российских компаний. Логистика, документы, сроки и цены фиксируются договором."/>
   <meta property="og:url" content="https://tegroup.cc/"/>
-  <meta property="og:image" content="https://tegroup.cc/og-image.jpg"/>
+  <meta property="og:image" content="https://tegroup.cc/og-image.svg"/>
+  <meta property="og:image:type" content="image/svg+xml"/>
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
 
@@ -37,7 +38,7 @@
     "name": "ОсОО «ТЕ ГРУПП»",
     "alternateName": "TE GROUP",
     "url": "https://tegroup.cc/",
-    "logo": "https://tegroup.cc/og-image.jpg",
+    "logo": "https://tegroup.cc/og-image.svg",
     "description": "Международные поставки товаров из Китая, Турции, ОАЭ и Израиля. Таможенное оформление в ЕАЭС. Логистика под ключ.",
     "address": {
       "@type": "PostalAddress",
@@ -52,7 +53,19 @@
       "latitude": 42.8746,
       "longitude": 74.5698
     },
-    "areaServed": ["KG", "RU", "KZ", "BY", "AM"],
+    "areaServed": [
+      {"@type": "Country", "name": "Россия", "sameAs": "https://ru.wikipedia.org/wiki/Россия"},
+      {"@type": "Country", "name": "Кыргызстан"},
+      {"@type": "Country", "name": "Казахстан"},
+      {"@type": "Country", "name": "Беларусь"},
+      {"@type": "Country", "name": "Армения"},
+      {"@type": "City", "name": "Москва"},
+      {"@type": "City", "name": "Санкт-Петербург"},
+      {"@type": "City", "name": "Новосибирск"},
+      {"@type": "City", "name": "Екатеринбург"},
+      {"@type": "City", "name": "Бишкек"},
+      {"@type": "City", "name": "Алматы"}
+    ],
     "telephone": "+79527783680",
     "email": "oootegroup@gmail.com",
     "priceRange": "$$",
@@ -78,11 +91,11 @@
       "@type": "OfferCatalog",
       "name": "Направления доставки",
       "itemListElement": [
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Доставка из Китая", "url": "https://tegroup.cc/china-import/"}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Поставки из Турции", "url": "https://tegroup.cc/turkey-import/"}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Импорт из ОАЭ", "url": "https://tegroup.cc/uae-import/"}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Импорт из Израиля", "url": "https://tegroup.cc/israel-import/"}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Таможенное оформление ЕАЭС", "url": "https://tegroup.cc/customs-clearance/"}}
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Доставка из Китая в Россию", "url": "https://tegroup.cc/china-import/", "description": "Авто 12–18 дней, ЖД 18–25 дней, авиа 3–5 дней. От $0.8/кг."}, "priceSpecification": {"@type": "UnitPriceSpecification", "priceCurrency": "USD", "price": "0.80", "unitText": "кг", "description": "от $0.80/кг (ЖД)"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Поставки из Турции в Россию", "url": "https://tegroup.cc/turkey-import/", "description": "Авто 7–12 дней, авиа 2–4 дня. Текстиль, стройматериалы, оборудование."}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Импорт из ОАЭ в Россию", "url": "https://tegroup.cc/uae-import/", "description": "Авиа 2–4 дня, море 18–25 дней. Электроника, парфюмерия, оборудование."}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Импорт из Израиля в Россию", "url": "https://tegroup.cc/israel-import/", "description": "Авиа 2–3 дня, авто 10–14 дней. Медицинское оборудование, агротехнологии, электроника."}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Таможенное оформление ЕАЭС", "url": "https://tegroup.cc/customs-clearance/", "description": "Выпуск товара за 1–2 рабочих дня. Растаможка в Бишкеке — экономия 15–30%."}}
       ]
     }
   }
@@ -989,6 +1002,7 @@
       <a href="/uae-import/">ОАЭ</a>
       <a href="/israel-import/">Израиль</a>
       <a href="/customs-clearance/">Таможня</a>
+      <a href="#calculator">Расчёт</a>
       <a href="#contact">Контакты</a>
     </div>
 
@@ -1008,6 +1022,7 @@
   <a href="/uae-import/" class="mob-link">Импорт из ОАЭ</a>
   <a href="/israel-import/" class="mob-link">Импорт из Израиля</a>
   <a href="/customs-clearance/" class="mob-link">Таможенное оформление</a>
+  <a href="#calculator" class="mob-link" style="color:var(--gold);">⚡ Калькулятор</a>
   <a href="#contact"    class="mob-link">Контакты</a>
   <a href="tel:+79527783680">+7 952 778 3680</a>
 </div>
@@ -1668,9 +1683,147 @@
 
     </div>
 
+    <!-- ═══ DELIVERY TIMELINE TABLE ═══ -->
+    <div class="reveal" style="margin-bottom:36px;">
+      <h3 style="font-size:18px;margin-bottom:16px;">Ориентировочные сроки и стоимость доставки в Россию</h3>
+      <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
+        <table style="width:100%;border-collapse:collapse;background:var(--white);box-shadow:var(--sh-sm);font-size:14px;">
+          <thead>
+            <tr style="background:var(--navy);color:#fff;font-size:12px;text-transform:uppercase;letter-spacing:.05em;">
+              <th style="padding:14px 18px;text-align:left;">Направление</th>
+              <th style="padding:14px 18px;text-align:left;">Авто</th>
+              <th style="padding:14px 18px;text-align:left;">ЖД / Море</th>
+              <th style="padding:14px 18px;text-align:left;">Авиа</th>
+              <th style="padding:14px 18px;text-align:left;">Стоимость от</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border2);">
+              <td style="padding:14px 18px;font-weight:700;color:var(--navy);">🇨🇳 Китай → РФ</td>
+              <td style="padding:14px 18px;">12–18 дн.</td>
+              <td style="padding:14px 18px;">18–25 дн.</td>
+              <td style="padding:14px 18px;">3–5 дн.</td>
+              <td style="padding:14px 18px;color:var(--gold);font-weight:700;">$0,8 / кг</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border2);background:var(--bg);">
+              <td style="padding:14px 18px;font-weight:700;color:var(--navy);">🇹🇷 Турция → РФ</td>
+              <td style="padding:14px 18px;">7–12 дн.</td>
+              <td style="padding:14px 18px;">14–20 дн.</td>
+              <td style="padding:14px 18px;">2–4 дн.</td>
+              <td style="padding:14px 18px;color:var(--gold);font-weight:700;">$1,5 / кг</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border2);">
+              <td style="padding:14px 18px;font-weight:700;color:var(--navy);">🇦🇪 ОАЭ → РФ</td>
+              <td style="padding:14px 18px;">10–16 дн.</td>
+              <td style="padding:14px 18px;">18–25 дн.</td>
+              <td style="padding:14px 18px;">2–4 дн.</td>
+              <td style="padding:14px 18px;color:var(--gold);font-weight:700;">$2,0 / кг</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border2);background:var(--bg);">
+              <td style="padding:14px 18px;font-weight:700;color:var(--navy);">🇮🇱 Израиль → РФ</td>
+              <td style="padding:14px 18px;">10–14 дн.</td>
+              <td style="padding:14px 18px;">16–22 дн.</td>
+              <td style="padding:14px 18px;">2–3 дн.</td>
+              <td style="padding:14px 18px;color:var(--gold);font-weight:700;">$2,5 / кг</td>
+            </tr>
+            <tr>
+              <td style="padding:14px 18px;font-weight:700;color:var(--navy);">🇪🇺 Европа → РФ</td>
+              <td style="padding:14px 18px;">7–14 дн.</td>
+              <td style="padding:14px 18px;">14–21 дн.</td>
+              <td style="padding:14px 18px;">2–4 дн.</td>
+              <td style="padding:14px 18px;color:var(--gold);font-weight:700;">$1,8 / кг</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:12px;color:var(--muted);margin-top:10px;">* Сроки указаны до Бишкека + 3–7 дней доставка до склада в РФ. Стоимость зависит от веса, объёма, типа товара и текущих ставок фрахта. Для точного расчёта отправьте инвойс.</p>
+    </div>
+
     <div class="reveal" style="background:var(--bg);padding:28px 32px;border-left:4px solid var(--gold);max-width:820px;">
       <p style="font-size:14px;color:var(--navy);margin:0 0 6px;font-weight:700;">Почему мы не указываем фиксированные тарифы на сайте?</p>
       <p style="font-size:13px;color:var(--muted);margin:0;">Как и крупнейшие мировые операторы (Maersk, Kuehne+Nagel, DB Schenker), мы рассчитываем стоимость индивидуально — потому что она зависит от категории товара, веса, объёма, маршрута и текущих ставок фрахта. Фиксированная цена на сайте была бы либо завышенной, либо недостоверной. Мы называем точную сумму за 1–2 часа после получения инвойса — и фиксируем её в договоре.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+     INTERACTIVE QUIZ / CALCULATOR
+================================================================ -->
+<section id="calculator" class="section" style="background:var(--navy);color:#fff;position:relative;overflow:hidden;">
+  <!-- Decorative background -->
+  <div style="position:absolute;inset:0;background:repeating-linear-gradient(120deg,transparent,transparent 200px,rgba(201,162,39,.02) 200px,rgba(201,162,39,.02) 201px);pointer-events:none;"></div>
+  <div class="container" style="position:relative;z-index:2;">
+    <div class="reveal" style="text-align:center;margin-bottom:44px;">
+      <span class="tag" style="color:var(--gold);background:rgba(201,162,39,.1);border-color:rgba(201,162,39,.25);">Калькулятор</span>
+      <h2 style="color:#fff;">Рассчитайте стоимость доставки за 30 секунд</h2>
+      <p style="color:rgba(255,255,255,.55);max-width:520px;margin:8px auto 0;">Ответьте на 3 вопроса — мы покажем ориентировочные сроки и стоимость. Точный расчёт — бесплатно за 1–2 часа.</p>
+    </div>
+
+    <div id="quiz" class="reveal" style="max-width:640px;margin:0 auto;">
+      <!-- Step indicators -->
+      <div id="quiz-steps" style="display:flex;gap:8px;margin-bottom:28px;justify-content:center;">
+        <div class="qstep active" data-step="1" style="width:80px;height:4px;border-radius:2px;background:var(--gold);transition:.3s;"></div>
+        <div class="qstep" data-step="2" style="width:80px;height:4px;border-radius:2px;background:rgba(255,255,255,.15);transition:.3s;"></div>
+        <div class="qstep" data-step="3" style="width:80px;height:4px;border-radius:2px;background:rgba(255,255,255,.15);transition:.3s;"></div>
+      </div>
+
+      <!-- Step 1: Country -->
+      <div id="q1" class="quiz-panel" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:32px 28px;">
+        <h3 style="color:#fff;font-size:18px;margin-bottom:6px;">Откуда доставляем?</h3>
+        <p style="color:rgba(255,255,255,.45);font-size:13px;margin-bottom:20px;">Выберите страну закупки</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+          <button onclick="quizSelect(1,'china')" class="qbtn" data-val="china" style="padding:16px;border:1.5px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);border-radius:8px;color:#fff;font-size:15px;font-weight:600;cursor:pointer;transition:.2s;text-align:left;">🇨🇳 Китай</button>
+          <button onclick="quizSelect(1,'turkey')" class="qbtn" data-val="turkey" style="padding:16px;border:1.5px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);border-radius:8px;color:#fff;font-size:15px;font-weight:600;cursor:pointer;transition:.2s;text-align:left;">🇹🇷 Турция</button>
+          <button onclick="quizSelect(1,'uae')" class="qbtn" data-val="uae" style="padding:16px;border:1.5px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);border-radius:8px;color:#fff;font-size:15px;font-weight:600;cursor:pointer;transition:.2s;text-align:left;">🇦🇪 ОАЭ</button>
+          <button onclick="quizSelect(1,'israel')" class="qbtn" data-val="israel" style="padding:16px;border:1.5px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);border-radius:8px;color:#fff;font-size:15px;font-weight:600;cursor:pointer;transition:.2s;text-align:left;">🇮🇱 Израиль</button>
+          <button onclick="quizSelect(1,'europe')" class="qbtn" data-val="europe" style="padding:16px;border:1.5px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);border-radius:8px;color:#fff;font-size:15px;font-weight:600;cursor:pointer;transition:.2s;text-align:left;grid-column:span 2;">🇪🇺 Европа</button>
+        </div>
+      </div>
+
+      <!-- Step 2: Cargo type -->
+      <div id="q2" class="quiz-panel" style="display:none;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:32px 28px;">
+        <h3 style="color:#fff;font-size:18px;margin-bottom:6px;">Тип товара</h3>
+        <p style="color:rgba(255,255,255,.45);font-size:13px;margin-bottom:20px;">Выберите ближайшую категорию</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+          <button onclick="quizSelect(2,'general')" class="qbtn" style="padding:16px;border:1.5px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);border-radius:8px;color:#fff;font-size:14px;font-weight:600;cursor:pointer;transition:.2s;text-align:left;">📦 Обычный товар<span style="display:block;font-size:11px;font-weight:400;color:rgba(255,255,255,.4);margin-top:4px;">одежда, хозтовары, мебель</span></button>
+          <button onclick="quizSelect(2,'equipment')" class="qbtn" style="padding:16px;border:1.5px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);border-radius:8px;color:#fff;font-size:14px;font-weight:600;cursor:pointer;transition:.2s;text-align:left;">⚙️ Оборудование<span style="display:block;font-size:11px;font-weight:400;color:rgba(255,255,255,.4);margin-top:4px;">станки, техника, запчасти</span></button>
+          <button onclick="quizSelect(2,'electronics')" class="qbtn" style="padding:16px;border:1.5px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);border-radius:8px;color:#fff;font-size:14px;font-weight:600;cursor:pointer;transition:.2s;text-align:left;">📱 Электроника<span style="display:block;font-size:11px;font-weight:400;color:rgba(255,255,255,.4);margin-top:4px;">смартфоны, компоненты</span></button>
+          <button onclick="quizSelect(2,'building')" class="qbtn" style="padding:16px;border:1.5px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);border-radius:8px;color:#fff;font-size:14px;font-weight:600;cursor:pointer;transition:.2s;text-align:left;">🧱 Стройматериалы<span style="display:block;font-size:11px;font-weight:400;color:rgba(255,255,255,.4);margin-top:4px;">керамогранит, металл, пиломатериалы</span></button>
+        </div>
+        <button onclick="quizBack(1)" style="margin-top:16px;padding:10px 20px;background:none;border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.5);border-radius:6px;font-size:12px;cursor:pointer;font-weight:600;">← Назад</button>
+      </div>
+
+      <!-- Step 3: Weight -->
+      <div id="q3" class="quiz-panel" style="display:none;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:32px 28px;">
+        <h3 style="color:#fff;font-size:18px;margin-bottom:6px;">Примерный вес партии</h3>
+        <p style="color:rgba(255,255,255,.45);font-size:13px;margin-bottom:20px;">Не знаете точно? Выберите приблизительно</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+          <button onclick="quizSelect(3,'50')" class="qbtn" style="padding:16px;border:1.5px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);border-radius:8px;color:#fff;font-size:15px;font-weight:600;cursor:pointer;transition:.2s;">50–200 кг</button>
+          <button onclick="quizSelect(3,'500')" class="qbtn" style="padding:16px;border:1.5px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);border-radius:8px;color:#fff;font-size:15px;font-weight:600;cursor:pointer;transition:.2s;">200–1000 кг</button>
+          <button onclick="quizSelect(3,'3000')" class="qbtn" style="padding:16px;border:1.5px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);border-radius:8px;color:#fff;font-size:15px;font-weight:600;cursor:pointer;transition:.2s;">1–5 тонн</button>
+          <button onclick="quizSelect(3,'10000')" class="qbtn" style="padding:16px;border:1.5px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);border-radius:8px;color:#fff;font-size:15px;font-weight:600;cursor:pointer;transition:.2s;">5+ тонн / контейнер</button>
+        </div>
+        <button onclick="quizBack(2)" style="margin-top:16px;padding:10px 20px;background:none;border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.5);border-radius:6px;font-size:12px;cursor:pointer;font-weight:600;">← Назад</button>
+      </div>
+
+      <!-- Result -->
+      <div id="qresult" class="quiz-panel" style="display:none;background:linear-gradient(135deg,rgba(201,162,39,.12),rgba(201,162,39,.04));border:1.5px solid rgba(201,162,39,.3);border-radius:12px;padding:36px 28px;text-align:center;">
+        <div style="font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);margin-bottom:16px;font-weight:700;">Ориентировочный расчёт</div>
+        <div id="qr-country" style="font-size:22px;font-weight:800;color:#fff;margin-bottom:8px;"></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0;text-align:center;">
+          <div style="background:rgba(0,0,0,.2);padding:20px;border-radius:8px;">
+            <div style="font-size:11px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px;">Срок доставки</div>
+            <div id="qr-time" style="font-size:24px;font-weight:900;color:var(--gold);"></div>
+          </div>
+          <div style="background:rgba(0,0,0,.2);padding:20px;border-radius:8px;">
+            <div style="font-size:11px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px;">Стоимость от</div>
+            <div id="qr-price" style="font-size:24px;font-weight:900;color:var(--gold);"></div>
+          </div>
+        </div>
+        <p id="qr-note" style="font-size:13px;color:rgba(255,255,255,.5);margin-bottom:24px;"></p>
+        <button onclick="openCTA()" class="btn btn-gold" style="width:100%;padding:16px;font-size:14px;border:none;cursor:pointer;">Получить точный расчёт — бесплатно</button>
+        <button onclick="quizReset()" style="margin-top:12px;padding:10px 20px;background:none;border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.5);border-radius:6px;font-size:12px;cursor:pointer;font-weight:600;">Рассчитать другое направление</button>
+      </div>
     </div>
   </div>
 </section>
@@ -2157,6 +2310,98 @@
 function openCTA(){document.getElementById('ctaOverlay').classList.add('open');document.body.style.overflow='hidden'}
 function closeCTA(){document.getElementById('ctaOverlay').classList.remove('open');document.body.style.overflow=''}
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeCTA()});
+
+/* ═══ QUIZ CALCULATOR ═══ */
+const quizData = {
+  china:  {name:'🇨🇳 Китай → Россия',  auto:'15–21 дн.',rail:'21–30 дн.',air:'6–8 дн.',  priceKg:0.8, priceMult:{general:1,equipment:1.3,electronics:1.5,building:0.9}},
+  turkey: {name:'🇹🇷 Турция → Россия', auto:'10–16 дн.',rail:'17–24 дн.',air:'5–7 дн.',  priceKg:1.5, priceMult:{general:1,equipment:1.2,electronics:1.4,building:0.85}},
+  uae:    {name:'🇦🇪 ОАЭ → Россия',    auto:'13–20 дн.',rail:'21–28 дн.',air:'5–7 дн.',  priceKg:2.0, priceMult:{general:1,equipment:1.2,electronics:1.3,building:0.9}},
+  israel: {name:'🇮🇱 Израиль → Россия',auto:'13–18 дн.',rail:'19–25 дн.',air:'5–6 дн.',  priceKg:2.5, priceMult:{general:1,equipment:1.15,electronics:1.3,building:0.9}},
+  europe: {name:'🇪🇺 Европа → Россия', auto:'10–18 дн.',rail:'17–24 дн.',air:'5–7 дн.',  priceKg:1.8, priceMult:{general:1,equipment:1.2,electronics:1.35,building:0.85}}
+};
+let qState = {country:null, cargo:null, weight:null};
+
+function quizSelect(step, val) {
+  if(step===1) qState.country = val;
+  if(step===2) qState.cargo = val;
+  if(step===3) { qState.weight = val; showQuizResult(); return; }
+
+  // Highlight selected button
+  const panel = document.getElementById('q'+step);
+  panel.querySelectorAll('.qbtn').forEach(b => {
+    b.style.borderColor = 'rgba(255,255,255,.12)';
+    b.style.background = 'rgba(255,255,255,.04)';
+  });
+  const clicked = panel.querySelector('[data-val="'+val+'"]') || event.target.closest('.qbtn');
+  if(clicked){clicked.style.borderColor='var(--gold)';clicked.style.background='rgba(201,162,39,.15)';}
+
+  // Advance to next step
+  setTimeout(() => {
+    document.getElementById('q'+step).style.display = 'none';
+    document.getElementById('q'+(step+1)).style.display = 'block';
+    document.querySelectorAll('.qstep').forEach((s,i) => {
+      s.style.background = i < step+1 ? 'var(--gold)' : 'rgba(255,255,255,.15)';
+    });
+  }, 200);
+}
+
+function quizBack(toStep) {
+  const cur = toStep + 1;
+  document.getElementById('q'+cur).style.display = 'none';
+  document.getElementById('q'+toStep).style.display = 'block';
+  document.querySelectorAll('.qstep').forEach((s,i) => {
+    s.style.background = i < toStep ? 'var(--gold)' : 'rgba(255,255,255,.15)';
+  });
+}
+
+function showQuizResult() {
+  const d = quizData[qState.country];
+  const mult = d.priceMult[qState.cargo] || 1;
+  const basePrice = d.priceKg * mult;
+
+  // Volume discount for heavy shipments
+  let discount = 1;
+  if(qState.weight === '3000') discount = 0.85;
+  if(qState.weight === '10000') discount = 0.7;
+  const finalPrice = (basePrice * discount).toFixed(1);
+
+  // Best transport mode by weight
+  let timeStr = d.auto;
+  let note = 'Рекомендуемый способ: автоперевозка. Включает таможенное оформление в Бишкеке (1–2 дня) и доставку до склада в РФ.';
+  if(qState.weight === '50') {
+    timeStr = d.air;
+    note = 'Для небольших партий рекомендуем авиадоставку. Быстро и экономично. Включает таможенное оформление в Бишкеке.';
+  } else if(qState.weight === '10000') {
+    timeStr = d.rail;
+    note = 'Для крупных партий оптимально: ЖД-контейнер или море. Максимальная экономия на кг. Полный пакет документов для ФНС.';
+  }
+
+  document.getElementById('qr-country').textContent = d.name;
+  document.getElementById('qr-time').textContent = timeStr;
+  document.getElementById('qr-price').textContent = '$' + finalPrice + '/кг';
+  document.getElementById('qr-note').textContent = note;
+
+  document.getElementById('q3').style.display = 'none';
+  document.getElementById('qresult').style.display = 'block';
+  document.querySelectorAll('.qstep').forEach(s => s.style.background = 'var(--gold)');
+
+  // Yandex Metrika goal
+  if(typeof ym !== 'undefined') ym(106940695, 'reachGoal', 'quiz_complete');
+}
+
+function quizReset() {
+  qState = {country:null, cargo:null, weight:null};
+  document.getElementById('qresult').style.display = 'none';
+  document.getElementById('q1').style.display = 'block';
+  document.querySelectorAll('.qstep').forEach((s,i) => {
+    s.style.background = i === 0 ? 'var(--gold)' : 'rgba(255,255,255,.15)';
+  });
+  // Reset button styles
+  document.querySelectorAll('.qbtn').forEach(b => {
+    b.style.borderColor = 'rgba(255,255,255,.12)';
+    b.style.background = 'rgba(255,255,255,.04)';
+  });
+}
 </script>
 <!-- /CTA MODAL -->
 

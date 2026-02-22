@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a1a42"/>
+      <stop offset="100%" stop-color="#0f2560"/>
+    </linearGradient>
+    <linearGradient id="gold-line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="transparent"/>
+      <stop offset="15%" stop-color="#c9a227"/>
+      <stop offset="50%" stop-color="#e2bb44"/>
+      <stop offset="85%" stop-color="#c9a227"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </linearGradient>
+    <linearGradient id="gold-grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e5c040"/>
+      <stop offset="100%" stop-color="#c9a227"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Subtle grid pattern -->
+  <g stroke="rgba(255,255,255,.03)" stroke-width="1">
+    <line x1="0" y1="105" x2="1200" y2="105"/>
+    <line x1="0" y1="210" x2="1200" y2="210"/>
+    <line x1="0" y1="315" x2="1200" y2="315"/>
+    <line x1="0" y1="420" x2="1200" y2="420"/>
+    <line x1="0" y1="525" x2="1200" y2="525"/>
+    <line x1="200" y1="0" x2="200" y2="630"/>
+    <line x1="400" y1="0" x2="400" y2="630"/>
+    <line x1="600" y1="0" x2="600" y2="630"/>
+    <line x1="800" y1="0" x2="800" y2="630"/>
+    <line x1="1000" y1="0" x2="1000" y2="630"/>
+  </g>
+
+  <!-- Decorative circles (world map hint) -->
+  <circle cx="950" cy="280" r="180" fill="none" stroke="rgba(201,162,39,.08)" stroke-width="1.5"/>
+  <circle cx="950" cy="280" r="130" fill="none" stroke="rgba(201,162,39,.05)" stroke-width="1"/>
+  <circle cx="950" cy="280" r="80" fill="none" stroke="rgba(201,162,39,.03)" stroke-width="1"/>
+
+  <!-- Decorative route lines -->
+  <path d="M120 450 Q300 380 500 350 Q700 320 850 280" fill="none" stroke="rgba(201,162,39,.15)" stroke-width="2" stroke-dasharray="8 12"/>
+  <path d="M120 500 Q350 450 550 400 Q750 360 900 300" fill="none" stroke="rgba(122,174,219,.1)" stroke-width="1.5" stroke-dasharray="5 10"/>
+
+  <!-- Country dots -->
+  <circle cx="870" cy="200" r="6" fill="#c9a227" opacity=".4"/><!-- China -->
+  <circle cx="780" cy="260" r="5" fill="#c9a227" opacity=".35"/><!-- Turkey -->
+  <circle cx="810" cy="300" r="5" fill="#c9a227" opacity=".3"/><!-- UAE -->
+  <circle cx="770" cy="280" r="4" fill="#c9a227" opacity=".25"/><!-- Israel -->
+  <circle cx="700" cy="240" r="8" fill="#c9a227" opacity=".5"/><!-- Bishkek hub -->
+  <circle cx="700" cy="240" r="14" fill="none" stroke="#c9a227" stroke-width="1" opacity=".3"/>
+
+  <!-- Gold accent line (top) -->
+  <rect x="0" y="0" width="1200" height="4" fill="url(#gold-line)"/>
+
+  <!-- Logo cube (large) -->
+  <g transform="translate(110, 200)">
+    <circle r="52" fill="rgba(201,162,39,.08)" stroke="rgba(201,162,39,.25)" stroke-width="1.5"/>
+    <polygon points="0,-32 28,-16 0,0 -28,-16" fill="#e5c040"/>
+    <polygon points="-28,-16 0,0 0,32 -28,16" fill="#6b4e08"/>
+    <polygon points="0,0 28,-16 28,16 0,32" fill="#9a7012"/>
+    <polygon points="0,-32 10,-26 0,-20 -10,-26" fill="rgba(255,255,255,.3)"/>
+  </g>
+
+  <!-- Company name -->
+  <text x="180" y="188" fill="white" font-family="Inter, Arial, Helvetica, sans-serif" font-size="28" font-weight="900" letter-spacing="4">
+    <tspan fill="#c9a227">TE</tspan><tspan> GROUP</tspan>
+  </text>
+  <text x="180" y="210" fill="rgba(255,255,255,.4)" font-family="Inter, Arial, Helvetica, sans-serif" font-size="11" font-weight="600" letter-spacing="3">МЕЖДУНАРОДНАЯ ЛОГИСТИКА</text>
+
+  <!-- Main heading -->
+  <text x="110" y="320" fill="white" font-family="Inter, Arial, Helvetica, sans-serif" font-size="48" font-weight="900" letter-spacing="-1">
+    Импорт в <tspan fill="#e5c040">Россию</tspan> через ЕАЭС
+  </text>
+
+  <!-- Subheading -->
+  <text x="110" y="370" fill="rgba(255,255,255,.65)" font-family="Inter, Arial, Helvetica, sans-serif" font-size="22" font-weight="500">
+    Доставка и таможенное оформление под ключ
+  </text>
+
+  <!-- Country flags line -->
+  <text x="110" y="430" fill="rgba(255,255,255,.45)" font-family="Inter, Arial, Helvetica, sans-serif" font-size="16" font-weight="600" letter-spacing="1">
+    🇨🇳 Китай  ·  🇹🇷 Турция  ·  🇦🇪 ОАЭ  ·  🇮🇱 Израиль  ·  🇪🇺 Европа
+  </text>
+
+  <!-- Website URL -->
+  <text x="110" y="555" fill="rgba(201,162,39,.6)" font-family="Inter, Arial, Helvetica, sans-serif" font-size="16" font-weight="700" letter-spacing="2">
+    TEGROUP.CC
+  </text>
+
+  <!-- Phone -->
+  <text x="110" y="580" fill="rgba(255,255,255,.3)" font-family="Inter, Arial, Helvetica, sans-serif" font-size="14" font-weight="500">
+    +7 952 778-36-80  ·  oootegroup@gmail.com
+  </text>
+
+  <!-- Gold accent line (bottom) -->
+  <rect x="0" y="626" width="1200" height="4" fill="url(#gold-line)"/>
+
+  <!-- Bottom left gold corner accent -->
+  <rect x="0" y="0" width="4" height="630" fill="url(#gold-line)" transform="rotate(90) translate(0,-4)"/>
+</svg>
