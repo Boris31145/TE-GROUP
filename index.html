@@ -422,6 +422,40 @@
     .nav-burger.open span:nth-child(2) { opacity: 0; }
     .nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
+    /* Calc icon in nav */
+    .nav-calc-icon {
+      width: 38px; height: 38px; border-radius: 50%;
+      border: 1.5px solid var(--gold); background: transparent;
+      cursor: pointer; display: inline-flex; align-items: center; justify-content: center;
+      margin-right: 8px; position: relative; overflow: visible;
+      transition: background .25s, transform .25s, box-shadow .25s;
+      animation: calc-icon-glow 3s ease-in-out infinite 2s;
+    }
+    .nav-calc-icon:hover {
+      background: rgba(201,162,39,.15); transform: scale(1.12);
+      box-shadow: 0 0 16px rgba(201,162,39,.5);
+      animation: none;
+    }
+    .nav-calc-icon::after {
+      content: ''; position: absolute; inset: -3px; border-radius: 50%;
+      border: 1.5px solid transparent;
+      background: conic-gradient(from 0deg, transparent 0%, rgba(201,162,39,.6) 25%, transparent 50%) border-box;
+      -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+      mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor; mask-composite: exclude;
+      animation: calc-ring-spin 6s linear infinite;
+      pointer-events: none;
+    }
+    @keyframes calc-icon-glow {
+      0%,100% { box-shadow: 0 0 0 0 rgba(201,162,39,0); }
+      50% { box-shadow: 0 0 14px 4px rgba(201,162,39,.35); }
+    }
+    @keyframes calc-ring-spin { to { transform: rotate(360deg); } }
+    @media (prefers-reduced-motion: reduce) {
+      .nav-calc-icon { animation: none; }
+      .nav-calc-icon::after { animation: none; }
+    }
+
     /* Mobile menu */
     .mob-menu {
       display: none; position: fixed; top: var(--nav-h); left: 0; right: 0; z-index: 299;
@@ -1006,6 +1040,9 @@
       <a href="#contact">Контакты</a>
     </div>
 
+    <button onclick="openCalcModal()" class="nav-calc-icon nav-cta-btn" title="Калькулятор стоимости импорта">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="8" y2="10.01"/><line x1="12" y1="10" x2="12" y2="10.01"/><line x1="16" y1="10" x2="16" y2="10.01"/><line x1="8" y1="14" x2="8" y2="14.01"/><line x1="12" y1="14" x2="12" y2="14.01"/><line x1="16" y1="14" x2="16" y2="14.01"/><line x1="8" y1="18" x2="8" y2="18.01"/><line x1="12" y1="18" x2="16" y2="18"/></svg>
+    </button>
     <button onclick="openCTA()" class="btn btn-navy nav-cta-btn" style="padding:10px 22px;font-size:12px;cursor:pointer;border:none;">Получить КП</button>
 
     <button class="nav-burger" id="burger" aria-label="Открыть меню">
@@ -2213,13 +2250,141 @@
 .fw{position:fixed;right:20px;bottom:28px;z-index:9999;display:flex;flex-direction:column;gap:10px;align-items:center}
 .fw-btn{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(0,0,0,.25);transition:transform .2s,box-shadow .2s;position:relative;text-decoration:none}
 .fw-btn:hover{transform:scale(1.1);box-shadow:0 6px 22px rgba(0,0,0,.35)}
-.fw-wa{background:#25d366}.fw-tg{background:#229ed9}.fw-call{background:#0b1d4e}
+.fw-wa{background:#25d366}.fw-tg{background:#229ed9}.fw-call{background:linear-gradient(135deg,#c9a227,#e5c040)}
 .fw-tip{position:absolute;right:62px;background:rgba(11,29,78,.9);color:#fff;font-size:12px;font-family:inherit;white-space:nowrap;padding:5px 10px;border-radius:6px;opacity:0;pointer-events:none;transition:opacity .2s}
 .fw-btn:hover .fw-tip{opacity:1}
 @media(max-width:480px){.fw{right:14px;bottom:18px}.fw-btn{width:46px;height:46px}.fw-tip{display:none}}
+
+/* ── Save Chip Button ── */
+.fw-save{
+  width:60px;height:60px;
+  background:var(--navy);
+  border:none;cursor:pointer;
+  flex-direction:column;gap:1px;
+  opacity:0;transform:scale(.3);
+  pointer-events:none;
+  position:relative;overflow:visible;
+  font-family:inherit;
+}
+.fw-save.visible{
+  opacity:1;transform:scale(1);pointer-events:auto;
+  animation:fw-save-enter .6s cubic-bezier(.22,1,.36,1) forwards;
+}
+.fw-save::before{
+  content:'';position:absolute;inset:-3px;border-radius:50%;z-index:-1;
+  background:conic-gradient(from 0deg,transparent 0%,#c9a227 25%,#e5c040 50%,#c9a227 75%,transparent 100%);
+  animation:fw-shine-spin 4s linear infinite;
+  opacity:.85;
+}
+.fw-save::after{
+  content:'';position:absolute;inset:0;border-radius:50%;
+  background:var(--navy);z-index:0;
+}
+.fw-save-text{
+  position:relative;z-index:1;
+  display:flex;flex-direction:column;align-items:center;line-height:1.15;
+}
+.fw-save-text span:first-child{
+  font-size:11px;font-weight:800;color:#fff;letter-spacing:.02em;
+}
+.fw-save-text span:last-child{
+  font-size:7.5px;font-weight:700;color:#c9a227;letter-spacing:.03em;text-transform:uppercase;
+}
+.fw-save.visible.idle{animation:fw-save-pulse 5s ease-in-out infinite 2s}
+@keyframes fw-save-enter{from{opacity:0;transform:scale(.3)}to{opacity:1;transform:scale(1)}}
+@keyframes fw-shine-spin{to{transform:rotate(360deg)}}
+@keyframes fw-save-pulse{
+  0%,100%{box-shadow:0 4px 18px rgba(0,0,0,.25),0 0 0 0 rgba(201,162,39,.4)}
+  50%{box-shadow:0 4px 18px rgba(0,0,0,.25),0 0 0 12px rgba(201,162,39,0)}
+}
+@media(max-width:480px){.fw-save{width:50px;height:50px}.fw-save-text span:first-child{font-size:10px}.fw-save-text span:last-child{font-size:7px}}
+@media(prefers-reduced-motion:reduce){
+  .fw-save.visible{animation:none;opacity:1;transform:scale(1)}
+  .fw-save::before{animation:none}
+  .fw-save.visible.idle{animation:none}
+}
+
+/* ── Save Modal ── */
+.sm-overlay{
+  position:fixed;inset:0;z-index:10001;
+  background:rgba(11,29,78,.6);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;pointer-events:none;transition:opacity .35s ease;
+  padding:20px;
+}
+.sm-overlay.open{opacity:1;pointer-events:auto}
+.sm-box{
+  background:#fff;border-radius:16px;padding:40px 32px 32px;
+  max-width:520px;width:100%;max-height:90vh;overflow-y:auto;
+  box-shadow:0 32px 80px rgba(0,0,0,.35);
+  transform:translateY(24px) scale(.97);
+  transition:transform .4s cubic-bezier(.22,1,.36,1);
+  position:relative;
+}
+.sm-overlay.open .sm-box{transform:translateY(0) scale(1)}
+.sm-close{
+  position:absolute;top:14px;right:16px;width:34px;height:34px;
+  border:none;background:none;cursor:pointer;display:flex;align-items:center;justify-content:center;
+  border-radius:50%;transition:background .2s;
+}
+.sm-close:hover{background:rgba(0,0,0,.06)}
+.sm-close svg{width:18px;height:18px;stroke:#999;stroke-width:2.5}
+.sm-title{font-size:22px;font-weight:800;color:var(--navy);line-height:1.25;margin:0 0 6px;letter-spacing:-.02em}
+.sm-title em{color:var(--gold);font-style:normal}
+.sm-sub{font-size:14px;color:var(--muted);margin:0 0 24px;line-height:1.55}
+.sm-divider{height:1px;background:var(--border2);margin:0 0 20px}
+.sm-points{list-style:none;padding:0;margin:0 0 24px}
+.sm-points li{
+  display:flex;gap:12px;padding:12px 0;
+  border-bottom:1px solid rgba(0,0,0,.05);font-size:14px;line-height:1.5;color:#333;
+}
+.sm-points li:last-child{border-bottom:none}
+.sm-num{
+  width:28px;height:28px;flex-shrink:0;border-radius:50%;
+  background:var(--navy);color:#fff;font-size:12px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;margin-top:1px;
+}
+.sm-wedo-title{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);margin:0 0 12px}
+.sm-wedo{list-style:none;padding:0;margin:0 0 24px}
+.sm-wedo li{
+  padding:8px 0 8px 22px;position:relative;
+  font-size:13.5px;line-height:1.5;color:#444;
+}
+.sm-wedo li::before{
+  content:'✓';position:absolute;left:0;color:var(--gold);font-weight:700;
+}
+.sm-ctas{display:flex;flex-direction:column;gap:10px;margin-bottom:20px}
+.sm-cta{
+  display:block;text-align:center;text-decoration:none;
+  padding:14px 20px;border-radius:10px;font-size:14px;font-weight:700;
+  transition:transform .15s,box-shadow .15s;
+  cursor:pointer;border:none;font-family:inherit;width:100%;box-sizing:border-box;
+}
+.sm-cta:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.12)}
+.sm-cta-primary{
+  background:var(--navy);color:#fff;
+  box-shadow:0 4px 16px rgba(11,29,78,.25);
+}
+.sm-cta-secondary{
+  background:transparent;color:var(--navy);
+  border:1.5px solid var(--border);
+}
+.sm-cta-secondary:hover{border-color:var(--navy);background:rgba(11,29,78,.03)}
+.sm-disclaimer{font-size:11px;color:#999;line-height:1.5;margin:0 0 12px}
+@media(max-width:480px){
+  .sm-box{padding:28px 20px 24px;border-radius:14px}
+  .sm-title{font-size:19px}
+  .sm-points li{font-size:13px}
+}
 </style>
 
 <div class="fw" aria-label="Связаться с нами">
+  <!-- Save Chip (injected by JS after delay) -->
+  <button id="saveChip" class="fw-btn fw-save" aria-label="Как сэкономить на импорте" onclick="openSaveModal()">
+    <span class="fw-tip">Где теряются деньги на импорте</span>
+    <span class="fw-save-text"><span>Как</span><span>сэкономить</span></span>
+  </button>
+
   <a href="https://wa.me/996501989469" class="fw-btn fw-wa" target="_blank" rel="noopener" aria-label="WhatsApp">
     <span class="fw-tip">WhatsApp</span>
     <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.554 4.103 1.523 5.827L.057 23.887l6.213-1.432A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.006-1.368l-.36-.213-3.687.849.874-3.583-.234-.368A9.818 9.818 0 1 1 12 21.818z"/></svg>
@@ -2230,7 +2395,7 @@
   </a>
   <a href="tel:+79527783680" class="fw-btn fw-call" aria-label="Позвонить">
     <span class="fw-tip">+7 952 778 3680</span>
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.16 6.16l.91-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0b1d4e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.16 6.16l.91-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
   </a>
 </div>
 <!-- /FLOATING CONTACT WIDGET -->
@@ -2404,6 +2569,1411 @@ function quizReset() {
 }
 </script>
 <!-- /CTA MODAL -->
+
+<!-- ═══ SAVE MODAL — "Как сэкономить" ═══ -->
+<div class="sm-overlay" id="saveOverlay" onclick="if(event.target===this)closeSaveModal()">
+  <div class="sm-box">
+    <button class="sm-close" onclick="closeSaveModal()" aria-label="Закрыть">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+
+    <div class="sm-title">Импорт можно сделать дорого.<br>А можно — <em>грамотно</em>.</div>
+    <p class="sm-sub">Разница — в точке оформления, структуре сделки и маршруте.</p>
+
+    <div class="sm-divider"></div>
+
+    <ol class="sm-points">
+      <li>
+        <span class="sm-num">1</span>
+        <span><strong>НДС и платежи считаются там, где оформляется импорт.</strong> Вопрос не «сколько», а где и как это оформлено документально.</span>
+      </li>
+      <li>
+        <span class="sm-num">2</span>
+        <span><strong>Неподготовленный маршрут = досмотр + простой + деньги.</strong> Один месяц «на проверке» часто стоит дороже всей «экономии на перевозчике».</span>
+      </li>
+      <li>
+        <span class="sm-num">3</span>
+        <span><strong>Таможенная стоимость должна быть обоснована заранее.</strong> Не «объясняться» после доначислений и требований.</span>
+      </li>
+    </ol>
+
+    <div class="sm-wedo-title">Что мы делаем</div>
+    <ul class="sm-wedo">
+      <li>До отгрузки проверяем: код ТН&nbsp;ВЭД, ограничения, разрешения, комплект документов.</li>
+      <li>Готовим доказательную базу по стоимости и классификации — чтобы снизить риск доначислений.</li>
+      <li>Подбираем маршрут и пост под ваш товар, чтобы минимизировать простои.</li>
+    </ul>
+
+    <div class="sm-ctas">
+      <button class="sm-cta sm-cta-primary" onclick="closeSaveModal();setTimeout(openCTA,350)">Проверить код и риски — бесплатно</button>
+      <button class="sm-cta sm-cta-secondary" onclick="closeSaveModal();setTimeout(openCTA,350)">Получить расчёт под ключ</button>
+    </div>
+
+    <p class="sm-disclaimer">Работаем только в правовом поле ЕАЭС и РФ. Экономия достигается за&nbsp;счёт корректной классификации, документов и маршрутизации, без сокрытия фактов и без&nbsp;«серых» схем.</p>
+
+  </div>
+</div>
+
+<script>
+/* ═══ SAVE CHIP + MODAL LOGIC ═══ */
+(function(){
+  var DELAY_MS = 3500;
+  var chip     = document.getElementById('saveChip');
+  var overlay  = document.getElementById('saveOverlay');
+  var modalOpen = false;
+
+  /* Show chip on every visit — no localStorage hiding */
+  function initChip(){
+    if(!chip) return;
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    setTimeout(function(){
+      chip.classList.add('visible');
+      setTimeout(function(){ chip.classList.add('idle'); }, reduced ? 100 : 700);
+    }, reduced ? 1000 : DELAY_MS);
+  }
+
+  /* Open modal */
+  window.openSaveModal = function(){
+    if(!overlay) return;
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    modalOpen = true;
+    if(typeof ym !== 'undefined') ym(106940695, 'reachGoal', 'save_modal_open');
+  };
+
+  /* Close modal — chip stays, pulse softens */
+  window.closeSaveModal = function(){
+    if(!overlay) return;
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+    modalOpen = false;
+    if(chip) chip.style.opacity = '.8';
+  };
+
+  /* ESC to close */
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && modalOpen) closeSaveModal();
+  });
+
+  initChip();
+})();
+</script>
+<!-- /SAVE MODAL -->
+
+<!-- ═══ IMPORT COST CALCULATOR MODAL ═══ -->
+<style>
+/* ── Calculator overlay ── */
+.calc-overlay{
+  position:fixed;inset:0;z-index:10002;
+  background:rgba(11,29,78,.6);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;pointer-events:none;transition:opacity .3s ease;
+}
+.calc-overlay.open{opacity:1;pointer-events:auto}
+
+/* ── Calculator box — wider ── */
+.calc-box{
+  background:#fff;border-radius:18px;padding:36px 36px 32px;
+  max-width:720px;width:96%;max-height:92vh;overflow-y:auto;
+  box-shadow:0 24px 80px rgba(0,0,0,.35);
+  transform:translateY(30px) scale(.96);
+  transition:transform .35s cubic-bezier(.22,1,.36,1);
+  position:relative;
+}
+.calc-overlay.open .calc-box{transform:translateY(0) scale(1)}
+
+.calc-close{
+  position:absolute;top:14px;right:16px;width:32px;height:32px;
+  border:none;background:none;cursor:pointer;display:flex;align-items:center;justify-content:center;
+  border-radius:50%;transition:background .2s;z-index:2;
+}
+.calc-close:hover{background:rgba(0,0,0,.06)}
+.calc-close svg{width:18px;height:18px;stroke:#888;stroke-width:2.5}
+
+.calc-title{
+  font-size:22px;font-weight:800;color:var(--navy);margin:0 0 4px;letter-spacing:-.02em;
+  display:flex;align-items:center;gap:8px;
+}
+.calc-sub{font-size:13px;color:var(--muted);margin:0 0 24px;line-height:1.5}
+
+/* ── Tabs for sections ── */
+.calc-tabs{display:flex;gap:0;margin-bottom:20px;border-bottom:2px solid #ebedf0}
+.calc-tab{
+  padding:10px 20px;font-size:13px;font-weight:700;color:var(--muted);cursor:pointer;
+  border:none;background:none;font-family:inherit;position:relative;transition:color .2s;
+}
+.calc-tab.active{color:var(--navy)}
+.calc-tab.active::after{
+  content:'';position:absolute;bottom:-2px;left:0;right:0;height:2px;
+  background:var(--gold);border-radius:1px;
+}
+.calc-tab:hover{color:var(--navy)}
+.calc-panel-tab{display:none}
+.calc-panel-tab.active{display:block}
+
+/* ── Form fields ── */
+.calc-form{display:flex;flex-direction:column;gap:14px}
+.calc-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.calc-row-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.calc-field{display:flex;flex-direction:column;gap:4px;position:relative}
+.calc-field label{font-size:12px;font-weight:700;color:var(--navy);letter-spacing:.02em}
+.calc-field select,
+.calc-field input[type="number"],
+.calc-field input[type="text"]{
+  padding:11px 14px;border:1.5px solid #dde1e8;border-radius:8px;
+  font-size:14px;font-family:inherit;color:var(--navy);background:#fff;
+  transition:border-color .2s;outline:none;width:100%;box-sizing:border-box;
+}
+.calc-field select:focus,
+.calc-field input:focus{border-color:var(--gold)}
+.calc-field input::placeholder{color:#adb5bd}
+.calc-field .calc-hint{font-size:11px;color:var(--muted);margin-top:2px}
+
+/* ── HS Catalog Browser ── */
+.hs-wrap{position:relative}
+.hs-dropdown{
+  position:absolute;top:100%;left:0;right:0;z-index:20;
+  background:#fff;border:1.5px solid var(--gold);border-top:none;border-radius:0 0 10px 10px;
+  max-height:340px;overflow-y:auto;display:none;
+  box-shadow:0 12px 40px rgba(0,0,0,.18);
+}
+.hs-dropdown.show{display:block}
+
+/* Section headers in dropdown */
+.hs-section{
+  padding:8px 14px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;
+  color:var(--gold);background:rgba(201,162,39,.06);border-bottom:1px solid rgba(201,162,39,.15);
+  position:sticky;top:0;z-index:1;cursor:pointer;display:flex;align-items:center;gap:6px;
+  transition:background .15s;
+}
+.hs-section:hover{background:rgba(201,162,39,.12)}
+.hs-section::before{content:'▸';font-size:10px;transition:transform .2s;display:inline-block}
+.hs-section.open::before{transform:rotate(90deg)}
+.hs-group{display:none}
+.hs-group.show{display:block}
+
+.hs-item{
+  padding:9px 14px 9px 28px;cursor:pointer;font-size:13px;color:var(--navy);
+  border-bottom:1px solid #f5f5f5;transition:background .1s;display:flex;align-items:center;gap:8px;
+}
+.hs-item:hover{background:rgba(201,162,39,.08)}
+.hs-item:last-child{border-bottom:none}
+.hs-item-code{font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap;flex-shrink:0;font-size:12px;min-width:46px}
+.hs-item-name{color:#555;font-size:12px;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.hs-item-rate{font-size:11px;color:var(--gold);font-weight:700;flex-shrink:0;padding:2px 6px;background:rgba(201,162,39,.08);border-radius:4px}
+.hs-browse-btn{
+  display:block;width:100%;padding:8px;border:none;background:rgba(11,29,78,.03);
+  font-size:12px;font-weight:600;color:var(--navy);cursor:pointer;text-align:center;
+  font-family:inherit;border-top:1px solid #ebedf0;transition:background .15s;
+}
+.hs-browse-btn:hover{background:rgba(201,162,39,.1);color:var(--gold)}
+.hs-sel-badge{
+  display:inline-flex;align-items:center;gap:4px;padding:3px 10px 3px 8px;
+  background:rgba(201,162,39,.1);border:1px solid rgba(201,162,39,.3);border-radius:6px;
+  font-size:12px;font-weight:600;color:var(--navy);margin-top:4px;
+}
+.hs-sel-badge .hs-sel-x{
+  cursor:pointer;font-size:14px;color:var(--muted);margin-left:4px;line-height:1;
+}
+.hs-sel-badge .hs-sel-x:hover{color:#e00}
+
+/* ── Field tooltips ── */
+.calc-field-tip{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:16px;height:16px;border-radius:50%;background:rgba(201,162,39,.15);
+  color:var(--gold);font-size:9px;font-weight:800;cursor:help;
+  margin-left:4px;position:relative;vertical-align:middle;flex-shrink:0;
+}
+.calc-field-tip:hover::after{
+  content:attr(data-tip);position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);
+  background:var(--navy);color:#fff;font-size:12px;font-weight:400;padding:10px 14px;border-radius:8px;
+  width:260px;white-space:normal;line-height:1.5;z-index:30;pointer-events:none;
+  box-shadow:0 8px 24px rgba(0,0,0,.2);
+}
+.calc-field-tip:hover::before{
+  content:'';position:absolute;bottom:calc(100% + 2px);left:50%;transform:translateX(-50%);
+  border:6px solid transparent;border-top-color:var(--navy);z-index:31;
+}
+/* ── Beginner guide bar ── */
+.calc-guide{
+  background:linear-gradient(135deg,rgba(201,162,39,.08),rgba(201,162,39,.03));
+  border:1px solid rgba(201,162,39,.2);border-radius:10px;
+  padding:12px 16px;margin-bottom:16px;display:flex;gap:10px;align-items:flex-start;font-size:12px;color:var(--navy);line-height:1.5;
+}
+.calc-guide-icon{font-size:18px;flex-shrink:0;margin-top:1px}
+.calc-guide strong{color:var(--gold)}
+
+/* ── Delivery estimate block ── */
+.calc-delivery-est{
+  background:rgba(201,162,39,.06);border:1px solid rgba(201,162,39,.2);border-radius:10px;
+  padding:14px 16px;margin-top:4px;
+}
+.calc-del-title{font-size:12px;font-weight:700;color:var(--navy);margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.calc-del-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.calc-del-opt{
+  padding:12px 10px;border:1.5px solid #dde1e8;border-radius:8px;text-align:center;
+  cursor:pointer;transition:border-color .2s,background .2s;background:#fff;
+}
+.calc-del-opt:hover{border-color:var(--gold)}
+.calc-del-opt.selected{border-color:var(--gold);background:rgba(201,162,39,.1)}
+.calc-del-opt-mode{font-size:12px;font-weight:700;color:var(--navy)}
+.calc-del-opt-time{font-size:11px;color:var(--muted);margin-top:2px}
+.calc-del-opt-price{font-size:13px;font-weight:800;color:var(--gold);margin-top:4px}
+.calc-del-opt-unit{font-size:10px;color:var(--muted);margin-top:2px}
+/* weight info block */
+.calc-weight-info{
+  margin-top:12px;padding:12px 14px;border-radius:8px;
+  background:#f8f9fa;border-left:3px solid var(--gold);font-size:13px;line-height:1.7;color:var(--navy);
+}
+.calc-weight-info strong{font-weight:700;color:var(--navy)}
+.calc-weight-info .cwi-label{display:inline-block;min-width:170px;color:var(--muted);font-size:12px}
+.calc-weight-info .cwi-val{font-weight:700;color:var(--navy)}
+.calc-weight-info .cwi-used{color:var(--gold);font-weight:700}
+.calc-weight-info .cwi-note{font-size:11px;color:var(--muted);margin-top:6px;line-height:1.4}
+.calc-density-warn{
+  margin-top:8px;padding:10px 12px;border-radius:8px;
+  background:#fff8e1;border:1px solid #ffe082;font-size:12px;color:#8b6914;
+  display:flex;align-items:center;gap:6px;
+}
+.calc-density-warn svg{flex-shrink:0}
+
+.calc-btn{
+  padding:14px 24px;border:none;border-radius:10px;font-size:15px;font-weight:700;
+  cursor:pointer;font-family:inherit;transition:transform .15s,box-shadow .15s;
+  background:linear-gradient(135deg,#c9a227,#e5c040);color:var(--navy);
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  margin-top:8px;width:100%;
+}
+.calc-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(201,162,39,.35)}
+.calc-btn:active{transform:scale(.97)}
+
+/* ── Results ── */
+.calc-results{display:none;margin-top:20px}
+.calc-results.show{display:block}
+.calc-results-title{
+  font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);
+  font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:6px;
+}
+.calc-breakdown{
+  background:var(--bg);border-radius:12px;padding:16px 20px;border:1px solid #ebedf0;
+}
+.calc-line{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:7px 0;font-size:13px;color:var(--navy);
+}
+.calc-line:not(:last-child){border-bottom:1px solid #ebedf0}
+.calc-line-label{display:flex;align-items:center;gap:5px;font-weight:500;flex:1;min-width:0}
+.calc-line-label span.calc-lbl-text{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.calc-line-label .calc-info{
+  width:15px;height:15px;border-radius:50%;background:#ebedf0;flex-shrink:0;
+  display:inline-flex;align-items:center;justify-content:center;
+  font-size:9px;color:var(--muted);cursor:help;position:relative;font-weight:700;
+}
+.calc-line-label .calc-info:hover::after{
+  content:attr(data-tip);position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);
+  background:var(--navy);color:#fff;font-size:11px;font-weight:400;padding:6px 10px;border-radius:6px;
+  white-space:nowrap;z-index:10;pointer-events:none;
+}
+.calc-line-val{font-weight:700;font-variant-numeric:tabular-nums;flex-shrink:0;text-align:right;margin-left:10px}
+.calc-line-section{
+  font-weight:700;background:rgba(201,162,39,.05);margin:0 -20px;padding:7px 20px;
+}
+.calc-total{
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;
+  margin-top:14px;padding:14px 20px;
+  background:linear-gradient(135deg,rgba(201,162,39,.1),rgba(201,162,39,.05));
+  border:1.5px solid rgba(201,162,39,.3);border-radius:10px;
+}
+.calc-total-label{font-size:14px;font-weight:700;color:var(--navy)}
+.calc-total-val{font-size:22px;font-weight:900;color:var(--navy)}
+
+.calc-result-ctas{display:flex;flex-direction:column;gap:10px;margin-top:16px}
+.calc-cta-send{
+  padding:14px;border:none;border-radius:10px;font-size:14px;font-weight:700;
+  cursor:pointer;font-family:inherit;text-align:center;
+  background:var(--navy);color:#fff;transition:transform .15s;
+}
+.calc-cta-send:hover{transform:translateY(-2px)}
+.calc-cta-reset{
+  padding:10px;border:1px solid #dde1e8;border-radius:8px;font-size:13px;font-weight:600;
+  cursor:pointer;font-family:inherit;text-align:center;
+  background:none;color:var(--muted);transition:border-color .2s;
+}
+.calc-cta-reset:hover{border-color:var(--gold);color:var(--navy)}
+.calc-disclaimer{font-size:11px;color:var(--muted);margin-top:12px;line-height:1.5;text-align:center}
+
+/* ── Donut chart ── */
+.calc-chart-wrap{display:flex;gap:24px;align-items:center;margin-bottom:20px;flex-wrap:wrap;justify-content:center}
+.calc-chart{width:160px;height:160px;flex-shrink:0;position:relative}
+.calc-chart svg{width:100%;height:100%;transform:rotate(-90deg)}
+.calc-chart circle{transition:stroke-dasharray .7s ease,stroke-dashoffset .7s ease}
+.calc-chart-center{
+  position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  font-size:11px;color:var(--muted);line-height:1.3;text-align:center;
+}
+.calc-chart-center strong{font-size:15px;color:var(--navy);display:block;margin-bottom:1px}
+.calc-legend{flex:1;min-width:150px;display:flex;flex-direction:column;gap:4px}
+.calc-legend-item{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--navy)}
+.calc-legend-dot{width:10px;height:10px;border-radius:3px;flex-shrink:0}
+.calc-legend-val{font-variant-numeric:tabular-nums;margin-left:auto;font-weight:600;font-size:12px}
+.calc-legend-pct{font-size:10px;color:var(--muted);font-weight:700;width:32px;text-align:right;flex-shrink:0}
+
+/* ── Dual currency (RUB) ── */
+.calc-currency-row{
+  display:flex;align-items:center;gap:10px;margin-bottom:16px;padding:10px 14px;
+  background:rgba(201,162,39,.06);border-radius:10px;border:1px solid rgba(201,162,39,.15);
+  flex-wrap:wrap;
+}
+.calc-currency-row label{font-size:12px;font-weight:700;color:var(--navy);white-space:nowrap}
+.calc-currency-row input{
+  width:80px;padding:6px 10px;border:1.5px solid #dde1e8;border-radius:6px;
+  font-size:13px;font-family:inherit;text-align:center;color:var(--navy);outline:none;
+}
+.calc-currency-row input:focus{border-color:var(--gold)}
+.calc-currency-row .ccr-hint{font-size:11px;color:var(--muted)}
+.calc-line-rub{font-size:11px;color:var(--muted);font-weight:400}
+.calc-total-rub{font-size:14px;color:var(--muted);font-weight:600}
+
+/* ── Copy button ── */
+.calc-cta-copy{
+  padding:12px;border:1.5px solid var(--gold);border-radius:10px;font-size:13px;font-weight:600;
+  cursor:pointer;font-family:inherit;text-align:center;
+  background:rgba(201,162,39,.06);color:var(--navy);transition:all .25s;
+  display:flex;align-items:center;justify-content:center;gap:6px;
+}
+.calc-cta-copy:hover{background:rgba(201,162,39,.15);border-color:var(--gold)}
+.calc-cta-copy.copied{background:rgba(40,167,69,.1);border-color:#28a745;color:#28a745}
+
+@media(max-width:640px){
+  .calc-box{padding:24px 18px 22px;border-radius:14px;max-width:100%}
+  .calc-title{font-size:18px}
+  .calc-row,.calc-row-3{grid-template-columns:1fr}
+  .calc-del-grid{grid-template-columns:1fr}
+  .calc-weight-info .cwi-label{min-width:140px}
+  .calc-total-val{font-size:19px}
+  .calc-tabs{overflow-x:auto}
+  .calc-tab{padding:8px 14px;font-size:12px;white-space:nowrap}
+  .calc-chart-wrap{flex-direction:column;align-items:center}
+  .calc-chart{width:140px;height:140px}
+  .calc-currency-row{gap:6px}
+  .calc-currency-row input{width:70px}
+  .calc-field-tip:hover::after{width:200px;left:auto;right:-10px;transform:none}
+  .calc-field-tip:hover::before{left:auto;right:10px;transform:none}
+  .hs-dropdown{max-height:280px}
+  .calc-guide{font-size:11px;padding:10px 12px}
+}
+</style>
+
+<div class="calc-overlay" id="calcOverlay" onclick="if(event.target===this)closeCalcModal()">
+  <div class="calc-box">
+    <button class="calc-close" onclick="closeCalcModal()" aria-label="Закрыть">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+
+    <div class="calc-title">🧮 Калькулятор стоимости импорта</div>
+    <p class="calc-sub">Ориентировочный расчёт полной стоимости ввоза товара в Россию через ЕАЭС — пошлины, НДС, доставка, сборы</p>
+
+    <!-- Tabs -->
+    <div class="calc-tabs">
+      <button class="calc-tab active" data-tab="customs" onclick="calcSwitchTab('customs')">📋 Таможня и налоги</button>
+      <button class="calc-tab" data-tab="delivery" onclick="calcSwitchTab('delivery')">🚛 Расчёт доставки</button>
+      <button class="calc-tab" data-tab="full" onclick="calcSwitchTab('full')">📊 Полный расчёт</button>
+    </div>
+
+    <!-- ═══ TAB 1: Customs & taxes ═══ -->
+    <div class="calc-panel-tab active" id="calcPanelCustoms">
+      <!-- Beginner guide -->
+      <div class="calc-guide">
+        <span class="calc-guide-icon">💡</span>
+        <div>
+          <strong>Первый раз?</strong> Заполните 3 поля — <strong>страна</strong>, <strong>стоимость товара</strong> и <strong>категория</strong> — и нажмите «Рассчитать». Остальные поля необязательны, но повышают точность. Наведите на <span style="display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;border-radius:50%;background:rgba(201,162,39,.15);color:var(--gold);font-size:8px;font-weight:800;">?</span> рядом с каждым полем для подробностей.
+        </div>
+      </div>
+
+      <div class="calc-form">
+        <div class="calc-row">
+          <div class="calc-field">
+            <label>Страна отправки <span class="calc-field-tip" data-tip="Откуда будет отправлен ваш товар. Выберите страну, где находится ваш поставщик или производитель.">?</span></label>
+            <select id="calcCountry">
+              <option value="china">🇨🇳 Китай</option>
+              <option value="turkey">🇹🇷 Турция</option>
+              <option value="uae">🇦🇪 ОАЭ</option>
+              <option value="israel">🇮🇱 Израиль</option>
+              <option value="europe">🇪🇺 Европа</option>
+            </select>
+          </div>
+          <div class="calc-field">
+            <label>Стоимость товара (FOB), $ <span class="calc-field-tip" data-tip="FOB (Free On Board) — цена товара на заводе или складе поставщика, до отправки. Обычно это сумма из инвойса (счёта от поставщика). Если знаете только цену «с доставкой» — впишите её, а поле «Доставка» оставьте пустым.">?</span></label>
+            <input type="number" id="calcFOB" placeholder="Пример: 10000" min="0" step="100">
+            <span class="calc-hint">Сумма из инвойса (счёта) от поставщика в долларах</span>
+          </div>
+        </div>
+
+        <div class="calc-row">
+          <div class="calc-field">
+            <label>Доставка (фрахт), $ <span class="calc-field-tip" data-tip="Фрахт — стоимость перевозки груза от склада поставщика до склада в РФ. Зависит от способа (авто, ЖД, авиа, море), веса и объёма. Если не знаете — рассчитайте во вкладке «🚛 Расчёт доставки» или оставьте пустым.">?</span></label>
+            <input type="number" id="calcFreight" placeholder="Пример: 1500" min="0" step="50">
+            <span class="calc-hint">Не знаете? → перейдите во вкладку «🚛 Расчёт доставки»</span>
+          </div>
+          <div class="calc-field">
+            <label>Страховка, $ <span class="calc-field-tip" data-tip="Страхование груза на время перевозки. Обычно составляет 0.3–0.5% от стоимости товара. Необязательно, но рекомендуется для дорогого или хрупкого груза. Если не страхуете — оставьте 0.">?</span></label>
+            <input type="number" id="calcInsurance" placeholder="0" min="0" step="10" value="0">
+            <span class="calc-hint">Обычно 0.3–0.5% от стоимости товара. Можно оставить 0</span>
+          </div>
+        </div>
+
+        <!-- HS code with full catalog browser -->
+        <div class="calc-field hs-wrap" style="margin-bottom:2px">
+          <label>Код ТН ВЭД <span class="calc-field-tip" data-tip="ТН ВЭД (товарная номенклатура ВЭД) — это 10-значный код, который определяет вид товара и ставку таможенной пошлины. Если вы знаете код — введите его. Если нет — нажмите «📂 Открыть каталог» и найдите свой товар по категории. Коды берутся из справочника ЕАЭС (аналогично Alta-Soft).">?</span></label>
+          <input type="text" id="calcHS" placeholder="Введите код, название товара или нажмите 📂 Каталог…" autocomplete="off">
+          <div class="hs-dropdown" id="hsDropdown"></div>
+          <div id="hsSelectedBadge" style="display:none"></div>
+          <span class="calc-hint" style="display:flex;align-items:center;gap:6px">
+            <span>Начните вводить код/название — или</span>
+            <button type="button" class="hs-browse-btn" style="display:inline;width:auto;padding:2px 10px;border:1px solid var(--gold);border-radius:4px;font-size:11px;margin:0" onclick="toggleHSCatalog()">📂 Открыть каталог ТН ВЭД</button>
+          </span>
+        </div>
+
+        <div class="calc-row">
+          <div class="calc-field">
+            <label>Категория товара <span class="calc-field-tip" data-tip="Если вы не знаете код ТН ВЭД — выберите категорию. Мы подставим среднюю ставку пошлины для этого типа товара. Если код ТН ВЭД указан — он имеет приоритет.">?</span></label>
+            <select id="calcCategory">
+              <optgroup label="── Машины и оборудование ──">
+                <option value="machinery_industrial">⚙️ Промышленное оборудование (0–3%)</option>
+                <option value="machinery_agri">🚜 Сельхозтехника (0%)</option>
+                <option value="machinery_cnc">🔧 Станки, ЧПУ, прессы (0–3%)</option>
+              </optgroup>
+              <optgroup label="── Электроника ──">
+                <option value="electronics_components">🔌 Электронные компоненты (0–3%)</option>
+                <option value="electronics_consumer">📱 Бытовая электроника (3–5%)</option>
+                <option value="electronics_computers">💻 Компьютеры, серверы (0%)</option>
+              </optgroup>
+              <optgroup label="── Текстиль и одежда ──">
+                <option value="textiles_fabric">🧵 Ткани (8–10%)</option>
+                <option value="textiles_garments">👕 Готовая одежда (10–12%)</option>
+                <option value="textiles_shoes">👟 Обувь (8–10%)</option>
+              </optgroup>
+              <optgroup label="── Стройматериалы ──">
+                <option value="build_ceramics">🏗️ Керамогранит, плитка (10–15%)</option>
+                <option value="build_metal">🔩 Металлопрокат (5–8%)</option>
+                <option value="build_wood">🪵 Пиломатериалы (5–7%)</option>
+                <option value="build_general" selected>🧱 Стройматериалы общие (8–10%)</option>
+              </optgroup>
+              <optgroup label="── Продукты питания ──">
+                <option value="food_raw">🌾 Сырьё (сахар, масло, зерно) (5–10%)</option>
+                <option value="food_processed">🥫 Готовые продукты (12–15%)</option>
+                <option value="food_beverages">🍷 Напитки, алкоголь (12–20%)</option>
+              </optgroup>
+              <optgroup label="── Транспорт ──">
+                <option value="auto_parts">🔧 Автозапчасти (5–10%)</option>
+                <option value="auto_vehicles">🚗 Автомобили (15–25%)</option>
+              </optgroup>
+              <optgroup label="── Химия и фарма ──">
+                <option value="chemicals_ind">🧪 Промышленная химия (5–6.5%)</option>
+                <option value="chemicals_pharma">💊 Фармацевтика (0%)</option>
+                <option value="chemicals_cosm">🧴 Косметика (6–12%)</option>
+              </optgroup>
+              <optgroup label="── Другое ──">
+                <option value="furniture">🪑 Мебель (8–12%)</option>
+                <option value="toys">🧸 Игрушки (10%)</option>
+                <option value="paper">📄 Бумага, упаковка (5%)</option>
+                <option value="instruments">🔬 Приборы, инструменты (0–3%)</option>
+                <option value="general">📦 Другой товар (10%)</option>
+              </optgroup>
+            </select>
+            <span class="calc-hint">Если указан ТН ВЭД — ставка определяется автоматически</span>
+          </div>
+          <div class="calc-field">
+            <label>Вес партии, кг <span class="calc-field-tip" data-tip="Общий вес всей партии товара в килограммах. Нужен для расчёта стоимости на 1 кг. Если не знаете точный вес — оставьте пустым, расчёт всё равно будет выполнен.">?</span></label>
+            <input type="number" id="calcWeight" placeholder="Пример: 500" min="0" step="10">
+            <span class="calc-hint">Необязательно — для расчёта стоимости на 1 кг</span>
+          </div>
+        </div>
+
+        <div class="calc-field">
+          <label>Доп. расходы (брокер, склад, сертификация), $ <span class="calc-field-tip" data-tip="Дополнительные расходы: услуги таможенного брокера (~$200-500), хранение на складе временного хранения (СВХ), оформление сертификатов/деклараций соответствия, лабораторные экспертизы. Если не знаете — оставьте 0, мы уточним при подготовке КП.">?</span></label>
+          <input type="number" id="calcExtra" placeholder="0" min="0" step="50" value="0">
+          <span class="calc-hint">Брокер (~$200–500), складские (~$100–300), сертификация. Можно оставить 0</span>
+        </div>
+
+        <button class="calc-btn" onclick="calculateImport()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/></svg>
+          Рассчитать таможенные платежи
+        </button>
+      </div>
+    </div>
+
+    <!-- ═══ TAB 2: Delivery estimate ═══ -->
+    <div class="calc-panel-tab" id="calcPanelDelivery">
+      <div class="calc-form">
+        <div class="calc-row">
+          <div class="calc-field">
+            <label>Откуда</label>
+            <select id="delCountry">
+              <option value="china">🇨🇳 Китай</option>
+              <option value="turkey">🇹🇷 Турция</option>
+              <option value="uae">🇦🇪 ОАЭ</option>
+              <option value="israel">🇮🇱 Израиль</option>
+              <option value="europe">🇪🇺 Европа</option>
+            </select>
+          </div>
+          <div class="calc-field">
+            <label>Куда (город РФ)</label>
+            <select id="delCity">
+              <option value="moscow">Москва</option>
+              <option value="spb">Санкт-Петербург</option>
+              <option value="ekb">Екатеринбург</option>
+              <option value="nsk">Новосибирск</option>
+              <option value="krd">Краснодар</option>
+              <option value="other">Другой город</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="calc-row">
+          <div class="calc-field">
+            <label>Вес, кг <span class="calc-field-tip" data-tip="Фактический (брутто) вес груза в килограммах. Если не знаете точный — укажите примерный. При отсутствии веса расчёт пойдёт только по объёму.">?</span></label>
+            <input type="number" id="delWeight" placeholder="500" min="0" step="10">
+            <span class="calc-hint">Если нет веса — укажите только объём</span>
+          </div>
+          <div class="calc-field">
+            <label>Объём, м³ <span class="calc-field-tip" data-tip="Объём груза в кубических метрах. Перевозчики часто считают по объёмному весу: 1 м³ = 167–200 кг (в зависимости от транспорта). Если объём неизвестен — оставьте пустым.">?</span></label>
+            <input type="number" id="delVolume" placeholder="2" min="0" step="0.1">
+            <span class="calc-hint">Если нет объёма — расчёт по факт. весу</span>
+          </div>
+        </div>
+
+        <button class="calc-btn" onclick="calculateDelivery()" style="margin-top:4px">
+          🚛 Рассчитать стоимость доставки
+        </button>
+
+        <div id="delResults" style="display:none;margin-top:14px;">
+          <!-- Weight info block -->
+          <div class="calc-weight-info" id="delWeightInfo"></div>
+          <!-- Density warning -->
+          <div class="calc-density-warn" id="delDensityWarn" style="display:none">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8b6914" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            <span>Груз низкой плотности. Расчёт произведён по <strong>объёмному весу</strong>.</span>
+          </div>
+
+          <div class="calc-del-title" style="margin-top:12px">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Варианты доставки <span id="delRoute" style="font-weight:400;color:var(--muted);font-size:11px;"></span>
+          </div>
+          <div class="calc-del-grid" id="delGrid"></div>
+
+          <p style="font-size:11px;color:var(--muted);margin-top:8px;line-height:1.4">
+            <strong>⚖️ Как перевозчики считают вес:</strong> стоимость рассчитывается по большему значению — фактический или объёмный вес. Авиа: 1 м³ = 167 кг. Авто/ЖД: 1 м³ = 200 кг. Море: строго по объёму (м³).
+          </p>
+          <p style="font-size:11px;color:var(--muted);margin-top:4px;">Расчёт ориентировочный. Финальная стоимость зависит от маршрута, сезона, плотности груза и таможенного режима.</p>
+
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px">
+            <button class="calc-btn" style="background:var(--navy);color:#fff;font-size:13px;padding:12px;flex:1;min-width:200px" onclick="useDeliveryPrice()">
+              ✅ Использовать цену в полном расчёте
+            </button>
+            <button class="calc-btn" style="background:var(--gold);color:var(--navy);font-size:13px;padding:12px;flex:1;min-width:200px" onclick="useDeliveryInKP()">
+              📋 Использовать расчёт в КП
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ TAB 3: Full calculation — shows results ═══ -->
+    <div class="calc-panel-tab" id="calcPanelFull">
+      <div class="calc-results show" id="calcResults" style="margin-top:0">
+        <div class="calc-results-title">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Ориентировочный расчёт
+        </div>
+        <div id="calcNoResult" style="text-align:center;padding:30px 0;color:var(--muted);font-size:14px;">
+          Заполните данные во вкладке «Таможня и налоги» или «Доставка» и нажмите «Рассчитать».<br>Результат появится здесь.
+        </div>
+        <div id="calcHasResult" style="display:none;">
+
+          <!-- Currency rate row -->
+          <div class="calc-currency-row">
+            <label>💱 Курс ЦБ:</label>
+            <span style="font-size:13px;font-weight:600;color:var(--navy);">1 $ =</span>
+            <input type="number" id="calcRubRate" value="92" min="1" step="0.1" onchange="recalcRub()" oninput="recalcRub()">
+            <span style="font-size:13px;font-weight:600;color:var(--navy);">₽</span>
+            <span class="ccr-hint">Измените курс при необходимости</span>
+          </div>
+
+          <!-- Donut chart + legend -->
+          <div class="calc-chart-wrap" id="calcChartWrap" style="display:none;">
+            <div class="calc-chart">
+              <svg viewBox="0 0 120 120" id="calcDonut"></svg>
+              <div class="calc-chart-center">
+                <strong id="chartTotal">—</strong>
+                <span>Landed Cost</span>
+              </div>
+            </div>
+            <div class="calc-legend" id="calcLegend"></div>
+          </div>
+
+          <div class="calc-breakdown">
+            <div class="calc-line calc-line-section">
+              <span class="calc-line-label"><span class="calc-lbl-text">📦 Товар и логистика</span></span>
+              <span class="calc-line-val"></span>
+            </div>
+            <div class="calc-line">
+              <span class="calc-line-label"><span class="calc-lbl-text">Стоимость товара (FOB)</span> <span class="calc-info" data-tip="Цена у поставщика">?</span></span>
+              <span class="calc-line-val"><span id="crFOB">—</span> <span class="calc-line-rub" id="crFOBr"></span></span>
+            </div>
+            <div class="calc-line">
+              <span class="calc-line-label"><span class="calc-lbl-text">Доставка (фрахт)</span> <span class="calc-info" data-tip="Транспортировка до Бишкека + до РФ">?</span></span>
+              <span class="calc-line-val"><span id="crFreight">—</span> <span class="calc-line-rub" id="crFreightr"></span></span>
+            </div>
+            <div class="calc-line">
+              <span class="calc-line-label"><span class="calc-lbl-text">Страховка</span></span>
+              <span class="calc-line-val"><span id="crInsurance">—</span> <span class="calc-line-rub" id="crInsurancer"></span></span>
+            </div>
+            <div class="calc-line calc-line-section" style="color:var(--gold);">
+              <span class="calc-line-label"><span class="calc-lbl-text">Таможенная стоимость (CIF)</span> <span class="calc-info" data-tip="FOB + фрахт + страховка">?</span></span>
+              <span class="calc-line-val"><span id="crCIF">—</span> <span class="calc-line-rub" id="crCIFr"></span></span>
+            </div>
+            <div class="calc-line calc-line-section">
+              <span class="calc-line-label"><span class="calc-lbl-text">🏛️ Таможенные платежи</span></span>
+              <span class="calc-line-val"></span>
+            </div>
+            <div class="calc-line">
+              <span class="calc-line-label"><span class="calc-lbl-text">Таможенная пошлина</span> <span class="calc-info" data-tip="CIF × ставка пошлины">?</span></span>
+              <span class="calc-line-val"><span id="crDuty">—</span> <span class="calc-line-rub" id="crDutyr"></span></span>
+            </div>
+            <div class="calc-line">
+              <span class="calc-line-label"><span class="calc-lbl-text">НДС (20%)</span> <span class="calc-info" data-tip="(CIF + пошлина) × 20%">?</span></span>
+              <span class="calc-line-val"><span id="crVAT">—</span> <span class="calc-line-rub" id="crVATr"></span></span>
+            </div>
+            <div class="calc-line calc-line-section">
+              <span class="calc-line-label"><span class="calc-lbl-text">📎 Дополнительно</span></span>
+              <span class="calc-line-val"></span>
+            </div>
+            <div class="calc-line">
+              <span class="calc-line-label"><span class="calc-lbl-text">Брокер, склад, сертификация</span> <span class="calc-info" data-tip="Брокер, складские, оформление">?</span></span>
+              <span class="calc-line-val"><span id="crExtra">—</span> <span class="calc-line-rub" id="crExtrar"></span></span>
+            </div>
+          </div>
+
+          <div class="calc-total">
+            <div>
+              <span class="calc-total-label">Итого (Landed Cost):</span>
+              <div class="calc-total-rub" id="crTotalRub"></div>
+            </div>
+            <span class="calc-total-val" id="crTotal">—</span>
+          </div>
+
+          <div id="crPerKg" style="text-align:center;margin-top:8px;font-size:13px;color:var(--muted);display:none;">
+            Стоимость на 1 кг: <strong id="crKgVal" style="color:var(--navy);">—</strong>
+            <span class="calc-line-rub" id="crKgRub"></span>
+          </div>
+
+          <div class="calc-result-ctas">
+            <button class="calc-cta-send" onclick="closeCalcModal();setTimeout(openCTA,350)">📋 Отправить расчёт для точного КП</button>
+            <button class="calc-cta-copy" id="calcCopyBtn" onclick="copyCalcResult()">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+              Скопировать расчёт
+            </button>
+            <button class="calc-cta-reset" onclick="resetCalc()">🔄 Рассчитать другой товар</button>
+          </div>
+        </div>
+        <p class="calc-disclaimer">Расчёт ориентировочный. Финальная стоимость зависит от маршрута, сезона, плотности груза и таможенного режима. Фактические ставки определяются точным HS-кодом, страной происхождения и размером партии. Мы подготовим точное КП за 1–2 часа.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+/* ═══ IMPORT COST CALCULATOR v2 ═══ */
+(function(){
+  /* ─── Full HS code catalog (ТН ВЭД ЕАЭС) organized by 21 sections ─── */
+  /* Based on the EAEU common customs tariff (public data, cf. Alta-Soft) */
+  var HS_SECTIONS = [
+    {id:'I',  name:'Живые животные, продукты животного происхождения', ch:'01–05', items:[
+      {code:'0201',name:'Мясо КРС (говядина) охлаждённое',rate:0.15},
+      {code:'0207',name:'Мясо птицы (курица, индейка)',rate:0.25},
+      {code:'0301',name:'Живая рыба',rate:0.10},{code:'0302',name:'Рыба охлаждённая',rate:0.08},
+      {code:'0401',name:'Молоко, сливки',rate:0.15},{code:'0407',name:'Яйца птиц',rate:0.15},
+      {code:'0409',name:'Мёд натуральный',rate:0.05}
+    ]},
+    {id:'II', name:'Растительные продукты', ch:'06–14', items:[
+      {code:'0713',name:'Бобовые (горох, фасоль, чечевица)',rate:0.05},
+      {code:'0803',name:'Бананы',rate:0.05},{code:'0805',name:'Цитрусовые (апельсины, лимоны)',rate:0.05},
+      {code:'0901',name:'Кофе',rate:0.08},{code:'0902',name:'Чай',rate:0.05},
+      {code:'1001',name:'Пшеница и меслин',rate:0.05},{code:'1005',name:'Кукуруза',rate:0.05},
+      {code:'1006',name:'Рис',rate:0.10},{code:'1201',name:'Соя',rate:0.05}
+    ]},
+    {id:'III',name:'Жиры, масла', ch:'15', items:[
+      {code:'1507',name:'Соевое масло',rate:0.08},{code:'1509',name:'Оливковое масло',rate:0.05},
+      {code:'1511',name:'Пальмовое масло',rate:0.03},{code:'1512',name:'Подсолнечное масло',rate:0.08}
+    ]},
+    {id:'IV', name:'Пищевые продукты, напитки, табак', ch:'16–24', items:[
+      {code:'1601',name:'Колбасы, мясные изделия',rate:0.25},{code:'1701',name:'Сахар',rate:0.10},
+      {code:'1806',name:'Шоколад, какао-продукты',rate:0.12},{code:'1905',name:'Кондитерские изделия, печенье',rate:0.12},
+      {code:'2009',name:'Фруктовые соки',rate:0.10},{code:'2106',name:'Пищевые добавки, протеин',rate:0.10},
+      {code:'2201',name:'Вода минеральная',rate:0.10},{code:'2204',name:'Вино виноградное',rate:0.12},
+      {code:'2208',name:'Крепкий алкоголь (водка, виски)',rate:0.15},{code:'2402',name:'Сигареты',rate:0.20}
+    ]},
+    {id:'V',  name:'Минеральные продукты', ch:'25–27', items:[
+      {code:'2516',name:'Гранит, базальт, песчаник',rate:0.05},{code:'2523',name:'Цемент',rate:0.05},
+      {code:'2710',name:'Нефтепродукты, бензин',rate:0.05},{code:'2711',name:'Газ природный',rate:0}
+    ]},
+    {id:'VI', name:'Химическая продукция', ch:'28–38', items:[
+      {code:'2814',name:'Аммиак',rate:0.05},{code:'2833',name:'Сульфаты',rate:0.05},
+      {code:'2933',name:'Органические соединения',rate:0.05},{code:'3004',name:'Лекарства расфасованные',rate:0},
+      {code:'3204',name:'Красители синтетические',rate:0.065},{code:'3208',name:'Краски, лаки',rate:0.065},
+      {code:'3304',name:'Косметика (кремы, помады)',rate:0.065},{code:'3305',name:'Шампуни, средства для волос',rate:0.065},
+      {code:'3401',name:'Мыло',rate:0.05},{code:'3808',name:'Инсектициды, пестициды',rate:0.05},
+      {code:'3824',name:'Хим. реагенты, смеси',rate:0.05}
+    ]},
+    {id:'VII',name:'Пластмассы, каучук, резина', ch:'39–40', items:[
+      {code:'3917',name:'Трубы пластиковые',rate:0.065},{code:'3920',name:'Плёнки полимерные',rate:0.065},
+      {code:'3921',name:'Листы, пластины пластиковые',rate:0.065},{code:'3923',name:'Тара пластиковая (бутылки, канистры)',rate:0.065},
+      {code:'3926',name:'Изделия из пластмасс прочие',rate:0.065},
+      {code:'4011',name:'Шины автомобильные',rate:0.10},{code:'4015',name:'Перчатки резиновые',rate:0.08}
+    ]},
+    {id:'VIII',name:'Кожа, мех, изделия из них', ch:'41–43', items:[
+      {code:'4104',name:'Кожа КРС (дублёная)',rate:0.05},{code:'4202',name:'Чемоданы, сумки',rate:0.10},
+      {code:'4203',name:'Одежда из кожи',rate:0.10},{code:'4303',name:'Меховые изделия',rate:0.10}
+    ]},
+    {id:'IX', name:'Дерево, бумага', ch:'44–49', items:[
+      {code:'4407',name:'Пиломатериалы хвойных',rate:0.07},{code:'4411',name:'ДВП, МДФ панели',rate:0.08},
+      {code:'4412',name:'Фанера',rate:0.08},{code:'4805',name:'Бумага крафтовая',rate:0.05},
+      {code:'4819',name:'Гофрокартон, коробки',rate:0.05},{code:'4820',name:'Тетради, блокноты',rate:0.05},
+      {code:'4901',name:'Книги, брошюры',rate:0}
+    ]},
+    {id:'X',  name:'Текстиль', ch:'50–63', items:[
+      {code:'5208',name:'Ткань хлопковая',rate:0.08},{code:'5407',name:'Ткань синтетическая',rate:0.08},
+      {code:'5903',name:'Ткань с пропиткой',rate:0.08},{code:'6004',name:'Трикотажное полотно',rate:0.08}
+    ]},
+    {id:'XI', name:'Одежда и обувь', ch:'61–67', items:[
+      {code:'6109',name:'Футболки, майки',rate:0.10},{code:'6110',name:'Свитеры, пуловеры',rate:0.10},
+      {code:'6203',name:'Мужские костюмы, брюки',rate:0.10},{code:'6204',name:'Женские платья, юбки',rate:0.10},
+      {code:'6205',name:'Рубашки мужские',rate:0.10},{code:'6302',name:'Постельное бельё',rate:0.10},
+      {code:'6402',name:'Обувь с верхом из резины/пластика',rate:0.10},{code:'6403',name:'Обувь кожаная',rate:0.08},
+      {code:'6404',name:'Обувь с текстильным верхом',rate:0.10},{code:'6406',name:'Детали обуви, стельки',rate:0.05}
+    ]},
+    {id:'XII',name:'Камень, стекло, керамика', ch:'68–70', items:[
+      {code:'6802',name:'Камень обработанный (мрамор, гранит)',rate:0.08},
+      {code:'6907',name:'Керамогранит, напольная плитка',rate:0.12},{code:'6908',name:'Глазурованная плитка',rate:0.12},
+      {code:'6911',name:'Посуда фарфоровая',rate:0.10},{code:'7005',name:'Стекло листовое',rate:0.08},
+      {code:'7010',name:'Стеклянные бутылки, банки',rate:0.12},{code:'7013',name:'Посуда стеклянная',rate:0.12}
+    ]},
+    {id:'XIII',name:'Металлы и изделия из них', ch:'72–83', items:[
+      {code:'7207',name:'Заготовки из стали',rate:0.05},{code:'7210',name:'Оцинкованная сталь',rate:0.05},
+      {code:'7216',name:'Уголки, двутавры',rate:0.05},{code:'7304',name:'Трубы стальные бесшовные',rate:0.05},
+      {code:'7308',name:'Металлоконструкции',rate:0.08},{code:'7318',name:'Болты, гайки, шурупы',rate:0.08},
+      {code:'7326',name:'Изделия из стали прочие',rate:0.08},
+      {code:'7601',name:'Алюминий необработанный',rate:0.05},{code:'7606',name:'Алюминиевый лист',rate:0.05},
+      {code:'7907',name:'Цинковые изделия',rate:0.05},{code:'8301',name:'Замки, ключи',rate:0.10},
+      {code:'8302',name:'Фурнитура дверная',rate:0.08},{code:'8311',name:'Электроды для сварки',rate:0.08}
+    ]},
+    {id:'XIV',name:'Драгоценные камни, металлы', ch:'71', items:[
+      {code:'7113',name:'Ювелирные изделия',rate:0.20},{code:'7116',name:'Жемчуг',rate:0.10},
+      {code:'7117',name:'Бижутерия',rate:0.15}
+    ]},
+    {id:'XV', name:'Машины и оборудование, электрика', ch:'84–85', items:[
+      {code:'8414',name:'Компрессоры, вентиляторы, кондиционеры',rate:0.08},
+      {code:'8418',name:'Холодильники, морозильники',rate:0.12},
+      {code:'8422',name:'Упаковочные машины',rate:0.03},{code:'8443',name:'Принтеры, МФУ, копиры',rate:0.03},
+      {code:'8450',name:'Стиральные машины',rate:0.05},{code:'8458',name:'Токарные станки',rate:0},
+      {code:'8459',name:'Сверлильные/фрезерные станки',rate:0},{code:'8462',name:'Прессы, штампы',rate:0},
+      {code:'8471',name:'Компьютеры, ноутбуки, планшеты',rate:0},{code:'8473',name:'Комплектующие для ПК',rate:0},
+      {code:'8474',name:'Дробилки, грохоты',rate:0},{code:'8477',name:'Литьевые машины (пластик)',rate:0},
+      {code:'8481',name:'Краны, клапаны, арматура',rate:0.03},{code:'8483',name:'Валы, подшипники, редукторы',rate:0.03},
+      {code:'8501',name:'Электродвигатели',rate:0.05},{code:'8504',name:'Трансформаторы, блоки питания',rate:0.05},
+      {code:'8516',name:'Электронагреватели, плиты',rate:0.08},{code:'8517',name:'Телефоны, смартфоны',rate:0},
+      {code:'8528',name:'Телевизоры, мониторы',rate:0.05},{code:'8539',name:'Светильники, лампы LED',rate:0.05},
+      {code:'8541',name:'Диоды, транзисторы, LED',rate:0},{code:'8542',name:'Микросхемы, процессоры',rate:0},
+      {code:'8544',name:'Кабели, провода',rate:0.05}
+    ]},
+    {id:'XVI',name:'Транспортные средства', ch:'86–89', items:[
+      {code:'8701',name:'Тракторы, тягачи',rate:0},{code:'8702',name:'Автобусы',rate:0.03},
+      {code:'8703',name:'Легковые автомобили',rate:0.15},{code:'8704',name:'Грузовые автомобили',rate:0.03},
+      {code:'8708',name:'Автозапчасти',rate:0.05},{code:'8711',name:'Мотоциклы',rate:0.10},
+      {code:'8712',name:'Велосипеды',rate:0.10},{code:'8716',name:'Прицепы',rate:0.05},
+      {code:'8901',name:'Суда, катера',rate:0},{code:'8903',name:'Яхты, лодки прогулочные',rate:0.10}
+    ]},
+    {id:'XVII',name:'Приборы, оптика, медтехника', ch:'90–92', items:[
+      {code:'9004',name:'Очки солнцезащитные/коррекция',rate:0.10},
+      {code:'9018',name:'Медицинские инструменты',rate:0},{code:'9021',name:'Протезы, ортопедия',rate:0},
+      {code:'9022',name:'Рентгеновские аппараты',rate:0},{code:'9025',name:'Термометры, барометры',rate:0.03},
+      {code:'9027',name:'Лабораторное оборудование',rate:0.02},{code:'9028',name:'Счётчики (газ, вода)',rate:0.03},
+      {code:'9031',name:'Измерительные приборы',rate:0},{code:'9032',name:'Автоматические регуляторы',rate:0}
+    ]},
+    {id:'XVIII',name:'Оружие (огнестрельное)', ch:'93', items:[
+      {code:'9302',name:'Револьверы, пистолеты',rate:0.20},{code:'9303',name:'Ружья, винтовки',rate:0.20},
+      {code:'9306',name:'Боеприпасы',rate:0.20}
+    ]},
+    {id:'XIX',name:'Мебель, освещение, игрушки, спорт', ch:'94–96', items:[
+      {code:'9401',name:'Стулья, кресла',rate:0.08},{code:'9403',name:'Мебель (столы, шкафы, кровати)',rate:0.08},
+      {code:'9404',name:'Матрасы',rate:0.08},{code:'9405',name:'Люстры, светильники',rate:0.08},
+      {code:'9503',name:'Игрушки детские',rate:0.10},{code:'9504',name:'Игровые приставки',rate:0.08},
+      {code:'9506',name:'Спортинвентарь',rate:0.10},{code:'9507',name:'Удочки, рыболовные снасти',rate:0.10}
+    ]},
+    {id:'XX', name:'Разные промышленные товары', ch:'94–96 прочие', items:[
+      {code:'9601',name:'Изделия из кости, рога, янтаря',rate:0.05},
+      {code:'9608',name:'Ручки, карандаши',rate:0.10},{code:'9615',name:'Расчёски, заколки',rate:0.10},
+      {code:'9617',name:'Термосы',rate:0.10}
+    ]},
+    {id:'XXI',name:'Произведения искусства, антиквариат', ch:'97', items:[
+      {code:'9701',name:'Картины, рисунки',rate:0},{code:'9703',name:'Скульптуры',rate:0},
+      {code:'9706',name:'Антиквариат (>100 лет)',rate:0}
+    ]}
+  ];
+
+  /* Flatten for search */
+  var HS_DB = [];
+  HS_SECTIONS.forEach(function(s){
+    s.items.forEach(function(item){
+      HS_DB.push({code:item.code, name:item.name, rate:item.rate, section:s.id+' '+s.name});
+    });
+  });
+
+  /* ─── Duty rates by expanded category ─── */
+  var DUTY_RATES = {
+    machinery_industrial:{avg:0.02},machinery_agri:{avg:0},machinery_cnc:{avg:0.01},
+    electronics_components:{avg:0.02},electronics_consumer:{avg:0.04},electronics_computers:{avg:0},
+    textiles_fabric:{avg:0.09},textiles_garments:{avg:0.11},textiles_shoes:{avg:0.09},
+    build_ceramics:{avg:0.12},build_metal:{avg:0.06},build_wood:{avg:0.06},build_general:{avg:0.09},
+    food_raw:{avg:0.08},food_processed:{avg:0.13},food_beverages:{avg:0.15},
+    auto_parts:{avg:0.075},auto_vehicles:{avg:0.20},
+    chemicals_ind:{avg:0.055},chemicals_pharma:{avg:0},chemicals_cosm:{avg:0.08},
+    furniture:{avg:0.09},toys:{avg:0.10},paper:{avg:0.05},instruments:{avg:0.02},
+    general:{avg:0.10}
+  };
+
+  var VAT_RATE = 0.20;
+
+  /* ─── Delivery rates (per kg or per m³ for sea) by country × mode ─── */
+  var DEL_RATES = {
+    china:  {auto:1.2, rail:0.8, air:4.0, sea_per_m3:130},
+    turkey: {auto:1.5, rail:1.0, air:4.5, sea_per_m3:160},
+    uae:    {auto:2.0, rail:1.3, air:5.0, sea_per_m3:180},
+    israel: {auto:2.5, rail:1.5, air:5.5, sea_per_m3:210},
+    europe: {auto:1.8, rail:1.0, air:4.5, sea_per_m3:150}
+  };
+  var DEL_TIMES = {
+    china:  {auto:'15–21 дн.',rail:'21–30 дн.',air:'5–8 дн.',sea:'35–50 дн.'},
+    turkey: {auto:'10–16 дн.',rail:'17–24 дн.',air:'4–6 дн.',sea:'20–30 дн.'},
+    uae:    {auto:'13–20 дн.',rail:'21–28 дн.',air:'4–6 дн.',sea:'25–35 дн.'},
+    israel: {auto:'13–18 дн.',rail:'19–25 дн.',air:'4–6 дн.',sea:'25–35 дн.'},
+    europe: {auto:'10–18 дн.',rail:'17–24 дн.',air:'3–5 дн.',sea:'25–40 дн.'}
+  };
+  /* Volumetric weight coefficients (kg per m³) */
+  var VOL_COEFF = {auto:200, rail:200, air:167};
+  /* Minimum chargeable weight (kg) */
+  var MIN_CHARGE_WEIGHT = 100;
+  var DEL_CITY_EXTRA = {moscow:0,spb:0.05,ekb:0.15,nsk:0.25,krd:0.10,other:0.15};
+  var DEL_MODE_LABELS = {auto:'🚛 Авто',rail:'🚂 ЖД',air:'✈️ Авиа',sea:'🚢 Море (LCL)'};
+
+  var selectedDelMode = null;
+  var selectedDelPrice = 0;
+
+  function fmt(n){ return n.toLocaleString('ru-RU',{maximumFractionDigits:0}) }
+  function fmt2(n){ return n.toLocaleString('ru-RU',{maximumFractionDigits:2}) }
+
+  /* ─── Tab switching ─── */
+  window.calcSwitchTab = function(tab){
+    document.querySelectorAll('.calc-tab').forEach(function(t){t.classList.toggle('active',t.dataset.tab===tab)});
+    document.querySelectorAll('.calc-panel-tab').forEach(function(p){p.classList.remove('active')});
+    var map = {customs:'calcPanelCustoms',delivery:'calcPanelDelivery',full:'calcPanelFull'};
+    document.getElementById(map[tab]).classList.add('active');
+  };
+
+  /* ─── HS Autocomplete + Catalog Browser ─── */
+  var hsInput = document.getElementById('calcHS');
+  var hsDrop  = document.getElementById('hsDropdown');
+  var hsBadge = document.getElementById('hsSelectedBadge');
+  var catalogMode = false;
+
+  function selectHSCode(code, name, rate){
+    hsInput.value = code;
+    hsInput.dataset.selectedRate = rate;
+    hsDrop.classList.remove('show');
+    catalogMode = false;
+    /* Show badge */
+    if(hsBadge){
+      hsBadge.innerHTML = '<span class="hs-sel-badge">📌 '+code+' — '+name+' ('+(rate*100).toFixed(1)+'%) <span class="hs-sel-x" onclick="clearHSSelection()">✕</span></span>';
+      hsBadge.style.display = 'block';
+    }
+  }
+
+  window.clearHSSelection = function(){
+    hsInput.value = '';
+    delete hsInput.dataset.selectedRate;
+    if(hsBadge){ hsBadge.innerHTML = ''; hsBadge.style.display = 'none'; }
+  };
+
+  /* Build catalog HTML (all sections collapsed) */
+  function buildCatalogHTML(){
+    var html = '<div style="padding:8px 14px;font-size:12px;color:var(--navy);font-weight:600;background:#f8f9fa;border-bottom:1px solid #ebedf0;">📖 Каталог ТН ВЭД ЕАЭС — '+HS_DB.length+' товарных позиций</div>';
+    HS_SECTIONS.forEach(function(s, si){
+      html += '<div class="hs-section" data-sec="'+si+'" onclick="toggleHSSection('+si+')">'+
+              '<span>'+s.id+'. '+s.name+' <span style="font-size:10px;font-weight:400;color:var(--muted)">(гл. '+s.ch+')</span></span></div>';
+      html += '<div class="hs-group" data-secg="'+si+'">';
+      s.items.forEach(function(item){
+        html += '<div class="hs-item" data-code="'+item.code+'" data-rate="'+item.rate+'" data-name="'+item.name+'">'+
+                '<span class="hs-item-code">'+item.code+'</span>'+
+                '<span class="hs-item-name">'+item.name+'</span>'+
+                '<span class="hs-item-rate">'+(item.rate*100).toFixed(1)+'%</span>'+
+                '</div>';
+      });
+      html += '</div>';
+    });
+    return html;
+  }
+
+  window.toggleHSSection = function(idx){
+    var grp = hsDrop.querySelector('[data-secg="'+idx+'"]');
+    var sec = hsDrop.querySelector('[data-sec="'+idx+'"]');
+    if(!grp || !sec) return;
+    grp.classList.toggle('show');
+    sec.classList.toggle('open');
+  };
+
+  window.toggleHSCatalog = function(){
+    if(catalogMode && hsDrop.classList.contains('show')){
+      hsDrop.classList.remove('show');
+      catalogMode = false;
+      return;
+    }
+    hsDrop.innerHTML = buildCatalogHTML();
+    hsDrop.classList.add('show');
+    catalogMode = true;
+    hsDrop.scrollTop = 0;
+  };
+
+  if(hsInput && hsDrop){
+    /* Search mode */
+    hsInput.addEventListener('input', function(){
+      catalogMode = false;
+      var q = this.value.toLowerCase().replace(/\s+/g,'');
+      if(q.length < 2){ hsDrop.classList.remove('show'); return; }
+      var matches = HS_DB.filter(function(h){
+        return h.code.indexOf(q) !== -1 || h.name.toLowerCase().indexOf(q) !== -1;
+      }).slice(0,15);
+      if(!matches.length){
+        hsDrop.innerHTML = '<div style="padding:14px;text-align:center;color:var(--muted);font-size:13px;">Не найдено. Попробуйте 📂 <a href="#" onclick="event.preventDefault();toggleHSCatalog()" style="color:var(--gold);font-weight:600;">Открыть каталог</a></div>';
+        hsDrop.classList.add('show');
+        return;
+      }
+      hsDrop.innerHTML = matches.map(function(h){
+        return '<div class="hs-item" data-code="'+h.code+'" data-rate="'+h.rate+'" data-name="'+h.name+'">'+
+               '<span class="hs-item-code">'+h.code+'</span>'+
+               '<span class="hs-item-name">'+h.name+'</span>'+
+               '<span class="hs-item-rate">'+(h.rate*100).toFixed(1)+'%</span>'+
+               '</div>';
+      }).join('') +
+      '<div class="hs-browse-btn" onclick="toggleHSCatalog()">📂 Открыть полный каталог ('+HS_DB.length+' позиций)</div>';
+      hsDrop.classList.add('show');
+    });
+
+    /* Click handler for items (both search results and catalog) */
+    hsDrop.addEventListener('click', function(e){
+      var item = e.target.closest('.hs-item');
+      if(!item) return;
+      selectHSCode(item.dataset.code, item.dataset.name, item.dataset.rate);
+    });
+
+    /* Close on outside click */
+    document.addEventListener('click', function(e){
+      if(!e.target.closest('.hs-wrap') && !e.target.closest('.hs-browse-btn')) hsDrop.classList.remove('show');
+    });
+
+    /* Focus — show hint if empty */
+    hsInput.addEventListener('focus', function(){
+      if(!this.value && !catalogMode){
+        hsDrop.innerHTML = '<div style="padding:12px 14px;font-size:13px;color:var(--navy);line-height:1.5;">'+
+          '<strong>🔍 Как найти код ТН ВЭД?</strong><br>'+
+          '<span style="color:var(--muted)">• Введите <strong>код</strong> (напр. 8471) или <strong>название</strong> (напр. «ноутбук»)<br>'+
+          '• Или нажмите 📂 <a href="#" onclick="event.preventDefault();toggleHSCatalog()" style="color:var(--gold);font-weight:600;">Открыть каталог</a> — все '+HS_DB.length+' позиций по разделам</span>'+
+          '</div>';
+        hsDrop.classList.add('show');
+      }
+    });
+  }
+
+  /* ─── Open / Close ─── */
+  window.openCalcModal = function(){
+    document.getElementById('calcOverlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+    if(typeof ym !== 'undefined') ym(106940695, 'reachGoal', 'calc_modal_open');
+  };
+  window.closeCalcModal = function(){
+    document.getElementById('calcOverlay').classList.remove('open');
+    document.body.style.overflow = '';
+  };
+
+  /* ─── Last calculation data (for RUB recalc & copy) ─── */
+  var lastCalc = null;
+
+  /* ─── Chart colors ─── */
+  var CHART_COLORS = [
+    '#0b1d4e', /* FOB — navy */
+    '#3b5998', /* Freight — blue */
+    '#7ba1d6', /* Insurance — light blue */
+    '#c9a227', /* Duty — gold */
+    '#e5c040', /* VAT — light gold */
+    '#8e8e93'  /* Extra — gray */
+  ];
+  var CHART_LABELS = ['Товар (FOB)','Доставка','Страховка','Пошлина','НДС (20%)','Доп. расходы'];
+
+  /* ─── RUB formatter ─── */
+  function getRubRate(){ return parseFloat(document.getElementById('calcRubRate').value) || 92; }
+  function fmtRub(usd){ var r = usd * getRubRate(); return r >= 1000000 ? fmt2(r/1000000)+' млн ₽' : fmt(r)+' ₽'; }
+
+  /* ─── Build donut chart (pure SVG) ─── */
+  function buildChart(segments, total){
+    var svg = document.getElementById('calcDonut');
+    var legend = document.getElementById('calcLegend');
+    var wrap = document.getElementById('calcChartWrap');
+    if(!svg || !legend) return;
+
+    var R = 45, CX = 60, CY = 60, CIRC = 2 * Math.PI * R;
+    var filtered = [];
+    for(var i = 0; i < segments.length; i++){
+      if(segments[i] > 0) filtered.push({val:segments[i], color:CHART_COLORS[i], label:CHART_LABELS[i]});
+    }
+    if(!filtered.length){ wrap.style.display='none'; return; }
+    wrap.style.display = 'flex';
+
+    /* SVG circles */
+    var html = '<circle cx="'+CX+'" cy="'+CY+'" r="'+R+'" fill="none" stroke="#ebedf0" stroke-width="18"/>';
+    var offset = 0;
+    for(var j = 0; j < filtered.length; j++){
+      var pct = filtered[j].val / total;
+      var dash = pct * CIRC;
+      html += '<circle cx="'+CX+'" cy="'+CY+'" r="'+R+'" fill="none" stroke="'+filtered[j].color+
+              '" stroke-width="18" stroke-dasharray="'+dash.toFixed(2)+' '+(CIRC - dash).toFixed(2)+
+              '" stroke-dashoffset="'+(-offset).toFixed(2)+'" stroke-linecap="butt" style="transition:all .7s ease"/>';
+      offset += dash;
+    }
+    svg.innerHTML = html;
+    document.getElementById('chartTotal').textContent = '$'+fmt(total);
+
+    /* Legend */
+    var lhtml = '';
+    for(var k = 0; k < filtered.length; k++){
+      var p = (filtered[k].val / total * 100).toFixed(1);
+      lhtml += '<div class="calc-legend-item">'+
+               '<span class="calc-legend-dot" style="background:'+filtered[k].color+'"></span>'+
+               '<span>'+filtered[k].label+'</span>'+
+               '<span class="calc-legend-val">$'+fmt(filtered[k].val)+'</span>'+
+               '<span class="calc-legend-pct">'+p+'%</span>'+
+               '</div>';
+    }
+    legend.innerHTML = lhtml;
+  }
+
+  /* ─── Fill RUB values from lastCalc ─── */
+  function fillRub(){
+    if(!lastCalc) return;
+    var d = lastCalc;
+    var pairs = [
+      ['crFOBr', d.fob], ['crFreightr', d.freight], ['crInsurancer', d.insurance],
+      ['crCIFr', d.cif], ['crDutyr', d.duty], ['crVATr', d.vat], ['crExtrar', d.extra]
+    ];
+    for(var i = 0; i < pairs.length; i++){
+      var el = document.getElementById(pairs[i][0]);
+      if(el) el.textContent = pairs[i][1] > 0 ? '≈ '+fmtRub(pairs[i][1]) : '';
+    }
+    var totalRub = document.getElementById('crTotalRub');
+    if(totalRub) totalRub.textContent = '≈ '+fmtRub(d.total);
+    /* Per kg RUB */
+    var kgRub = document.getElementById('crKgRub');
+    if(kgRub && d.weight > 0) kgRub.textContent = '≈ '+fmt(d.total/d.weight*getRubRate())+' ₽/кг';
+  }
+  window.recalcRub = fillRub;
+
+  /* ─── Calculate customs + taxes ─── */
+  window.calculateImport = function(){
+    var fob       = parseFloat(document.getElementById('calcFOB').value) || 0;
+    var freight   = parseFloat(document.getElementById('calcFreight').value) || 0;
+    var insurance = parseFloat(document.getElementById('calcInsurance').value) || 0;
+    var weight    = parseFloat(document.getElementById('calcWeight').value) || 0;
+    var category  = document.getElementById('calcCategory').value;
+    var extra     = parseFloat(document.getElementById('calcExtra').value) || 0;
+
+    if(fob <= 0){ alert('Укажите стоимость товара (FOB)'); return; }
+
+    var cif = fob + freight + insurance;
+
+    /* Duty rate: HS selected rate > HS first-2-digit lookup > category */
+    var dutyRate;
+    var hsEl = document.getElementById('calcHS');
+    if(hsEl.dataset.selectedRate !== undefined && hsEl.dataset.selectedRate !== ''){
+      dutyRate = parseFloat(hsEl.dataset.selectedRate);
+    } else {
+      var hsVal = (hsEl.value||'').replace(/\s/g,'');
+      if(hsVal.length >= 2){
+        var found = HS_DB.find(function(h){ return h.code.indexOf(hsVal) === 0; });
+        dutyRate = found ? found.rate : (DUTY_RATES[category]||DUTY_RATES.general).avg;
+      } else {
+        dutyRate = (DUTY_RATES[category]||DUTY_RATES.general).avg;
+      }
+    }
+
+    var duty  = cif * dutyRate;
+    var vat   = (cif + duty) * VAT_RATE;
+    var total = cif + duty + vat + extra;
+
+    /* Store for RUB recalc + copy */
+    lastCalc = {fob:fob, freight:freight, insurance:insurance, cif:cif,
+                duty:duty, dutyRate:dutyRate, vat:vat, extra:extra, total:total, weight:weight};
+
+    /* Fill USD values */
+    document.getElementById('crFOB').textContent       = '$'+fmt(fob);
+    document.getElementById('crFreight').textContent    = freight > 0 ? '$'+fmt(freight) : '—';
+    document.getElementById('crInsurance').textContent  = insurance > 0 ? '$'+fmt(insurance) : '—';
+    document.getElementById('crCIF').textContent        = '$'+fmt(cif);
+    document.getElementById('crDuty').textContent       = '$'+fmt(duty)+' ('+(dutyRate*100).toFixed(1)+'%)';
+    document.getElementById('crVAT').textContent        = '$'+fmt(vat);
+    document.getElementById('crExtra').textContent      = extra > 0 ? '$'+fmt(extra) : '—';
+    document.getElementById('crTotal').textContent      = '$'+fmt(total);
+
+    /* Fill RUB values */
+    fillRub();
+
+    /* Per kg */
+    var kgBlock = document.getElementById('crPerKg');
+    if(weight > 0){
+      document.getElementById('crKgVal').textContent = '$'+fmt2(total/weight)+'/кг';
+      kgBlock.style.display = 'block';
+    } else { kgBlock.style.display = 'none'; }
+
+    /* Build donut chart */
+    buildChart([fob, freight, insurance, duty, vat, extra], total);
+
+    document.getElementById('calcNoResult').style.display = 'none';
+    document.getElementById('calcHasResult').style.display = 'block';
+
+    calcSwitchTab('full');
+    if(typeof ym !== 'undefined') ym(106940695, 'reachGoal', 'calc_result');
+  };
+
+  /* ─── Copy calculation to clipboard ─── */
+  window.copyCalcResult = function(){
+    if(!lastCalc) return;
+    var d = lastCalc;
+    var r = getRubRate();
+    var lines = [
+      '📋 РАСЧЁТ ИМПОРТА — TE GROUP',
+      '━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
+      '',
+      '📦 Товар и логистика',
+      '  Товар (FOB):      $'+fmt(d.fob)+'  ('+fmt(d.fob*r)+' ₽)',
+      '  Доставка:         '+(d.freight > 0 ? '$'+fmt(d.freight)+'  ('+fmt(d.freight*r)+' ₽)' : '—'),
+      '  Страховка:        '+(d.insurance > 0 ? '$'+fmt(d.insurance)+'  ('+fmt(d.insurance*r)+' ₽)' : '—'),
+      '  ─────────────────',
+      '  Тамож. стоимость: $'+fmt(d.cif)+'  ('+fmt(d.cif*r)+' ₽)',
+      '',
+      '🏛️ Таможенные платежи',
+      '  Пошлина ('+(d.dutyRate*100).toFixed(1)+'%): $'+fmt(d.duty)+'  ('+fmt(d.duty*r)+' ₽)',
+      '  НДС (20%):        $'+fmt(d.vat)+'  ('+fmt(d.vat*r)+' ₽)',
+      '',
+      '📎 Дополнительно',
+      '  Брокер/склад:     '+(d.extra > 0 ? '$'+fmt(d.extra)+'  ('+fmt(d.extra*r)+' ₽)' : '—'),
+      '',
+      '━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
+      '💰 ИТОГО: $'+fmt(d.total)+'  ('+fmt(d.total*r)+' ₽)'
+    ];
+    if(d.weight > 0){
+      lines.push('   На 1 кг: $'+fmt2(d.total/d.weight)+'/кг  ('+fmt(d.total/d.weight*r)+' ₽/кг)');
+    }
+    lines.push('');
+    lines.push('Курс: 1$ = '+r+' ₽');
+    lines.push('Расчёт ориентировочный.');
+    lines.push('tegroup.cc  ·  +7 952 778 3680');
+
+    var text = lines.join('\n');
+    var btn = document.getElementById('calcCopyBtn');
+
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(function(){
+        btn.classList.add('copied');
+        btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Скопировано!';
+        setTimeout(function(){
+          btn.classList.remove('copied');
+          btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg> Скопировать расчёт';
+        }, 2500);
+      });
+    } else {
+      /* Fallback for older browsers */
+      var ta = document.createElement('textarea');
+      ta.value = text; ta.style.position='fixed'; ta.style.opacity='0';
+      document.body.appendChild(ta); ta.select();
+      try{ document.execCommand('copy'); btn.textContent='✅ Скопировано!'; }catch(e){}
+      document.body.removeChild(ta);
+      setTimeout(function(){ btn.textContent='📋 Скопировать расчёт'; }, 2500);
+    }
+  };
+
+  /* ─── Calculate delivery (PRO: volumetric weight by mode) ─── */
+  var lastDeliveryCalc = null; /* store for "use in KP" */
+
+  window.calculateDelivery = function(){
+    var country = document.getElementById('delCountry').value;
+    var city    = document.getElementById('delCity').value;
+    var weight  = parseFloat(document.getElementById('delWeight').value) || 0;
+    var volume  = parseFloat(document.getElementById('delVolume').value) || 0;
+
+    /* ─ Validation: at least weight OR volume must be provided ─ */
+    if(weight <= 0 && volume <= 0){
+      alert('Укажите вес и/или объём груза');
+      return;
+    }
+
+    var rates = DEL_RATES[country];
+    var times = DEL_TIMES[country];
+    var cityMult = 1 + (DEL_CITY_EXTRA[city] || 0.15);
+    var grid = document.getElementById('delGrid');
+    selectedDelMode = null;
+    selectedDelPrice = 0;
+
+    /* ─ Density check ─ */
+    var density = (weight > 0 && volume > 0) ? weight / volume : null;
+    var densityWarnEl = document.getElementById('delDensityWarn');
+    var anyVolUsed = false;
+
+    var html = '';
+    var modes = ['auto','rail','air','sea'];
+    modes.forEach(function(mode){
+      var isSea = (mode === 'sea');
+      var basePrice, chargeWeight, volWeight, unit;
+
+      if(isSea){
+        /* Sea (LCL): strictly by volume */
+        var seaVol = volume > 0 ? volume : (weight > 0 ? weight / 200 : 0);
+        if(seaVol < 1) seaVol = 1; /* min 1 m³ */
+        basePrice = rates.sea_per_m3 * seaVol * cityMult;
+        chargeWeight = 0; /* not used for sea */
+        unit = fmt2(seaVol)+' м³ × $'+fmt(rates.sea_per_m3)+'/м³';
+      } else {
+        /* Auto / Rail / Air: volumetric weight formula */
+        var coeff = VOL_COEFF[mode] || 200;
+        volWeight = volume > 0 ? volume * coeff : 0;
+        chargeWeight = Math.max(weight, volWeight);
+
+        /* Minimum chargeable weight */
+        if(chargeWeight < MIN_CHARGE_WEIGHT) chargeWeight = MIN_CHARGE_WEIGHT;
+
+        if(volWeight > weight && volume > 0) anyVolUsed = true;
+
+        var rate = rates[mode];
+        basePrice = rate * chargeWeight * cityMult;
+
+        /* Volume discount */
+        if(chargeWeight > 3000) basePrice *= 0.80;
+        else if(chargeWeight > 1000) basePrice *= 0.90;
+
+        unit = fmt(chargeWeight)+' кг × $'+fmt2(rate)+'/кг';
+      }
+
+      html += '<div class="calc-del-opt" data-mode="'+mode+'" data-price="'+basePrice.toFixed(0)+'" data-cw="'+(chargeWeight||0)+'" onclick="selectDelMode(this)">'+
+              '<div class="calc-del-opt-mode">'+DEL_MODE_LABELS[mode]+'</div>'+
+              '<div class="calc-del-opt-time">'+times[mode]+'</div>'+
+              '<div class="calc-del-opt-price">$'+fmt(basePrice)+'</div>'+
+              '<div class="calc-del-opt-unit">'+unit+'</div>'+
+              '</div>';
+    });
+    grid.innerHTML = html;
+
+    /* ─ Weight info block ─ */
+    var wiEl = document.getElementById('delWeightInfo');
+    var wiLines = [];
+    if(weight > 0){
+      wiLines.push('<span class="cwi-label">Фактический вес:</span> <span class="cwi-val">'+fmt(weight)+' кг</span>');
+    }
+    if(volume > 0){
+      wiLines.push('<span class="cwi-label">Объём:</span> <span class="cwi-val">'+fmt2(volume)+' м³</span>');
+      var volAuto = volume * 200, volAir = volume * 167;
+      wiLines.push('<span class="cwi-label">Объёмный вес (авто/ЖД):</span> <span class="cwi-val">'+fmt(volAuto)+' кг</span> <span style="font-size:11px;color:var(--muted)">(×200)</span>');
+      wiLines.push('<span class="cwi-label">Объёмный вес (авиа):</span> <span class="cwi-val">'+fmt(volAir)+' кг</span> <span style="font-size:11px;color:var(--muted)">(×167)</span>');
+    }
+    wiLines.push('<div class="cwi-note">⚖️ Перевозчики рассчитывают стоимость по большему значению: фактический или объёмный вес. Морской фрахт (LCL) — строго по объёму.</div>');
+    wiEl.innerHTML = wiLines.join('<br>');
+
+    /* ─ Density warning ─ */
+    if(density !== null && density < 100){
+      densityWarnEl.style.display = 'flex';
+    } else {
+      densityWarnEl.style.display = 'none';
+    }
+
+    document.getElementById('delRoute').textContent = '('+country.toUpperCase()+' → '+city+')';
+    document.getElementById('delResults').style.display = 'block';
+
+    /* Store for "use in KP" */
+    lastDeliveryCalc = {country:country, city:city, weight:weight, volume:volume};
+  };
+
+  window.selectDelMode = function(el){
+    document.querySelectorAll('.calc-del-opt').forEach(function(o){o.classList.remove('selected')});
+    el.classList.add('selected');
+    selectedDelMode = el.dataset.mode;
+    selectedDelPrice = parseFloat(el.dataset.price) || 0;
+  };
+
+  /* Use delivery price in customs tab */
+  window.useDeliveryPrice = function(){
+    if(selectedDelPrice <= 0){ alert('Сначала выберите вариант доставки'); return; }
+    document.getElementById('calcFreight').value = selectedDelPrice.toFixed(0);
+    /* Sync country */
+    document.getElementById('calcCountry').value = document.getElementById('delCountry').value;
+    /* Sync weight */
+    var dw = document.getElementById('delWeight').value;
+    if(dw && !document.getElementById('calcWeight').value) document.getElementById('calcWeight').value = dw;
+    calcSwitchTab('customs');
+  };
+
+  /* "Use calculation in KP" — pass data to contact form */
+  window.useDeliveryInKP = function(){
+    if(selectedDelPrice <= 0){ alert('Сначала выберите вариант доставки'); return; }
+    var d = lastDeliveryCalc || {};
+    var mode = selectedDelMode || '';
+    var modeLabel = DEL_MODE_LABELS[mode] || mode;
+    var info = '🚛 Расчёт доставки:\n'+
+               '• Откуда: '+(d.country||'')+'\n'+
+               '• Куда: '+(d.city||'')+'\n'+
+               '• Вес: '+(d.weight||0)+' кг\n'+
+               '• Объём: '+(d.volume||0)+' м³\n'+
+               '• Транспорт: '+modeLabel+'\n'+
+               '• Ориент. стоимость: $'+fmt(selectedDelPrice);
+    /* Copy to clipboard and open CTA */
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(info);
+    }
+    closeCalcModal();
+    setTimeout(openCTA, 350);
+  };
+
+  /* ─── Reset ─── */
+  window.resetCalc = function(){
+    ['calcFOB','calcFreight','calcInsurance','calcWeight','calcHS','calcExtra'].forEach(function(id){
+      var el = document.getElementById(id);
+      if(el) el.value = (id==='calcInsurance'||id==='calcExtra') ? '0' : '';
+    });
+    document.getElementById('calcCategory').value = 'build_general';
+    var hsEl = document.getElementById('calcHS');
+    if(hsEl) delete hsEl.dataset.selectedRate;
+    clearHSSelection();
+    lastCalc = null;
+    var chartWrap = document.getElementById('calcChartWrap');
+    if(chartWrap) chartWrap.style.display = 'none';
+    document.getElementById('calcNoResult').style.display = '';
+    document.getElementById('calcHasResult').style.display = 'none';
+    calcSwitchTab('customs');
+  };
+
+  /* ESC */
+  document.addEventListener('keydown', function(e){
+    if(e.key==='Escape' && document.getElementById('calcOverlay').classList.contains('open')) closeCalcModal();
+  });
+})();
+</script>
+<!-- /IMPORT CALCULATOR -->
 
 </body>
 </html>
