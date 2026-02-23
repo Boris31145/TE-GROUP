@@ -441,24 +441,24 @@
     .nav-burger.open span:nth-child(2) { opacity: 0; }
     .nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-    /* Calc icon in nav */
+    /* Calc icon in nav — navy blue theme */
     .nav-calc-icon {
       width: 38px; height: 38px; border-radius: 50%;
-      border: 1.5px solid var(--gold); background: transparent;
+      border: 1.5px solid var(--navy); background: var(--navy);
       cursor: pointer; display: inline-flex; align-items: center; justify-content: center;
       margin-right: 8px; position: relative; overflow: visible;
       transition: background .25s, transform .25s, box-shadow .25s;
       animation: calc-icon-glow 3s ease-in-out infinite 2s;
     }
     .nav-calc-icon:hover {
-      background: rgba(201,162,39,.15); transform: scale(1.12);
-      box-shadow: 0 0 16px rgba(201,162,39,.5);
+      background: rgba(11,29,78,.85); transform: scale(1.12);
+      box-shadow: 0 0 18px rgba(11,29,78,.6);
       animation: none;
     }
     .nav-calc-icon::after {
       content: ''; position: absolute; inset: -3px; border-radius: 50%;
       border: 1.5px solid transparent;
-      background: conic-gradient(from 0deg, transparent 0%, rgba(201,162,39,.6) 25%, transparent 50%) border-box;
+      background: conic-gradient(from 0deg, transparent 0%, rgba(201,162,39,.7) 25%, transparent 50%) border-box;
       -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
       mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
       -webkit-mask-composite: xor; mask-composite: exclude;
@@ -466,8 +466,8 @@
       pointer-events: none;
     }
     @keyframes calc-icon-glow {
-      0%,100% { box-shadow: 0 0 0 0 rgba(201,162,39,0); }
-      50% { box-shadow: 0 0 14px 4px rgba(201,162,39,.35); }
+      0%,100% { box-shadow: 0 0 0 0 rgba(11,29,78,0); }
+      50% { box-shadow: 0 0 14px 4px rgba(201,162,39,.4); }
     }
     @keyframes calc-ring-spin { to { transform: rotate(360deg); } }
     @media (prefers-reduced-motion: reduce) {
@@ -1064,7 +1064,7 @@
 
     <!-- Calc icon: visible on both desktop and mobile (left of burger on mobile) -->
     <button onclick="openCalcModal()" class="nav-calc-icon nav-cta-btn" title="Калькулятор стоимости импорта">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="8" y2="10.01"/><line x1="12" y1="10" x2="12" y2="10.01"/><line x1="16" y1="10" x2="16" y2="10.01"/><line x1="8" y1="14" x2="8" y2="14.01"/><line x1="12" y1="14" x2="12" y2="14.01"/><line x1="16" y1="14" x2="16" y2="14.01"/><line x1="8" y1="18" x2="8" y2="18.01"/><line x1="12" y1="18" x2="16" y2="18"/></svg>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#e5c040" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="8" y2="10.01"/><line x1="12" y1="10" x2="12" y2="10.01"/><line x1="16" y1="10" x2="16" y2="10.01"/><line x1="8" y1="14" x2="8" y2="14.01"/><line x1="12" y1="14" x2="12" y2="14.01"/><line x1="16" y1="14" x2="16" y2="14.01"/><line x1="8" y1="18" x2="8" y2="18.01"/><line x1="12" y1="18" x2="16" y2="18"/></svg>
     </button>
     <button onclick="openCTA()" class="btn btn-navy nav-cta-btn" style="padding:10px 22px;font-size:12px;cursor:pointer;border:none;">Получить КП</button>
 
@@ -2278,10 +2278,10 @@
 .fw-btn:hover .fw-tip{opacity:1}
 @media(max-width:480px){.fw{right:14px;bottom:18px}.fw-btn{width:46px;height:46px}.fw-tip{display:none}}
 
-/* ── Save Chip Button ── */
+/* ── Save Chip Button — premium double-ring design ── */
 .fw-save{
-  width:60px;height:60px;
-  background:var(--navy);
+  width:66px;height:66px;
+  background:transparent;
   border:none;cursor:pointer;
   flex-direction:column;gap:1px;
   opacity:0;transform:scale(.3);
@@ -2293,34 +2293,44 @@
   opacity:1;transform:scale(1);pointer-events:auto;
   animation:fw-save-enter .6s cubic-bezier(.22,1,.36,1) forwards;
 }
+/* Outer spinning gold ring */
 .fw-save::before{
-  content:'';position:absolute;inset:-3px;border-radius:50%;z-index:-1;
-  background:conic-gradient(from 0deg,transparent 0%,#c9a227 25%,#e5c040 50%,#c9a227 75%,transparent 100%);
-  animation:fw-shine-spin 4s linear infinite;
-  opacity:.85;
+  content:'';position:absolute;inset:-5px;border-radius:50%;z-index:-1;
+  background:conic-gradient(from 0deg,transparent 0%,#c9a227 20%,#e5c040 40%,#fff8 50%,#e5c040 60%,#c9a227 80%,transparent 100%);
+  animation:fw-shine-spin 3s linear infinite;
+  opacity:.9;
 }
+/* Inner dark circle (the button face) */
 .fw-save::after{
-  content:'';position:absolute;inset:0;border-radius:50%;
-  background:var(--navy);z-index:0;
+  content:'';position:absolute;inset:2px;border-radius:50%;z-index:0;
+  background:radial-gradient(circle at 35% 35%,#132957,#0b1d4e 60%,#071536);
+  border:1.5px solid rgba(201,162,39,.45);
+  box-shadow:inset 0 1px 3px rgba(255,255,255,.08),0 2px 12px rgba(0,0,0,.4);
 }
 .fw-save-text{
   position:relative;z-index:1;
-  display:flex;flex-direction:column;align-items:center;line-height:1.15;
+  display:flex;flex-direction:column;align-items:center;line-height:1.2;
+  text-shadow:0 1px 4px rgba(0,0,0,.3);
 }
 .fw-save-text span:first-child{
-  font-size:11px;font-weight:800;color:#fff;letter-spacing:.02em;
+  font-size:12px;font-weight:800;color:#fff;letter-spacing:.03em;
 }
 .fw-save-text span:last-child{
-  font-size:7.5px;font-weight:700;color:#c9a227;letter-spacing:.03em;text-transform:uppercase;
+  font-size:7px;font-weight:700;color:#e5c040;letter-spacing:.06em;text-transform:uppercase;
 }
-.fw-save.visible.idle{animation:fw-save-pulse 5s ease-in-out infinite 2s}
+/* Idle: gold glow pulse */
+.fw-save.visible.idle{animation:fw-save-pulse 4s ease-in-out infinite 1.5s}
 @keyframes fw-save-enter{from{opacity:0;transform:scale(.3)}to{opacity:1;transform:scale(1)}}
 @keyframes fw-shine-spin{to{transform:rotate(360deg)}}
 @keyframes fw-save-pulse{
-  0%,100%{box-shadow:0 4px 18px rgba(0,0,0,.25),0 0 0 0 rgba(201,162,39,.4)}
-  50%{box-shadow:0 4px 18px rgba(0,0,0,.25),0 0 0 12px rgba(201,162,39,0)}
+  0%,100%{box-shadow:0 0 8px 2px rgba(201,162,39,.2),0 4px 18px rgba(0,0,0,.3)}
+  50%{box-shadow:0 0 22px 8px rgba(201,162,39,.45),0 4px 18px rgba(0,0,0,.3)}
 }
-@media(max-width:480px){.fw-save{width:50px;height:50px}.fw-save-text span:first-child{font-size:10px}.fw-save-text span:last-child{font-size:7px}}
+@media(max-width:480px){
+  .fw-save{width:58px;height:58px}
+  .fw-save-text span:first-child{font-size:11px}
+  .fw-save-text span:last-child{font-size:6.5px}
+}
 @media(prefers-reduced-motion:reduce){
   .fw-save.visible{animation:none;opacity:1;transform:scale(1)}
   .fw-save::before{animation:none}
@@ -2810,7 +2820,7 @@ function quizReset() {
 .calc-field-tip:hover::after{
   content:attr(data-tip);position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);
   background:var(--navy);color:#fff;font-size:12px;font-weight:400;padding:10px 14px;border-radius:8px;
-  width:260px;white-space:normal;line-height:1.5;z-index:30;pointer-events:none;
+  width:260px;max-width:calc(100vw - 40px);white-space:normal;word-wrap:break-word;line-height:1.5;z-index:30;pointer-events:none;
   box-shadow:0 8px 24px rgba(0,0,0,.2);
 }
 .calc-field-tip:hover::before{
@@ -2980,8 +2990,11 @@ function quizReset() {
   .calc-chart{width:140px;height:140px}
   .calc-currency-row{gap:6px}
   .calc-currency-row input{width:70px}
-  .calc-field-tip:hover::after{width:200px;left:auto;right:-10px;transform:none}
-  .calc-field-tip:hover::before{left:auto;right:10px;transform:none}
+  .calc-field-tip:hover::after{display:none}
+  .calc-field-tip:hover::before{display:none}
+  .calc-mob-tip{position:fixed;left:12px;right:12px;bottom:20px;background:var(--navy);color:#fff;font-size:13px;line-height:1.55;padding:16px 40px 16px 18px;border-radius:12px;z-index:10010;box-shadow:0 8px 32px rgba(0,0,0,.4);animation:calcTipIn .25s ease}
+  .calc-mob-tip-x{position:absolute;top:8px;right:10px;background:none;border:none;color:rgba(255,255,255,.6);font-size:18px;cursor:pointer;padding:4px 6px;line-height:1}
+  @keyframes calcTipIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
   .hs-dropdown{max-height:280px}
   .calc-guide{font-size:11px;padding:10px 12px}
 }
@@ -3994,6 +4007,28 @@ function quizReset() {
   document.addEventListener('keydown', function(e){
     if(e.key==='Escape' && document.getElementById('calcOverlay').classList.contains('open')) closeCalcModal();
   });
+
+  /* ── Mobile tooltips (tap-based) ── */
+  (function(){
+    var isMobile = function(){ return window.innerWidth <= 640; };
+    function closeMobTip(){
+      var el = document.querySelector('.calc-mob-tip');
+      if(el) el.remove();
+    }
+    document.addEventListener('click', function(e){
+      var tip = e.target.closest('.calc-field-tip');
+      if(!tip || !isMobile()) { closeMobTip(); return; }
+      e.preventDefault(); e.stopPropagation();
+      closeMobTip();
+      var text = tip.getAttribute('data-tip');
+      if(!text) return;
+      var div = document.createElement('div');
+      div.className = 'calc-mob-tip';
+      div.innerHTML = text + '<button class="calc-mob-tip-x" onclick="this.parentElement.remove()">&times;</button>';
+      document.body.appendChild(div);
+      setTimeout(function(){ document.addEventListener('click', closeMobTip, {once:true}); }, 50);
+    }, true);
+  })();
 })();
 </script>
 <!-- /IMPORT CALCULATOR -->
