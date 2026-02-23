@@ -1527,7 +1527,7 @@
             <div class="r-info">
               <div class="r-country">Израиль</div>
               <div class="r-cities">Тель-Авив · Хайфа · Ашдод</div>
-            </div>
+          </div>
             <div style="text-align:right;">
               <div class="r-arrow">→ Бишкек</div>
               <div class="r-time">по запросу</div>
@@ -2337,77 +2337,166 @@
   .fw-save.visible.idle{animation:none}
 }
 
-/* ── Save Modal ── */
+/* ── Save Modal — premium long-form ── */
 .sm-overlay{
   position:fixed;inset:0;z-index:10001;
-  background:rgba(11,29,78,.6);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  background:rgba(11,29,78,.65);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
   display:flex;align-items:center;justify-content:center;
   opacity:0;pointer-events:none;transition:opacity .35s ease;
   padding:20px;
 }
 .sm-overlay.open{opacity:1;pointer-events:auto}
 .sm-box{
-  background:#fff;border-radius:16px;padding:40px 32px 32px;
-  max-width:520px;width:100%;max-height:90vh;overflow-y:auto;
-  box-shadow:0 32px 80px rgba(0,0,0,.35);
+  background:#fff;border-radius:18px;padding:0;
+  max-width:580px;width:100%;max-height:90vh;overflow-y:auto;overflow-x:hidden;
+  box-shadow:0 32px 80px rgba(0,0,0,.4),0 0 0 1px rgba(201,162,39,.1);
   transform:translateY(24px) scale(.97);
   transition:transform .4s cubic-bezier(.22,1,.36,1);
   position:relative;
+  scrollbar-width:thin;scrollbar-color:rgba(201,162,39,.3) transparent;
 }
+.sm-box::-webkit-scrollbar{width:5px}
+.sm-box::-webkit-scrollbar-track{background:transparent}
+.sm-box::-webkit-scrollbar-thumb{background:rgba(201,162,39,.3);border-radius:10px}
 .sm-overlay.open .sm-box{transform:translateY(0) scale(1)}
 .sm-close{
-  position:absolute;top:14px;right:16px;width:34px;height:34px;
-  border:none;background:none;cursor:pointer;display:flex;align-items:center;justify-content:center;
-  border-radius:50%;transition:background .2s;
+  position:absolute;top:14px;right:14px;width:36px;height:36px;z-index:2;
+  border:none;background:rgba(255,255,255,.15);cursor:pointer;display:flex;align-items:center;justify-content:center;
+  border-radius:50%;transition:background .2s;backdrop-filter:blur(4px);
 }
-.sm-close:hover{background:rgba(0,0,0,.06)}
-.sm-close svg{width:18px;height:18px;stroke:#999;stroke-width:2.5}
-.sm-title{font-size:22px;font-weight:800;color:var(--navy);line-height:1.25;margin:0 0 6px;letter-spacing:-.02em}
-.sm-title em{color:var(--gold);font-style:normal}
-.sm-sub{font-size:14px;color:var(--muted);margin:0 0 24px;line-height:1.55}
-.sm-divider{height:1px;background:var(--border2);margin:0 0 20px}
-.sm-points{list-style:none;padding:0;margin:0 0 24px}
-.sm-points li{
-  display:flex;gap:12px;padding:12px 0;
-  border-bottom:1px solid rgba(0,0,0,.05);font-size:14px;line-height:1.5;color:#333;
+.sm-close:hover{background:rgba(255,255,255,.3)}
+.sm-close svg{width:18px;height:18px;stroke:rgba(255,255,255,.7);stroke-width:2.5}
+/* ── Hero: dark premium header ── */
+.sm-hero{
+  background:linear-gradient(160deg,#0b1d4e 0%,#132957 50%,#0d2248 100%);
+  padding:22px 28px 18px;
+  text-align:center;
+  position:relative;overflow:hidden;
+  border-radius:18px 18px 0 0;
 }
-.sm-points li:last-child{border-bottom:none}
-.sm-num{
-  width:28px;height:28px;flex-shrink:0;border-radius:50%;
-  background:var(--navy);color:#fff;font-size:12px;font-weight:700;
-  display:flex;align-items:center;justify-content:center;margin-top:1px;
+.sm-hero::before{
+  content:'';position:absolute;top:-60%;left:-20%;width:140%;height:140%;
+  background:radial-gradient(ellipse at 30% 20%,rgba(201,162,39,.08) 0%,transparent 60%);
+  pointer-events:none;
 }
-.sm-wedo-title{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);margin:0 0 12px}
-.sm-wedo{list-style:none;padding:0;margin:0 0 24px}
-.sm-wedo li{
-  padding:8px 0 8px 22px;position:relative;
-  font-size:13.5px;line-height:1.5;color:#444;
+.sm-hero::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(201,162,39,.4),transparent);
 }
-.sm-wedo li::before{
-  content:'✓';position:absolute;left:0;color:var(--gold);font-weight:700;
+.sm-title{
+  font-size:19px;font-weight:800;color:#fff;line-height:1.3;
+  margin:0 0 8px;letter-spacing:-.01em;position:relative;
 }
-.sm-ctas{display:flex;flex-direction:column;gap:10px;margin-bottom:20px}
+.sm-title .sm-title-icon{display:inline;font-size:19px;margin-right:4px}
+.sm-hook{font-size:13px;color:rgba(255,255,255,.55);line-height:1.55;margin:0;position:relative}
+.sm-hook em{font-style:normal;color:rgba(255,255,255,.8)}
+.sm-hook-key{
+  display:block;margin-top:8px;font-size:13.5px;font-weight:600;color:#fff;line-height:1.45;
+  position:relative;
+}
+.sm-hook-key::before{
+  content:'';display:block;width:24px;height:1.5px;margin:0 auto 6px;
+  background:linear-gradient(90deg,var(--gold),var(--gold-light));border-radius:2px;
+}
+.sm-hook-key em{
+  font-style:normal;
+  background:linear-gradient(90deg,#c9a227,#e5c040);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+/* ── Body content ── */
+.sm-body{padding:28px 28px 32px}
+/* Separator */
+.sm-sep{display:flex;align-items:center;gap:14px;margin:24px 0;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--navy)}
+.sm-sep::before,.sm-sep::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(201,162,39,.25),transparent)}
+/* ── Section cards ── */
+.sm-section{
+  margin-bottom:16px;padding:22px 20px;border-radius:14px;
+  border:1px solid rgba(11,29,78,.06);
+  background:#fafbfd;
+  position:relative;overflow:hidden;
+  transition:box-shadow .25s;
+}
+.sm-section:hover{box-shadow:0 4px 20px rgba(11,29,78,.06)}
+.sm-section::before{
+  content:'';position:absolute;top:0;left:0;width:3px;height:100%;
+  background:linear-gradient(180deg,var(--gold),var(--gold-light));
+  border-radius:0 2px 2px 0;
+}
+.sm-section-head{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.sm-section-num{
+  width:28px;height:28px;flex-shrink:0;border-radius:8px;
+  background:var(--navy);color:var(--gold);font-size:12px;font-weight:800;
+  display:flex;align-items:center;justify-content:center;
+}
+.sm-section-title{font-size:14px;font-weight:700;color:var(--navy);line-height:1.35;margin:0}
+.sm-section p{font-size:13px;color:#555;line-height:1.65;margin:0 0 6px}
+.sm-section p:last-child{margin-bottom:0}
+.sm-accent{
+  display:block;margin-top:8px;padding:10px 14px;border-radius:8px;
+  background:linear-gradient(135deg,rgba(11,29,78,.03),rgba(201,162,39,.04));
+  border-left:2px solid var(--gold);
+  font-size:13px;font-weight:600;color:var(--navy);line-height:1.5;
+}
+.sm-section ul{list-style:none;padding:0;margin:6px 0 0}
+.sm-section ul li{
+  padding:5px 0 5px 22px;position:relative;
+  font-size:12.5px;line-height:1.5;color:#666;
+}
+.sm-section ul li::before{
+  content:'';position:absolute;left:8px;top:12px;
+  width:5px;height:5px;border-radius:50%;
+  background:linear-gradient(135deg,#c9a227,#e5c040);
+}
+/* ── Compare block ── */
+.sm-compare{margin:16px 0 20px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.sm-compare-col{padding:16px;border-radius:12px;font-size:12.5px;line-height:1.55}
+.sm-compare-bad{background:rgba(220,53,69,.035);border:1px solid rgba(220,53,69,.1);color:#666}
+.sm-compare-good{background:rgba(40,167,69,.035);border:1px solid rgba(40,167,69,.1);color:#444}
+.sm-compare-col strong{display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid rgba(0,0,0,.05)}
+.sm-compare-bad strong{color:#b02a37}
+.sm-compare-good strong{color:#198754}
+.sm-compare-col ul{list-style:none;padding:0;margin:0}
+.sm-compare-col ul li{padding:4px 0 4px 18px;position:relative;font-size:12.5px}
+.sm-compare-bad ul li::before{content:'✕';position:absolute;left:0;color:#b02a37;font-size:11px}
+.sm-compare-good ul li::before{content:'✓';position:absolute;left:0;color:#198754;font-size:12px;font-weight:700}
+/* Bottom statement */
+.sm-bottom{text-align:center;margin:20px 0 6px;font-size:14px;color:#555;line-height:1.55}
+.sm-bottom strong{color:var(--navy);font-size:15px}
+/* CTAs */
+.sm-ctas{display:flex;flex-direction:column;gap:10px;margin:20px 0}
 .sm-cta{
   display:block;text-align:center;text-decoration:none;
-  padding:14px 20px;border-radius:10px;font-size:14px;font-weight:700;
+  padding:15px 20px;border-radius:12px;font-size:14px;font-weight:700;
   transition:transform .15s,box-shadow .15s;
   cursor:pointer;border:none;font-family:inherit;width:100%;box-sizing:border-box;
 }
 .sm-cta:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.12)}
 .sm-cta-primary{
-  background:var(--navy);color:#fff;
+  background:linear-gradient(135deg,#0b1d4e,#132957);color:#fff;
   box-shadow:0 4px 16px rgba(11,29,78,.25);
 }
-.sm-cta-secondary{
-  background:transparent;color:var(--navy);
-  border:1.5px solid var(--border);
-}
+.sm-cta-primary:hover{box-shadow:0 8px 28px rgba(11,29,78,.35)}
+.sm-cta-secondary{background:transparent;color:var(--navy);border:1.5px solid rgba(11,29,78,.12)}
 .sm-cta-secondary:hover{border-color:var(--navy);background:rgba(11,29,78,.03)}
-.sm-disclaimer{font-size:11px;color:#999;line-height:1.5;margin:0 0 12px}
+/* Legal footer */
+.sm-legal{
+  font-size:11px;color:#999;line-height:1.55;text-align:center;margin:0;
+  padding:16px 28px 24px;
+  border-top:1px solid var(--border2);
+  background:linear-gradient(180deg,#fafbfd,#fff);
+}
+.sm-legal strong{color:#555;font-weight:600}
 @media(max-width:480px){
-  .sm-box{padding:28px 20px 24px;border-radius:14px}
-  .sm-title{font-size:19px}
-  .sm-points li{font-size:13px}
+  .sm-hero{padding:18px 16px 14px}
+  .sm-title{font-size:17px}
+  .sm-hook{font-size:12px}
+  .sm-hook-key{font-size:12.5px}
+  .sm-body{padding:20px 16px 24px}
+  .sm-section{padding:16px 14px}
+  .sm-compare{grid-template-columns:1fr;gap:8px}
+  .sm-section p,.sm-section ul li{font-size:12px}
+  .sm-legal{padding:14px 16px 20px}
 }
 </style>
 
@@ -2606,43 +2695,106 @@ function quizReset() {
 <!-- ═══ SAVE MODAL — "Как сэкономить" ═══ -->
 <div class="sm-overlay" id="saveOverlay" onclick="if(event.target===this)closeSaveModal()">
   <div class="sm-box">
-    <button class="sm-close" onclick="closeSaveModal()" aria-label="Закрыть">
-      <svg viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12"/></svg>
-    </button>
 
-    <div class="sm-title">Импорт можно сделать дорого.<br>А можно — <em>грамотно</em>.</div>
-    <p class="sm-sub">Разница — в точке оформления, структуре сделки и маршруте.</p>
-
-    <div class="sm-divider"></div>
-
-    <ol class="sm-points">
-      <li>
-        <span class="sm-num">1</span>
-        <span><strong>НДС и платежи считаются там, где оформляется импорт.</strong> Вопрос не «сколько», а где и как это оформлено документально.</span>
-      </li>
-      <li>
-        <span class="sm-num">2</span>
-        <span><strong>Неподготовленный маршрут = досмотр + простой + деньги.</strong> Один месяц «на проверке» часто стоит дороже всей «экономии на перевозчике».</span>
-      </li>
-      <li>
-        <span class="sm-num">3</span>
-        <span><strong>Таможенная стоимость должна быть обоснована заранее.</strong> Не «объясняться» после доначислений и требований.</span>
-      </li>
-    </ol>
-
-    <div class="sm-wedo-title">Что мы делаем</div>
-    <ul class="sm-wedo">
-      <li>До отгрузки проверяем: код ТН&nbsp;ВЭД, ограничения, разрешения, комплект документов.</li>
-      <li>Готовим доказательную базу по стоимости и классификации — чтобы снизить риск доначислений.</li>
-      <li>Подбираем маршрут и пост под ваш товар, чтобы минимизировать простои.</li>
-    </ul>
-
-    <div class="sm-ctas">
-      <button class="sm-cta sm-cta-primary" onclick="closeSaveModal();setTimeout(openCTA,350)">Проверить код и риски — бесплатно</button>
-      <button class="sm-cta sm-cta-secondary" onclick="closeSaveModal();setTimeout(openCTA,350)">Получить расчёт под ключ</button>
+    <!-- ── Dark premium hero ── -->
+    <div class="sm-hero">
+      <button class="sm-close" onclick="closeSaveModal()" aria-label="Закрыть">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <div class="sm-title">
+        <span class="sm-title-icon">💰</span>
+        Как сэкономить на&nbsp;импорте
+      </div>
+      <p class="sm-hook">Импорт можно сделать дорого. А&nbsp;можно — <em>управляемо</em>.</p>
+      <span class="sm-hook-key">
+        Разница не&nbsp;в&nbsp;12% и&nbsp;не&nbsp;в&nbsp;22%.<br>
+        Разница — в&nbsp;том, кто контролирует <em>базу начисления</em>.
+      </span>
     </div>
 
-    <p class="sm-disclaimer">Работаем только в правовом поле ЕАЭС и РФ. Экономия достигается за&nbsp;счёт корректной классификации, документов и маршрутизации, без сокрытия фактов и без&nbsp;«серых» схем.</p>
+    <!-- ── Body ── -->
+    <div class="sm-body">
+
+      <!-- Section 1 -->
+      <div class="sm-section">
+        <div class="sm-section-head">
+          <span class="sm-section-num">1</span>
+          <div class="sm-section-title">Купили за&nbsp;10 — должно оформляться по&nbsp;10</div>
+        </div>
+        <p>Таможня работает с&nbsp;документами. Если они выстроены слабо — начинается сопоставление. Используются:</p>
+        <ul>
+          <li>каталоги производителей</li>
+          <li>открытые ценовые источники</li>
+          <li>данные по аналогичным поставкам</li>
+        </ul>
+        <p>И тогда обсуждается уже не&nbsp;ваш инвойс, а&nbsp;«рыночный ориентир».</p>
+        <div class="sm-accent">Вопрос перестаёт быть «про&nbsp;ставку» — он&nbsp;становится про&nbsp;базу начисления. Наша задача — защитить цену сделки документально.</div>
+      </div>
+
+      <!-- Section 2 -->
+      <div class="sm-section">
+        <div class="sm-section-head">
+          <span class="sm-section-num">2</span>
+          <div class="sm-section-title">Маршрут «на авось» стоит дорого</div>
+        </div>
+        <p>Неподготовленный пост = досмотр + СВХ + запросы + простой. Каждый день — это:</p>
+        <ul>
+          <li>хранение на складе</li>
+          <li>замороженные деньги</li>
+          <li>срыв сроков</li>
+          <li>потерянная маржа</li>
+        </ul>
+        <div class="sm-accent">Экономия начинается не&nbsp;с&nbsp;фрахта. Экономия начинается с&nbsp;выбора маршрута.</div>
+      </div>
+
+      <!-- Section 3 -->
+      <div class="sm-section">
+        <div class="sm-section-head">
+          <span class="sm-section-num">3</span>
+          <div class="sm-section-title">Стоимость не&nbsp;должна «доказываться»</div>
+        </div>
+        <p>Если структура сделки не&nbsp;выстроена заранее — доказывать придётся после подачи декларации. Мы&nbsp;работаем иначе:</p>
+        <ul>
+          <li>проверяем код до отгрузки</li>
+          <li>оцениваем риски сопоставления стоимости</li>
+          <li>формируем доказательную базу</li>
+          <li>подбираем оптимальную точку оформления</li>
+        </ul>
+        <div class="sm-accent">Экономия достигается не&nbsp;снижением налогов. Экономия достигается отсутствием доначислений.</div>
+      </div>
+
+      <!-- Practice comparison -->
+      <div class="sm-sep">Что это означает на практике</div>
+
+      <div class="sm-compare">
+        <div class="sm-compare-col sm-compare-bad">
+          <strong>❌ Без подготовки</strong>
+          <ul>
+            <li>спорить после корректировок</li>
+            <li>платить с пересчитанной базы</li>
+            <li>терять время на СВХ</li>
+          </ul>
+        </div>
+        <div class="sm-compare-col sm-compare-good">
+          <strong>✅ С TE GROUP</strong>
+          <ul>
+            <li>заранее выстроить сделку</li>
+            <li>зафиксировать доказательства</li>
+            <li>оформить без пересмотра стоимости</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="sm-bottom">Вариантов несколько.<br><strong>Лучший определяется после анализа вашей сделки.</strong></p>
+
+      <div class="sm-ctas">
+        <button class="sm-cta sm-cta-primary" onclick="closeSaveModal();setTimeout(openCTA,350)">🔎 Проверить код и риски — бесплатно</button>
+        <button class="sm-cta sm-cta-secondary" onclick="closeSaveModal();setTimeout(openCTA,350)">📊 Получить расчёт под ключ</button>
+      </div>
+
+    </div><!-- /sm-body -->
+
+    <p class="sm-legal">Работаем строго в правовом поле ЕАЭС и&nbsp;РФ. Без&nbsp;занижения. Без&nbsp;фиктивных документов. Без&nbsp;«серых» схем.<br><strong>Мы не&nbsp;уменьшаем налоги. Мы&nbsp;контролируем основание для их расчёта.</strong></p>
 
   </div>
 </div>
@@ -2933,36 +3085,76 @@ function quizReset() {
   background:none;color:var(--muted);transition:border-color .2s;
 }
 .calc-cta-reset:hover{border-color:var(--gold);color:var(--navy)}
-/* ── RU vs EAEU comparison block ── */
+/* ── Collapsible insight block ── */
+.calc-insight{margin-bottom:14px;border:1px solid rgba(201,162,39,.15);border-radius:10px;overflow:hidden;background:linear-gradient(135deg,rgba(11,29,78,.02),rgba(201,162,39,.03))}
+.calc-insight-toggle{
+  cursor:pointer;padding:12px 16px;font-size:13px;font-weight:700;color:var(--navy);
+  list-style:none;display:flex;align-items:center;gap:6px;user-select:none;
+  transition:background .2s;
+}
+.calc-insight-toggle::-webkit-details-marker{display:none}
+.calc-insight-toggle::after{content:'▸';margin-left:auto;transition:transform .2s;font-size:12px;color:var(--gold)}
+.calc-insight[open] .calc-insight-toggle::after{transform:rotate(90deg)}
+.calc-insight-toggle:hover{background:rgba(201,162,39,.06)}
+.calc-insight-body{padding:0 16px 14px;font-size:12.5px;line-height:1.6;color:#555}
+.calc-insight-item{padding:6px 0 6px 12px;border-left:2px solid rgba(201,162,39,.3);margin-bottom:6px}
+.calc-insight-item strong{color:var(--navy)}
+.calc-insight-footer{padding:10px 12px;background:rgba(11,29,78,.04);border-radius:8px;margin-top:8px;font-size:12px;color:var(--navy)}
+.calc-insight-footer strong{color:var(--gold)}
+
+/* ── Risk indicators block ── */
+.calc-risks{
+  margin-top:16px;padding:16px;border-radius:12px;
+  border:1px solid rgba(11,29,78,.06);background:#fafbfd;
+}
+.calc-risks-title{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:12px;display:flex;align-items:center;gap:6px}
+.calc-risk-row{display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(0,0,0,.04);font-size:12.5px;color:#555}
+.calc-risk-row:last-of-type{border-bottom:none}
+.calc-risk-badge{
+  display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:20px;
+  font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;
+}
+.calc-risk-low{background:rgba(40,167,69,.1);color:#198754}
+.calc-risk-mid{background:rgba(255,193,7,.15);color:#8b6914}
+.calc-risk-high{background:rgba(220,53,69,.1);color:#b02a37}
+.calc-risk-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.calc-risk-low .calc-risk-dot{background:#198754}
+.calc-risk-mid .calc-risk-dot{background:#c9a227}
+.calc-risk-high .calc-risk-dot{background:#dc3545}
+.calc-risks-hint{font-size:11px;color:var(--muted);margin-top:10px;line-height:1.5}
+.calc-risks-ctas{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.calc-risks-ctas button{
+  flex:1;min-width:180px;padding:11px 14px;border-radius:10px;font-size:12.5px;font-weight:700;
+  cursor:pointer;font-family:inherit;border:none;transition:transform .15s,box-shadow .15s;
+}
+.calc-risks-ctas button:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(0,0,0,.1)}
+.calc-risks-cta-primary{background:var(--navy);color:#fff}
+.calc-risks-cta-secondary{background:transparent;color:var(--navy);border:1.5px solid rgba(11,29,78,.12) !important}
+
+/* ── Preparation comparison ── */
 .calc-compare{
   margin-top:20px;padding:20px;border-radius:12px;
   background:linear-gradient(135deg,rgba(11,29,78,.03),rgba(201,162,39,.04));
   border:1px solid rgba(201,162,39,.15);
 }
-.calc-compare-title{font-size:14px;font-weight:700;color:var(--navy);text-align:center;margin-bottom:16px}
+.calc-compare-title{font-size:14px;font-weight:700;color:var(--navy);text-align:center;margin-bottom:4px}
+.calc-compare-subtitle{font-size:11px;color:var(--muted);text-align:center;margin-bottom:14px;line-height:1.4}
 .calc-compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .calc-compare-col{padding:14px;border-radius:10px;font-size:12px}
-.calc-compare-ru{background:rgba(220,53,69,.04);border:1px solid rgba(220,53,69,.12)}
-.calc-compare-kg{background:rgba(40,167,69,.04);border:1px solid rgba(40,167,69,.12)}
+.calc-compare-bad{background:rgba(220,53,69,.04);border:1px solid rgba(220,53,69,.12)}
+.calc-compare-good{background:rgba(40,167,69,.04);border:1px solid rgba(40,167,69,.12)}
 .calc-compare-hdr{font-size:12px;font-weight:700;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid rgba(0,0,0,.06)}
-.calc-compare-ru .calc-compare-hdr{color:#b02a37}
-.calc-compare-kg .calc-compare-hdr{color:#198754}
+.calc-compare-bad .calc-compare-hdr{color:#b02a37}
+.calc-compare-good .calc-compare-hdr{color:#198754}
 .calc-compare-item{display:flex;justify-content:space-between;align-items:center;padding:4px 0;font-size:12px;color:#555}
 .calc-compare-item strong{color:var(--navy);font-size:12px}
 .calc-compare-total{display:flex;justify-content:space-between;align-items:center;padding-top:8px;margin-top:6px;border-top:1.5px solid rgba(0,0,0,.08);font-weight:700}
-.calc-compare-ru .calc-compare-total strong{color:#b02a37;font-size:14px}
-.calc-compare-kg .calc-compare-total strong{color:#198754;font-size:14px}
-.calc-compare-savings{
-  margin-top:14px;padding:12px 16px;border-radius:10px;text-align:center;
-  background:linear-gradient(135deg,#198754,#28a745);color:#fff;font-size:14px;font-weight:600;
-}
-.calc-compare-savings strong{font-size:18px;margin:0 4px}
-.calc-compare-pct{display:inline-block;background:rgba(255,255,255,.2);padding:2px 8px;border-radius:20px;font-size:12px;font-weight:700;margin-left:6px}
+.calc-compare-bad .calc-compare-total strong{color:#b02a37;font-size:14px}
+.calc-compare-good .calc-compare-total strong{color:#198754;font-size:14px}
 .calc-compare-note{font-size:10px;color:var(--muted);margin-top:10px;text-align:center;line-height:1.4}
 @media(max-width:480px){
   .calc-compare-grid{grid-template-columns:1fr}
   .calc-compare-title{font-size:13px}
-  .calc-compare-savings strong{font-size:16px}
 }
 .calc-disclaimer{font-size:11px;color:var(--muted);margin-top:12px;line-height:1.5;text-align:center}
 
@@ -3028,6 +3220,12 @@ function quizReset() {
   @keyframes calcTipIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
   .hs-dropdown{max-height:280px}
   .calc-guide{font-size:11px;padding:10px 12px}
+  .calc-insight-toggle{font-size:12px;padding:10px 12px}
+  .calc-insight-body{font-size:12px;padding:0 12px 12px}
+  .calc-risks{padding:12px}
+  .calc-risk-row{flex-wrap:wrap;gap:4px;font-size:12px}
+  .calc-risks-ctas button{font-size:12px;min-width:140px}
+  .calc-compare-grid{grid-template-columns:1fr}
 }
 </style>
 
@@ -3038,7 +3236,7 @@ function quizReset() {
     </button>
 
     <div class="calc-title">🧮 Калькулятор стоимости импорта</div>
-    <p class="calc-sub">Расчёт стоимости импорта через ЕАЭС (Кыргызстан) с НДС 12% — и сравнение с растаможкой напрямую в России (НДС 22%)</p>
+    <p class="calc-sub">Ориентир по платежам и доставке. Главная экономия — не «сэкономить на перевозчике», а не попасть на доначисления, простой и штрафы.</p>
 
     <!-- Tabs -->
     <div class="calc-tabs">
@@ -3056,6 +3254,25 @@ function quizReset() {
           <strong>Первый раз?</strong> Заполните 3 поля — <strong>страна</strong>, <strong>стоимость товара</strong> и <strong>категория</strong> — и нажмите «Рассчитать». Остальные поля необязательны, но повышают точность. Наведите на <span style="display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;border-radius:50%;background:rgba(201,162,39,.15);color:var(--gold);font-size:8px;font-weight:800;">?</span> рядом с каждым полем для подробностей.
         </div>
       </div>
+
+      <!-- Collapsible insight block -->
+      <details class="calc-insight">
+        <summary class="calc-insight-toggle">⚡ Где теряются деньги на импорте</summary>
+        <div class="calc-insight-body">
+          <div class="calc-insight-item">
+            <strong>1. База для платежей.</strong> Если документы слабые — вам могут предложить ориентироваться на «каталоги / аналогичные товары / справочники». Вопрос перестаёт быть «про ставку» — он становится про базу начисления.
+          </div>
+          <div class="calc-insight-item">
+            <strong>2. Маршрут.</strong> Неподготовленный пост = досмотр + простой + непредсказуемые расходы. Каждый день — это хранение, замороженные деньги и сорванные сроки.
+          </div>
+          <div class="calc-insight-item">
+            <strong>3. ТН ВЭД.</strong> Ошибка в коде = лишние платежи + риски по разрешительным документам. Часто это стоит дороже самой доставки.
+          </div>
+          <div class="calc-insight-footer">
+            <strong>Что делаем мы:</strong> до отгрузки проверяем ТН ВЭД, пакет документов, ограничения и маршрут. Это снижает риск корректировок и простоя.
+          </div>
+        </div>
+      </details>
 
       <div class="calc-form">
         <div class="calc-row">
@@ -3232,7 +3449,7 @@ function quizReset() {
           <p style="font-size:11px;color:var(--muted);margin-top:8px;line-height:1.4">
             <strong>⚖️ Как перевозчики считают вес:</strong> стоимость рассчитывается по большему значению — фактический или объёмный вес. Авиа: 1 м³ = 167 кг. Авто/ЖД: 1 м³ = 200 кг. Море: строго по объёму (м³).
           </p>
-          <p style="font-size:11px;color:var(--muted);margin-top:4px;">Расчёт ориентировочный. Финальная стоимость зависит от маршрута, сезона, плотности груза и таможенного режима.</p>
+          <p style="font-size:11px;color:var(--muted);margin-top:4px;line-height:1.4">Ориентир при таких вводных. Финальная ставка зависит от класса груза, упаковки, плотности, сезонности, маршрута и наличия мест.</p>
 
           <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px">
             <button class="calc-btn" style="background:var(--navy);color:#fff;font-size:13px;padding:12px;flex:1;min-width:200px" onclick="useDeliveryPrice()">
@@ -3309,7 +3526,7 @@ function quizReset() {
               <span class="calc-line-val"><span id="crDuty">—</span> <span class="calc-line-rub" id="crDutyr"></span></span>
             </div>
             <div class="calc-line">
-              <span class="calc-line-label"><span class="calc-lbl-text">НДС (12% — КР)</span> <span class="calc-info" data-tip="(CIF + пошлина) × 12%. В Кыргызстане НДС 12% вместо 22% (РФ). Это одно из ключевых преимуществ оформления через ЕАЭС.">?</span></span>
+              <span class="calc-line-label"><span class="calc-lbl-text">НДС</span> <span class="calc-info" data-tip="(CIF + пошлина) × ставка НДС. Ставка зависит от юрисдикции оформления.">?</span></span>
               <span class="calc-line-val"><span id="crVAT">—</span> <span class="calc-line-rub" id="crVATr"></span></span>
             </div>
             <div class="calc-line calc-line-section">
@@ -3344,32 +3561,61 @@ function quizReset() {
             <button class="calc-cta-reset" onclick="resetCalc()">🔄 Рассчитать другой товар</button>
           </div>
         </div>
-        <!-- ── RU vs EAEU comparison ── -->
-        <div id="calcCompare" class="calc-compare" style="display:none;">
-          <div class="calc-compare-title">📊 Сравнение: Россия напрямую vs через ЕАЭС (Кыргызстан)</div>
-          <div class="calc-compare-grid">
-            <div class="calc-compare-col calc-compare-ru">
-              <div class="calc-compare-hdr">🇷🇺 Напрямую в Россию</div>
-              <div class="calc-compare-item"><span>Пошлина</span><strong id="cmpRuDuty">—</strong></div>
-              <div class="calc-compare-item"><span>НДС (22%)</span><strong id="cmpRuVat">—</strong></div>
-              <div class="calc-compare-item"><span>Брокер, услуги</span><strong id="cmpRuExtra">—</strong></div>
-              <div class="calc-compare-total"><span>Итого</span><strong id="cmpRuTotal">—</strong></div>
-            </div>
-            <div class="calc-compare-col calc-compare-kg">
-              <div class="calc-compare-hdr">🇰🇬 Через ЕАЭС (TE GROUP)</div>
-              <div class="calc-compare-item"><span>Пошлина</span><strong id="cmpKgDuty">—</strong></div>
-              <div class="calc-compare-item"><span>НДС (12%)</span><strong id="cmpKgVat">—</strong></div>
-              <div class="calc-compare-item"><span>Брокер, услуги</span><strong id="cmpKgExtra">—</strong></div>
-              <div class="calc-compare-total"><span>Итого</span><strong id="cmpKgTotal">—</strong></div>
-            </div>
+        <!-- ── Risk indicators ── -->
+        <div id="calcRisks" class="calc-risks" style="display:none;">
+          <div class="calc-risks-title">⚠️ Риски, которые чаще всего дороже доставки</div>
+          <div class="calc-risk-row">
+            <span>Риск корректировки таможенной стоимости</span>
+            <span class="calc-risk-badge" id="riskCTS"><span class="calc-risk-dot"></span> —</span>
           </div>
-          <div class="calc-compare-savings" id="cmpSavings">
-            💰 Ваша экономия: <strong id="cmpSaveUsd">—</strong> <span id="cmpSaveRub" class="calc-line-rub"></span> <span class="calc-compare-pct" id="cmpSavePct"></span>
+          <div class="calc-risk-row">
+            <span>Риск простоя на досмотре</span>
+            <span class="calc-risk-badge" id="riskDelay"><span class="calc-risk-dot"></span> —</span>
           </div>
-          <div class="calc-compare-note">* Пошлина по единому тарифу ЕАЭС одинакова. Экономия складывается из разницы НДС (22% → 12%) и стоимости таможенных услуг.</div>
+          <p id="riskWarning" class="calc-risks-hint" style="display:none"></p>
+          <div class="calc-risks-ctas">
+            <button class="calc-risks-cta-primary" onclick="closeCalcModal();setTimeout(openCTA,350)">🔎 Проверить ТН ВЭД и документы — бесплатно</button>
+            <button class="calc-risks-cta-secondary" onclick="closeCalcModal();setTimeout(openCTA,350)">📊 Получить расчёт под ключ</button>
+          </div>
         </div>
 
-        <p class="calc-disclaimer">Расчёт ориентировочный. Финальная стоимость зависит от маршрута, сезона, плотности груза и таможенного режима. Фактические ставки определяются точным HS-кодом, страной происхождения и размером партии. Мы подготовим точное КП за 1–2 часа.</p>
+        <!-- ── Preparation comparison ── -->
+        <div id="calcCompare" class="calc-compare" style="display:none;">
+          <div class="calc-compare-title">📊 Без подготовки vs Под ключ с подготовкой</div>
+          <div class="calc-compare-subtitle">Сравнение показывает не «скидку», а управляемость базы, документов и рисков корректировки.</div>
+          <div class="calc-compare-grid">
+            <div class="calc-compare-col calc-compare-bad">
+              <div class="calc-compare-hdr">❌ Самостоятельно / без подготовки</div>
+              <div class="calc-compare-item"><span>Платежи</span><strong id="cmpBadPayments">—</strong></div>
+              <div class="calc-compare-item"><span>Риск КТС</span><strong id="cmpBadCTS">—</strong></div>
+              <div class="calc-compare-item"><span>Риск простоя</span><strong id="cmpBadDelay">—</strong></div>
+              <div class="calc-compare-total"><span>Предсказуемость</span><strong style="color:#b02a37">Низкая</strong></div>
+            </div>
+            <div class="calc-compare-col calc-compare-good">
+              <div class="calc-compare-hdr">✅ Под ключ с TE GROUP</div>
+              <div class="calc-compare-item"><span>Платежи</span><strong id="cmpGoodPayments">—</strong></div>
+              <div class="calc-compare-item"><span>Риск КТС</span><strong id="cmpGoodCTS">Низкий</strong></div>
+              <div class="calc-compare-item"><span>Риск простоя</span><strong id="cmpGoodDelay">Низкий</strong></div>
+              <div class="calc-compare-total"><span>Предсказуемость</span><strong style="color:#198754">Высокая</strong></div>
+            </div>
+          </div>
+          <div class="calc-compare-note">Мы не уменьшаем налоги. Мы контролируем основание для их расчёта — через ТН ВЭД, документы и маршрут.</div>
+        </div>
+
+        <!-- ── Motivational summary ── -->
+        <div class="calc-insight" style="margin-top:16px">
+          <div class="calc-insight-toggle" style="pointer-events:none;cursor:default">
+            <span>ℹ️ Импорт можно сделать дорого. А можно — грамотно.</span>
+          </div>
+          <div class="calc-insight-body" style="display:block;padding-top:0">
+            <p style="margin:0 0 6px;color:var(--navy);font-weight:600;">Разница — в документах, ТН ВЭД и маршруте: именно там чаще всего возникают доначисления и простой.</p>
+            <p style="margin:0;font-size:11.5px;">
+              <strong>Что поможет:</strong> проверка кода ТН ВЭД • подбор маршрута и поста • подготовка доказательной базы • формирование списка документов
+            </p>
+          </div>
+        </div>
+
+        <p class="calc-disclaimer">Расчёт ориентировочный. Итог зависит от ТН ВЭД, документов, условий поставки и маршрута. Работаем в правовом поле — экономия за счёт классификации, документов и маршрута. Мы подготовим точное КП за 1–2 часа.</p>
       </div>
     </div>
 
@@ -3536,10 +3782,7 @@ function quizReset() {
     general:{avg:0.10}
   };
 
-  var VAT_KG = 0.12;  /* НДС Кыргызстан (ЕАЭС) — 12% */
-  var VAT_RU = 0.22;  /* НДС Россия — 22% */
-  var VAT_RATE = VAT_KG;  /* Калькулятор считает через ЕАЭС */
-  var EXTRA_RU_MARKUP = 350;  /* Доп. стоимость услуг при растаможке напрямую в РФ, $ */
+  var VAT_RATE = 0.12;  /* НДС — ставка зависит от юрисдикции оформления */
 
   /* ─── Delivery rates (per kg or per m³ for sea) by country × mode ─── */
   var DEL_RATES = {
@@ -3713,7 +3956,7 @@ function quizReset() {
     '#e5c040', /* VAT — light gold */
     '#8e8e93'  /* Extra — gray */
   ];
-  var CHART_LABELS = ['Товар (FOB)','Доставка','Страховка','Пошлина','НДС (12%)','Доп. расходы'];
+  var CHART_LABELS = ['Товар (FOB)','Доставка','Страховка','Пошлина','НДС','Доп. расходы'];
 
   /* ─── RUB formatter ─── */
   function getRubRate(){ return parseFloat(document.getElementById('calcRubRate').value) || 92; }
@@ -3811,24 +4054,12 @@ function quizReset() {
     }
 
     var duty  = cif * dutyRate;
+    var vat   = (cif + duty) * VAT_RATE;
+    var total = cif + duty + vat + extra;
 
-    /* ─── КР (ЕАЭС) — НДС 12% ─── */
-    var vatKg    = (cif + duty) * VAT_KG;
-    var totalKg  = cif + duty + vatKg + extra;
-
-    /* ─── РФ напрямую — НДС 22%, доп. расходы выше ─── */
-    var vatRu    = (cif + duty) * VAT_RU;
-    var extraRu  = extra + EXTRA_RU_MARKUP;
-    var totalRu  = cif + duty + vatRu + extraRu;
-
-    /* В калькуляторе показываем ЕАЭС вариант */
-    var vat   = vatKg;
-    var total = totalKg;
-
-    /* Store for RUB recalc + copy + comparison */
+    /* Store for RUB recalc + copy */
     lastCalc = {fob:fob, freight:freight, insurance:insurance, cif:cif,
-                duty:duty, dutyRate:dutyRate, vat:vat, extra:extra, total:total, weight:weight,
-                vatRu:vatRu, extraRu:extraRu, totalRu:totalRu, totalKg:totalKg};
+                duty:duty, dutyRate:dutyRate, vat:vat, extra:extra, total:total, weight:weight};
 
     /* Fill USD values */
     document.getElementById('crFOB').textContent       = '$'+fmt(fob);
@@ -3853,22 +4084,48 @@ function quizReset() {
     /* Build donut chart */
     buildChart([fob, freight, insurance, duty, vat, extra], total);
 
-    /* ─── Fill RU vs EAEU comparison ─── */
-    var r = getRubRate();
-    document.getElementById('cmpRuDuty').textContent   = '$'+fmt(duty);
-    document.getElementById('cmpRuVat').textContent     = '$'+fmt(vatRu);
-    document.getElementById('cmpRuExtra').textContent   = '$'+fmt(extraRu);
-    document.getElementById('cmpRuTotal').textContent   = '$'+fmt(totalRu);
-    document.getElementById('cmpKgDuty').textContent   = '$'+fmt(duty);
-    document.getElementById('cmpKgVat').textContent     = '$'+fmt(vatKg);
-    document.getElementById('cmpKgExtra').textContent   = '$'+fmt(extra);
-    document.getElementById('cmpKgTotal').textContent   = '$'+fmt(totalKg);
+    /* ─── Risk indicators ─── */
+    var hsVal = (hsEl.value||'').replace(/\s/g,'');
+    var hasHS = (hsEl.dataset.selectedRate !== undefined && hsEl.dataset.selectedRate !== '') || hsVal.length >= 4;
+    var isGeneral = (category === 'general');
+    var riskyCategories = ['food_raw','food_processed','food_beverages','auto_vehicles','chemicals_cosm','textiles_garments','textiles_shoes'];
+    var isRiskyCat = riskyCategories.indexOf(category) !== -1;
 
-    var saved = totalRu - totalKg;
-    var pct   = totalRu > 0 ? Math.round(saved/totalRu*100) : 0;
-    document.getElementById('cmpSaveUsd').textContent = '$'+fmt(saved);
-    document.getElementById('cmpSaveRub').textContent = '('+fmt(saved*r)+' ₽)';
-    document.getElementById('cmpSavePct').textContent = '−'+pct+'%';
+    /* CTS risk: no HS + general category = high; no HS = medium; HS present = low */
+    var ctsRisk = 'low';
+    if(!hasHS && isGeneral) ctsRisk = 'high';
+    else if(!hasHS) ctsRisk = 'mid';
+
+    /* Delay risk: risky category + no HS = high; risky OR no HS = medium */
+    var delayRisk = 'low';
+    if(isRiskyCat && !hasHS) delayRisk = 'high';
+    else if(isRiskyCat || !hasHS) delayRisk = 'mid';
+
+    var riskLabels = {low:'Низкий',mid:'Средний',high:'Высокий'};
+
+    function setRisk(el,level){
+      el.className = 'calc-risk-badge calc-risk-'+level;
+      el.innerHTML = '<span class="calc-risk-dot"></span> '+riskLabels[level];
+    }
+    setRisk(document.getElementById('riskCTS'), ctsRisk);
+    setRisk(document.getElementById('riskDelay'), delayRisk);
+
+    var warnEl = document.getElementById('riskWarning');
+    if(ctsRisk !== 'low' || delayRisk !== 'low'){
+      warnEl.textContent = 'Если код ТН ВЭД и пакет документов не подтверждены заранее, возрастает риск запросов по стоимости и классификации. Это влияет на сроки и итоговые расходы.';
+      warnEl.style.display = 'block';
+    } else {
+      warnEl.style.display = 'none';
+    }
+    document.getElementById('calcRisks').style.display = 'block';
+
+    /* ─── Preparation comparison ─── */
+    document.getElementById('cmpBadPayments').textContent = '$'+fmt(total)+' (ориентир)';
+    document.getElementById('cmpBadCTS').textContent = riskLabels[ctsRisk];
+    document.getElementById('cmpBadCTS').style.color = ctsRisk==='high'?'#b02a37':ctsRisk==='mid'?'#8b6914':'#198754';
+    document.getElementById('cmpBadDelay').textContent = riskLabels[delayRisk];
+    document.getElementById('cmpBadDelay').style.color = delayRisk==='high'?'#b02a37':delayRisk==='mid'?'#8b6914':'#198754';
+    document.getElementById('cmpGoodPayments').textContent = '$'+fmt(total)+' (ориентир)';
     document.getElementById('calcCompare').style.display = 'block';
 
     document.getElementById('calcNoResult').style.display = 'none';
@@ -3883,8 +4140,6 @@ function quizReset() {
     if(!lastCalc) return;
     var d = lastCalc;
     var r = getRubRate();
-    var savedUsd = (d.totalRu||0) - (d.totalKg||d.total);
-    var savedPct = (d.totalRu && d.totalRu > 0) ? Math.round(savedUsd/d.totalRu*100) : 0;
     var lines = [
       '📋 РАСЧЁТ ИМПОРТА — TE GROUP',
       '━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
@@ -3896,17 +4151,15 @@ function quizReset() {
       '  ─────────────────',
       '  Тамож. стоимость: $'+fmt(d.cif)+'  ('+fmt(d.cif*r)+' ₽)',
       '',
-      '🏛️ Таможенные платежи (ЕАЭС, НДС 12%)',
+      '🏛️ Таможенные платежи',
       '  Пошлина ('+(d.dutyRate*100).toFixed(1)+'%): $'+fmt(d.duty)+'  ('+fmt(d.duty*r)+' ₽)',
-      '  НДС (12%):        $'+fmt(d.vat)+'  ('+fmt(d.vat*r)+' ₽)',
+      '  НДС:              $'+fmt(d.vat)+'  ('+fmt(d.vat*r)+' ₽)',
       '',
       '📎 Дополнительно',
       '  Брокер/склад:     '+(d.extra > 0 ? '$'+fmt(d.extra)+'  ('+fmt(d.extra*r)+' ₽)' : '—'),
       '',
       '━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
-      '✅ ИТОГО через ЕАЭС: $'+fmt(d.total)+'  ('+fmt(d.total*r)+' ₽)',
-      '❌ Было бы в РФ:     $'+fmt(d.totalRu||0)+'  ('+fmt((d.totalRu||0)*r)+' ₽)',
-      '💰 Экономия:         $'+fmt(savedUsd)+'  ('+fmt(savedUsd*r)+' ₽) — '+savedPct+'%'
+      '💰 ИТОГО (ориентир): $'+fmt(d.total)+'  ('+fmt(d.total*r)+' ₽)'
     ];
     if(d.weight > 0){
       lines.push('   На 1 кг: $'+fmt2(d.total/d.weight)+'/кг  ('+fmt(d.total/d.weight*r)+' ₽/кг)');
@@ -4000,10 +4253,15 @@ function quizReset() {
         unit = fmt(chargeWeight)+' кг × $'+fmt2(rate)+'/кг';
       }
 
+      /* Show price as a range (±15%) instead of exact number */
+      var priceLow = Math.round(basePrice * 0.85);
+      var priceHigh = Math.round(basePrice * 1.15);
+      var priceDisplay = '$'+fmt(priceLow)+' – $'+fmt(priceHigh);
+
       html += '<div class="calc-del-opt" data-mode="'+mode+'" data-price="'+basePrice.toFixed(0)+'" data-cw="'+(chargeWeight||0)+'" onclick="selectDelMode(this)">'+
               '<div class="calc-del-opt-mode">'+DEL_MODE_LABELS[mode]+'</div>'+
               '<div class="calc-del-opt-time">'+times[mode]+'</div>'+
-              '<div class="calc-del-opt-price">$'+fmt(basePrice)+'</div>'+
+              '<div class="calc-del-opt-price">'+priceDisplay+'</div>'+
               '<div class="calc-del-opt-unit">'+unit+'</div>'+
               '</div>';
     });
@@ -4093,6 +4351,8 @@ function quizReset() {
     if(chartWrap) chartWrap.style.display = 'none';
     var cmpEl = document.getElementById('calcCompare');
     if(cmpEl) cmpEl.style.display = 'none';
+    var riskEl = document.getElementById('calcRisks');
+    if(riskEl) riskEl.style.display = 'none';
     document.getElementById('calcNoResult').style.display = '';
     document.getElementById('calcHasResult').style.display = 'none';
     calcSwitchTab('customs');
