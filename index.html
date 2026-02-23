@@ -2293,16 +2293,16 @@
   opacity:1;transform:scale(1);pointer-events:auto;
   animation:fw-save-enter .6s cubic-bezier(.22,1,.36,1) forwards;
 }
-/* Outer spinning gold ring */
+/* Outer spinning gold ring — thin elegant */
 .fw-save::before{
-  content:'';position:absolute;inset:-5px;border-radius:50%;z-index:-1;
+  content:'';position:absolute;inset:-3px;border-radius:50%;z-index:-1;
   background:conic-gradient(from 0deg,transparent 0%,#c9a227 20%,#e5c040 40%,#fff8 50%,#e5c040 60%,#c9a227 80%,transparent 100%);
   animation:fw-shine-spin 3s linear infinite;
   opacity:.9;
 }
 /* Inner dark circle (the button face) */
 .fw-save::after{
-  content:'';position:absolute;inset:2px;border-radius:50%;z-index:0;
+  content:'';position:absolute;inset:1px;border-radius:50%;z-index:0;
   background:radial-gradient(circle at 35% 35%,#132957,#0b1d4e 60%,#071536);
   border:1.5px solid rgba(201,162,39,.45);
   box-shadow:inset 0 1px 3px rgba(255,255,255,.08),0 2px 12px rgba(0,0,0,.4);
@@ -2933,6 +2933,37 @@ function quizReset() {
   background:none;color:var(--muted);transition:border-color .2s;
 }
 .calc-cta-reset:hover{border-color:var(--gold);color:var(--navy)}
+/* ── RU vs EAEU comparison block ── */
+.calc-compare{
+  margin-top:20px;padding:20px;border-radius:12px;
+  background:linear-gradient(135deg,rgba(11,29,78,.03),rgba(201,162,39,.04));
+  border:1px solid rgba(201,162,39,.15);
+}
+.calc-compare-title{font-size:14px;font-weight:700;color:var(--navy);text-align:center;margin-bottom:16px}
+.calc-compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.calc-compare-col{padding:14px;border-radius:10px;font-size:12px}
+.calc-compare-ru{background:rgba(220,53,69,.04);border:1px solid rgba(220,53,69,.12)}
+.calc-compare-kg{background:rgba(40,167,69,.04);border:1px solid rgba(40,167,69,.12)}
+.calc-compare-hdr{font-size:12px;font-weight:700;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid rgba(0,0,0,.06)}
+.calc-compare-ru .calc-compare-hdr{color:#b02a37}
+.calc-compare-kg .calc-compare-hdr{color:#198754}
+.calc-compare-item{display:flex;justify-content:space-between;align-items:center;padding:4px 0;font-size:12px;color:#555}
+.calc-compare-item strong{color:var(--navy);font-size:12px}
+.calc-compare-total{display:flex;justify-content:space-between;align-items:center;padding-top:8px;margin-top:6px;border-top:1.5px solid rgba(0,0,0,.08);font-weight:700}
+.calc-compare-ru .calc-compare-total strong{color:#b02a37;font-size:14px}
+.calc-compare-kg .calc-compare-total strong{color:#198754;font-size:14px}
+.calc-compare-savings{
+  margin-top:14px;padding:12px 16px;border-radius:10px;text-align:center;
+  background:linear-gradient(135deg,#198754,#28a745);color:#fff;font-size:14px;font-weight:600;
+}
+.calc-compare-savings strong{font-size:18px;margin:0 4px}
+.calc-compare-pct{display:inline-block;background:rgba(255,255,255,.2);padding:2px 8px;border-radius:20px;font-size:12px;font-weight:700;margin-left:6px}
+.calc-compare-note{font-size:10px;color:var(--muted);margin-top:10px;text-align:center;line-height:1.4}
+@media(max-width:480px){
+  .calc-compare-grid{grid-template-columns:1fr}
+  .calc-compare-title{font-size:13px}
+  .calc-compare-savings strong{font-size:16px}
+}
 .calc-disclaimer{font-size:11px;color:var(--muted);margin-top:12px;line-height:1.5;text-align:center}
 
 /* ── Donut chart ── */
@@ -3007,7 +3038,7 @@ function quizReset() {
     </button>
 
     <div class="calc-title">🧮 Калькулятор стоимости импорта</div>
-    <p class="calc-sub">Ориентировочный расчёт полной стоимости ввоза товара в Россию через ЕАЭС — пошлины, НДС, доставка, сборы</p>
+    <p class="calc-sub">Расчёт стоимости импорта через ЕАЭС (Кыргызстан) с НДС 12% — и сравнение с растаможкой напрямую в России (НДС 22%)</p>
 
     <!-- Tabs -->
     <div class="calc-tabs">
@@ -3278,7 +3309,7 @@ function quizReset() {
               <span class="calc-line-val"><span id="crDuty">—</span> <span class="calc-line-rub" id="crDutyr"></span></span>
             </div>
             <div class="calc-line">
-              <span class="calc-line-label"><span class="calc-lbl-text">НДС (20%)</span> <span class="calc-info" data-tip="(CIF + пошлина) × 20%">?</span></span>
+              <span class="calc-line-label"><span class="calc-lbl-text">НДС (12% — КР)</span> <span class="calc-info" data-tip="(CIF + пошлина) × 12%. В Кыргызстане НДС 12% вместо 22% (РФ). Это одно из ключевых преимуществ оформления через ЕАЭС.">?</span></span>
               <span class="calc-line-val"><span id="crVAT">—</span> <span class="calc-line-rub" id="crVATr"></span></span>
             </div>
             <div class="calc-line calc-line-section">
@@ -3313,6 +3344,31 @@ function quizReset() {
             <button class="calc-cta-reset" onclick="resetCalc()">🔄 Рассчитать другой товар</button>
           </div>
         </div>
+        <!-- ── RU vs EAEU comparison ── -->
+        <div id="calcCompare" class="calc-compare" style="display:none;">
+          <div class="calc-compare-title">📊 Сравнение: Россия напрямую vs через ЕАЭС (Кыргызстан)</div>
+          <div class="calc-compare-grid">
+            <div class="calc-compare-col calc-compare-ru">
+              <div class="calc-compare-hdr">🇷🇺 Напрямую в Россию</div>
+              <div class="calc-compare-item"><span>Пошлина</span><strong id="cmpRuDuty">—</strong></div>
+              <div class="calc-compare-item"><span>НДС (22%)</span><strong id="cmpRuVat">—</strong></div>
+              <div class="calc-compare-item"><span>Брокер, услуги</span><strong id="cmpRuExtra">—</strong></div>
+              <div class="calc-compare-total"><span>Итого</span><strong id="cmpRuTotal">—</strong></div>
+            </div>
+            <div class="calc-compare-col calc-compare-kg">
+              <div class="calc-compare-hdr">🇰🇬 Через ЕАЭС (TE GROUP)</div>
+              <div class="calc-compare-item"><span>Пошлина</span><strong id="cmpKgDuty">—</strong></div>
+              <div class="calc-compare-item"><span>НДС (12%)</span><strong id="cmpKgVat">—</strong></div>
+              <div class="calc-compare-item"><span>Брокер, услуги</span><strong id="cmpKgExtra">—</strong></div>
+              <div class="calc-compare-total"><span>Итого</span><strong id="cmpKgTotal">—</strong></div>
+            </div>
+          </div>
+          <div class="calc-compare-savings" id="cmpSavings">
+            💰 Ваша экономия: <strong id="cmpSaveUsd">—</strong> <span id="cmpSaveRub" class="calc-line-rub"></span> <span class="calc-compare-pct" id="cmpSavePct"></span>
+          </div>
+          <div class="calc-compare-note">* Пошлина по единому тарифу ЕАЭС одинакова. Экономия складывается из разницы НДС (22% → 12%) и стоимости таможенных услуг.</div>
+        </div>
+
         <p class="calc-disclaimer">Расчёт ориентировочный. Финальная стоимость зависит от маршрута, сезона, плотности груза и таможенного режима. Фактические ставки определяются точным HS-кодом, страной происхождения и размером партии. Мы подготовим точное КП за 1–2 часа.</p>
       </div>
     </div>
@@ -3480,7 +3536,10 @@ function quizReset() {
     general:{avg:0.10}
   };
 
-  var VAT_RATE = 0.20;
+  var VAT_KG = 0.12;  /* НДС Кыргызстан (ЕАЭС) — 12% */
+  var VAT_RU = 0.22;  /* НДС Россия — 22% */
+  var VAT_RATE = VAT_KG;  /* Калькулятор считает через ЕАЭС */
+  var EXTRA_RU_MARKUP = 350;  /* Доп. стоимость услуг при растаможке напрямую в РФ, $ */
 
   /* ─── Delivery rates (per kg or per m³ for sea) by country × mode ─── */
   var DEL_RATES = {
@@ -3654,7 +3713,7 @@ function quizReset() {
     '#e5c040', /* VAT — light gold */
     '#8e8e93'  /* Extra — gray */
   ];
-  var CHART_LABELS = ['Товар (FOB)','Доставка','Страховка','Пошлина','НДС (20%)','Доп. расходы'];
+  var CHART_LABELS = ['Товар (FOB)','Доставка','Страховка','Пошлина','НДС (12%)','Доп. расходы'];
 
   /* ─── RUB formatter ─── */
   function getRubRate(){ return parseFloat(document.getElementById('calcRubRate').value) || 92; }
@@ -3752,12 +3811,24 @@ function quizReset() {
     }
 
     var duty  = cif * dutyRate;
-    var vat   = (cif + duty) * VAT_RATE;
-    var total = cif + duty + vat + extra;
 
-    /* Store for RUB recalc + copy */
+    /* ─── КР (ЕАЭС) — НДС 12% ─── */
+    var vatKg    = (cif + duty) * VAT_KG;
+    var totalKg  = cif + duty + vatKg + extra;
+
+    /* ─── РФ напрямую — НДС 22%, доп. расходы выше ─── */
+    var vatRu    = (cif + duty) * VAT_RU;
+    var extraRu  = extra + EXTRA_RU_MARKUP;
+    var totalRu  = cif + duty + vatRu + extraRu;
+
+    /* В калькуляторе показываем ЕАЭС вариант */
+    var vat   = vatKg;
+    var total = totalKg;
+
+    /* Store for RUB recalc + copy + comparison */
     lastCalc = {fob:fob, freight:freight, insurance:insurance, cif:cif,
-                duty:duty, dutyRate:dutyRate, vat:vat, extra:extra, total:total, weight:weight};
+                duty:duty, dutyRate:dutyRate, vat:vat, extra:extra, total:total, weight:weight,
+                vatRu:vatRu, extraRu:extraRu, totalRu:totalRu, totalKg:totalKg};
 
     /* Fill USD values */
     document.getElementById('crFOB').textContent       = '$'+fmt(fob);
@@ -3782,6 +3853,24 @@ function quizReset() {
     /* Build donut chart */
     buildChart([fob, freight, insurance, duty, vat, extra], total);
 
+    /* ─── Fill RU vs EAEU comparison ─── */
+    var r = getRubRate();
+    document.getElementById('cmpRuDuty').textContent   = '$'+fmt(duty);
+    document.getElementById('cmpRuVat').textContent     = '$'+fmt(vatRu);
+    document.getElementById('cmpRuExtra').textContent   = '$'+fmt(extraRu);
+    document.getElementById('cmpRuTotal').textContent   = '$'+fmt(totalRu);
+    document.getElementById('cmpKgDuty').textContent   = '$'+fmt(duty);
+    document.getElementById('cmpKgVat').textContent     = '$'+fmt(vatKg);
+    document.getElementById('cmpKgExtra').textContent   = '$'+fmt(extra);
+    document.getElementById('cmpKgTotal').textContent   = '$'+fmt(totalKg);
+
+    var saved = totalRu - totalKg;
+    var pct   = totalRu > 0 ? Math.round(saved/totalRu*100) : 0;
+    document.getElementById('cmpSaveUsd').textContent = '$'+fmt(saved);
+    document.getElementById('cmpSaveRub').textContent = '('+fmt(saved*r)+' ₽)';
+    document.getElementById('cmpSavePct').textContent = '−'+pct+'%';
+    document.getElementById('calcCompare').style.display = 'block';
+
     document.getElementById('calcNoResult').style.display = 'none';
     document.getElementById('calcHasResult').style.display = 'block';
 
@@ -3794,6 +3883,8 @@ function quizReset() {
     if(!lastCalc) return;
     var d = lastCalc;
     var r = getRubRate();
+    var savedUsd = (d.totalRu||0) - (d.totalKg||d.total);
+    var savedPct = (d.totalRu && d.totalRu > 0) ? Math.round(savedUsd/d.totalRu*100) : 0;
     var lines = [
       '📋 РАСЧЁТ ИМПОРТА — TE GROUP',
       '━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
@@ -3805,15 +3896,17 @@ function quizReset() {
       '  ─────────────────',
       '  Тамож. стоимость: $'+fmt(d.cif)+'  ('+fmt(d.cif*r)+' ₽)',
       '',
-      '🏛️ Таможенные платежи',
+      '🏛️ Таможенные платежи (ЕАЭС, НДС 12%)',
       '  Пошлина ('+(d.dutyRate*100).toFixed(1)+'%): $'+fmt(d.duty)+'  ('+fmt(d.duty*r)+' ₽)',
-      '  НДС (20%):        $'+fmt(d.vat)+'  ('+fmt(d.vat*r)+' ₽)',
+      '  НДС (12%):        $'+fmt(d.vat)+'  ('+fmt(d.vat*r)+' ₽)',
       '',
       '📎 Дополнительно',
       '  Брокер/склад:     '+(d.extra > 0 ? '$'+fmt(d.extra)+'  ('+fmt(d.extra*r)+' ₽)' : '—'),
       '',
       '━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
-      '💰 ИТОГО: $'+fmt(d.total)+'  ('+fmt(d.total*r)+' ₽)'
+      '✅ ИТОГО через ЕАЭС: $'+fmt(d.total)+'  ('+fmt(d.total*r)+' ₽)',
+      '❌ Было бы в РФ:     $'+fmt(d.totalRu||0)+'  ('+fmt((d.totalRu||0)*r)+' ₽)',
+      '💰 Экономия:         $'+fmt(savedUsd)+'  ('+fmt(savedUsd*r)+' ₽) — '+savedPct+'%'
     ];
     if(d.weight > 0){
       lines.push('   На 1 кг: $'+fmt2(d.total/d.weight)+'/кг  ('+fmt(d.total/d.weight*r)+' ₽/кг)');
@@ -3998,6 +4091,8 @@ function quizReset() {
     lastCalc = null;
     var chartWrap = document.getElementById('calcChartWrap');
     if(chartWrap) chartWrap.style.display = 'none';
+    var cmpEl = document.getElementById('calcCompare');
+    if(cmpEl) cmpEl.style.display = 'none';
     document.getElementById('calcNoResult').style.display = '';
     document.getElementById('calcHasResult').style.display = 'none';
     calcSwitchTab('customs');
