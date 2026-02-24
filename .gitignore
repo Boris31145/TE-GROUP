@@ -1,3 +1,6 @@
 te-bot/
 *.png
+!favicon-*.png
+!og-image.png
 *.bat
+!PUSH-SITE.bat
