@@ -1,0 +1,14 @@
+/* Shared section switch for the original goods pages. */
+.nav { height: calc(var(--nav-h) + 56px); }
+.nav .nav-inner { height: var(--nav-h); }
+.tg-directions-bar { height: 56px; background: #fff; border-top: 1px solid #e0e5ed; }
+.tg-directions-inner { height: 100%; max-width: 1200px; margin: 0 auto; padding: 6px 32px; display: flex; align-items: stretch; gap: 6px; }
+.tg-directions-label { color: #637199; font-size: 10px; letter-spacing: .05em; margin-right: 4px; }
+.tg-directions-inner a { display: flex; align-items: center; justify-content: center; min-height: 44px; min-width: 140px; padding: 8px 20px; border-radius: 5px; background: #f0f3f8; color: #0b1d4e; font: 600 14px/1.4 'Inter', Arial, sans-serif; text-transform: none; letter-spacing: 0; text-decoration: none; }
+.tg-directions-inner a[aria-current="page"] { color: #fff; background: #0b1d4e; }
+.tg-directions-inner a:focus-visible { outline: 2px solid #c9a227; outline-offset: 3px; }
+.hero { margin-top: 0; padding-top: calc(var(--nav-h) + 56px); }
+.page-header { margin-top: calc(var(--nav-h) + 56px); }
+.mob-menu { top: calc(var(--nav-h) + 56px); }
+:target { scroll-margin-top: calc(var(--nav-h) + 68px); }
+@media (max-width: 600px) { .tg-directions-inner { padding: 6px 16px; } .tg-directions-inner a { flex: 1; min-width: 0; } }

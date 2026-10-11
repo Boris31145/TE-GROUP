@@ -4,3 +4,11 @@ te-bot/
 !og-image.png
 *.bat
 !PUSH-SITE.bat
+!RUN-LOCAL.bat
+!RUN-SANDBOX.bat
+runtime/
+config/business.json
+__pycache__/
+*.pyc
+.env
+review/images.json

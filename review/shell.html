@@ -1,0 +1,17 @@
+<div id="tegroup-mobile-review" class="viz-dotted-background">
+
+  <div class="review-product">
+    <div class="review-mode" id="reviewMode">Срез источников · заявки только для проверки · без обновления и оплаты</div>
+
+    <!-- APPLICATION -->
+    <section id="reviewEntry" class="review-page" hidden>
+      <h1>Выберите направление</h1>
+      <div class="review-directions"><button class="review-direction cursor-interaction" data-review-nav="goods"><img src="REVIEW_GOODS_IMAGE" alt="Товары и оборудование"><span class="direction-copy"><strong>Товары</strong><small>Закупка и доставка<br>для бизнеса</small><span>Открыть →</span></span></button><button class="review-direction auto cursor-interaction" data-review-nav="cars"><img src="REVIEW_CARS_IMAGE" alt="Автомобильное направление"><span class="direction-copy"><strong>Автомобили</strong><small>США · Корея · Китай</small><span>В каталог →</span></span></button></div>
+    </section>
+    <section id="reviewGoods" class="review-page" hidden><h1>Товары для бизнеса</h1><p class="muted">Закупка, международная доставка и таможенное оформление.</p><h2>Направления поставок</h2><p>Китай · Турция · ОАЭ · Израиль</p><details><summary>Услуги</summary><p>Поиск поставщика, закупка оборудования, электроники и текстиля, перевозка и оформление грузов.</p></details></section>
+    <section id="reviewDocument" class="review-page" hidden><button id="reviewDocumentBack" class="text-button cursor-interaction">← Назад</button><div id="reviewDocumentContent"></div><button type="button" id="reviewPrint" class="outline cursor-interaction">Печать / сохранить PDF</button></section>
+    <section id="reviewConfirmDialog" class="review-page" hidden><span class="eyebrow">ПОДТВЕРЖДЕНИЕ ДЕЙСТВИЯ</span><h2 id="reviewConfirmMessage"></h2><div class="review-links"><button id="reviewConfirmYes" class="primary cursor-interaction">Подтвердить</button><button id="reviewConfirmNo" class="outline cursor-interaction">Вернуться в кабинет</button></div></section>
+    <section id="reviewUsIntake" class="review-page" hidden><span class="eyebrow">США / ОЧЕРЕДЬ ПОДГОТОВКИ СМЕТ</span><h1>Лоты из источника</h1><p class="muted">Цена Buy Now — только выкуп. Полный бюджет, доступность и возможность экспорта требуют подтверждения. До этого лот не публикуется как готовое предложение TE GROUP.</p><div id="reviewIntakeCards" class="cards"></div></section>
+  </div>
+<details class="review-settings"><summary>Настройки проверки</summary><button type="button" id="reviewWidth" class="cursor-interaction">На всю ширину</button>    <div class="review-tools"><label for="reviewData">Данные каталога</label><select id="reviewData"><option value="actual">Реальные объявления из источников</option><option value="test">Тестовые машины / полный сценарий</option><option value="intake">Реальные лоты США / подготовка смет</option></select><label id="reviewScenarioField" hidden for="reviewScenario">Сценарий проверки</label><select id="reviewScenario" hidden><option value="normal">Обычное бронирование</option><option value="price_changed">Новая цена +150 000 ₽</option><option value="stale">Выгрузка устарела</option><option value="quote_expired">Срок сметы истек</option><option value="held">Машину забронировал другой клиент</option><option value="docs_verified">Документы проверены сотрудником (тест)</option><option value="details_returned">Данные возвращены на уточнение (тест)</option><option value="hold_expired">Срок моей брони истек</option></select></div></details>
+</div>

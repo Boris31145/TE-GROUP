@@ -1,13 +1,8 @@
 @echo off
 chcp 65001 >nul
-cd /d "C:\Users\games\Desktop\Ford\Oli\Код\TE"
-echo === TE GROUP Website Push ===
-echo.
-git add -A
-git status
-echo.
-git commit -m "feat: calculator overhaul (risk indicators, preparation comparison, price ranges), favicon.ico for Yandex/Google, save-chip modal redesign"
-git push origin main
-echo.
-echo === Done! ===
+echo Эта версия использует сервер и базу данных.
+echo GitHub Pages не поддерживает кабинет, бронирование и счета.
+echo Для локальной работы запустите RUN-LOCAL.bat или RUN-SANDBOX.bat.
+echo Публикация требует отдельного серверного развертывания.
+echo Автоматическая отправка в main отключена.
 pause

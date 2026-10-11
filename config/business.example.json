@@ -1,0 +1,31 @@
+{
+  "mode": "local",
+  "documents_approved": false,
+  "personal_data_region": "",
+  "max_feed_age_seconds": 1800,
+  "sync_interval_seconds": 900,
+  "reservation_seconds": 3600,
+  "reservation_amount_rub": null,
+  "operator": {
+    "name": "ОсОО «ТЕ ГРУПП»",
+    "tax_id": "00506202410612",
+    "address": "Кыргызстан, Бишкек, ул. Киевская, 77, офис 603",
+    "email": "oootegroup@gmail.com"
+  },
+  "issuer": {
+    "name": "",
+    "tax_id": "",
+    "address": "",
+    "bank": "",
+    "account": "",
+    "bank_code": "",
+    "payment_terms": ""
+  },
+  "source_feeds": {
+    "westmotors": {
+      "url": "",
+      "token_env": "TEGROUP_WESTMOTORS_TOKEN",
+      "authoritative": true
+    }
+  }
+}
