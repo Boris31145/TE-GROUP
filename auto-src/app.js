@@ -174,7 +174,7 @@ function documentStage(stage){
     $(id).hidden=n!==stage;$('docStep'+n).classList.toggle('active',n===stage);
   }
 }
-function revokeDocumentDownloads(){for(const url of documentFlow.urls)URL.revokeObjectURL(url);documentFlow.urls=[];$('documentDownloads').innerHTML='';}
+function revokeDocumentDownloads(){window.TEPdfPreview?.clear();for(const url of documentFlow.urls)URL.revokeObjectURL(url);documentFlow.urls=[];$('documentDownloads').innerHTML='';}
 function clearDocumentData(){
   documentFlow.generation++;revokeDocumentDownloads();documentFlow.offer=null;documentFlow.snapshot=null;documentFlow.acceptedAt=null;documentFlow.generating=false;
   $('documentForm').reset();$('documentConsentCheck').checked=false;$('documentIntent').checked=false;
@@ -211,7 +211,9 @@ $('documentForm').addEventListener('submit',async e=>{
     revokeDocumentDownloads();documentFlow.snapshot=snapshot;
     $('documentResultName').textContent=snapshot.buyer.full_name+' · '+snapshot.offer.title;
     const url=URL.createObjectURL(new Blob([data],{type:'application/pdf'}));documentFlow.urls.push(url);
-    $('documentDownloads').innerHTML=`<a class="document-download" href="${esc(url)}" download="${snapshot.document_number}-documents.pdf"><span><strong>Договор и инвойс с QR</strong><small>Один PDF · спецификация и согласие включены · ${Math.ceil(data.length/1024)} КБ</small></span><span>Скачать ↓</span></a>`;
+    const filename=snapshot.document_number+'-documents.pdf';
+    $('documentDownloads').innerHTML=`<div class="document-file"><strong>Договор и инвойс с QR</strong><small>Договор, спецификация, счёт и согласие<br>PDF · ${(data.length/1000000).toFixed(2).replace('.',',')} МБ</small><div class="document-file-actions"><a class="primary" href="${esc(url)}" download="${esc(filename)}">Скачать ↓</a><button type="button" id="documentOpen" class="outline">Открыть ↗</button></div></div>`;
+    $('documentOpen').addEventListener('click',()=>window.TEPdfPreview.open(url,filename));
     documentStage(3);
   }catch(error){if(generation===documentFlow.generation)$('documentFormError').textContent=error.message||'Не удалось сформировать PDF. Попробуйте ещё раз.';}
   finally{if(generation===documentFlow.generation){documentFlow.generating=false;$('documentGenerate').disabled=false;}}

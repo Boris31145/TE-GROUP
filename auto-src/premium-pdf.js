@@ -24,7 +24,7 @@
     if(markBytes)marks=await pdf.embedPng(markBytes);
     const illustrations={};
     for(const [code,data] of Object.entries(global.TEWatermarkImages||{})){
-      illustrations[code]=await pdf.embedPng(Uint8Array.from(atob(data),c=>c.charCodeAt(0)));
+      illustrations[code]=await pdf.embedJpg(Uint8Array.from(atob(data),c=>c.charCodeAt(0)));
     }
     pdf.setTitle('TE GROUP | Договор '+number+' и счёт');pdf.setAuthor(company.name);pdf.setProducer('TE GROUP');
     function line(x1,y1,x2,y2,color=c.line,width=.55){page.drawLine({start:{x:x1,y:y1},end:{x:x2,y:y2},thickness:width,color});}
@@ -51,7 +51,7 @@
       const art=illustrations[code];
       const layouts=[{x:51,y:287,w:490},{x:89,y:268,w:467},{x:39,y:260,w:511},{x:67,y:302,w:470}];
       const pos=part==='Счёт'?{x:50,y:98,w:337}:layouts[index%layouts.length];
-      if(art)page.drawImage(art,{x:pos.x,y:pos.y,width:pos.w,height:pos.w*art.height/art.width,opacity:.115,blendMode:PDFLib.BlendMode.Multiply});
+      if(art)page.drawImage(art,{x:pos.x,y:pos.y,width:pos.w,height:pos.w*art.height/art.width,opacity:1,blendMode:PDFLib.BlendMode.Multiply});
       const label={KR:'КОРЕЯ',US:'США',CN:'КИТАЙ'}[code];
       const captions=['ПОДБОР И ЗАКУПКА','МЕЖДУНАРОДНАЯ ПОСТАВКА','СОПРОВОЖДЕНИЕ СДЕЛКИ'];
       // Restrained stationery furniture stays outside the legal text area.
@@ -87,7 +87,7 @@
     }
     // Three deliberately different authorization layouts, using the supplied facsimile.
     function signatureBlock({buyer=true}={}){
-      const h=139;space(h);const top=y;y-=h;
+      const h=149;space(h);const top=y;y-=h;
       const specification=part==='Спецификация',invoice=part==='Счёт';
       const sellerX=specification?L+264:L,buyerX=specification?L:L+280;
       line(L,top,R,top);line(sellerX,top,sellerX+31,top,c.gold,1.3);
@@ -101,11 +101,11 @@
         page.pushOperators(PDFLib.popGraphicsState());
       }
       if(marks){
-        const layout=invoice?{sx:R-204,sy:top-101,sa:0,px:R-111,py:top-124,pa:5}:
-          specification?{sx:sellerX+29,sy:top-105,sa:1.2,px:sellerX+115,py:top-132,pa:3}:
-          {sx:L+4,sy:top-106,sa:-.8,px:L+87,py:top-130,pa:-5};
+        const layout=invoice?{sx:R-204,sy:top-101,sa:0,px:R-122,py:top-139,pa:5}:
+          specification?{sx:sellerX+29,sy:top-105,sa:1.2,px:sellerX+107,py:top-140,pa:3}:
+          {sx:L+4,sy:top-106,sa:-.8,px:L+96,py:top-140,pa:-5};
         clippedMark([18,102,1205,608],layout.sx,layout.sy,112,layout.sa);
-        clippedMark([1225,0,796,756],layout.px,layout.py,88,layout.pa);
+        clippedMark([1225,0,796,756],layout.px,layout.py,119,layout.pa);
       }else line(sellerX,top-101,sellerX+112,top-101);
       if(buyer){
         write('ПОКУПАТЕЛЬ',buyerX,top-17,7.2,bold,c.muted);
@@ -135,7 +135,7 @@
     const buyerDetails=[b.full_name+'.',passport+'.',b.address+'.','Телефон: '+b.phone+'.','Email: '+b.email+'.'];
     const partyLines=values=>values.flatMap(value=>wrap(value,8.5,237));
     const sellerLines=partyLines(sellerDetails),buyerLines=partyLines(buyerDetails),partyHeight=Math.max(sellerLines.length,buyerLines.length)*11.2+12;
-    space(35+partyHeight+139);section('Реквизиты и подписи сторон',35+partyHeight+139);
+    space(35+partyHeight+149);section('Реквизиты и подписи сторон',35+partyHeight+149);
     sellerLines.forEach((text,i)=>write(text,L,y-i*11.2,8.5));buyerLines.forEach((text,i)=>write(text,L+264,y-i*11.2,8.5));y-=partyHeight;
     signatureBlock();
 
@@ -179,7 +179,7 @@
     paragraph(global.TEPaymentInstructions.purpose(s),{size:9,leading:13,gap:11});
     const approvedAmount=invoiceRub;
     page.drawRectangle({x:L,y:y-39,width:W,height:49,color:c.pale});write('Сумма к оплате',L+13,y-8,9,font,c.muted);write(money(approvedAmount),L+13,y-28,16,bold);y-=57;
-    space(298);qr(global.TEPaymentInstructions.requisitesQr(s),R-142,y,142);
+    space(308);qr(global.TEPaymentInstructions.requisitesQr(s),R-142,y,142);
     const qrTextX=L,qrTextWidth=W-179;
     const textTop=y;paragraph('Оплата по банковским реквизитам',{size:11,leading:15,gap:9,face:bold,x:qrTextX,width:qrTextWidth});
     paragraph('Отсканируйте код в банковском приложении с поддержкой QR по реквизитам или оплатите счет в отделении банка.',{size:9,leading:13,gap:8,x:qrTextX,width:qrTextWidth});

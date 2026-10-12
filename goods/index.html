@@ -305,7 +305,7 @@
        background-size: 210% — зум, чтобы эмблема заняла всю область */
     .wm {
       position: absolute; pointer-events: none; z-index: 1;
-      background: url('../фирменный бланк ТЕ.png') 50% 42% / 210% auto no-repeat;
+      background: url('/assets/brand.svg') 50% 42% / 65% auto no-repeat;
     }
     /* На белом фоне — очень тонкий отпечаток эмблемы */
     .wm-light {
@@ -986,7 +986,9 @@
   </script>
   <noscript><div><img src="https://mc.yandex.ru/watch/106940695" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
   <!-- /Yandex.Metrika counter -->
-</head>
+<style>
+.hero{padding-top:0!important;min-height:calc(100vh - 132px)}.hero-inner{min-height:calc(100vh - 132px)}.hero-left [style*="animation"]{animation:none!important}.te-direction-return{max-width:1200px;margin:0 auto;padding:100px 24px 14px;display:flex;align-items:center;gap:14px;font-size:12px;color:#536153}.te-direction-return a{text-decoration:none;color:#384f34}.te-direction-return a:hover{text-decoration:underline}.te-cars-return{margin-left:auto}.nav-links{gap:16px!important}.nav-links a{font-size:11px!important}@media(max-width:1100px){.nav-links{display:none!important}.nav-burger{display:flex!important}}@media(max-width:600px){.te-direction-return{padding:84px 16px 12px;gap:8px;font-size:10px}.te-direction-return .te-cars-return{font-size:10px}}
+</style></head>
 <body>
 
 <!-- ================================================================
@@ -995,7 +997,7 @@
 <nav class="nav" id="nav">
   <div class="container nav-inner">
 
-    <a href="#" class="logo-wrap">
+    <a href="/" class="logo-wrap" aria-label="TE GROUP — выбор направления">
       <svg class="logo-emblem" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
         <!-- ── Кольца: внешнее, золотое, внутреннее ── -->
         <circle cx="21" cy="21" r="20"   stroke="#0b1d4e" stroke-width="2"/>
@@ -1049,6 +1051,8 @@
     </a>
 
     <div class="nav-links">
+      <a href="/">Главная</a>
+      <a href="/cars/">Автомобили</a>
       <a href="/china-import/">Китай</a>
       <a href="/turkey-import/">Турция</a>
       <a href="/uae-import/">ОАЭ</a>
@@ -1070,9 +1074,11 @@
 
   </div>
 </nav>
+<div class="te-direction-return"><a href="/">← Все направления</a><span>/</span><span aria-current="page">Товары для бизнеса</span><a href="/cars/" class="te-cars-return">Автомобили ↗</a></div>
 
 <div class="mob-menu" id="mob-menu">
-  <a href="/" class="mob-link mob-home">Главная</a>
+  <a href="/" class="mob-link mob-home">Главная — выбор направления</a>
+  <a href="/cars/" class="mob-link">Автомобили</a>
   <a href="/china-import/" class="mob-link">Импорт из Китая</a>
   <a href="/turkey-import/" class="mob-link">Импорт из Турции</a>
   <a href="/uae-import/" class="mob-link">Импорт из ОАЭ</a>
