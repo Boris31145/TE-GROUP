@@ -1,0 +1,18 @@
+{
+  "version": "20261012-4",
+  "sourceCommit": "268b650f632509f483b38cc9c7565c52a87277f8",
+  "tools": {
+    "javascript-obfuscator": "5.9.0",
+    "terser": "5.51.2"
+  },
+  "sourceMaps": false,
+  "eval": false,
+  "files": {
+    "auto-src/app.js": "e220e2ac9e067113f26423f87ba9956173a899e2a55bb9f840b8670bb25c4721",
+    "auto-src/payment-instructions.js": "f981d7cb14750eb01da50f3b4f939b4d7db52b46c9be4fcf05b7a5ebca119996",
+    "auto-src/premium-pdf.js": "be6bf39a6d4f33bf3f1a0e7df35a98e03a9e58994d51405260ee81782cdf5d07",
+    "auto-src/local-documents.js": "d48b7703e43c55b17310edf9a25e443bc18a6f2de72c72605ad3829a2f8d9736",
+    "auto-src/pdf-preview.js": "a21c5a35c88caccc3466faff6961975c4e6481e06afed6b2220c021ddb6c4ac3",
+    "auto-src/public-config.js": "424960332903079bd6e109635c7bcf04b044f5be4e7f5efa5c9ad76cb340d528"
+  }
+}

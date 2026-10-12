@@ -5,3 +5,11 @@ te-bot/
 !auto-src/watermarks/*.png
 *.bat
 !PUSH-SITE.bat
+
+node_modules/
+.env
+.env.*
+!.env.example
+private-source/
+*.pem
+*.key
