@@ -27,8 +27,48 @@
       "checked_on": "2026-10-19",
       "availability": "Объявление доступно; наличие подтверждается у продавца",
       "price_basis": "Цена техники у продавца; таможенные платежи и перевозка отдельно",
-      "customs_status": "Отдельный расчёт по характеристикам и документам техники",
-      "transport_status": "Отдельно по запросу"
+      "customs_status": "Предварительный расчёт опубликован; без логистики и услуг",
+      "transport_status": "Отдельно по запросу",
+      "customs": {
+        "calculated_on": "2026-10-19",
+        "status": "preliminary_scenario",
+        "destination": "Россия",
+        "importer": "Юридическое лицо / ИП",
+        "declarations": "Одна машина в отдельной декларации",
+        "tnved_provisional": "8429519900",
+        "origin_assumption": "США — расчётное допущение, требует подтверждения",
+        "recycling_category": "F04–F05, старше 3 лет",
+        "vat_rate": "0.22",
+        "excise_rub": "0.00",
+        "inputs": {
+          "rate": ".30",
+          "util_base": 172500,
+          "util_coefficient": "26.45"
+        },
+        "border_transport_included": false,
+        "assumptions": [
+          "Расчёт для происхождения США: пошлина 30% по ПП РФ № 2240. Страна размещения объявления сама по себе не подтверждает происхождение; нужен документ продавца.",
+          "Утильсбор показан диапазоном: F04 (200–250 л.с.) — 4 562 625 ₽; F05 (250–300 л.с.) — 6 844 800 ₽. У модели указаны 171 кВт net и 186 кВт ISO 14396; номинальную мощность и категорию необходимо подтвердить по табличке двигателя и документам конкретной машины."
+        ],
+        "sources": [
+          "tariff84",
+          "usa_duty",
+          "util81_loaders",
+          "cat_power",
+          "clearance",
+          "vat"
+        ],
+        "customs_value_rub": "5811430.00",
+        "duty_rub": "1743429.00",
+        "vat_rub": "1662068.98",
+        "clearance_fee_rub": "49240.00",
+        "recycling_fee_rub": "4562625.00",
+        "customs_total_rub": "8017362.98",
+        "equipment_with_customs_rub": "13828792.98",
+        "customs_total_max_rub": "10299537.98",
+        "equipment_with_customs_max_rub": "16110967.98",
+        "recycling_fee_max_rub": "6844800.00"
+      }
     },
     {
       "id": "cat-950m-2016",
@@ -50,8 +90,48 @@
       "checked_on": "2026-10-19",
       "availability": "Объявление доступно; наличие подтверждается у продавца",
       "price_basis": "Цена техники у продавца; таможенные платежи и перевозка отдельно",
-      "customs_status": "Отдельный расчёт по характеристикам и документам техники",
-      "transport_status": "Отдельно по запросу"
+      "customs_status": "Предварительный расчёт опубликован; без логистики и услуг",
+      "transport_status": "Отдельно по запросу",
+      "customs": {
+        "calculated_on": "2026-10-19",
+        "status": "preliminary_scenario",
+        "destination": "Россия",
+        "importer": "Юридическое лицо / ИП",
+        "declarations": "Одна машина в отдельной декларации",
+        "tnved_provisional": "8429519900",
+        "origin_assumption": "США — расчётное допущение, требует подтверждения",
+        "recycling_category": "F04–F05, старше 3 лет",
+        "vat_rate": "0.22",
+        "excise_rub": "0.00",
+        "inputs": {
+          "rate": ".30",
+          "util_base": 172500,
+          "util_coefficient": "26.45"
+        },
+        "border_transport_included": false,
+        "assumptions": [
+          "Расчёт для происхождения США: пошлина 30% по ПП РФ № 2240. Страна размещения объявления сама по себе не подтверждает происхождение; нужен документ продавца.",
+          "Утильсбор показан диапазоном: F04 (200–250 л.с.) — 4 562 625 ₽; F05 (250–300 л.с.) — 6 844 800 ₽. У модели указаны 171 кВт net и 186 кВт ISO 14396; номинальную мощность и категорию необходимо подтвердить по табличке двигателя и документам конкретной машины."
+        ],
+        "sources": [
+          "tariff84",
+          "usa_duty",
+          "util81_loaders",
+          "cat_power",
+          "clearance",
+          "vat"
+        ],
+        "customs_value_rub": "5853239.00",
+        "duty_rub": "1755971.70",
+        "vat_rub": "1674026.35",
+        "clearance_fee_rub": "49240.00",
+        "recycling_fee_rub": "4562625.00",
+        "customs_total_rub": "8041863.05",
+        "equipment_with_customs_rub": "13895102.05",
+        "customs_total_max_rub": "10324038.05",
+        "equipment_with_customs_max_rub": "16177277.05",
+        "recycling_fee_max_rub": "6844800.00"
+      }
     },
     {
       "id": "hyundai-hx380l",
@@ -73,8 +153,46 @@
       "checked_on": "2026-10-19",
       "availability": "Объявление доступно; наличие подтверждается у продавца",
       "price_basis": "Цена техники у продавца; таможенные платежи и перевозка отдельно",
-      "customs_status": "Отдельный расчёт по характеристикам и документам техники",
-      "transport_status": "Отдельно по запросу"
+      "customs_status": "Предварительный расчёт опубликован; без логистики и услуг",
+      "transport_status": "Отдельно по запросу",
+      "customs": {
+        "calculated_on": "2026-10-19",
+        "status": "preliminary_scenario",
+        "destination": "Россия",
+        "importer": "Юридическое лицо / ИП",
+        "declarations": "Одна машина в отдельной декларации",
+        "tnved_provisional": "8429521001",
+        "origin_assumption": "Республика Корея — требует подтверждения по документам",
+        "recycling_category": "C03, старше 3 лет",
+        "vat_rate": "0.22",
+        "excise_rub": "0.00",
+        "inputs": {
+          "rate": ".05",
+          "util_base": 172500,
+          "util_coefficient": "48.78"
+        },
+        "border_transport_included": false,
+        "assumptions": [
+          "Принято происхождение Республика Корея, мощность 257 кВт и возраст более 3 лет: категория C03. Происхождение и мощность проверяются по документам конкретной машины."
+        ],
+        "sources": [
+          "tariff84",
+          "util81",
+          "hyundai_power",
+          "clearance",
+          "vat"
+        ],
+        "customs_value_rub": "5613750.00",
+        "duty_rub": "280687.50",
+        "vat_rub": "1296776.25",
+        "clearance_fee_rub": "49240.00",
+        "recycling_fee_rub": "8414550.00",
+        "customs_total_rub": "10041253.75",
+        "equipment_with_customs_rub": "15655003.75",
+        "customs_total_max_rub": "10041253.75",
+        "equipment_with_customs_max_rub": "15655003.75",
+        "recycling_fee_max_rub": "8414550.00"
+      }
     },
     {
       "id": "peterbilt-365",
@@ -99,8 +217,48 @@
       "checked_on": "2026-10-19",
       "availability": "Объявление доступно; наличие подтверждается у продавца",
       "price_basis": "Цена техники у продавца; таможенные платежи и перевозка отдельно",
-      "customs_status": "Отдельный расчёт по характеристикам и документам техники",
-      "transport_status": "Отдельно по запросу"
+      "customs_status": "Предварительный расчёт опубликован; без логистики и услуг",
+      "transport_status": "Отдельно по запросу",
+      "customs": {
+        "calculated_on": "2026-10-19",
+        "status": "preliminary_scenario",
+        "destination": "Россия",
+        "importer": "Юридическое лицо / ИП",
+        "declarations": "Одна машина в отдельной декларации",
+        "tnved_provisional": "8704239801",
+        "origin_assumption": "США",
+        "recycling_category": "18¹, дорожный самосвал свыше 20 т, старше 3 лет",
+        "vat_rate": "0.22",
+        "excise_rub": "0.00",
+        "inputs": {
+          "cm3": 12900,
+          "eur": "93.7187",
+          "util_base": 150000,
+          "util_coefficient": "66.44"
+        },
+        "border_transport_included": false,
+        "assumptions": [
+          "Для пошлины принят номинальный объём двигателя PACCAR MX-13, 12 900 см³. Точный объём в см³ необходимо сверить с документами: 1 EUR за 1 см³ для дорожного дизельного грузовика старше 7 лет и полной массой более 20 т.",
+          "Принята категория дорожного самосвала полной массой более 20 т, старше 3 лет: строка 18¹ ПП РФ № 1291, коэффициент 66,44 на 2026 год. Это не карьерный самосвал категории R по ПП РФ № 81."
+        ],
+        "sources": [
+          "tariff87",
+          "util_trucks",
+          "paccar",
+          "clearance",
+          "vat"
+        ],
+        "customs_value_rub": "5435151.00",
+        "duty_rub": "1208971.23",
+        "vat_rub": "1461706.89",
+        "clearance_fee_rub": "21344.00",
+        "recycling_fee_rub": "9966000.00",
+        "customs_total_rub": "12658022.12",
+        "equipment_with_customs_rub": "18093173.12",
+        "customs_total_max_rub": "12658022.12",
+        "equipment_with_customs_max_rub": "18093173.12",
+        "recycling_fee_max_rub": "9966000.00"
+      }
     },
     {
       "id": "western-star-4900fa",
@@ -125,14 +283,118 @@
       "checked_on": "2026-10-19",
       "availability": "Объявление доступно; наличие подтверждается у продавца",
       "price_basis": "Цена техники у продавца; таможенные платежи и перевозка отдельно",
-      "customs_status": "Отдельный расчёт по характеристикам и документам техники",
-      "transport_status": "Отдельно по запросу"
+      "customs_status": "Предварительный расчёт опубликован; без логистики и услуг",
+      "transport_status": "Отдельно по запросу",
+      "customs": {
+        "calculated_on": "2026-10-19",
+        "status": "preliminary_scenario",
+        "destination": "Россия",
+        "importer": "Юридическое лицо / ИП",
+        "declarations": "Одна машина в отдельной декларации",
+        "tnved_provisional": "8704239801",
+        "origin_assumption": "США",
+        "recycling_category": "18¹, дорожный самосвал свыше 20 т, старше 3 лет",
+        "vat_rate": "0.22",
+        "excise_rub": "0.00",
+        "inputs": {
+          "cm3": 12800,
+          "eur": "93.7187",
+          "util_base": 150000,
+          "util_coefficient": "66.44"
+        },
+        "border_transport_included": false,
+        "assumptions": [
+          "Для пошлины принят номинальный объём двигателя Detroit DD13, 12 800 см³. Точный объём в см³ необходимо сверить с документами: 1 EUR за 1 см³ для дорожного дизельного грузовика старше 7 лет и полной массой более 20 т.",
+          "Принята категория дорожного самосвала полной массой более 20 т, старше 3 лет: строка 18¹ ПП РФ № 1291, коэффициент 66,44 на 2026 год. Это не карьерный самосвал категории R по ПП РФ № 81."
+        ],
+        "sources": [
+          "tariff87",
+          "util_trucks",
+          "detroit",
+          "clearance",
+          "vat"
+        ],
+        "customs_value_rub": "5435151.00",
+        "duty_rub": "1199599.36",
+        "vat_rub": "1459645.08",
+        "clearance_fee_rub": "21344.00",
+        "recycling_fee_rub": "9966000.00",
+        "customs_total_rub": "12646588.44",
+        "equipment_with_customs_rub": "18081739.44",
+        "customs_total_max_rub": "12646588.44",
+        "equipment_with_customs_max_rub": "18081739.44",
+        "recycling_fee_max_rub": "9966000.00"
+      }
     }
   ],
   "audience": "Строительные компании; полноразмерная строительная техника",
-  "pricing_model": "Техника, таможенные платежи и перевозка показываются отдельно. Город доставки не требуется для просмотра ассортимента.",
+  "pricing_model": "Опубликованы цена продавца, предварительные платежи при ввозе в РФ и итог техника + таможня и утильсбор. Доставка и услуги отдельно; транспортная составляющая таможенной стоимости требует пересчёта после выбора маршрута.",
   "price_range_rub": {
     "min": 4900000,
     "max": 5950000
+  },
+  "customs_method": {
+    "date": "2026-10-19",
+    "sources": {
+      "tariff84": {
+        "title": "ЕТТ ЕАЭС, группа 84 (действующая редакция)",
+        "url": "https://eec.eaeunion.org/comission/department/catr/ett/ru.2022/ru.84_2022_27.04.2026.pdf"
+      },
+      "tariff87": {
+        "title": "ЕТТ ЕАЭС, группа 87 (действующая редакция)",
+        "url": "https://eec.eaeunion.org/comission/department/catr/ett/ru.2022/ru.87_2022_22.01.2026.pdf"
+      },
+      "usa_duty": {
+        "title": "ПП РФ № 2240: пошлина 30% на погрузчики происхождением из США",
+        "url": "http://government.ru/docs/all/144700/?page=8"
+      },
+      "util81": {
+        "title": "ПП РФ № 81: утильсбор на самоходные машины, таблица 2026",
+        "url": "http://government.ru/docs/all/105365/?page=5"
+      },
+      "util81_loaders": {
+        "title": "ПП РФ № 81: категории F04 и F05",
+        "url": "http://government.ru/docs/all/105365/?page=6"
+      },
+      "util_trucks": {
+        "title": "ПП РФ № 1065: строка 18¹ для самосвалов свыше 20 т",
+        "url": "http://government.ru/docs/all/160051/"
+      },
+      "clearance": {
+        "title": "ПП РФ № 1637 в редакции № 1638: таможенный сбор",
+        "url": "http://government.ru/docs/all/156477/"
+      },
+      "vat": {
+        "title": "ФНС: основная ставка НДС 22% с 2026 года",
+        "url": "https://www.nalog.gov.ru/rn25/news/activities_fts/16590316/"
+      },
+      "cat_power": {
+        "title": "Caterpillar 950M: 171 кВт net / 186 кВт ISO 14396",
+        "url": "https://www.petersoncat.com/sites/default/files/products/documents/-79541.pdf"
+      },
+      "hyundai_power": {
+        "title": "Hyundai HX380L: мощность 257 кВт",
+        "url": "https://www.hyundai-ce.eu/en/products/archive/excavators/crawler-excavators/hx380l"
+      },
+      "paccar": {
+        "title": "PACCAR MX-13: номинальный рабочий объём 12,9 л",
+        "url": "https://paccarpowertrain.com/wp-content/uploads/2024/04/CARB-MY24-_MX13SpecSheet_2025.pdf"
+      },
+      "detroit": {
+        "title": "Detroit DD13: номинальный рабочий объём 12,8 л",
+        "url": "https://www.detroitanz.com/engines/dd13/"
+      }
+    },
+    "customs_value": "Цена продавца в рублях. Перевозка, страхование и иные добавления до места прибытия в ЕАЭС в этом сценарии не учтены; при выборе маршрута их необходимо включить в таможенную стоимость.",
+    "vat_formula": "22% × (таможенная стоимость + пошлина); утильсбор и таможенный сбор в базу НДС не включены",
+    "total_formula": "Цена техники + пошлина + ввозной НДС + таможенный сбор + утилизационный сбор",
+    "excluded": [
+      "Перевозка",
+      "Страхование",
+      "Услуги брокера и TE GROUP",
+      "СВХ",
+      "Сертификация и оформление ПСМ/ЭПТС"
+    ],
+    "rounding": "Каждый платёж округлён до копеек ROUND_HALF_UP; суммы на странице отображаются в рублях/млн рублей"
   }
 }

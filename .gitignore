@@ -11,5 +11,6 @@ node_modules/
 .env.*
 !.env.example
 private-source/
+__pycache__/
 *.pem
 *.key
