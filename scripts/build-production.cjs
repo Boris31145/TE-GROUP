@@ -37,7 +37,7 @@ async function protect(code,name){
  }
  // Sensitive-data page retains strict no-eval CSP. Add immutable integrity checks for external JS.
  let cars=fs.readFileSync(path.join(source,'cars/index.html'),'utf8').replaceAll('20261012-3','20261012-4');
- cars=cars.replace(/<script src="([^"?]+)([^\"]*)"><\/script>/g,(_,url,query)=>{
+ cars=cars.replace(/<script src="([^"?]+)([^\"]*)"[^>]*><\/script>/g,(_,url,query)=>{
   const bytes=fs.readFileSync(path.join(root,url));const sri=crypto.createHash('sha384').update(bytes).digest('base64');
   return `<script src="${url}${query}" integrity="sha384-${sri}" crossorigin="anonymous"></script>`;
  });

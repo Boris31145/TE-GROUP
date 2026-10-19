@@ -1,6 +1,6 @@
 {
-  "version": "20261012-5",
-  "sourceCommit": "268b650f632509f483b38cc9c7565c52a87277f8",
+  "version": "20261019-6",
+  "sourceCommit": "dd0c3bd5f2d1f9f3b7207d3f41b270dee72571f2",
   "tools": {
     "javascript-obfuscator": "5.9.0",
     "terser": "5.51.2"
@@ -8,12 +8,13 @@
   "sourceMaps": false,
   "eval": false,
   "files": {
-    "auto-src/app.js": "6c970ec0c35cdb4215ba790f52f291fa38a42667c8007a1bb164688cef81d8b0",
+    "auto-src/app.js": "ae7e4ea2e3e0d14b38c4980723b6c4f13a13d439136855e268823d1601e4f0f7",
     "auto-src/payment-instructions.js": "f981d7cb14750eb01da50f3b4f939b4d7db52b46c9be4fcf05b7a5ebca119996",
     "auto-src/premium-pdf.js": "be6bf39a6d4f33bf3f1a0e7df35a98e03a9e58994d51405260ee81782cdf5d07",
     "auto-src/local-documents.js": "d48b7703e43c55b17310edf9a25e443bc18a6f2de72c72605ad3829a2f8d9736",
     "auto-src/pdf-preview.js": "a21c5a35c88caccc3466faff6961975c4e6481e06afed6b2220c021ddb6c4ac3",
     "auto-src/public-config.js": "424960332903079bd6e109635c7bcf04b044f5be4e7f5efa5c9ad76cb340d528",
-    "auto-src/https-only.js": "04956835727d63a01d3bd6247be2190fad7cf0a9754547b35b1be4c4fe765abc"
+    "auto-src/https-only.js": "04956835727d63a01d3bd6247be2190fad7cf0a9754547b35b1be4c4fe765abc",
+    "auto-src/catalog-data.js": "1842d8c405d854a1a25d50f6ebd9d68fc5fb51ab237f44eb9fee009ea3a958da"
   }
 }
