@@ -1,6 +1,6 @@
 {
   "version": "20261020-1",
-  "sourceCommit": "2719e1a71701ea245a3f493e1a9d45330ab4f2a8",
+  "sourceCommit": "eec53f38ae2cd925eacc462b74e7fe2eba88ec40",
   "tools": {
     "javascript-obfuscator": "5.9.0",
     "terser": "5.51.2"
