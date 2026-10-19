@@ -8,327 +8,156 @@
   "rate_source": "https://www.cbr.ru/currency_base/daily/?UniDbQuery.Posted=True&UniDbQuery.To=19.10.2026",
   "items": [
     {
-      "id": "cat-950m-2015",
+      "id": "sdlg-lg936l",
+      "model": "SDLG LG936L",
       "kind": "Погрузчики",
-      "url": "https://www.machinerytrader.com/listing/for-sale/241472335/2015-caterpillar-950m-wheel-loaders",
-      "title": "Caterpillar 950M",
-      "price": 69500,
+      "year": 2022,
+      "serial": "VLG0936LVN0670639",
+      "serial_type": "Заводской номер",
+      "location": "Китай · Шанхай",
+      "seller": "Machinery Trader Group Co., Ltd / MachineryTrader",
+      "source_url": "https://www.machinerytrader.com/listing/for-sale/257909603/2022-sdlg-lg936l-wheel-loaders",
+      "pricing_mode": "import_estimate",
       "currency": "USD",
-      "serial": "CAT0950MTEMB01206",
-      "country": "США",
-      "year": 2015,
-      "hours": 10335,
-      "specs": "10 335 м/ч · фронтальный погрузчик · ковш с зубьями",
-      "sold": false,
-      "image": "https://media.sandhills.com/img.axd?id=9043485760&wid=4326182721&rwl=False&p=&ext=&w=614&h=460&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=kL7dziCXZCGYEItSwfYD%2bzRyehz5GPk3eOJcCToUV%2bo%3d",
-      "price_rub": 5811430,
-      "seller": "MachineryTrader, объявление 241472335",
-      "serial_kind": "PIN",
-      "checked_on": "2026-10-19",
-      "availability": "Объявление доступно; наличие подтверждается у продавца",
-      "price_basis": "Цена техники у продавца; таможенные платежи и перевозка отдельно",
-      "customs_status": "Предварительный расчёт опубликован; без логистики и услуг",
-      "transport_status": "Отдельно по запросу",
+      "price_original": 12000,
+      "specs": "800 м/ч · фронтальный · ковш ≈ 1,8 м³ · 123,37 HP",
+      "tnved": "8429519900",
+      "import_inputs": {
+        "rate": ".05",
+        "util_base": 172500,
+        "util_coefficient": "22.48"
+      },
+      "util_source": "util81_loaders",
+      "tax_assumption": "Происхождение Китай; F03, 100–200 л.с., старше 3 лет: коэффициент 22,48.",
+      "condition_note": "Наработка и состояние указаны продавцом; независимая диагностика не проводилась.",
       "customs": {
-        "calculated_on": "2026-10-19",
         "status": "preliminary_scenario",
-        "destination": "Россия",
-        "importer": "Юридическое лицо / ИП",
-        "declarations": "Одна машина в отдельной декларации",
-        "tnved_provisional": "8429519900",
-        "origin_assumption": "США — расчётное допущение, требует подтверждения",
-        "recycling_category": "F04–F05, старше 3 лет",
-        "vat_rate": "0.22",
-        "excise_rub": "0.00",
-        "inputs": {
-          "rate": ".30",
-          "util_base": 172500,
-          "util_coefficient": "26.45"
-        },
+        "calculated_on": "2026-10-19",
         "border_transport_included": false,
-        "assumptions": [
-          "Расчёт для происхождения США: пошлина 30% по ПП РФ № 2240. Страна размещения объявления сама по себе не подтверждает происхождение; нужен документ продавца.",
-          "Утильсбор показан диапазоном: F04 (200–250 л.с.) — 4 562 625 ₽; F05 (250–300 л.с.) — 6 844 800 ₽. У модели указаны 171 кВт net и 186 кВт ISO 14396; номинальную мощность и категорию необходимо подтвердить по табличке двигателя и документам конкретной машины."
-        ],
-        "sources": [
-          "tariff84",
-          "usa_duty",
-          "util81_loaders",
-          "cat_power",
-          "clearance",
-          "vat"
-        ],
-        "customs_value_rub": "5811430.00",
-        "duty_rub": "1743429.00",
-        "vat_rub": "1662068.98",
-        "clearance_fee_rub": "49240.00",
-        "recycling_fee_rub": "4562625.00",
-        "customs_total_rub": "8017362.98",
-        "equipment_with_customs_rub": "13828792.98",
-        "customs_total_max_rub": "10299537.98",
-        "equipment_with_customs_max_rub": "16110967.98",
-        "recycling_fee_max_rub": "6844800.00"
-      }
+        "customs_value_rub": "1003412.40",
+        "duty_rub": "50170.62",
+        "vat_rub": "231788.26",
+        "clearance_fee_rub": "4924.00",
+        "recycling_fee_rub": "3877800.00",
+        "customs_total_rub": "4164682.88",
+        "equipment_with_customs_rub": "5168095.28"
+      },
+      "price_rub": "1003412.40",
+      "image_source_url": "https://media.sandhills.com/img.axd?id=9039495692&wid=4326182721&rwl=False&p=&ext=&w=614&h=460&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=Ytuk1iW51exHeLV08sGKe30JmvYq8m42hwyJOu89HuE%3d"
     },
     {
-      "id": "cat-950m-2016",
-      "kind": "Погрузчики",
-      "url": "https://www.machinerytrader.com/listing/for-sale/253086893/2016-caterpillar-950m-wheel-loaders",
-      "title": "Caterpillar 950M",
-      "price": 70000,
-      "currency": "USD",
-      "serial": "EMB02144",
-      "country": "США",
-      "year": 2016,
-      "hours": 12255,
-      "specs": "12 255 м/ч · фронтальный погрузчик · Cat C7.1, 230 л.с.",
-      "sold": false,
-      "image": "https://media.sandhills.com/img.axd?id=9037212329&wid=4326182721&rwl=False&p=&ext=&w=614&h=460&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=H%2bLDLKhtbyvcdNFd9LV7k4NLk6CrrYjkMF%2fp26o%2f8Zc%3d",
-      "price_rub": 5853239,
-      "seller": "MachineryTrader, объявление 253086893",
-      "serial_kind": "Заводской номер",
-      "checked_on": "2026-10-19",
-      "availability": "Объявление доступно; наличие подтверждается у продавца",
-      "price_basis": "Цена техники у продавца; таможенные платежи и перевозка отдельно",
-      "customs_status": "Предварительный расчёт опубликован; без логистики и услуг",
-      "transport_status": "Отдельно по запросу",
-      "customs": {
-        "calculated_on": "2026-10-19",
-        "status": "preliminary_scenario",
-        "destination": "Россия",
-        "importer": "Юридическое лицо / ИП",
-        "declarations": "Одна машина в отдельной декларации",
-        "tnved_provisional": "8429519900",
-        "origin_assumption": "США — расчётное допущение, требует подтверждения",
-        "recycling_category": "F04–F05, старше 3 лет",
-        "vat_rate": "0.22",
-        "excise_rub": "0.00",
-        "inputs": {
-          "rate": ".30",
-          "util_base": 172500,
-          "util_coefficient": "26.45"
-        },
-        "border_transport_included": false,
-        "assumptions": [
-          "Расчёт для происхождения США: пошлина 30% по ПП РФ № 2240. Страна размещения объявления сама по себе не подтверждает происхождение; нужен документ продавца.",
-          "Утильсбор показан диапазоном: F04 (200–250 л.с.) — 4 562 625 ₽; F05 (250–300 л.с.) — 6 844 800 ₽. У модели указаны 171 кВт net и 186 кВт ISO 14396; номинальную мощность и категорию необходимо подтвердить по табличке двигателя и документам конкретной машины."
-        ],
-        "sources": [
-          "tariff84",
-          "usa_duty",
-          "util81_loaders",
-          "cat_power",
-          "clearance",
-          "vat"
-        ],
-        "customs_value_rub": "5853239.00",
-        "duty_rub": "1755971.70",
-        "vat_rub": "1674026.35",
-        "clearance_fee_rub": "49240.00",
-        "recycling_fee_rub": "4562625.00",
-        "customs_total_rub": "8041863.05",
-        "equipment_with_customs_rub": "13895102.05",
-        "customs_total_max_rub": "10324038.05",
-        "equipment_with_customs_max_rub": "16177277.05",
-        "recycling_fee_max_rub": "6844800.00"
-      }
-    },
-    {
-      "id": "hyundai-hx380l",
+      "id": "sany-sy200c-pro",
+      "model": "SANY SY200C PRO",
       "kind": "Экскаваторы",
-      "url": "https://machineryline.info/-/sale/tracked-excavators/Hyundai/HX380L--26101610331050182900",
-      "title": "Hyundai HX380L",
-      "price": 59900,
-      "currency": "EUR",
-      "serial": "HHKHKA01LH0000168",
-      "country": "Нидерланды",
-      "year": 2017,
-      "hours": 8205,
-      "specs": "8 205 м/ч · гусеничный экскаватор · двигатель Cummins QSL9",
-      "sold": false,
-      "image": "https://img.linemedia.com/img/s/construction-equipment-tracked-excavator-Hyundai-HX380L---1792135991233080518_common--26101610331050182900.jpg",
-      "price_rub": 5613750,
-      "seller": "Machineryline, объявление HX380L",
-      "serial_kind": "PIN",
-      "checked_on": "2026-10-19",
-      "availability": "Объявление доступно; наличие подтверждается у продавца",
-      "price_basis": "Цена техники у продавца; таможенные платежи и перевозка отдельно",
-      "customs_status": "Предварительный расчёт опубликован; без логистики и услуг",
-      "transport_status": "Отдельно по запросу",
+      "year": 2024,
+      "serial": "SNYSY200GRG540635",
+      "serial_type": "Заводской номер",
+      "location": "Китай · Хэфэй",
+      "seller": "YUANJIAN / CN Used Excavator",
+      "source_url": "https://cnusedexcavator.com/products/used-sany-sy200c-pro-crawler-excavator-for-sale-sany-sy200c-pro-price",
+      "pricing_mode": "import_estimate",
+      "currency": "USD",
+      "price_original": 20000,
+      "specs": "591 м/ч · 21 т · гусеничный · ковш 1 м³ · 118 кВт",
+      "tnved": "8429521001",
+      "import_inputs": {
+        "rate": ".05",
+        "util_base": 172500,
+        "util_coefficient": "19.46"
+      },
+      "util_source": "util81",
+      "tax_assumption": "Происхождение Китай; C01, 50–170 л.с., не старше 3 лет: коэффициент 19,46.",
+      "condition_note": "На сайте продавца опубликована справочная цена 20 000 USD. Комплектация и цена конкретной машины требуют подтверждения до заказа; фото и характеристики приведены по объявлению.",
       "customs": {
-        "calculated_on": "2026-10-19",
         "status": "preliminary_scenario",
-        "destination": "Россия",
-        "importer": "Юридическое лицо / ИП",
-        "declarations": "Одна машина в отдельной декларации",
-        "tnved_provisional": "8429521001",
-        "origin_assumption": "Республика Корея — требует подтверждения по документам",
-        "recycling_category": "C03, старше 3 лет",
-        "vat_rate": "0.22",
-        "excise_rub": "0.00",
-        "inputs": {
-          "rate": ".05",
-          "util_base": 172500,
-          "util_coefficient": "48.78"
-        },
+        "calculated_on": "2026-10-19",
         "border_transport_included": false,
-        "assumptions": [
-          "Принято происхождение Республика Корея, мощность 257 кВт и возраст более 3 лет: категория C03. Происхождение и мощность проверяются по документам конкретной машины."
-        ],
-        "sources": [
-          "tariff84",
-          "util81",
-          "hyundai_power",
-          "clearance",
-          "vat"
-        ],
-        "customs_value_rub": "5613750.00",
-        "duty_rub": "280687.50",
-        "vat_rub": "1296776.25",
-        "clearance_fee_rub": "49240.00",
-        "recycling_fee_rub": "8414550.00",
-        "customs_total_rub": "10041253.75",
-        "equipment_with_customs_rub": "15655003.75",
-        "customs_total_max_rub": "10041253.75",
-        "equipment_with_customs_max_rub": "15655003.75",
-        "recycling_fee_max_rub": "8414550.00"
-      }
+        "customs_value_rub": "1672354.00",
+        "duty_rub": "83617.70",
+        "vat_rub": "386313.77",
+        "clearance_fee_rub": "13541.00",
+        "recycling_fee_rub": "3356850.00",
+        "customs_total_rub": "3840322.47",
+        "equipment_with_customs_rub": "5512676.47"
+      },
+      "price_rub": "1672354.00",
+      "image_source_url": "https://cnusedexcavator.com/cdn/shop/files/882412101_image1.jpg?v=1784687988&width=1200"
     },
     {
-      "id": "peterbilt-365",
-      "kind": "Самосвалы",
-      "url": "https://www.bensiron.com/for-sale/2013-peterbilt-365-tri-axle-dump-truck-paccar-455hp-13-speed-manual-14338980",
-      "title": "Peterbilt 365",
-      "vin": "1NPSLP0X8DD190529",
-      "price_usd": 65000,
-      "year": 2013,
-      "miles": 361650,
-      "hp": 455,
-      "country": "США",
-      "sold": false,
-      "image": "https://d2uhsaoc6ysewq.cloudfront.net/56388/Dump-Trucks-Peterbilt-365-67379382.jpg",
-      "price": 65000,
-      "currency": "USD",
-      "serial": "1NPSLP0X8DD190529",
-      "price_rub": 5435151,
-      "specs": "361 650 миль · 455 л.с. · 8×4 · механика, 13 ступеней",
-      "seller": "Ben Kaplan Equipment",
-      "serial_kind": "VIN",
-      "checked_on": "2026-10-19",
-      "availability": "Объявление доступно; наличие подтверждается у продавца",
-      "price_basis": "Цена техники у продавца; таможенные платежи и перевозка отдельно",
-      "customs_status": "Предварительный расчёт опубликован; без логистики и услуг",
-      "transport_status": "Отдельно по запросу",
+      "id": "bizon-k150",
+      "model": "BIZON K150",
+      "kind": "Экскаваторы",
+      "year": 2024,
+      "serial": "JH5915007K01A7009",
+      "serial_type": "Заводской номер (в поле VIN продавца)",
+      "location": "Россия · Самара",
+      "seller": "АО ВТБ Лизинг · АЛ 262039/01-24 СРТ",
+      "source_url": "https://www.vtb-leasing.ru/auto/probeg/bizon-k150-al-262039-01-24-srt/",
+      "pricing_mode": "russia_resale",
+      "currency": "RUB",
+      "price_rub": "5590000.00",
+      "specs": "1 201 м/ч · колёсный экскаватор · двигатель 4,2 л · 180 л.с.",
+      "documents_note": "Продавец предлагает покупку по договору купли-продажи в РФ с НДС. До оплаты необходимо сверить ПСМ/ЭПСМ, статус утильсбора, регистрационные ограничения и залоги.",
+      "condition_note": "Состояние и комплектацию необходимо проверить на осмотре. Номер указан точно как у продавца; это не 17-значный дорожный VIN.",
       "customs": {
-        "calculated_on": "2026-10-19",
-        "status": "preliminary_scenario",
-        "destination": "Россия",
-        "importer": "Юридическое лицо / ИП",
-        "declarations": "Одна машина в отдельной декларации",
-        "tnved_provisional": "8704239801",
-        "origin_assumption": "США",
-        "recycling_category": "18¹, дорожный самосвал свыше 20 т, старше 3 лет",
-        "vat_rate": "0.22",
-        "excise_rub": "0.00",
-        "inputs": {
-          "cm3": 12900,
-          "eur": "93.7187",
-          "util_base": 150000,
-          "util_coefficient": "66.44"
-        },
-        "border_transport_included": false,
-        "assumptions": [
-          "Для пошлины принят номинальный объём двигателя PACCAR MX-13, 12 900 см³. Точный объём в см³ необходимо сверить с документами: 1 EUR за 1 см³ для дорожного дизельного грузовика старше 7 лет и полной массой более 20 т.",
-          "Принята категория дорожного самосвала полной массой более 20 т, старше 3 лет: строка 18¹ ПП РФ № 1291, коэффициент 66,44 на 2026 год. Это не карьерный самосвал категории R по ПП РФ № 81."
-        ],
-        "sources": [
-          "tariff87",
-          "util_trucks",
-          "paccar",
-          "clearance",
-          "vat"
-        ],
-        "customs_value_rub": "5435151.00",
-        "duty_rub": "1208971.23",
-        "vat_rub": "1461706.89",
-        "clearance_fee_rub": "21344.00",
-        "recycling_fee_rub": "9966000.00",
-        "customs_total_rub": "12658022.12",
-        "equipment_with_customs_rub": "18093173.12",
-        "customs_total_max_rub": "12658022.12",
-        "equipment_with_customs_max_rub": "18093173.12",
-        "recycling_fee_max_rub": "9966000.00"
-      }
+        "status": "russia_resale",
+        "equipment_with_customs_rub": "5590000.00",
+        "additional_import_payments_rub": "0.00",
+        "vat_in_seller_price": true
+      },
+      "image_source_url": "https://www.vtb-leasing.ru/upload/resize_cache/iblock/26e/rpebwhhxf13nsjlbl5wg09z495vyppag/1200_740_2/IMG_20250923_105417.webp"
     },
     {
-      "id": "western-star-4900fa",
+      "id": "shacman-sx33186v366",
+      "model": "SHACMAN SX33186V366",
       "kind": "Самосвалы",
-      "url": "https://simplelend.co/dump-trucks/pennsylvania/2012-western-star-4900fa-tri-axle/SL-74246629",
-      "title": "Western Star 4900FA",
-      "vin": "5KJJAEDV0CPBR1795",
-      "price_usd": 65000,
-      "year": 2012,
-      "miles": 312000,
-      "hp": 450,
-      "country": "США",
-      "sold": false,
-      "image": "https://simplelend.co/api/proxy-image?url=https%3A%2F%2Fpub-59871b913952423cbc1072045a8e2ac7.r2.dev%2Ftruck-images%2Fpennsylvania%2F2012-western-star-4900fa-tri-axle%2Fsl-74246629%2F1fde05e1d05dbe3b.webp&size=detail&format=webp",
-      "price": 65000,
-      "currency": "USD",
-      "serial": "5KJJAEDV0CPBR1795",
-      "price_rub": 5435151,
-      "specs": "312 000 миль · 450 л.с. · Detroit DD13 · AutoShift, 10 ступеней",
-      "seller": "Simple Lend Marketplace",
-      "serial_kind": "VIN",
-      "checked_on": "2026-10-19",
-      "availability": "Объявление доступно; наличие подтверждается у продавца",
-      "price_basis": "Цена техники у продавца; таможенные платежи и перевозка отдельно",
-      "customs_status": "Предварительный расчёт опубликован; без логистики и услуг",
-      "transport_status": "Отдельно по запросу",
+      "year": 2024,
+      "serial": "LZGJX4V61RX035695",
+      "serial_type": "VIN",
+      "location": "Россия · Москва",
+      "seller": "Лидер Трак энд Бас",
+      "source_url": "https://leader-trucks.ru/models/used-tech/samosval-35m3-shacman-sx33186v366-2024/",
+      "pricing_mode": "russia_resale",
+      "currency": "RUB",
+      "price_rub": "5600000.00",
+      "specs": "132 881 км · 8×4 · кузов 35 м³ · 423 л.с. · Евро-5",
+      "documents_note": "Продавец указывает цену с НДС 22%, наличие ПТС и уплаченный утильсбор. Эти сведения необходимо подтвердить документами и статусом ЭПТС до оплаты.",
+      "condition_note": "Продавец заявляет о технической проверке; независимая диагностика TE GROUP не проводилась.",
       "customs": {
-        "calculated_on": "2026-10-19",
-        "status": "preliminary_scenario",
-        "destination": "Россия",
-        "importer": "Юридическое лицо / ИП",
-        "declarations": "Одна машина в отдельной декларации",
-        "tnved_provisional": "8704239801",
-        "origin_assumption": "США",
-        "recycling_category": "18¹, дорожный самосвал свыше 20 т, старше 3 лет",
-        "vat_rate": "0.22",
-        "excise_rub": "0.00",
-        "inputs": {
-          "cm3": 12800,
-          "eur": "93.7187",
-          "util_base": 150000,
-          "util_coefficient": "66.44"
-        },
-        "border_transport_included": false,
-        "assumptions": [
-          "Для пошлины принят номинальный объём двигателя Detroit DD13, 12 800 см³. Точный объём в см³ необходимо сверить с документами: 1 EUR за 1 см³ для дорожного дизельного грузовика старше 7 лет и полной массой более 20 т.",
-          "Принята категория дорожного самосвала полной массой более 20 т, старше 3 лет: строка 18¹ ПП РФ № 1291, коэффициент 66,44 на 2026 год. Это не карьерный самосвал категории R по ПП РФ № 81."
-        ],
-        "sources": [
-          "tariff87",
-          "util_trucks",
-          "detroit",
-          "clearance",
-          "vat"
-        ],
-        "customs_value_rub": "5435151.00",
-        "duty_rub": "1199599.36",
-        "vat_rub": "1459645.08",
-        "clearance_fee_rub": "21344.00",
-        "recycling_fee_rub": "9966000.00",
-        "customs_total_rub": "12646588.44",
-        "equipment_with_customs_rub": "18081739.44",
-        "customs_total_max_rub": "12646588.44",
-        "equipment_with_customs_max_rub": "18081739.44",
-        "recycling_fee_max_rub": "9966000.00"
-      }
+        "status": "russia_resale",
+        "equipment_with_customs_rub": "5600000.00",
+        "additional_import_payments_rub": "0.00",
+        "vat_in_seller_price": true
+      },
+      "image_source_url": "https://leader-trucks.ru/site/assets/files/167179/20260723_123351.800x600.jpg.webp"
+    },
+    {
+      "id": "shacman-sx331863366",
+      "model": "SHACMAN SX331863366",
+      "kind": "Самосвалы",
+      "year": 2023,
+      "serial": "LZGJX4Z62PX041268",
+      "serial_type": "VIN",
+      "location": "Россия · Санкт-Петербург",
+      "seller": "АО ВТБ Лизинг · АЛ 222891/19-23",
+      "source_url": "https://www.vtb-leasing.ru/auto/probeg/shacman-sx331863366-al-222891-19-23/",
+      "pricing_mode": "russia_resale",
+      "currency": "RUB",
+      "price_rub": "5443980.00",
+      "specs": "544 л.с. · двигатель 12,54 л · пробег уточняется",
+      "documents_note": "Продавец предлагает покупку по договору купли-продажи в РФ с НДС. До оплаты необходимо сверить ПТС/ЭПТС, статус утильсбора, регистрационные ограничения и залоги.",
+      "condition_note": "Пробег в публикации не указан. Состояние кузова, шасси и агрегатов проверяется на осмотре.",
+      "customs": {
+        "status": "russia_resale",
+        "equipment_with_customs_rub": "5443980.00",
+        "additional_import_payments_rub": "0.00",
+        "vat_in_seller_price": true
+      },
+      "image_source_url": "https://www.vtb-leasing.ru/upload/iblock/c25/umq0ufsxzabweexlzwgkcjd3p4kmvt1t/IMG_0155.webp"
     }
   ],
   "audience": "Строительные компании; полноразмерная строительная техника",
-  "pricing_model": "Опубликованы цена продавца, предварительные платежи при ввозе в РФ и итог техника + таможня и утильсбор. Доставка и услуги отдельно; транспортная составляющая таможенной стоимости требует пересчёта после выбора маршрута.",
+  "pricing_model": "Два предварительных сценария ввоза из Китая и три предложения покупки уже в России. Итог 4,9–5,95 млн рублей за единицу; доставка и услуги отдельно.",
   "price_range_rub": {
     "min": 4900000,
     "max": 5950000
@@ -337,52 +166,24 @@
     "date": "2026-10-19",
     "sources": {
       "tariff84": {
-        "title": "ЕТТ ЕАЭС, группа 84 (действующая редакция)",
+        "title": "ЕТТ ЕАЭС, группа 84",
         "url": "https://eec.eaeunion.org/comission/department/catr/ett/ru.2022/ru.84_2022_27.04.2026.pdf"
       },
-      "tariff87": {
-        "title": "ЕТТ ЕАЭС, группа 87 (действующая редакция)",
-        "url": "https://eec.eaeunion.org/comission/department/catr/ett/ru.2022/ru.87_2022_22.01.2026.pdf"
-      },
-      "usa_duty": {
-        "title": "ПП РФ № 2240: пошлина 30% на погрузчики происхождением из США",
-        "url": "http://government.ru/docs/all/144700/?page=8"
-      },
       "util81": {
-        "title": "ПП РФ № 81: утильсбор на самоходные машины, таблица 2026",
-        "url": "http://government.ru/docs/all/105365/?page=5"
+        "title": "ПП РФ № 81: экскаваторы, таблица 2026",
+        "url": "https://government.ru/docs/all/105365/?page=5"
       },
       "util81_loaders": {
-        "title": "ПП РФ № 81: категории F04 и F05",
-        "url": "http://government.ru/docs/all/105365/?page=6"
-      },
-      "util_trucks": {
-        "title": "ПП РФ № 1065: строка 18¹ для самосвалов свыше 20 т",
-        "url": "http://government.ru/docs/all/160051/"
+        "title": "ПП РФ № 81: погрузчики F03, таблица 2026",
+        "url": "https://government.ru/docs/all/105365/?page=6"
       },
       "clearance": {
-        "title": "ПП РФ № 1637 в редакции № 1638: таможенный сбор",
-        "url": "http://government.ru/docs/all/156477/"
+        "title": "ПП РФ № 1637: таможенный сбор",
+        "url": "https://government.ru/docs/all/156477/"
       },
       "vat": {
-        "title": "ФНС: основная ставка НДС 22% с 2026 года",
+        "title": "ФНС: НДС 22% с 2026 года",
         "url": "https://www.nalog.gov.ru/rn25/news/activities_fts/16590316/"
-      },
-      "cat_power": {
-        "title": "Caterpillar 950M: 171 кВт net / 186 кВт ISO 14396",
-        "url": "https://www.petersoncat.com/sites/default/files/products/documents/-79541.pdf"
-      },
-      "hyundai_power": {
-        "title": "Hyundai HX380L: мощность 257 кВт",
-        "url": "https://www.hyundai-ce.eu/en/products/archive/excavators/crawler-excavators/hx380l"
-      },
-      "paccar": {
-        "title": "PACCAR MX-13: номинальный рабочий объём 12,9 л",
-        "url": "https://paccarpowertrain.com/wp-content/uploads/2024/04/CARB-MY24-_MX13SpecSheet_2025.pdf"
-      },
-      "detroit": {
-        "title": "Detroit DD13: номинальный рабочий объём 12,8 л",
-        "url": "https://www.detroitanz.com/engines/dd13/"
       }
     },
     "customs_value": "Цена продавца в рублях. Перевозка, страхование и иные добавления до места прибытия в ЕАЭС в этом сценарии не учтены; при выборе маршрута их необходимо включить в таможенную стоимость.",
@@ -395,6 +196,7 @@
       "СВХ",
       "Сертификация и оформление ПСМ/ЭПТС"
     ],
-    "rounding": "Каждый платёж округлён до копеек ROUND_HALF_UP; суммы на странице отображаются в рублях/млн рублей"
+    "rounding": "Каждый платёж округлён до копеек ROUND_HALF_UP; суммы на странице отображаются в рублях/млн рублей",
+    "applies_to": "Только pricing_mode=import_estimate; для russia_resale цена с НДС, повторный импорт не производится."
   }
 }

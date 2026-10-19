@@ -64,21 +64,40 @@ class CustomsTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             customs.estimate(1, rate=".30", border_transport=-1, **kw)
 
-    def test_published_breakdowns_and_assumptions(self):
+    def test_budget_and_resale_no_double_tax(self):
         data = json.loads((ROOT / "equipment/listings.json").read_text())
         page = (ROOT / "equipment/index.html").read_text()
         self.assertEqual(len(data["items"]), 5)
+        self.assertEqual(len({i["serial"] for i in data["items"]}), 5)
+        self.assertEqual({i["kind"] for i in data["items"]}, {"Погрузчики", "Экскаваторы", "Самосвалы"})
         for item in data["items"]:
-            c = item["customs"]
-            parts = sum(D(c[k]) for k in ("duty_rub", "vat_rub", "clearance_fee_rub", "recycling_fee_rub"))
-            self.assertEqual(parts, D(c["customs_total_rub"]))
-            self.assertEqual(D(item["price_rub"]) + parts, D(c["equipment_with_customs_rub"]))
-            self.assertFalse(c["border_transport_included"])
-            self.assertEqual(c["status"], "preliminary_scenario")
-            self.assertTrue(c["assumptions"])
+            c = customs.calculate_item(item, data["rates"])
+            self.assertEqual(c, item["customs"])
+            self.assertTrue(D("4900000") <= D(c["equipment_with_customs_rub"]) <= D("5950000"))
             self.assertIn(item["serial"], page)
+            self.assertTrue((ROOT / "assets/equipment" / (item["id"]+".webp")).exists())
+            if item["pricing_mode"] == "import_estimate":
+                parts = sum(D(c[k]) for k in ("duty_rub", "vat_rub", "clearance_fee_rub", "recycling_fee_rub"))
+                self.assertEqual(parts, D(c["customs_total_rub"]))
+                self.assertEqual(D(item["price_rub"]) + parts, D(c["equipment_with_customs_rub"]))
+                self.assertFalse(c["border_transport_included"])
+            else:
+                self.assertEqual(c["equipment_with_customs_rub"], item["price_rub"])
+                self.assertEqual(c["additional_import_payments_rub"], "0.00")
+                self.assertTrue(c["vat_in_seller_price"])
         self.assertEqual(page.count('class="customs-details"'), 5)
-        self.assertNotIn("Отдельный расчёт</dd>", page)
+
+    def test_new_selection_tax_categories(self):
+        sdlg = customs.estimate("1003412.40", rate=".05", util_base=172500, util_coefficient="22.48")
+        sany = customs.estimate("1672354", rate=".05", util_base=172500, util_coefficient="19.46")
+        self.assertEqual(sdlg["recycling_fee_rub"], "3877800.00")
+        self.assertEqual(sdlg["equipment_with_customs_rub"], "5168095.28")
+        self.assertEqual(sany["recycling_fee_rub"], "3356850.00")
+        self.assertEqual(sany["equipment_with_customs_rub"], "5512676.47")
+
+    def test_unknown_pricing_mode_is_rejected(self):
+        with self.assertRaises(ValueError):
+            customs.calculate_item({"pricing_mode": "unknown"}, {})
 
 
 if __name__ == "__main__":
