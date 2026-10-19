@@ -1,7 +1,6 @@
 """Rebuild the dated, preliminary RF import estimates in the equipment catalogue.
 
-No logistics quote or document verification is implied. All assumptions and source
-links are published with the figures. Uses Decimal; never derives tax from markup.
+No logistics quote or document verification is implied. Costing assumptions are retained in internal research records. Uses Decimal; never derives tax from markup.
 """
 from decimal import Decimal, ROUND_HALF_UP
 from pathlib import Path
@@ -96,52 +95,28 @@ def dl(rows, cls):
 
 
 def rebuild():
-    path = ROOT / "equipment/listings.json"
-    data = json.loads(path.read_text())
-    data["customs_method"]["sources"] = SOURCES
+    """Render a single customer-facing price; costing stays in internal records."""
+    from urllib.parse import quote
+    data = json.loads((ROOT / "equipment/listings.json").read_text())
     cards = []
     for item in data["items"]:
-        c = calculate_item(item, data["rates"])
-        total = D(c["equipment_with_customs_rub"])
-        if not D("4900000") <= total <= D("5950000"):
-            raise ValueError("Outside requested budget: " + item["id"])
-        item["customs"] = c
-        abroad = item["pricing_mode"] == "import_estimate"
-        if abroad:
-            item["price_rub"] = str(money(D(str(item["price_original"])) * D(str(data["rates"][item["currency"]]))))
-            label = "Техника + таможня и утильсбор ≈"
-            subtitle = "Предварительно. Без доставки и услуг."
-            rows = [("Техника у продавца", fmt(item["price_rub"])), ("Таможня и утильсбор ≈", fmt(c["customs_total_rub"])), ("Доставка", "Отдельно")]
-            detail = dl([("Техника у продавца", fmt(item["price_rub"])), ("Пошлина · 5%", fmt(c["duty_rub"])), ("Ввозной НДС · 22%", fmt(c["vat_rub"])), ("Таможенный сбор",fmt(c["clearance_fee_rub"])), ("Утилизационный сбор",fmt(c["recycling_fee_rub"])), ("Итого без доставки ≈",fmt(total))], "customs-breakdown")
-            detail += '<p>Ввоз в РФ для юридического лица / ИП. Предварительный код ТН ВЭД: '+item["tnved"]+'. '+html.escape(item["tax_assumption"])+'</p>'
-            detail += '<p>Цена продавца: '+str(item["price_original"])+' USD. Расчёт по курсу ЦБ 83,6177 ₽/USD на 19.10.2026. Перевозка и страхование до границы ЕАЭС увеличат таможенную стоимость и платежи; они пока не учтены. Код, происхождение, возраст и мощность сверяются по документам. НДС показан до возможного вычета.</p>'
-            detail += '<p>Источники: '+ ' · '.join(link(k) for k in ["tariff84", item["util_source"], "clearance", "vat"]) + '</p>'
-        else:
-            label = "Цена в России · с НДС"
-            subtitle = "Покупка в РФ. Доставка отдельно."
-            rows = [("Техника с НДС",fmt(total)), ("Новые платежи при ввозе", "Не начисляются"), ("Доставка", "Отдельно")]
-            detail = '<p>Предложение продавца со стоянки в России, цена включает НДС. При покупке внутри РФ нового ввоза нет: повторно пошлину, ввозной НДС и утильсбор к цене не прибавляем.</p><p>'+html.escape(item["documents_note"])+'</p>'
-            detail += '<p>Это цена техники у продавца. Доставка, услуги TE GROUP, диагностика и возможный ремонт оплачиваются отдельно.</p>'
-        serial=html.escape(item["serial"])
-        url=html.escape(item["source_url"], quote=True)
-        history='https://www.google.com/search?q=%22'+serial+'%22'
-        from urllib.parse import quote
-        request="mailto:oootegroup@gmail.com?subject="+quote("Спецтехника: "+item["model"]+" / "+item["serial"])
-        card = '<article class="equipment-card" data-kind="'+item["kind"]+'" id="'+item["id"]+'"><div class="machine-photo"><img src="/assets/equipment/'+item["id"]+'.webp" alt="'+html.escape(item["model"])+' — фото из объявления продавца" width="800" height="600" loading="lazy"><span>'+html.escape(item["location"])+'</span></div><div class="machine-copy"><p class="eyebrow">'+item["kind"]+' / '+str(item["year"])+' / '+('ПОД ВВОЗ' if abroad else 'УЖЕ В РФ')+'</p><h2>'+html.escape(item["model"])+'</h2><p class="machine-specs">'+html.escape(item["specs"])+'</p><div class="machine-price"><small>'+label+'</small><strong>'+millions(str(total))+' млн ₽</strong><span>'+subtitle+'</span></div>'+dl(rows, "machine-costs")
-        card += '<details class="customs-details"><summary>'+('Расчёт таможни и условия' if abroad else 'Цена и документы')+'</summary>'+detail+'</details><div class="machine-id"><small>'+item["serial_type"]+'</small><code>'+serial+'</code><button type="button" class="copy-id" data-serial="'+serial+'" aria-label="Скопировать номер '+serial+'">Копировать</button></div>'
-        card += '<details><summary>Источник и проверка истории</summary><p>'+html.escape(item["seller"])+' · проверка публикации 19.10.2026. Наличие и цена подтверждаются перед покупкой.</p><p>Номер опубликован продавцом. Сверьте его с табличкой и ПСМ/ЭПТС, проверьте ограничения, залоги и сервисные записи. Наличие номера не означает, что история уже проверена или доступна в единой базе.</p><p>'+html.escape(item["condition_note"])+'</p><a href="'+url+'" target="_blank" rel="noopener noreferrer">Открыть объявление продавца ↗</a><p><a href="'+history+'" target="_blank" rel="noopener noreferrer">Поиск упоминаний номера ↗</a></p></details><a class="machine-request" href="'+request+'">Уточнить предложение и доставку <span>↗</span></a></div></article>'
+        total = D(item["offer_price_rub"])
+        serial = html.escape(item["serial"])
+        request = "mailto:oootegroup@gmail.com?subject=" + quote("Спецтехника: " + item["model"] + " / " + item["serial"])
+        card = '<article class="equipment-card" data-kind="'+item["kind"]+'" id="'+item["id"]+'"><div class="machine-photo"><img src="/assets/equipment/'+item["id"]+'.webp" alt="'+html.escape(item["model"])+' — фото из объявления продавца" width="800" height="600" loading="lazy"><span>'+html.escape(item["location"])+'</span></div><div class="machine-copy"><p class="eyebrow">'+item["kind"]+' / '+str(item["year"])+'</p><h2>'+html.escape(item["model"])+'</h2><p class="machine-specs">'+html.escape(item["specs"])+'</p><div class="machine-price"><small>Стоимость техники</small><strong>'+millions(str(total))+' млн ₽</strong><span>Предварительная стоимость</span></div><p class="machine-delivery">Доставка рассчитывается индивидуально.</p>'
+        card += '<div class="machine-id"><small>'+item["serial_type"]+'</small><code>'+serial+'</code><button type="button" class="copy-id" data-serial="'+serial+'" aria-label="Скопировать номер '+serial+'">Копировать</button></div>'
+        card += '<details><summary>Источник и проверка истории</summary><p>'+html.escape(item["seller"])+' · проверка публикации 19.10.2026. Наличие и состояние подтверждаются перед покупкой.</p><p>Номер опубликован продавцом. Сверьте его с табличкой и ПСМ/ЭПТС, проверьте ограничения, залоги и сервисные записи. Наличие номера не означает, что история уже проверена или доступна в единой базе.</p><p>'+html.escape(item["condition_note"])+'</p><a href="'+html.escape(item["source_url"],quote=True)+'" target="_blank" rel="noopener noreferrer">Открыть объявление продавца ↗</a><p><a href="https://www.google.com/search?q=%22'+serial+'%22" target="_blank" rel="noopener noreferrer">Поиск упоминаний номера ↗</a></p></details><a class="machine-request" href="'+request+'">Уточнить предложение <span>↗</span></a></div></article>'
         cards.append(card)
-    path.write_text(json.dumps(data, ensure_ascii=False, indent=2)+"\n")
-    page=ROOT/"equipment/index.html"
-    text=page.read_text()
-    text=re.sub(r'<div class="equipment-grid">.*?</div></section>', '<div class="equipment-grid">'+"\n".join(cards)+'</div></section>', text, count=1, flags=re.S)
-    text=text.replace('Фронтальные погрузчики, гусеничный экскаватор и самосвалы из США и Нидерландов.', 'Погрузчик, два экскаватора и два тяжёлых самосвала.<br>Предложения из Китая под ввоз и техника уже в России.')
-    text=text.replace('цена техники у продавца</span>', 'ориентир за единицу без доставки</span>')
-    text=re.sub(r'<aside class="budget-note">.*?</aside>', '<aside class="budget-note"><strong>4,9–5,95 млн ₽ за единицу. Доставка — отдельно.</strong><p>Для техники из Китая показаны цена продавца, пошлина, НДС 22%, таможенный и утилизационный сборы. Для машин уже в РФ — цена продавца с НДС: новые импортные платежи не начисляются. Тип предложения указан в каждой карточке.</p><p>Расчёты на 19.10.2026 предварительные. Доставка, страхование, услуги TE GROUP и брокера, СВХ, сертификация и ПСМ/ЭПТС отдельно. Расходы до границы ЕАЭС увеличивают базу пошлины и НДС — после выбора маршрута требуется пересчёт. Бюджет на ремонт не включён.</p><small>Курс ЦБ: 1 USD = 83,6177 ₽. <a href="https://www.cbr.ru/currency_base/daily/?UniDbQuery.Posted=True&amp;UniDbQuery.To=19.10.2026" target="_blank" rel="noopener noreferrer">Источник курса ↗</a> · Публикации продавцов проверены 19.10.2026; наличие и документы требуют подтверждения.</small></aside>', text, count=1, flags=re.S)
-    text=text.replace('equipment.css?v=20261019-3','equipment.css?v=20261019-4')
+    page = ROOT / "equipment/index.html"
+    text = page.read_text()
+    text = re.sub(r'<div class="equipment-grid">.*?</div></section>', '<div class="equipment-grid">' + "\n".join(cards) + '</div></section>', text, count=1, flags=re.S)
+    text = re.sub(r'<aside class="budget-note">.*?</aside>', '<aside class="budget-note"><strong>Техника под вашу задачу.</strong><p>В карточках указана предварительная стоимость техники. Доставка рассчитывается индивидуально и оплачивается отдельно. Согласованную стоимость и условия поставки фиксируем в спецификации к договору.</p></aside>', text, count=1, flags=re.S)
+    text = text.replace('Предложения из Китая под ввоз и техника уже в России.', 'Пять предложений с фотографиями, характеристиками и номерами для проверки истории.')
+    text = text.replace('ориентир за единицу без доставки', 'стоимость техники за единицу')
+    text = re.sub(r'(<meta name="description" content=")[^"]*', r'\g<1>Погрузчик, экскаваторы и самосвалы для строительных компаний. Стоимость техники, фотографии, VIN и заводские номера. Индивидуальные условия поставки.', text, count=1)
+    text = text.replace('Подберём технику и рассчитаем таможенное оформление.', 'Подберём технику и согласуем условия поставки.')
+    text = re.sub(r'equipment.css\?v=[^" ]+', 'equipment.css?v=20261019-5', text)
     page.write_text(text)
-    for item in data["items"]:
-        print(item["model"],item["serial"],item["customs"]["equipment_with_customs_rub"])
 
 
 if __name__ == "__main__":

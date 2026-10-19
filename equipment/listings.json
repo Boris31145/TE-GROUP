@@ -1,11 +1,11 @@
 {
   "checked_on": "2026-10-19",
-  "rates": {
-    "USD": 83.6177,
-    "EUR": 93.7187
+  "audience": "Строительные компании; полноразмерная строительная техника",
+  "pricing_model": "Предварительная стоимость техники. Доставка рассчитывается индивидуально и оплачивается отдельно. Согласованная стоимость и условия фиксируются в спецификации к договору.",
+  "price_range_rub": {
+    "min": 4900000,
+    "max": 5950000
   },
-  "rate_date": "2026-10-17",
-  "rate_source": "https://www.cbr.ru/currency_base/daily/?UniDbQuery.Posted=True&UniDbQuery.To=19.10.2026",
   "items": [
     {
       "id": "sdlg-lg936l",
@@ -17,33 +17,10 @@
       "location": "Китай · Шанхай",
       "seller": "Machinery Trader Group Co., Ltd / MachineryTrader",
       "source_url": "https://www.machinerytrader.com/listing/for-sale/257909603/2022-sdlg-lg936l-wheel-loaders",
-      "pricing_mode": "import_estimate",
-      "currency": "USD",
-      "price_original": 12000,
       "specs": "800 м/ч · фронтальный · ковш ≈ 1,8 м³ · 123,37 HP",
-      "tnved": "8429519900",
-      "import_inputs": {
-        "rate": ".05",
-        "util_base": 172500,
-        "util_coefficient": "22.48"
-      },
-      "util_source": "util81_loaders",
-      "tax_assumption": "Происхождение Китай; F03, 100–200 л.с., старше 3 лет: коэффициент 22,48.",
       "condition_note": "Наработка и состояние указаны продавцом; независимая диагностика не проводилась.",
-      "customs": {
-        "status": "preliminary_scenario",
-        "calculated_on": "2026-10-19",
-        "border_transport_included": false,
-        "customs_value_rub": "1003412.40",
-        "duty_rub": "50170.62",
-        "vat_rub": "231788.26",
-        "clearance_fee_rub": "4924.00",
-        "recycling_fee_rub": "3877800.00",
-        "customs_total_rub": "4164682.88",
-        "equipment_with_customs_rub": "5168095.28"
-      },
-      "price_rub": "1003412.40",
-      "image_source_url": "https://media.sandhills.com/img.axd?id=9039495692&wid=4326182721&rwl=False&p=&ext=&w=614&h=460&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=Ytuk1iW51exHeLV08sGKe30JmvYq8m42hwyJOu89HuE%3d"
+      "image_source_url": "https://media.sandhills.com/img.axd?id=9039495692&wid=4326182721&rwl=False&p=&ext=&w=614&h=460&t=&lp=&c=True&wt=False&sz=Max&rt=0&checksum=Ytuk1iW51exHeLV08sGKe30JmvYq8m42hwyJOu89HuE%3d",
+      "offer_price_rub": "5168095.28"
     },
     {
       "id": "sany-sy200c-pro",
@@ -55,33 +32,10 @@
       "location": "Китай · Хэфэй",
       "seller": "YUANJIAN / CN Used Excavator",
       "source_url": "https://cnusedexcavator.com/products/used-sany-sy200c-pro-crawler-excavator-for-sale-sany-sy200c-pro-price",
-      "pricing_mode": "import_estimate",
-      "currency": "USD",
-      "price_original": 20000,
       "specs": "591 м/ч · 21 т · гусеничный · ковш 1 м³ · 118 кВт",
-      "tnved": "8429521001",
-      "import_inputs": {
-        "rate": ".05",
-        "util_base": 172500,
-        "util_coefficient": "19.46"
-      },
-      "util_source": "util81",
-      "tax_assumption": "Происхождение Китай; C01, 50–170 л.с., не старше 3 лет: коэффициент 19,46.",
-      "condition_note": "На сайте продавца опубликована справочная цена 20 000 USD. Комплектация и цена конкретной машины требуют подтверждения до заказа; фото и характеристики приведены по объявлению.",
-      "customs": {
-        "status": "preliminary_scenario",
-        "calculated_on": "2026-10-19",
-        "border_transport_included": false,
-        "customs_value_rub": "1672354.00",
-        "duty_rub": "83617.70",
-        "vat_rub": "386313.77",
-        "clearance_fee_rub": "13541.00",
-        "recycling_fee_rub": "3356850.00",
-        "customs_total_rub": "3840322.47",
-        "equipment_with_customs_rub": "5512676.47"
-      },
-      "price_rub": "1672354.00",
-      "image_source_url": "https://cnusedexcavator.com/cdn/shop/files/882412101_image1.jpg?v=1784687988&width=1200"
+      "condition_note": "Комплектация, наличие и состояние конкретной машины подтверждаются перед заказом. Фото и характеристики приведены по объявлению продавца.",
+      "image_source_url": "https://cnusedexcavator.com/cdn/shop/files/882412101_image1.jpg?v=1784687988&width=1200",
+      "offer_price_rub": "5512676.47"
     },
     {
       "id": "bizon-k150",
@@ -93,19 +47,10 @@
       "location": "Россия · Самара",
       "seller": "АО ВТБ Лизинг · АЛ 262039/01-24 СРТ",
       "source_url": "https://www.vtb-leasing.ru/auto/probeg/bizon-k150-al-262039-01-24-srt/",
-      "pricing_mode": "russia_resale",
-      "currency": "RUB",
-      "price_rub": "5590000.00",
       "specs": "1 201 м/ч · колёсный экскаватор · двигатель 4,2 л · 180 л.с.",
-      "documents_note": "Продавец предлагает покупку по договору купли-продажи в РФ с НДС. До оплаты необходимо сверить ПСМ/ЭПСМ, статус утильсбора, регистрационные ограничения и залоги.",
       "condition_note": "Состояние и комплектацию необходимо проверить на осмотре. Номер указан точно как у продавца; это не 17-значный дорожный VIN.",
-      "customs": {
-        "status": "russia_resale",
-        "equipment_with_customs_rub": "5590000.00",
-        "additional_import_payments_rub": "0.00",
-        "vat_in_seller_price": true
-      },
-      "image_source_url": "https://www.vtb-leasing.ru/upload/resize_cache/iblock/26e/rpebwhhxf13nsjlbl5wg09z495vyppag/1200_740_2/IMG_20250923_105417.webp"
+      "image_source_url": "https://www.vtb-leasing.ru/upload/resize_cache/iblock/26e/rpebwhhxf13nsjlbl5wg09z495vyppag/1200_740_2/IMG_20250923_105417.webp",
+      "offer_price_rub": "5590000.00"
     },
     {
       "id": "shacman-sx33186v366",
@@ -117,19 +62,10 @@
       "location": "Россия · Москва",
       "seller": "Лидер Трак энд Бас",
       "source_url": "https://leader-trucks.ru/models/used-tech/samosval-35m3-shacman-sx33186v366-2024/",
-      "pricing_mode": "russia_resale",
-      "currency": "RUB",
-      "price_rub": "5600000.00",
       "specs": "132 881 км · 8×4 · кузов 35 м³ · 423 л.с. · Евро-5",
-      "documents_note": "Продавец указывает цену с НДС 22%, наличие ПТС и уплаченный утильсбор. Эти сведения необходимо подтвердить документами и статусом ЭПТС до оплаты.",
       "condition_note": "Продавец заявляет о технической проверке; независимая диагностика TE GROUP не проводилась.",
-      "customs": {
-        "status": "russia_resale",
-        "equipment_with_customs_rub": "5600000.00",
-        "additional_import_payments_rub": "0.00",
-        "vat_in_seller_price": true
-      },
-      "image_source_url": "https://leader-trucks.ru/site/assets/files/167179/20260723_123351.800x600.jpg.webp"
+      "image_source_url": "https://leader-trucks.ru/site/assets/files/167179/20260723_123351.800x600.jpg.webp",
+      "offer_price_rub": "5600000.00"
     },
     {
       "id": "shacman-sx331863366",
@@ -141,62 +77,10 @@
       "location": "Россия · Санкт-Петербург",
       "seller": "АО ВТБ Лизинг · АЛ 222891/19-23",
       "source_url": "https://www.vtb-leasing.ru/auto/probeg/shacman-sx331863366-al-222891-19-23/",
-      "pricing_mode": "russia_resale",
-      "currency": "RUB",
-      "price_rub": "5443980.00",
       "specs": "544 л.с. · двигатель 12,54 л · пробег уточняется",
-      "documents_note": "Продавец предлагает покупку по договору купли-продажи в РФ с НДС. До оплаты необходимо сверить ПТС/ЭПТС, статус утильсбора, регистрационные ограничения и залоги.",
       "condition_note": "Пробег в публикации не указан. Состояние кузова, шасси и агрегатов проверяется на осмотре.",
-      "customs": {
-        "status": "russia_resale",
-        "equipment_with_customs_rub": "5443980.00",
-        "additional_import_payments_rub": "0.00",
-        "vat_in_seller_price": true
-      },
-      "image_source_url": "https://www.vtb-leasing.ru/upload/iblock/c25/umq0ufsxzabweexlzwgkcjd3p4kmvt1t/IMG_0155.webp"
+      "image_source_url": "https://www.vtb-leasing.ru/upload/iblock/c25/umq0ufsxzabweexlzwgkcjd3p4kmvt1t/IMG_0155.webp",
+      "offer_price_rub": "5443980.00"
     }
-  ],
-  "audience": "Строительные компании; полноразмерная строительная техника",
-  "pricing_model": "Два предварительных сценария ввоза из Китая и три предложения покупки уже в России. Итог 4,9–5,95 млн рублей за единицу; доставка и услуги отдельно.",
-  "price_range_rub": {
-    "min": 4900000,
-    "max": 5950000
-  },
-  "customs_method": {
-    "date": "2026-10-19",
-    "sources": {
-      "tariff84": {
-        "title": "ЕТТ ЕАЭС, группа 84",
-        "url": "https://eec.eaeunion.org/comission/department/catr/ett/ru.2022/ru.84_2022_27.04.2026.pdf"
-      },
-      "util81": {
-        "title": "ПП РФ № 81: экскаваторы, таблица 2026",
-        "url": "https://government.ru/docs/all/105365/?page=5"
-      },
-      "util81_loaders": {
-        "title": "ПП РФ № 81: погрузчики F03, таблица 2026",
-        "url": "https://government.ru/docs/all/105365/?page=6"
-      },
-      "clearance": {
-        "title": "ПП РФ № 1637: таможенный сбор",
-        "url": "https://government.ru/docs/all/156477/"
-      },
-      "vat": {
-        "title": "ФНС: НДС 22% с 2026 года",
-        "url": "https://www.nalog.gov.ru/rn25/news/activities_fts/16590316/"
-      }
-    },
-    "customs_value": "Цена продавца в рублях. Перевозка, страхование и иные добавления до места прибытия в ЕАЭС в этом сценарии не учтены; при выборе маршрута их необходимо включить в таможенную стоимость.",
-    "vat_formula": "22% × (таможенная стоимость + пошлина); утильсбор и таможенный сбор в базу НДС не включены",
-    "total_formula": "Цена техники + пошлина + ввозной НДС + таможенный сбор + утилизационный сбор",
-    "excluded": [
-      "Перевозка",
-      "Страхование",
-      "Услуги брокера и TE GROUP",
-      "СВХ",
-      "Сертификация и оформление ПСМ/ЭПТС"
-    ],
-    "rounding": "Каждый платёж округлён до копеек ROUND_HALF_UP; суммы на странице отображаются в рублях/млн рублей",
-    "applies_to": "Только pricing_mode=import_estimate; для russia_resale цена с НДС, повторный импорт не производится."
-  }
+  ]
 }

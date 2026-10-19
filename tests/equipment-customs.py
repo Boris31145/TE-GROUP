@@ -64,28 +64,22 @@ class CustomsTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             customs.estimate(1, rate=".30", border_transport=-1, **kw)
 
-    def test_budget_and_resale_no_double_tax(self):
+    def test_customer_prices_preserved_without_cost_breakdown(self):
         data = json.loads((ROOT / "equipment/listings.json").read_text())
         page = (ROOT / "equipment/index.html").read_text()
-        self.assertEqual(len(data["items"]), 5)
+        expected = {"sdlg-lg936l": "5168095.28", "sany-sy200c-pro": "5512676.47", "bizon-k150": "5590000.00", "shacman-sx33186v366": "5600000.00", "shacman-sx331863366": "5443980.00"}
+        self.assertEqual({i["id"]:i["offer_price_rub"] for i in data["items"]}, expected)
         self.assertEqual(len({i["serial"] for i in data["items"]}), 5)
-        self.assertEqual({i["kind"] for i in data["items"]}, {"Погрузчики", "Экскаваторы", "Самосвалы"})
         for item in data["items"]:
-            c = customs.calculate_item(item, data["rates"])
-            self.assertEqual(c, item["customs"])
-            self.assertTrue(D("4900000") <= D(c["equipment_with_customs_rub"]) <= D("5950000"))
             self.assertIn(item["serial"], page)
-            self.assertTrue((ROOT / "assets/equipment" / (item["id"]+".webp")).exists())
-            if item["pricing_mode"] == "import_estimate":
-                parts = sum(D(c[k]) for k in ("duty_rub", "vat_rub", "clearance_fee_rub", "recycling_fee_rub"))
-                self.assertEqual(parts, D(c["customs_total_rub"]))
-                self.assertEqual(D(item["price_rub"]) + parts, D(c["equipment_with_customs_rub"]))
-                self.assertFalse(c["border_transport_included"])
-            else:
-                self.assertEqual(c["equipment_with_customs_rub"], item["price_rub"])
-                self.assertEqual(c["additional_import_payments_rub"], "0.00")
-                self.assertTrue(c["vat_in_seller_price"])
-        self.assertEqual(page.count('class="customs-details"'), 5)
+            self.assertNotIn("customs", item)
+            self.assertNotIn("price_original", item)
+            self.assertNotIn("price_rub", item)
+        self.assertEqual(page.count('<small>Стоимость техники</small>'), 5)
+        for term in ["НДС", "утиль", "тамож", "Техника у продавца", "1672354", "3840322"]:
+            self.assertNotIn(term, page)
+            self.assertNotIn(term, json.dumps(data,ensure_ascii=False))
+        self.assertIn("оплачивается отдельно", page)
 
     def test_new_selection_tax_categories(self):
         sdlg = customs.estimate("1003412.40", rate=".05", util_base=172500, util_coefficient="22.48")
