@@ -7,6 +7,6 @@
   "private": true,
   "scripts": {
     "build": "node scripts/build-production.cjs",
-    "test": "node tests/documents.cjs && node tests/balance-invoice.cjs"
+    "test": "node tests/documents.cjs && node tests/balance-invoice.cjs && node tests/readiness-documents.cjs"
   }
 }
