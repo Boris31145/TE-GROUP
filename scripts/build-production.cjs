@@ -4,7 +4,7 @@ const root=path.resolve(__dirname,'..');
 if(!process.env.TE_SOURCE_DIR)throw Error('Set TE_SOURCE_DIR to the non-public editable source directory.');
 const source=path.resolve(process.env.TE_SOURCE_DIR);
 if(source===root)throw Error('Use a separate source directory to avoid obfuscating compiled files.');
-const own=['app','payment-instructions','premium-pdf','local-documents','pdf-preview','public-config','https-only'];
+const own=['app','payment-instructions','premium-pdf','local-documents','pdf-preview','public-config','https-only','document-flow'];
 const settings={target:'browser-no-eval',compact:true,controlFlowFlattening:false,deadCodeInjection:false,debugProtection:false,disableConsoleOutput:false,identifierNamesGenerator:'hexadecimal',renameGlobals:false,renameProperties:false,selfDefending:false,simplify:true,sourceMap:false,stringArray:true,stringArrayEncoding:['base64'],stringArrayThreshold:.7,unicodeEscapeSequence:false,seed:20261012};
 async function protect(code,name){
  const min=await minify(code,{compress:{passes:2},mangle:true,format:{comments:false},sourceMap:false});
@@ -36,21 +36,23 @@ async function protect(code,name){
   fs.writeFileSync(path.join(root,rel),result);
  }
  // Sensitive-data page retains strict no-eval CSP. Add immutable integrity checks for external JS.
- let cars=fs.readFileSync(path.join(source,'cars/index.html'),'utf8').replaceAll('20261012-3','20261012-4');
- cars=cars.replace(/<script src="([^"?]+)([^\"]*)"[^>]*><\/script>/g,(_,url,query)=>{
-  const bytes=fs.readFileSync(path.join(root,url));const sri=crypto.createHash('sha384').update(bytes).digest('base64');
-  return `<script src="${url}${query}" integrity="sha384-${sri}" crossorigin="anonymous"></script>`;
- });
- fs.writeFileSync(path.join(root,'cars/index.html'),cars);
+ for(const rel of ['cars/index.html','equipment/index.html']){
+  let page=fs.readFileSync(path.join(source,rel),'utf8');
+  page=page.replace(/<script\b([^>]*?)src="([^"?]+)([^\"]*)"[^>]*><\/script>/g,(_,attrs,url,query)=>{
+    const bytes=fs.readFileSync(path.join(root,url));const sri=crypto.createHash('sha384').update(bytes).digest('base64');
+    return `<script ${attrs.includes('defer')?'defer ':''}src="${url}${query}" integrity="sha384-${sri}" crossorigin="anonymous"></script>`;
+  });
+  fs.writeFileSync(path.join(root,rel),page);
+ }
  // This obsolete review HTML is not a public entry point.
  if(fs.existsSync(path.join(root,'auto-src/index.html')))fs.unlinkSync(path.join(root,'auto-src/index.html'));
  const files=own.map(n=>'auto-src/'+n+'.js');
- fs.writeFileSync(path.join(root,'production-build.json'),JSON.stringify({version:'20261012-5',sourceCommit:'268b650f632509f483b38cc9c7565c52a87277f8',tools:{'javascript-obfuscator':'5.9.0',terser:'5.51.2'},sourceMaps:false,eval:false,files:Object.fromEntries(files.map(f=>[f,crypto.createHash('sha256').update(fs.readFileSync(path.join(root,f))).digest('hex')]))},null,2)+'\n');
+ fs.writeFileSync(path.join(root,'production-build.json'),JSON.stringify({version:'20261019-7',sourceCommit:require('child_process').execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),tools:{'javascript-obfuscator':'5.9.0',terser:'5.51.2'},sourceMaps:false,eval:false,files:Object.fromEntries(files.map(f=>[f,crypto.createHash('sha256').update(fs.readFileSync(path.join(root,f))).digest('hex')]))},null,2)+'\n');
  // Early HTTPS upgrade on the production host. Edge redirect/HSTS still require domain access.
  const httpsBytes=fs.readFileSync(path.join(root,'auto-src/https-only.js'));
  const httpsSri=crypto.createHash('sha384').update(httpsBytes).digest('base64');
  const upgrade=`<script src="/auto-src/https-only.js?v=20261012-5" integrity="sha384-${httpsSri}" crossorigin="anonymous"></script>`;
- for(const rel of ['index.html','cars/index.html','goods/index.html','china-import/index.html','turkey-import/index.html','uae-import/index.html','israel-import/index.html','customs-clearance/index.html']){
+ for(const rel of ['index.html','cars/index.html','equipment/index.html','goods/index.html','china-import/index.html','turkey-import/index.html','uae-import/index.html','israel-import/index.html','customs-clearance/index.html']){
   const file=path.join(root,rel);let html=fs.readFileSync(file,'utf8');
   html=html.replace(/<script src="\/auto-src\/https-only\.js[^>]*><\/script>/g,'');
   html=html.replace(/<meta charset="utf-8"\s*\/?\s*>/i,match=>match+upgrade).replaceAll('20261012-4','20261012-5');

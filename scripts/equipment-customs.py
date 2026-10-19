@@ -106,6 +106,14 @@ def rebuild():
         card = '<article class="equipment-card" data-kind="'+item["kind"]+'" id="'+item["id"]+'"><div class="machine-photo"><img src="/assets/equipment/'+item["id"]+'.webp" alt="'+html.escape(item["model"])+' — фото из объявления продавца" width="800" height="600" loading="lazy"><span>'+html.escape(item["location"])+'</span></div><div class="machine-copy"><p class="eyebrow">'+item["kind"]+' / '+str(item["year"])+'</p><h2>'+html.escape(item["model"])+'</h2><p class="machine-specs">'+html.escape(item["specs"])+'</p><div class="machine-price"><small>Стоимость техники</small><strong>'+millions(str(total))+' млн ₽</strong><span>Предварительная стоимость</span></div><p class="machine-delivery">Доставка рассчитывается индивидуально.</p>'
         card += '<div class="machine-id"><small>'+item["serial_type"]+'</small><code>'+serial+'</code><button type="button" class="copy-id" data-serial="'+serial+'" aria-label="Скопировать номер '+serial+'">Копировать</button></div>'
         card += '<details><summary>Источник и проверка истории</summary><p>'+html.escape(item["seller"])+' · проверка публикации 19.10.2026. Наличие и состояние подтверждаются перед покупкой.</p><p>Номер опубликован продавцом. Сверьте его с табличкой и ПСМ/ЭПТС, проверьте ограничения, залоги и сервисные записи. Наличие номера не означает, что история уже проверена или доступна в единой базе.</p><p>'+html.escape(item["condition_note"])+'</p><a href="'+html.escape(item["source_url"],quote=True)+'" target="_blank" rel="noopener noreferrer">Открыть объявление продавца ↗</a><p><a href="https://www.google.com/search?q=%22'+serial+'%22" target="_blank" rel="noopener noreferrer">Поиск упоминаний номера ↗</a></p></details><a class="machine-request" href="'+request+'">Уточнить предложение <span>↗</span></a></div></article>'
+        amount = int(total.quantize(D("1"), rounding=ROUND_HALF_UP))
+        offer = {"id": item["id"], "asset_type": "equipment", "title": item["model"], "year": item["year"],
+                 "country": "CN" if item["location"].startswith("Китай") else "RU", "location": item["location"],
+                 "equipment_kind": item["kind"], "serial": item["serial"], "serial_type": item["serial_type"],
+                 "vin": item["serial"] if item["serial_type"] == "VIN" else None, "specs": item["specs"],
+                 "condition_description": item["condition_note"], "customer_price_rub": amount, "source_currency": "RUB"}
+        button = '<button type="button" class="machine-document" data-document-offer="' + html.escape(json.dumps(offer, ensure_ascii=False), quote=True) + '">Оформить договор и инвойс <span>↗</span></button>'
+        card = card.replace('<a class="machine-request"', button + '<a class="machine-request"')
         cards.append(card)
     page = ROOT / "equipment/index.html"
     text = page.read_text()
@@ -115,7 +123,7 @@ def rebuild():
     text = text.replace('ориентир за единицу без доставки', 'стоимость техники за единицу')
     text = re.sub(r'(<meta name="description" content=")[^"]*', r'\g<1>Погрузчик, экскаваторы и самосвалы для строительных компаний. Стоимость техники, фотографии, VIN и заводские номера. Индивидуальные условия поставки.', text, count=1)
     text = text.replace('Подберём технику и рассчитаем таможенное оформление.', 'Подберём технику и согласуем условия поставки.')
-    text = re.sub(r'equipment.css\?v=[^" ]+', 'equipment.css?v=20261019-5', text)
+    text = re.sub(r'equipment.css\?v=[^" ]+', 'equipment.css?v=20261019-7', text)
     page.write_text(text)
 
 

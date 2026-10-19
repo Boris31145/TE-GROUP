@@ -67,7 +67,7 @@ class CustomsTests(unittest.TestCase):
     def test_customer_prices_preserved_without_cost_breakdown(self):
         data = json.loads((ROOT / "equipment/listings.json").read_text())
         page = (ROOT / "equipment/index.html").read_text()
-        expected = {"sdlg-lg936l": "5168095.28", "sany-sy200c-pro": "5512676.47", "bizon-k150": "5590000.00", "shacman-sx33186v366": "5600000.00", "shacman-sx331863366": "5443980.00"}
+        expected = {"sdlg-lg936l": "5170000", "sany-sy200c-pro": "5510000", "bizon-k150": "5590000", "shacman-sx33186v366": "5600000", "shacman-sx331863366": "5440000"}
         self.assertEqual({i["id"]:i["offer_price_rub"] for i in data["items"]}, expected)
         self.assertEqual(len({i["serial"] for i in data["items"]}), 5)
         for item in data["items"]:
@@ -76,6 +76,7 @@ class CustomsTests(unittest.TestCase):
             self.assertNotIn("price_original", item)
             self.assertNotIn("price_rub", item)
         self.assertEqual(page.count('<small>Стоимость техники</small>'), 5)
+        self.assertEqual(page.count('class="machine-document"'), 5)
         for term in ["НДС", "утиль", "тамож", "Техника у продавца", "1672354", "3840322"]:
             self.assertNotIn(term, page)
             self.assertNotIn(term, json.dumps(data,ensure_ascii=False))
