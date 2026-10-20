@@ -4,7 +4,7 @@ const c={console,TextEncoder,TextDecoder,Uint8Array,ArrayBuffer,Date,setTimeout,
 vm.createContext(c);
 for(const name of ['vendor','settings','watermark-assets','payment-instructions','premium-pdf','local-documents','catalog-data'])vm.runInContext(fs.readFileSync(path.join(root,'auto-src',name+'.js'),'utf8'),c,{filename:name+'.js'});
 const api=c.TEPaymentInstructions,offers=c.TECatalogSnapshot.actual.offers;
-const buyer={full_name:'Тестов Иван Иванович',phone:'+7 999 000-00-00',email:'review@example.test',address:'Тестовый адрес, Москва, ул. Примерная, 1',document_type:'Паспорт РФ',passport_series:'0000',passport_number:'000000',passport_issued_by:'Тестовый орган — вымышленные данные',passport_issue_date:'2020-01-15',passport_department_code:'000-000'};
+const buyer={buyer_type:'individual',full_name:'Тестов Иван Иванович',phone:'+7 999 000-00-00',email:'review@example.test',address:'Тестовый адрес, Москва, ул. Примерная, 1',document_type:'Паспорт РФ',passport_series:'0000',passport_number:'000000',passport_issued_by:'Тестовый орган — вымышленные данные',passport_issue_date:'2020-01-15',passport_department_code:'000-000'};
 for(const v of [null,0,-1,NaN,Infinity,'2500000'])assert.throws(()=>api.invoiceAmount({offer:{source_price_rub:v}}));
 assert.equal(api.listingAmountRub({source_price_rub:2345678.6}),2345679);
 assert.equal(api.listingAmountRub({quote:{total_rub:3500000},source_price_rub:2200000}),3500000);
@@ -35,6 +35,14 @@ const equipment=JSON.parse(fs.readFileSync(path.join(root,'equipment/listings.js
 for(const o of equipment){const s=c.TELocalDocuments.makeSnapshot(o,buyer,c.TEDocumentSettings,Date.now());assert.equal(s.offer.serial,o.serial);assert.ok(api.requisitesQr(s).includes(o.serial));if(o.serial_type!=='VIN')assert.equal(s.offer.vin,null);}
 const organization={...buyer,buyer_type:'company',company_name:'ООО «Тестовая стройка»',company_inn:'7701234567',company_kpp:'770101001',company_address:'Тестовый юридический адрес, Москва, ул. Примерная, 1',signatory_basis:'Устава, директор'};
 const companySnapshot=c.TELocalDocuments.makeSnapshot(equipment[0],organization,c.TEDocumentSettings,Date.now());assert.equal(companySnapshot.buyer.passport_number,'');assert.equal(companySnapshot.buyer.company_name,organization.company_name);
+for(const asset of [equipment[0],baseline]){const companyDoc=c.TELocalDocuments.makeSnapshot(asset,organization,c.TEDocumentSettings,Date.now());assert.doesNotMatch(JSON.stringify(companyDoc.contract_terms),/для личного использования|личного импорта|статьей 23\.1/);}
+// Buyer type is explicit; a company needs only organization/representative/contact data.
+for(const buyer_type of ['',undefined,'other'])assert.throws(()=>c.TELocalDocuments.validateBuyer({...buyer,buyer_type}),/тип покупателя/);
+const minimalCompany={buyer_type:'company',company_name:organization.company_name,company_inn:organization.company_inn,company_address:organization.company_address,full_name:buyer.full_name,signatory_basis:'устава',phone:buyer.phone,email:buyer.email};
+const legal=c.TELocalDocuments.validateBuyer(minimalCompany);assert.equal(legal.company_kpp,'');assert.equal(legal.passport_number,'');assert.equal(legal.address,minimalCompany.company_address);
+const natural=c.TELocalDocuments.validateBuyer({...buyer,company_name:'Stale organization',company_inn:'1234567890',signatory_basis:'Stale authority'});assert.equal(natural.company_name,'');assert.equal(natural.company_inn,'');assert.equal(natural.signatory_basis,'');
+for(const missing of ['company_name','company_inn','company_address','full_name','signatory_basis','phone','email'])assert.throws(()=>c.TELocalDocuments.validateBuyer({...minimalCompany,[missing]:''}),missing);
+for(const overlong of [{company_name:'a'.repeat(201)},{signatory_basis:'a'.repeat(201)}])assert.throws(()=>c.TELocalDocuments.validateBuyer({...minimalCompany,...overlong}));
 (async()=>{
  const settings=c.TEDocumentSettings,decode=x=>Uint8Array.from(Buffer.from(x,'base64'));
  const resources={PDFLib:c.PDFLib,fontkit:c.fontkit,font:decode(settings.font_base64),fontBold:decode(settings.font_bold_base64),signatureMarks:decode(settings.signature_marks_base64),qrcode:c.qrcode};

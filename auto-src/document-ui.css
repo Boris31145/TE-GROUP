@@ -23,3 +23,17 @@
 #tegroup-mobile-review #pdfFit{min-width:90px;font-size:12px}#tegroup-mobile-review #pdfFit:not(:disabled){text-decoration:underline;text-underline-offset:3px}@media(max-width:600px){#tegroup-mobile-review .pdf-toolbar{display:grid;grid-template-columns:1fr auto;gap:8px}#tegroup-mobile-review .pdf-pages{grid-column:1;grid-row:1}#tegroup-mobile-review #pdfSave{grid-column:2;grid-row:1}#tegroup-mobile-review .pdf-zoom{grid-column:1/-1;grid-row:2;justify-content:center}#tegroup-mobile-review .pdf-toolbar button{min-width:44px;min-height:44px}}
 
 #tegroup-mobile-review .document-file p{font-size:13px;line-height:1.7;margin:0 0 18px}#tegroup-mobile-review .document-selection .payment-schedule{font-weight:600;line-height:1.7}
+
+/* Buyer selection precedes either private-data form in both catalogues. */
+#tegroup-mobile-review .document-flow .buyer-choice{margin:22px 0;padding:0;border:0}
+#tegroup-mobile-review .buyer-choice legend{font-size:15px;font-weight:600;margin-bottom:12px}
+#tegroup-mobile-review .buyer-options{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+#tegroup-mobile-review .document-flow .buyer-option{display:flex;align-items:center;gap:12px;padding:17px 15px;margin:0;min-width:0;border:1px solid #d4ddce;border-radius:4px;background:#fff;cursor:pointer}
+#tegroup-mobile-review .buyer-option:has(input:checked){border-color:#536e43;background:#edf3e7;box-shadow:inset 0 0 0 1px #536e43}
+#tegroup-mobile-review .document-flow .buyer-option input{width:18px;height:18px;min-height:18px;flex:0 0 18px;margin:0;accent-color:#3e5b30}
+#tegroup-mobile-review .buyer-option strong{display:block;font-size:13px;font-weight:600;line-height:1.5;color:#30482a}
+#tegroup-mobile-review .buyer-option small{display:block;font-size:11px;line-height:1.5;margin-top:4px;color:#64715c}
+#tegroup-mobile-review .buyer-option:focus-within{outline:2px solid #967849;outline-offset:3px}
+#tegroup-mobile-review .document-flow #companyFields{margin-top:0;padding-top:0;border-top:0}
+#tegroup-mobile-review .document-flow #companyFields legend{display:none}
+@media(max-width:520px){#tegroup-mobile-review .buyer-options{grid-template-columns:1fr;gap:10px}#tegroup-mobile-review .document-flow .buyer-option{padding:14px 16px}}
