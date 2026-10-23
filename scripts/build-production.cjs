@@ -42,15 +42,16 @@ async function protect(code,name){
  for(const rel of ['cars/index.html','equipment/index.html','documents/balance/index.html']){
   let page=fs.readFileSync(path.join(source,rel),'utf8');
   page=page.replace(/<script\b([^>]*?)src="([^"?]+)([^\"]*)"[^>]*><\/script>/g,(_,attrs,url,query)=>{
-    const bytes=fs.readFileSync(path.join(root,url));const sri=crypto.createHash('sha384').update(bytes).digest('base64');
+    const bytes=fs.readFileSync(path.join(root,url));const sri=crypto.createHash('sha384').update(bytes).digest('base64');query='?v='+crypto.createHash('sha256').update(bytes).digest('hex').slice(0,16);
     return `<script ${attrs.includes('defer')?'defer ':''}src="${url}${query}" integrity="sha384-${sri}" crossorigin="anonymous"></script>`;
   });
+  page=page.replace(/(<link\b[^>]*href=")([^"?]+\.css)([^"]*)/g,(_,prefix,url)=>{const hash=crypto.createHash('sha256').update(fs.readFileSync(path.join(root,url))).digest('hex').slice(0,16);return prefix+url+'?v='+hash;});
   fs.writeFileSync(path.join(root,rel),page);
  }
  // This obsolete review HTML is not a public entry point.
  if(fs.existsSync(path.join(root,'auto-src/index.html')))fs.unlinkSync(path.join(root,'auto-src/index.html'));
  const files=own.map(n=>'auto-src/'+n+'.js');
- fs.writeFileSync(path.join(root,'production-build.json'),JSON.stringify({version:'20261023-6',sourceCommit:require('child_process').execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),tools:{'javascript-obfuscator':'5.9.0',terser:'5.51.2'},sourceMaps:false,eval:false,files:Object.fromEntries(files.map(f=>[f,crypto.createHash('sha256').update(fs.readFileSync(path.join(root,f))).digest('hex')]))},null,2)+'\n');
+ fs.writeFileSync(path.join(root,'production-build.json'),JSON.stringify({version:'20261023-7',sourceCommit:require('child_process').execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),tools:{'javascript-obfuscator':'5.9.0',terser:'5.51.2'},sourceMaps:false,eval:false,files:Object.fromEntries(files.map(f=>[f,crypto.createHash('sha256').update(fs.readFileSync(path.join(root,f))).digest('hex')]))},null,2)+'\n');
  // Early HTTPS upgrade on the production host. Edge redirect/HSTS still require domain access.
  const httpsBytes=fs.readFileSync(path.join(root,'auto-src/https-only.js'));
  const httpsSri=crypto.createHash('sha384').update(httpsBytes).digest('base64');
