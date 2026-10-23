@@ -28,7 +28,7 @@ for(const [rub,split] of [[2999999,false],[3000000,false],[3000001,true],[598000
  assert.equal(api.orderAmount(s),rub*100);
  assert.equal(api.invoiceAmount(s),split?rub*50:rub*100);
  assert.equal(s.payment_terms.amount_kopecks+s.payment_terms.schedule.balance_kopecks,api.orderAmount(s));
- if(!split)assert.equal(JSON.stringify(s.contract_terms),JSON.stringify(c.TEDocumentSettings.contract),'Old contract terms must remain unchanged');
+ if(!split){const expected=structuredClone(c.TEDocumentSettings.contract);expected[2][1][4]=s.contract_terms[2][1][4];assert.equal(JSON.stringify(s.contract_terms),JSON.stringify(expected),'Existing terms except the clarified recipient identity must remain unchanged');assert.match(s.contract_terms[2][1][4],/то же юридическое лицо/);}
  else {if(o.price_kind!=='unified_estimate')assert.equal(s.contract_terms[2][1][0],c.TEDocumentSettings.contract[2][1][0]);const t=JSON.stringify(s.contract_terms);assert.ok(t.includes('10 (десяти) календарных дней'));assert.ok(t.includes('получения уведомления Продавца'));assert.ok(!t.includes('30 календарных дней'));}
 }
 const equipment=JSON.parse(fs.readFileSync(path.join(root,'equipment/listings.json'),'utf8')).items.map(i=>({id:i.id,title:i.model,asset_type:'equipment',year:i.year,country:i.location.startsWith('Китай')?'CN':'RU',location:i.location,equipment_kind:i.kind,serial:i.serial,serial_type:i.serial_type,vin:i.serial_type==='VIN'?i.serial:null,specs:i.specs,condition_description:i.condition_note,customer_price_rub:Number(i.offer_price_rub)}));
