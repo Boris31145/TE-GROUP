@@ -1,0 +1,16 @@
+const fs=require('fs'),path=require('path'),vm=require('vm'),assert=require('node:assert/strict');
+const root=path.resolve(__dirname,'..'),c={structuredClone,Date,Intl,console};c.globalThis=c;vm.createContext(c);
+for(const file of ['auto-src/payment-instructions.js','assets/live-pricing.js'])vm.runInContext(fs.readFileSync(path.join(root,file),'utf8'),c);
+const rates=JSON.parse(fs.readFileSync(path.join(root,'assets/currency-rates.json'))),api=c.TELivePricing;c.TELivePricing.setRates(rates);
+const usd={id:'usd',source_price_rub:1,pricing:{mode:'purchase',currency:'USD',amount:20000,fixed_rub:100000}};
+assert.equal(api.amount(usd).rub,Math.round(20000*rates.rates.USD+100000));
+const changed=structuredClone(rates);changed.rates.USD+=5;assert.equal(api.amount(usd,changed).rub-api.amount(usd,rates).rub,100000);
+const yuan={id:'cny',customer_price_rub:5000000,pricing:{mode:'indexed_budget',currency:'CNY',amount:100000,base_rate:rates.rates.CNY,base_total_rub:5000000,fixed_rub:0}};
+assert.equal(api.amount(yuan).rub,5000000);const yuanRate=structuredClone(rates);yuanRate.rates.CNY+=1;assert.equal(api.amount(yuan,yuanRate).rub,5100000);
+const yen={pricing:{mode:'equipment_import',currency:'JPY',amount:1000000,fixed_rub:0,duty_percent:5}};
+assert.ok(api.amount(yen,rates,'KG').rub<api.amount(yen,rates,'RU').rub);assert.equal(api.customsFee(1200000),4924);assert.equal(api.customsFee(1200000.01),13541);
+const bad=structuredClone(rates);bad.rates.JPY=-1;assert.throws(()=>api.setRates(bad));assert.equal(api.getRates().rates.JPY,rates.rates.JPY);
+const frozen=api.priced(yuan,'RU'),again=api.priced(yuan,'RU');assert.equal(JSON.stringify(frozen),JSON.stringify(again),'Identical quote signatures must not change because wall-clock time changed');
+api.setRates(yuanRate);assert.equal(frozen.customer_price_rub,5000000,'A captured offer is immutable');assert.equal(api.priced(yuan).customer_price_rub,5100000);
+assert.equal(c.TEPaymentInstructions.paymentDueDate('2026-10-15'),'2026-10-26');assert.equal(c.TEPaymentInstructions.paymentDueDate('2026-10-23'),'2026-11-02');assert.equal(c.TEPaymentInstructions.paymentDueDate('2026-12-25'),'2027-01-11');
+console.log('PASS: USD/CNY/JPY calculations, fixed RUB costs, customs fee boundary, invalid rate rejection, stable frozen price, statutory deadline');

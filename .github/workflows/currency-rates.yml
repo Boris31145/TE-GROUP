@@ -1,0 +1,49 @@
+name: Refresh official currency rates
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: currency-rates
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Fetch official reference rates
+        id: rates
+        continue-on-error: true
+        run: python scripts/update-currency-rates.py
+      - name: Save public rate snapshot
+        if: steps.rates.outcome == 'success'
+        run: |
+          git config user.name 'TE GROUP rates'
+          git config user.email 'rates@users.noreply.github.com'
+          git add assets/currency-rates.json
+          git diff --cached --quiet || git commit -m 'Refresh official currency rates'
+          git push
+      # A GITHUB_TOKEN commit does not itself trigger a Pages branch build.
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+      - uses: actions/deploy-pages@v4
+        id: deployment
+      - name: Report unavailable rate feed
+        if: steps.rates.outcome == 'failure'
+        run: |
+          echo "::error::The official rate feed was unavailable; the last published rates were retained."
+          exit 1
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}

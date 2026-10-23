@@ -1,0 +1,1 @@
+(function(){const e=document.querySelector('[data-home-order]');if(!e)return;try{const ids=JSON.parse(sessionStorage.getItem('te-order-ids')||'[]');e.textContent='Заказ'+(ids.length?' · '+ids.length:'')}catch{}})();

@@ -1,6 +1,6 @@
 {
-  "version": "20261023-5",
-  "sourceCommit": "7be07c3adc8ef8ed36da2dd92fa7c2549b79ad11",
+  "version": "20261023-6",
+  "sourceCommit": "0c7c8778d434409ad2d994ee9a2689ce73eab1a6",
   "tools": {
     "javascript-obfuscator": "5.9.0",
     "terser": "5.51.2"
@@ -9,14 +9,16 @@
   "eval": false,
   "files": {
     "auto-src/app.js": "4f507484c96b6b0a31c8fad3628a947d25ebf113153eff3c942b3e24f07bafaa",
-    "auto-src/payment-instructions.js": "82c11ad2f6bd97ca9fff44aba5309f53674e5c6372c62f6461e18e53d62cee1d",
-    "auto-src/premium-pdf.js": "bb7e0f1868e5fcb08654cb0d60112227175cf5d4385c8a734d6394431d003d24",
-    "auto-src/local-documents.js": "a9a10188f583f423401c51cc13fb6cb98281964361fb3bd0b5453e8b4bc81ffd",
+    "auto-src/payment-instructions.js": "16ec8d30e550c195e09811f0ac14d6d6d9ff00a61095fe31b091aa35114a208c",
+    "auto-src/premium-pdf.js": "d196ef96d680e62f2111564f0cf9725c71962d40aa9e00a509e2353d4cf03eb3",
+    "auto-src/local-documents.js": "3023c8694643b8411d91eb95e622a30d227aeb06b24d60c9d20ed6a8bdc9321a",
     "auto-src/pdf-preview.js": "1733b82756dbdf5c9aa2ba87611d0a6404847060e791d924cc4dcd25e066b9c6",
     "auto-src/public-config.js": "424960332903079bd6e109635c7bcf04b044f5be4e7f5efa5c9ad76cb340d528",
     "auto-src/https-only.js": "04956835727d63a01d3bd6247be2190fad7cf0a9754547b35b1be4c4fe765abc",
-    "auto-src/document-flow.js": "6199905d3222988020d4af26c0ecd2458219931276aef86b96a32b383b485e96",
-    "auto-src/balance-invoice.js": "a6f9dbdadec533d940440534b332628ad1585713e3597cd0e14fff5cf9a52af4",
-    "auto-src/balance-ui.js": "2381eec7c08e2b9343ec5a77bd03e6adf8bdb4be36d3ad158f3959a46304eff1"
+    "auto-src/document-flow.js": "3da6f92b832fb16bf82f41b312e4c39288d54b4191470edbe66dce7d75122325",
+    "auto-src/balance-invoice.js": "e3f586fb6ef544269ab4d31e4c72e4c48ba9eb908b9aa42ddeeaf7ee46e3db11",
+    "auto-src/balance-ui.js": "e06fe697a7ffd4e596b7255fdae81f5285438ae01637e64e73898fbe438c4b02",
+    "auto-src/order-documents.js": "88080c3e31c7b4aad77fecbc3d3c1844f81a402673c36951541a0d0976bd4900",
+    "auto-src/order-balance.js": "a83ef64ef43cf37e725d5dad55906826fae98ca717e8502ba4bb69125aee2c61"
   }
 }

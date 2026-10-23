@@ -1,0 +1,2353 @@
+{
+  "version": 1,
+  "checked_on": "2026-10-23",
+  "offers": [
+    {
+      "id": "dealer_retail:891832bc-40f3-4768-aabe-d477bc4fb751",
+      "title": "Honda Civic Sport",
+      "year": 2026,
+      "country": "US",
+      "mileage_km": 6389,
+      "power_hp": 150,
+      "fuel": "Бензин",
+      "engine_cc": 2000,
+      "transmission": "Вариатор",
+      "source_url": "https://www.cars.com/vehicledetail/891832bc-40f3-4768-aabe-d477bc4fb751/",
+      "source_currency": "USD",
+      "source_price": 27500,
+      "source_price_rub": 2334882,
+      "customer_price_rub": null,
+      "display_price_rub": null,
+      "price_kind": "fixed_purchase",
+      "source_expired": false,
+      "availability": "unconfirmed",
+      "vin": "2HGFE2F53TH583093",
+      "location": "Parkville, Maryland",
+      "asset_type": "car",
+      "category": "Автомобили",
+      "destinations": [
+        "RU"
+      ],
+      "images": [
+        "/assets/catalog/car-0-0.webp",
+        "/assets/catalog/car-0-1.webp",
+        "/assets/catalog/car-0-2.webp"
+      ],
+      "priority": 2126,
+      "condition_description": "Состояние и комплектация по согласованной Спецификации; осмотр перед приобретением.",
+      "pricing": {
+        "mode": "purchase",
+        "currency": "USD",
+        "amount": 27500,
+        "fixed_rub": 0
+      },
+      "client_note": "Указана стоимость автомобиля. Доставка и импортные платежи рассчитываются отдельно."
+    },
+    {
+      "id": "dealer_retail:47a452f2-7f50-4a70-ad9b-5cd7000dc8ff",
+      "title": "Honda Accord LX",
+      "year": 2024,
+      "country": "US",
+      "mileage_km": 26565,
+      "power_hp": 192,
+      "fuel": "Бензин",
+      "engine_cc": 1500,
+      "transmission": "Вариатор",
+      "source_url": "https://www.cars.com/vehicledetail/47a452f2-7f50-4a70-ad9b-5cd7000dc8ff/",
+      "source_currency": "USD",
+      "source_price": 25600,
+      "source_price_rub": 2173563,
+      "customer_price_rub": null,
+      "display_price_rub": null,
+      "price_kind": "fixed_purchase",
+      "source_expired": false,
+      "availability": "unconfirmed",
+      "vin": "1HGCY1F25RA017938",
+      "location": "Parkville, Maryland",
+      "asset_type": "car",
+      "category": "Автомобили",
+      "destinations": [
+        "RU"
+      ],
+      "images": [
+        "/assets/catalog/car-1-0.webp",
+        "/assets/catalog/car-1-1.webp",
+        "/assets/catalog/car-1-2.webp"
+      ],
+      "priority": 2124,
+      "condition_description": "Состояние и комплектация по согласованной Спецификации; осмотр перед приобретением.",
+      "pricing": {
+        "mode": "purchase",
+        "currency": "USD",
+        "amount": 25600,
+        "fixed_rub": 0
+      },
+      "client_note": "Указана стоимость автомобиля. Доставка и импортные платежи рассчитываются отдельно."
+    },
+    {
+      "id": "dealer_retail:ab6cd3b6-824f-4697-b626-f461a99e1f87",
+      "title": "Mazda CX-5 Preferred",
+      "year": 2024,
+      "country": "US",
+      "mileage_km": 48168,
+      "power_hp": null,
+      "fuel": "Бензин",
+      "engine_cc": 2500,
+      "transmission": "Автомат",
+      "source_url": "https://www.cars.com/vehicledetail/ab6cd3b6-824f-4697-b626-f461a99e1f87/",
+      "source_currency": "USD",
+      "source_price": 27348,
+      "source_price_rub": 2321976,
+      "customer_price_rub": null,
+      "display_price_rub": null,
+      "price_kind": "fixed_purchase",
+      "source_expired": false,
+      "availability": "unconfirmed",
+      "vin": "JM3KFBCM5R0372472",
+      "location": "Cincinnati, Ohio",
+      "asset_type": "car",
+      "category": "Автомобили",
+      "destinations": [
+        "RU"
+      ],
+      "images": [
+        "/assets/catalog/car-2-0.webp",
+        "/assets/catalog/car-2-1.webp",
+        "/assets/catalog/car-2-2.webp"
+      ],
+      "priority": 2124,
+      "condition_description": "Состояние и комплектация по согласованной Спецификации; осмотр перед приобретением.",
+      "pricing": {
+        "mode": "purchase",
+        "currency": "USD",
+        "amount": 27348,
+        "fixed_rub": 0
+      },
+      "client_note": "Указана стоимость автомобиля. Доставка и импортные платежи рассчитываются отдельно."
+    },
+    {
+      "id": "dealer_retail:cd300da2-8a9a-47a4-9d59-7b8a71a42b32",
+      "title": "Volkswagen Tiguan Wolfsburg",
+      "year": 2024,
+      "country": "US",
+      "mileage_km": 9416,
+      "power_hp": null,
+      "fuel": "Бензин",
+      "engine_cc": null,
+      "transmission": "Автомат",
+      "source_url": "https://www.cars.com/vehicledetail/cd300da2-8a9a-47a4-9d59-7b8a71a42b32/",
+      "source_currency": "USD",
+      "source_price": 29998,
+      "source_price_rub": 2546974,
+      "customer_price_rub": null,
+      "display_price_rub": null,
+      "price_kind": "fixed_purchase",
+      "source_expired": false,
+      "availability": "unconfirmed",
+      "vin": "3VVAB7AXXRM230031",
+      "location": "Omaha, Nebraska",
+      "asset_type": "car",
+      "category": "Автомобили",
+      "destinations": [
+        "RU"
+      ],
+      "images": [
+        "/assets/catalog/car-3-0.webp",
+        "/assets/catalog/car-3-1.webp",
+        "/assets/catalog/car-3-2.webp"
+      ],
+      "priority": 2124,
+      "condition_description": "Состояние и комплектация по согласованной Спецификации; осмотр перед приобретением.",
+      "pricing": {
+        "mode": "purchase",
+        "currency": "USD",
+        "amount": 29998,
+        "fixed_rub": 0
+      },
+      "client_note": "Указана стоимость автомобиля. Доставка и импортные платежи рассчитываются отдельно."
+    },
+    {
+      "id": "dealer_retail:0ee86766-5ef8-4445-bdbc-84870ae62ec3",
+      "title": "Toyota Camry SE",
+      "year": 2023,
+      "country": "US",
+      "mileage_km": 28579,
+      "power_hp": 203,
+      "fuel": "Бензин",
+      "engine_cc": 2500,
+      "transmission": "Автомат",
+      "source_url": "https://www.cars.com/vehicledetail/0ee86766-5ef8-4445-bdbc-84870ae62ec3/",
+      "source_currency": "USD",
+      "source_price": 26284,
+      "source_price_rub": 2231638,
+      "customer_price_rub": null,
+      "display_price_rub": null,
+      "price_kind": "fixed_purchase",
+      "source_expired": false,
+      "availability": "unconfirmed",
+      "vin": "4T1G11AK4PU742594",
+      "location": "Hampstead, Maryland",
+      "asset_type": "car",
+      "category": "Автомобили",
+      "destinations": [
+        "RU"
+      ],
+      "images": [
+        "/assets/catalog/car-4-0.webp",
+        "/assets/catalog/car-4-1.webp",
+        "/assets/catalog/car-4-2.webp"
+      ],
+      "priority": 2123,
+      "condition_description": "Состояние и комплектация по согласованной Спецификации; осмотр перед приобретением.",
+      "pricing": {
+        "mode": "purchase",
+        "currency": "USD",
+        "amount": 26284,
+        "fixed_rub": 0
+      },
+      "client_note": "Указана стоимость автомобиля. Доставка и импортные платежи рассчитываются отдельно."
+    },
+    {
+      "id": "dealer_retail:7b49d035-96db-4069-ba1e-6a98b369220c",
+      "title": "Toyota RAV4 LE",
+      "year": 2023,
+      "country": "US",
+      "mileage_km": 75716,
+      "power_hp": null,
+      "fuel": "Бензин",
+      "engine_cc": 2500,
+      "transmission": "Автомат",
+      "source_url": "https://www.cars.com/vehicledetail/7b49d035-96db-4069-ba1e-6a98b369220c/",
+      "source_currency": "USD",
+      "source_price": 27055,
+      "source_price_rub": 2297099,
+      "customer_price_rub": null,
+      "display_price_rub": null,
+      "price_kind": "fixed_purchase",
+      "source_expired": false,
+      "availability": "unconfirmed",
+      "vin": "2T3G1RFV8PW382173",
+      "location": "Elmhurst, Illinois",
+      "asset_type": "car",
+      "category": "Автомобили",
+      "destinations": [
+        "RU"
+      ],
+      "images": [
+        "/assets/catalog/car-5-0.webp",
+        "/assets/catalog/car-5-1.webp",
+        "/assets/catalog/car-5-2.webp"
+      ],
+      "priority": 2123,
+      "condition_description": "Состояние и комплектация по согласованной Спецификации; осмотр перед приобретением.",
+      "pricing": {
+        "mode": "purchase",
+        "currency": "USD",
+        "amount": 27055,
+        "fixed_rub": 0
+      },
+      "client_note": "Указана стоимость автомобиля. Доставка и импортные платежи рассчитываются отдельно."
+    },
+    {
+      "id": "dealer_retail:c280aead-49ab-4cba-a2b4-ed383e380355",
+      "title": "Subaru Forester Limited",
+      "year": 2023,
+      "country": "US",
+      "mileage_km": 27357,
+      "power_hp": null,
+      "fuel": "Бензин",
+      "engine_cc": 2500,
+      "transmission": "Вариатор",
+      "source_url": "https://www.cars.com/vehicledetail/c280aead-49ab-4cba-a2b4-ed383e380355/",
+      "source_currency": "USD",
+      "source_price": 28093,
+      "source_price_rub": 2385231,
+      "customer_price_rub": null,
+      "display_price_rub": null,
+      "price_kind": "fixed_purchase",
+      "source_expired": false,
+      "availability": "unconfirmed",
+      "vin": "JF2SKAPC1PH540799",
+      "location": "Folsom, California",
+      "asset_type": "car",
+      "category": "Автомобили",
+      "destinations": [
+        "RU"
+      ],
+      "images": [
+        "/assets/catalog/car-6-0.webp",
+        "/assets/catalog/car-6-1.webp",
+        "/assets/catalog/car-6-2.webp"
+      ],
+      "priority": 2123,
+      "condition_description": "Состояние и комплектация по согласованной Спецификации; осмотр перед приобретением.",
+      "pricing": {
+        "mode": "purchase",
+        "currency": "USD",
+        "amount": 28093,
+        "fixed_rub": 0
+      },
+      "client_note": "Указана стоимость автомобиля. Доставка и импортные платежи рассчитываются отдельно."
+    },
+    {
+      "id": "velauto:3934135",
+      "title": "Kia RAY",
+      "year": 2026,
+      "country": "KR",
+      "mileage_km": 2,
+      "power_hp": 76,
+      "fuel": "Бензин",
+      "engine_cc": 998,
+      "transmission": "Автомат",
+      "source_url": "https://velauto.ru/catalog/3934135",
+      "source_currency": "RUB",
+      "source_price": 2155826,
+      "source_price_rub": 2155826,
+      "customer_price_rub": 2000015,
+      "display_price_rub": null,
+      "price_kind": "unified_estimate",
+      "source_expired": false,
+      "availability": "on_request",
+      "vin": null,
+      "location": null,
+      "asset_type": "car",
+      "category": "Автомобили",
+      "destinations": [
+        "RU"
+      ],
+      "images": [
+        "/assets/catalog/car-7-0.webp",
+        "/assets/catalog/car-7-1.webp",
+        "/assets/catalog/car-7-2.webp"
+      ],
+      "priority": 2126,
+      "condition_description": "Состояние и комплектация по согласованной Спецификации; осмотр перед приобретением.",
+      "pricing": {
+        "mode": "indexed_budget",
+        "currency": "KRW",
+        "amount": 18890000,
+        "fixed_rub": 0,
+        "base_rate": 0.0612037,
+        "base_total_rub": 2000015
+      }
+    },
+    {
+      "id": "velauto:3586334",
+      "title": "KG Mobility TIBOLI",
+      "year": 2026,
+      "country": "KR",
+      "mileage_km": 955,
+      "power_hp": 126,
+      "fuel": "Бензин",
+      "engine_cc": 1597,
+      "transmission": "Автомат",
+      "source_url": "https://velauto.ru/catalog/3586334",
+      "source_currency": "RUB",
+      "source_price": 2413310,
+      "source_price_rub": 2413310,
+      "customer_price_rub": 2257499,
+      "display_price_rub": null,
+      "price_kind": "unified_estimate",
+      "source_expired": true,
+      "availability": "on_request",
+      "vin": null,
+      "location": null,
+      "asset_type": "car",
+      "category": "Автомобили",
+      "destinations": [
+        "RU"
+      ],
+      "images": [
+        "/assets/catalog/car-8-0.webp",
+        "/assets/catalog/car-8-1.webp",
+        "/assets/catalog/car-8-2.webp"
+      ],
+      "priority": 2126,
+      "condition_description": "Состояние и комплектация по согласованной Спецификации; осмотр перед приобретением.",
+      "pricing": {
+        "mode": "indexed_budget",
+        "currency": "KRW",
+        "amount": 21000000,
+        "fixed_rub": 0,
+        "base_rate": 0.0612037,
+        "base_total_rub": 2257499
+      }
+    },
+    {
+      "id": "velauto:3252513",
+      "title": "Hyundai Sonata",
+      "year": 2026,
+      "country": "KR",
+      "mileage_km": 38725,
+      "power_hp": 146,
+      "fuel": "Газ",
+      "engine_cc": 1999,
+      "transmission": "Автомат",
+      "source_url": "https://velauto.ru/catalog/3252513",
+      "source_currency": "RUB",
+      "source_price": 2460033,
+      "source_price_rub": 2460033,
+      "customer_price_rub": 2304222,
+      "display_price_rub": null,
+      "price_kind": "unified_estimate",
+      "source_expired": true,
+      "availability": "on_request",
+      "vin": null,
+      "location": null,
+      "asset_type": "car",
+      "category": "Автомобили",
+      "destinations": [
+        "RU"
+      ],
+      "images": [
+        "/assets/catalog/car-9-0.webp",
+        "/assets/catalog/car-9-1.webp",
+        "/assets/catalog/car-9-2.webp"
+      ],
+      "priority": 2126,
+      "condition_description": "Состояние и комплектация по согласованной Спецификации; осмотр перед приобретением.",
+      "pricing": {
+        "mode": "indexed_budget",
+        "currency": "KRW",
+        "amount": 21700000,
+        "fixed_rub": 0,
+        "base_rate": 0.0612037,
+        "base_total_rub": 2304222
+      }
+    },
+    {
+      "id": "velauto:4027465",
+      "title": "Hyundai AVANTE",
+      "year": 2026,
+      "country": "KR",
+      "mileage_km": 3932,
+      "power_hp": 123,
+      "fuel": "Бензин",
+      "engine_cc": 1598,
+      "transmission": "Автомат",
+      "source_url": "https://velauto.ru/catalog/4027465",
+      "source_currency": "RUB",
+      "source_price": 2546802,
+      "source_price_rub": 2546802,
+      "customer_price_rub": 2390991,
+      "display_price_rub": null,
+      "price_kind": "unified_estimate",
+      "source_expired": false,
+      "availability": "on_request",
+      "vin": null,
+      "location": null,
+      "asset_type": "car",
+      "category": "Автомобили",
+      "destinations": [
+        "RU"
+      ],
+      "images": [
+        "/assets/catalog/car-10-0.webp",
+        "/assets/catalog/car-10-1.webp",
+        "/assets/catalog/car-10-2.webp"
+      ],
+      "priority": 2126,
+      "condition_description": "Состояние и комплектация по согласованной Спецификации; осмотр перед приобретением.",
+      "pricing": {
+        "mode": "indexed_budget",
+        "currency": "KRW",
+        "amount": 22900000,
+        "fixed_rub": 0,
+        "base_rate": 0.0612037,
+        "base_total_rub": 2390991
+      }
+    },
+    {
+      "id": "velauto:4051220",
+      "title": "Volkswagen Tiguan",
+      "year": 2022,
+      "country": "KR",
+      "mileage_km": 47000,
+      "power_hp": 150,
+      "fuel": "Дизель",
+      "engine_cc": 1968,
+      "transmission": "Автомат",
+      "source_url": "https://velauto.ru/catalog/4051220",
+      "source_currency": "RUB",
+      "source_price": 3485883,
+      "source_price_rub": 3485883,
+      "customer_price_rub": 3330072,
+      "display_price_rub": null,
+      "price_kind": "unified_estimate",
+      "source_expired": true,
+      "availability": "on_request",
+      "vin": null,
+      "location": null,
+      "asset_type": "car",
+      "category": "Автомобили",
+      "destinations": [
+        "RU"
+      ],
+      "images": [
+        "/assets/catalog/car-11-0.webp",
+        "/assets/catalog/car-11-1.webp",
+        "/assets/catalog/car-11-2.webp"
+      ],
+      "priority": 2122,
+      "condition_description": "Состояние и комплектация по согласованной Спецификации; осмотр перед приобретением.",
+      "pricing": {
+        "mode": "indexed_budget",
+        "currency": "KRW",
+        "amount": 39990000,
+        "fixed_rub": 0,
+        "base_rate": 0.0612037,
+        "base_total_rub": 3330072,
+        "eur_duty_base": 5313.6,
+        "base_eur_rate": 91.1364
+      }
+    },
+    {
+      "id": "velauto:4033692",
+      "title": "Kia Sorento HEV 1.6 2WD",
+      "year": 2022,
+      "country": "KR",
+      "mileage_km": 48495,
+      "power_hp": 200,
+      "fuel": "Гибрид",
+      "engine_cc": 1598,
+      "transmission": "Автомат (электро)",
+      "source_url": "https://velauto.ru/catalog/4033692",
+      "source_currency": "RUB",
+      "source_price": 3933826,
+      "source_price_rub": 3933826,
+      "customer_price_rub": 3778015,
+      "display_price_rub": null,
+      "price_kind": "unified_estimate",
+      "source_expired": true,
+      "availability": "on_request",
+      "vin": null,
+      "location": null,
+      "asset_type": "car",
+      "category": "Автомобили",
+      "destinations": [
+        "RU"
+      ],
+      "images": [
+        "/assets/catalog/car-12-0.webp",
+        "/assets/catalog/car-12-1.webp",
+        "/assets/catalog/car-12-2.webp"
+      ],
+      "priority": 2122,
+      "condition_description": "Состояние и комплектация по согласованной Спецификации; осмотр перед приобретением.",
+      "pricing": {
+        "mode": "indexed_budget",
+        "currency": "KRW",
+        "amount": 24500000,
+        "fixed_rub": 0,
+        "base_rate": 0.0612037,
+        "base_total_rub": 3778015,
+        "eur_duty_base": 3995.0,
+        "base_eur_rate": 91.1364
+      }
+    },
+    {
+      "id": "velauto:4051225",
+      "title": "Ford Ranger",
+      "year": 2024,
+      "country": "KR",
+      "mileage_km": 10739,
+      "power_hp": 213,
+      "fuel": "Дизель",
+      "engine_cc": 1996,
+      "transmission": "Автомат",
+      "source_url": "https://velauto.ru/catalog/4051225",
+      "source_currency": "RUB",
+      "source_price": 5634417,
+      "source_price_rub": 5634417,
+      "customer_price_rub": 5478606,
+      "display_price_rub": null,
+      "price_kind": "unified_estimate",
+      "source_expired": true,
+      "availability": "on_request",
+      "vin": null,
+      "location": null,
+      "asset_type": "car",
+      "category": "Автомобили",
+      "destinations": [
+        "RU"
+      ],
+      "images": [
+        "/assets/catalog/car-13-0.webp",
+        "/assets/catalog/car-13-1.webp",
+        "/assets/catalog/car-13-2.webp"
+      ],
+      "priority": 2124,
+      "condition_description": "Состояние и комплектация по согласованной Спецификации; осмотр перед приобретением.",
+      "pricing": {
+        "mode": "indexed_budget",
+        "currency": "KRW",
+        "amount": 47000000,
+        "fixed_rub": 0,
+        "base_rate": 0.0612037,
+        "base_total_rub": 5478606
+      }
+    },
+    {
+      "id": "velauto:4051221",
+      "title": "Volvo XC90",
+      "year": 2019,
+      "country": "KR",
+      "mileage_km": 103000,
+      "power_hp": 235,
+      "fuel": "Дизель",
+      "engine_cc": 1969,
+      "transmission": "Автомат",
+      "source_url": "https://velauto.ru/catalog/4051221",
+      "source_currency": "RUB",
+      "source_price": 4870207,
+      "source_price_rub": 4870207,
+      "customer_price_rub": 4714396,
+      "display_price_rub": null,
+      "price_kind": "unified_estimate",
+      "source_expired": true,
+      "availability": "reserved",
+      "vin": null,
+      "location": null,
+      "asset_type": "car",
+      "category": "Автомобили",
+      "destinations": [
+        "RU"
+      ],
+      "images": [
+        "/assets/catalog/car-14-0.webp",
+        "/assets/catalog/car-14-1.webp",
+        "/assets/catalog/car-14-2.webp"
+      ],
+      "priority": 2119,
+      "condition_description": "Состояние и комплектация по согласованной Спецификации; осмотр перед приобретением.",
+      "pricing": {
+        "mode": "indexed_budget",
+        "currency": "KRW",
+        "amount": 29500000,
+        "fixed_rub": 0,
+        "base_rate": 0.0612037,
+        "base_total_rub": 4714396,
+        "eur_duty_base": 9451.199999999999,
+        "base_eur_rate": 91.1364
+      }
+    },
+    {
+      "id": "velauto:4051216",
+      "title": "Audi A6",
+      "year": 2018,
+      "country": "KR",
+      "mileage_km": 100490,
+      "power_hp": 190,
+      "fuel": "Бензин",
+      "engine_cc": 1984,
+      "transmission": "Автомат",
+      "source_url": "https://velauto.ru/catalog/4051216",
+      "source_currency": "RUB",
+      "source_price": 3819653,
+      "source_price_rub": 3819653,
+      "customer_price_rub": 3663842,
+      "display_price_rub": null,
+      "price_kind": "unified_estimate",
+      "source_expired": false,
+      "availability": "on_request",
+      "vin": null,
+      "location": null,
+      "asset_type": "car",
+      "category": "Автомобили",
+      "destinations": [
+        "RU"
+      ],
+      "images": [
+        "/assets/catalog/car-15-0.webp",
+        "/assets/catalog/car-15-1.webp",
+        "/assets/catalog/car-15-2.webp"
+      ],
+      "priority": 2118,
+      "condition_description": "Состояние и комплектация по согласованной Спецификации; осмотр перед приобретением.",
+      "pricing": {
+        "mode": "indexed_budget",
+        "currency": "KRW",
+        "amount": 16400000,
+        "fixed_rub": 0,
+        "base_rate": 0.0612037,
+        "base_total_rub": 3663842,
+        "eur_duty_base": 9523.199999999999,
+        "base_eur_rate": 91.1364
+      }
+    },
+    {
+      "id": "velauto:1666008",
+      "title": "Exeed LX (Zhuifeng)",
+      "year": 2026,
+      "country": "CN",
+      "mileage_km": 100,
+      "power_hp": 156,
+      "fuel": "Бензин",
+      "engine_cc": 1500,
+      "transmission": "CVT",
+      "source_url": "https://velauto.ru/catalog/1666008",
+      "source_currency": "RUB",
+      "source_price": 1905709,
+      "source_price_rub": 1905709,
+      "customer_price_rub": 1711661,
+      "display_price_rub": null,
+      "price_kind": "unified_estimate",
+      "source_expired": false,
+      "availability": "on_request",
+      "vin": null,
+      "location": null,
+      "asset_type": "car",
+      "category": "Автомобили",
+      "destinations": [
+        "RU"
+      ],
+      "images": [
+        "/assets/catalog/car-16-0.webp",
+        "/assets/catalog/car-16-1.webp",
+        "/assets/catalog/car-16-2.webp"
+      ],
+      "priority": 2126,
+      "condition_description": "Состояние и комплектация по согласованной Спецификации; осмотр перед приобретением.",
+      "pricing": {
+        "mode": "indexed_budget",
+        "currency": "CNY",
+        "amount": 78400,
+        "fixed_rub": 0,
+        "base_rate": 12.146,
+        "base_total_rub": 1711661
+      }
+    },
+    {
+      "id": "velauto:4044205",
+      "title": "Chery Tiggo 8",
+      "year": 2026,
+      "country": "CN",
+      "mileage_km": 1000,
+      "power_hp": 156,
+      "fuel": "Бензин",
+      "engine_cc": 1500,
+      "transmission": "DCT",
+      "source_url": "https://velauto.ru/catalog/4044205",
+      "source_currency": "RUB",
+      "source_price": 1913471,
+      "source_price_rub": 1913471,
+      "customer_price_rub": 1719423,
+      "display_price_rub": null,
+      "price_kind": "unified_estimate",
+      "source_expired": false,
+      "availability": "on_request",
+      "vin": null,
+      "location": null,
+      "asset_type": "car",
+      "category": "Автомобили",
+      "destinations": [
+        "RU"
+      ],
+      "images": [
+        "/assets/catalog/car-17-0.webp",
+        "/assets/catalog/car-17-1.webp",
+        "/assets/catalog/car-17-2.webp"
+      ],
+      "priority": 2126,
+      "condition_description": "Состояние и комплектация по согласованной Спецификации; осмотр перед приобретением.",
+      "pricing": {
+        "mode": "indexed_budget",
+        "currency": "CNY",
+        "amount": 79000,
+        "fixed_rub": 0,
+        "base_rate": 12.146,
+        "base_total_rub": 1719423
+      }
+    },
+    {
+      "id": "velauto:2103236",
+      "title": "Nissan X-Trail",
+      "year": 2026,
+      "country": "CN",
+      "mileage_km": 5000,
+      "power_hp": 140,
+      "fuel": "Бензин",
+      "engine_cc": 2000,
+      "transmission": "CVT",
+      "source_url": "https://velauto.ru/catalog/2103236",
+      "source_currency": "RUB",
+      "source_price": 2491783,
+      "source_price_rub": 2491783,
+      "customer_price_rub": 2297735,
+      "display_price_rub": null,
+      "price_kind": "unified_estimate",
+      "source_expired": false,
+      "availability": "on_request",
+      "vin": null,
+      "location": null,
+      "asset_type": "car",
+      "category": "Автомобили",
+      "destinations": [
+        "RU"
+      ],
+      "images": [
+        "/assets/catalog/car-18-0.webp",
+        "/assets/catalog/car-18-1.webp",
+        "/assets/catalog/car-18-2.webp"
+      ],
+      "priority": 2126,
+      "condition_description": "Состояние и комплектация по согласованной Спецификации; осмотр перед приобретением.",
+      "pricing": {
+        "mode": "indexed_budget",
+        "currency": "CNY",
+        "amount": 109900,
+        "fixed_rub": 0,
+        "base_rate": 12.146,
+        "base_total_rub": 2297735
+      }
+    },
+    {
+      "id": "velauto:3948288",
+      "title": "Geely Preface",
+      "year": 2025,
+      "country": "CN",
+      "mileage_km": 16000,
+      "power_hp": 181,
+      "fuel": "Бензин",
+      "engine_cc": 1500,
+      "transmission": "DCT",
+      "source_url": "https://velauto.ru/catalog/3948288",
+      "source_currency": "RUB",
+      "source_price": 2505966,
+      "source_price_rub": 2505966,
+      "customer_price_rub": 2311918,
+      "display_price_rub": null,
+      "price_kind": "unified_estimate",
+      "source_expired": false,
+      "availability": "on_request",
+      "vin": null,
+      "location": null,
+      "asset_type": "car",
+      "category": "Автомобили",
+      "destinations": [
+        "RU"
+      ],
+      "images": [
+        "/assets/catalog/car-19-0.webp",
+        "/assets/catalog/car-19-1.webp",
+        "/assets/catalog/car-19-2.webp"
+      ],
+      "priority": 2125,
+      "condition_description": "Состояние и комплектация по согласованной Спецификации; осмотр перед приобретением.",
+      "pricing": {
+        "mode": "indexed_budget",
+        "currency": "CNY",
+        "amount": 65500,
+        "fixed_rub": 0,
+        "base_rate": 12.146,
+        "base_total_rub": 2311918
+      }
+    },
+    {
+      "id": "velauto:4050994",
+      "title": "BMW 3 Series",
+      "year": 2021,
+      "country": "CN",
+      "mileage_km": 117000,
+      "power_hp": 156,
+      "fuel": "Бензин",
+      "engine_cc": 2000,
+      "transmission": "AT",
+      "source_url": "https://velauto.ru/catalog/4050994",
+      "source_currency": "RUB",
+      "source_price": 2884836,
+      "source_price_rub": 2884836,
+      "customer_price_rub": 2690788,
+      "display_price_rub": null,
+      "price_kind": "unified_estimate",
+      "source_expired": false,
+      "availability": "on_request",
+      "vin": null,
+      "location": null,
+      "asset_type": "car",
+      "category": "Автомобили",
+      "destinations": [
+        "RU"
+      ],
+      "images": [
+        "/assets/catalog/car-20-0.webp",
+        "/assets/catalog/car-20-1.webp",
+        "/assets/catalog/car-20-2.webp"
+      ],
+      "priority": 2121,
+      "condition_description": "Состояние и комплектация по согласованной Спецификации; осмотр перед приобретением.",
+      "pricing": {
+        "mode": "indexed_budget",
+        "currency": "CNY",
+        "amount": 119800,
+        "fixed_rub": 0,
+        "base_rate": 12.146,
+        "base_total_rub": 2690788
+      }
+    },
+    {
+      "id": "velauto:4050998",
+      "title": "BMW 3 Series",
+      "year": 2023,
+      "country": "CN",
+      "mileage_km": 41000,
+      "power_hp": 156,
+      "fuel": "Бензин",
+      "engine_cc": 2000,
+      "transmission": "AT",
+      "source_url": "https://velauto.ru/catalog/4050998",
+      "source_currency": "RUB",
+      "source_price": 3391498,
+      "source_price_rub": 3391498,
+      "customer_price_rub": 3197450,
+      "display_price_rub": null,
+      "price_kind": "unified_estimate",
+      "source_expired": false,
+      "availability": "on_request",
+      "vin": null,
+      "location": null,
+      "asset_type": "car",
+      "category": "Автомобили",
+      "destinations": [
+        "RU"
+      ],
+      "images": [
+        "/assets/catalog/car-21-0.webp",
+        "/assets/catalog/car-21-1.webp",
+        "/assets/catalog/car-21-2.webp"
+      ],
+      "priority": 2123,
+      "condition_description": "Состояние и комплектация по согласованной Спецификации; осмотр перед приобретением.",
+      "pricing": {
+        "mode": "indexed_budget",
+        "currency": "CNY",
+        "amount": 189800,
+        "fixed_rub": 0,
+        "base_rate": 12.146,
+        "base_total_rub": 3197450
+      }
+    },
+    {
+      "id": "velauto:4050990",
+      "title": "BMW 3 Series",
+      "year": 2022,
+      "country": "CN",
+      "mileage_km": 22000,
+      "power_hp": 156,
+      "fuel": "Бензин",
+      "engine_cc": 2000,
+      "transmission": "AT",
+      "source_url": "https://velauto.ru/catalog/4050990",
+      "source_currency": "RUB",
+      "source_price": 3288006,
+      "source_price_rub": 3288006,
+      "customer_price_rub": 3093958,
+      "display_price_rub": null,
+      "price_kind": "unified_estimate",
+      "source_expired": false,
+      "availability": "on_request",
+      "vin": null,
+      "location": null,
+      "asset_type": "car",
+      "category": "Автомобили",
+      "destinations": [
+        "RU"
+      ],
+      "images": [
+        "/assets/catalog/car-22-0.webp",
+        "/assets/catalog/car-22-1.webp",
+        "/assets/catalog/car-22-2.webp"
+      ],
+      "priority": 2122,
+      "condition_description": "Состояние и комплектация по согласованной Спецификации; осмотр перед приобретением.",
+      "pricing": {
+        "mode": "indexed_budget",
+        "currency": "CNY",
+        "amount": 181800,
+        "fixed_rub": 0,
+        "base_rate": 12.146,
+        "base_total_rub": 3093958
+      }
+    },
+    {
+      "id": "velauto:4051000",
+      "title": "BMW 3 Series",
+      "year": 2025,
+      "country": "CN",
+      "mileage_km": 49000,
+      "power_hp": 184,
+      "fuel": "Бензин",
+      "engine_cc": 2000,
+      "transmission": "AT",
+      "source_url": "https://velauto.ru/catalog/4051000",
+      "source_currency": "RUB",
+      "source_price": 4703644,
+      "source_price_rub": 4703644,
+      "customer_price_rub": 4509596,
+      "display_price_rub": null,
+      "price_kind": "unified_estimate",
+      "source_expired": false,
+      "availability": "on_request",
+      "vin": null,
+      "location": null,
+      "asset_type": "car",
+      "category": "Автомобили",
+      "destinations": [
+        "RU"
+      ],
+      "images": [
+        "/assets/catalog/car-23-0.webp",
+        "/assets/catalog/car-23-1.webp",
+        "/assets/catalog/car-23-2.webp"
+      ],
+      "priority": 2125,
+      "condition_description": "Состояние и комплектация по согласованной Спецификации; осмотр перед приобретением.",
+      "pricing": {
+        "mode": "indexed_budget",
+        "currency": "CNY",
+        "amount": 178000,
+        "fixed_rub": 0,
+        "base_rate": 12.146,
+        "base_total_rub": 4509596
+      }
+    },
+    {
+      "id": "velauto:4050992",
+      "title": "BMW 3 Series",
+      "year": 2025,
+      "country": "CN",
+      "mileage_km": 27000,
+      "power_hp": 184,
+      "fuel": "Бензин",
+      "engine_cc": 2000,
+      "transmission": "AT",
+      "source_url": "https://velauto.ru/catalog/4050992",
+      "source_currency": "RUB",
+      "source_price": 5061219,
+      "source_price_rub": 5061219,
+      "customer_price_rub": 4867171,
+      "display_price_rub": null,
+      "price_kind": "unified_estimate",
+      "source_expired": false,
+      "availability": "on_request",
+      "vin": null,
+      "location": null,
+      "asset_type": "car",
+      "category": "Автомобили",
+      "destinations": [
+        "RU"
+      ],
+      "images": [
+        "/assets/catalog/car-24-0.webp",
+        "/assets/catalog/car-24-1.webp",
+        "/assets/catalog/car-24-2.webp"
+      ],
+      "priority": 2125,
+      "condition_description": "Состояние и комплектация по согласованной Спецификации; осмотр перед приобретением.",
+      "pricing": {
+        "mode": "indexed_budget",
+        "currency": "CNY",
+        "amount": 189800,
+        "fixed_rub": 0,
+        "base_rate": 12.146,
+        "base_total_rub": 4867171
+      }
+    },
+    {
+      "id": "velauto:3717297",
+      "title": "Zeekr 001",
+      "year": 2025,
+      "country": "CN",
+      "mileage_km": 29000,
+      "power_hp": 422,
+      "fuel": "Электро",
+      "engine_cc": 0,
+      "transmission": "EV (fixed ratio)",
+      "source_url": "https://velauto.ru/catalog/3717297",
+      "source_currency": "RUB",
+      "source_price": null,
+      "source_price_rub": null,
+      "customer_price_rub": 5635504,
+      "display_price_rub": null,
+      "price_kind": "unified_estimate",
+      "source_expired": false,
+      "availability": "on_request",
+      "vin": null,
+      "location": null,
+      "asset_type": "car",
+      "category": "Автомобили",
+      "destinations": [
+        "RU"
+      ],
+      "images": [
+        "/assets/cars/3717297-1.webp",
+        "/assets/cars/3717297-2.webp",
+        "/assets/cars/3717297-3.webp"
+      ],
+      "priority": 2125,
+      "condition_description": "Состояние и комплектация по согласованной Спецификации; осмотр перед приобретением.",
+      "pricing": {
+        "mode": "indexed_budget",
+        "currency": "CNY",
+        "amount": 194900,
+        "fixed_rub": 0,
+        "base_rate": 12.146,
+        "base_total_rub": 5635504
+      }
+    },
+    {
+      "id": "velauto:3722766",
+      "title": "Audi Q5L",
+      "year": 2026,
+      "country": "CN",
+      "mileage_km": 100,
+      "power_hp": 190.3,
+      "fuel": "Бензин",
+      "engine_cc": 2000,
+      "transmission": "DCT",
+      "source_url": "https://velauto.ru/catalog/3722766",
+      "source_currency": "RUB",
+      "source_price": null,
+      "source_price_rub": null,
+      "customer_price_rub": 5622046,
+      "display_price_rub": null,
+      "price_kind": "unified_estimate",
+      "source_expired": false,
+      "availability": "on_request",
+      "vin": null,
+      "location": null,
+      "asset_type": "car",
+      "category": "Автомобили",
+      "destinations": [
+        "RU"
+      ],
+      "images": [
+        "/assets/cars/3722766-1.webp",
+        "/assets/cars/3722766-2.webp",
+        "/assets/cars/3722766-3.webp"
+      ],
+      "priority": 2126,
+      "condition_description": "Состояние и комплектация по согласованной Спецификации; осмотр перед приобретением.",
+      "pricing": {
+        "mode": "indexed_budget",
+        "currency": "CNY",
+        "amount": 239800,
+        "fixed_rub": 0,
+        "base_rate": 12.146,
+        "base_total_rub": 5622046
+      }
+    },
+    {
+      "id": "velauto:3245327",
+      "title": "Hyundai Palisade",
+      "year": 2024,
+      "country": "KR",
+      "mileage_km": 56793,
+      "power_hp": 202,
+      "fuel": "Дизель",
+      "engine_cc": 2199,
+      "transmission": "Автомат",
+      "source_url": "https://velauto.ru/catalog/3245327",
+      "source_currency": "RUB",
+      "source_price": null,
+      "source_price_rub": null,
+      "customer_price_rub": 5785160,
+      "display_price_rub": null,
+      "price_kind": "unified_estimate",
+      "source_expired": false,
+      "availability": "on_request",
+      "vin": null,
+      "location": null,
+      "asset_type": "car",
+      "category": "Автомобили",
+      "destinations": [
+        "RU"
+      ],
+      "images": [
+        "/assets/cars/3245327-1.webp",
+        "/assets/cars/3245327-2.webp",
+        "/assets/cars/3245327-3.webp"
+      ],
+      "priority": 2124,
+      "condition_description": "Состояние и комплектация по согласованной Спецификации; осмотр перед приобретением.",
+      "pricing": {
+        "mode": "indexed_budget",
+        "currency": "KRW",
+        "amount": 32500000,
+        "fixed_rub": 0,
+        "base_rate": 0.0612037,
+        "base_total_rub": 5785160
+      }
+    },
+    {
+      "id": "velauto:3726851",
+      "title": "Land Rover Range Rover Velar",
+      "year": 2024,
+      "country": "CN",
+      "mileage_km": 32000,
+      "power_hp": 250.2,
+      "fuel": "Бензин",
+      "engine_cc": 2000,
+      "transmission": "AT",
+      "source_url": "https://velauto.ru/catalog/3726851",
+      "source_currency": "RUB",
+      "source_price": null,
+      "source_price_rub": null,
+      "customer_price_rub": 5700546,
+      "display_price_rub": null,
+      "price_kind": "unified_estimate",
+      "source_expired": false,
+      "availability": "on_request",
+      "vin": null,
+      "location": null,
+      "asset_type": "car",
+      "category": "Автомобили",
+      "destinations": [
+        "RU"
+      ],
+      "images": [
+        "/assets/cars/3726851-1.webp",
+        "/assets/cars/3726851-2.webp",
+        "/assets/cars/3726851-3.webp"
+      ],
+      "priority": 2124,
+      "condition_description": "Состояние и комплектация по согласованной Спецификации; осмотр перед приобретением.",
+      "pricing": {
+        "mode": "indexed_budget",
+        "currency": "CNY",
+        "amount": 233800,
+        "fixed_rub": 0,
+        "base_rate": 12.146,
+        "base_total_rub": 5700546
+      }
+    },
+    {
+      "id": "velauto:4074077",
+      "title": "Volvo XC90",
+      "year": 2025,
+      "country": "CN",
+      "mileage_km": 24000,
+      "power_hp": 250,
+      "fuel": "Гибрид",
+      "engine_cc": 2000,
+      "transmission": "AT",
+      "source_url": "https://velauto.ru/catalog/4074077",
+      "source_currency": "RUB",
+      "source_price": null,
+      "source_price_rub": null,
+      "customer_price_rub": 5679646,
+      "display_price_rub": null,
+      "price_kind": "unified_estimate",
+      "source_expired": false,
+      "availability": "on_request",
+      "vin": null,
+      "location": null,
+      "asset_type": "car",
+      "category": "Автомобили",
+      "destinations": [
+        "RU"
+      ],
+      "images": [
+        "/assets/cars/4074077-1.webp",
+        "/assets/cars/4074077-2.webp",
+        "/assets/cars/4074077-3.webp"
+      ],
+      "priority": 2125,
+      "condition_description": "Состояние и комплектация по согласованной Спецификации; осмотр перед приобретением.",
+      "pricing": {
+        "mode": "indexed_budget",
+        "currency": "CNY",
+        "amount": 239800,
+        "fixed_rub": 0,
+        "base_rate": 12.146,
+        "base_total_rub": 5679646
+      }
+    },
+    {
+      "id": "velauto:3731888",
+      "title": "Kia Carnival",
+      "year": 2026,
+      "country": "KR",
+      "mileage_km": 3023,
+      "power_hp": 245,
+      "fuel": "Гибрид",
+      "engine_cc": 1598,
+      "transmission": "Автомат (электро)",
+      "source_url": "https://velauto.ru/catalog/3731888",
+      "source_currency": "RUB",
+      "source_price": null,
+      "source_price_rub": null,
+      "customer_price_rub": 5592976,
+      "display_price_rub": null,
+      "price_kind": "unified_estimate",
+      "source_expired": false,
+      "availability": "on_request",
+      "vin": null,
+      "location": null,
+      "asset_type": "car",
+      "category": "Автомобили",
+      "destinations": [
+        "RU"
+      ],
+      "images": [
+        "/assets/cars/3731888-1.webp",
+        "/assets/cars/3731888-2.webp",
+        "/assets/cars/3731888-3.webp"
+      ],
+      "priority": 2126,
+      "condition_description": "Состояние и комплектация по согласованной Спецификации; осмотр перед приобретением.",
+      "pricing": {
+        "mode": "indexed_budget",
+        "currency": "KRW",
+        "amount": 47300000,
+        "fixed_rub": 0,
+        "base_rate": 0.0612037,
+        "base_total_rub": 5592976
+      }
+    },
+    {
+      "id": "velauto:3191981",
+      "title": "Lixiang L8",
+      "year": 2024,
+      "country": "CN",
+      "mileage_km": 53000,
+      "power_hp": 449,
+      "fuel": "Гибрид",
+      "engine_cc": 1500,
+      "transmission": "EV (fixed ratio)",
+      "source_url": "https://velauto.ru/catalog/3191981",
+      "source_currency": "RUB",
+      "source_price": null,
+      "source_price_rub": null,
+      "customer_price_rub": 5721266,
+      "display_price_rub": null,
+      "price_kind": "unified_estimate",
+      "source_expired": false,
+      "availability": "on_request",
+      "vin": null,
+      "location": null,
+      "asset_type": "car",
+      "category": "Автомобили",
+      "destinations": [
+        "RU"
+      ],
+      "images": [
+        "/assets/cars/3191981-1.webp",
+        "/assets/cars/3191981-2.webp",
+        "/assets/cars/3191981-3.webp"
+      ],
+      "priority": 2124,
+      "condition_description": "Состояние и комплектация по согласованной Спецификации; осмотр перед приобретением.",
+      "pricing": {
+        "mode": "indexed_budget",
+        "currency": "CNY",
+        "amount": 179800,
+        "fixed_rub": 0,
+        "base_rate": 12.146,
+        "base_total_rub": 5721266
+      }
+    },
+    {
+      "id": "sdlg-lg936l",
+      "title": "SDLG LG936L",
+      "category": "Погрузчики",
+      "asset_type": "equipment",
+      "equipment_kind": "Погрузчики",
+      "serial": "VLG0936LVN0670639",
+      "serial_type": "Заводской номер",
+      "vin": null,
+      "year": 2022,
+      "country": "CN",
+      "location": "Китай · Шанхай",
+      "specs": "800 м/ч · фронтальный · ковш ≈ 1,8 м³ · 123,37 HP",
+      "condition_description": "Наработка и состояние указаны продавцом; независимая диагностика не проводилась.",
+      "source_url": "https://www.machinerytrader.com/listing/for-sale/257909603/2022-sdlg-lg936l-wheel-loaders",
+      "source_currency": "RUB",
+      "customer_price_rub": 5170000,
+      "images": [
+        "/assets/equipment/sdlg-lg936l.webp"
+      ],
+      "destinations": [
+        "RU"
+      ],
+      "priority": 500,
+      "price_kind": "unified_estimate"
+    },
+    {
+      "id": "sany-sy200c-pro",
+      "title": "SANY SY200C PRO",
+      "category": "Экскаваторы",
+      "asset_type": "equipment",
+      "equipment_kind": "Экскаваторы",
+      "serial": "SNYSY200GRG540635",
+      "serial_type": "Заводской номер",
+      "vin": null,
+      "year": 2024,
+      "country": "CN",
+      "location": "Китай · Хэфэй",
+      "specs": "591 м/ч · 21 т · гусеничный · ковш 1 м³ · 118 кВт",
+      "condition_description": "Комплектация, наличие и состояние конкретной машины подтверждаются перед заказом. Фото и характеристики приведены по объявлению продавца.",
+      "source_url": "https://cnusedexcavator.com/products/used-sany-sy200c-pro-crawler-excavator-for-sale-sany-sy200c-pro-price",
+      "source_currency": "RUB",
+      "customer_price_rub": 5510000,
+      "images": [
+        "/assets/equipment/sany-sy200c-pro.webp"
+      ],
+      "destinations": [
+        "RU"
+      ],
+      "priority": 500,
+      "price_kind": "unified_estimate"
+    },
+    {
+      "id": "bizon-k150",
+      "title": "BIZON K150",
+      "category": "Экскаваторы",
+      "asset_type": "equipment",
+      "equipment_kind": "Экскаваторы",
+      "serial": "JH5915007K01A7009",
+      "serial_type": "Заводской номер (в поле VIN продавца)",
+      "vin": null,
+      "year": 2024,
+      "country": "RU",
+      "location": "Россия · Самара",
+      "specs": "1 201 м/ч · колёсный экскаватор · двигатель 4,2 л · 180 л.с.",
+      "condition_description": "Состояние и комплектацию необходимо проверить на осмотре. Номер указан точно как у продавца; это не 17-значный дорожный VIN.",
+      "source_url": "https://www.vtb-leasing.ru/auto/probeg/bizon-k150-al-262039-01-24-srt/",
+      "source_currency": "RUB",
+      "customer_price_rub": 5590000,
+      "images": [
+        "/assets/equipment/bizon-k150.webp"
+      ],
+      "destinations": [
+        "RU"
+      ],
+      "priority": 500,
+      "price_kind": "unified_estimate"
+    },
+    {
+      "id": "shacman-sx33186v366",
+      "title": "SHACMAN SX33186V366",
+      "category": "Самосвалы",
+      "asset_type": "equipment",
+      "equipment_kind": "Самосвалы",
+      "serial": "LZGJX4V61RX035695",
+      "serial_type": "VIN",
+      "vin": "LZGJX4V61RX035695",
+      "year": 2024,
+      "country": "RU",
+      "location": "Россия · Москва",
+      "specs": "132 881 км · 8×4 · кузов 35 м³ · 423 л.с. · Евро-5",
+      "condition_description": "Продавец заявляет о технической проверке; независимая диагностика TE GROUP не проводилась.",
+      "source_url": "https://leader-trucks.ru/models/used-tech/samosval-35m3-shacman-sx33186v366-2024/",
+      "source_currency": "RUB",
+      "customer_price_rub": 5600000,
+      "images": [
+        "/assets/equipment/shacman-sx33186v366.webp"
+      ],
+      "destinations": [
+        "RU"
+      ],
+      "priority": 500,
+      "price_kind": "unified_estimate"
+    },
+    {
+      "id": "shacman-sx331863366",
+      "title": "SHACMAN SX331863366",
+      "category": "Самосвалы",
+      "asset_type": "equipment",
+      "equipment_kind": "Самосвалы",
+      "serial": "LZGJX4Z62PX041268",
+      "serial_type": "VIN",
+      "vin": "LZGJX4Z62PX041268",
+      "year": 2023,
+      "country": "RU",
+      "location": "Россия · Санкт-Петербург",
+      "specs": "544 л.с. · двигатель 12,54 л · пробег уточняется",
+      "condition_description": "Пробег в публикации не указан. Состояние кузова, шасси и агрегатов проверяется на осмотре.",
+      "source_url": "https://www.vtb-leasing.ru/auto/probeg/shacman-sx331863366-al-222891-19-23/",
+      "source_currency": "RUB",
+      "customer_price_rub": 5440000,
+      "images": [
+        "/assets/equipment/shacman-sx331863366.webp"
+      ],
+      "destinations": [
+        "RU"
+      ],
+      "priority": 500,
+      "price_kind": "unified_estimate"
+    },
+    {
+      "id": "jp-5831",
+      "title": "Maeda APM-100",
+      "category": "Навесное",
+      "equipment_kind": "Навесная косилка",
+      "asset_type": "equipment",
+      "serial": "111048",
+      "serial_type": "Заводской номер",
+      "year": null,
+      "country": "JP",
+      "location": "Япония · склад уточняется",
+      "specs": "Ножевая косилка Hammer Knife Mower. Экскаватор класса 0,25 м³; палец Ø50 мм, ширина 200 мм, длина 1 200 мм. Продавец указывает Komatsu / Hitachi.",
+      "condition_description": "Состояние и комплектность согласуются по актуальному осмотру.",
+      "source_url": "https://toku-world.com/en/stock/attachments/5831",
+      "source_currency": "JPY",
+      "source_price": 1280000,
+      "customer_price_rub": 737733.9,
+      "images": [
+        "/assets/catalog/jp-0.webp"
+      ],
+      "destinations": [
+        "KG"
+      ],
+      "priority": 200,
+      "price_kind": "unified_estimate",
+      "pricing": {
+        "mode": "equipment_import",
+        "currency": "JPY",
+        "amount": 1280000,
+        "fixed_rub": 0,
+        "duty_percent": 0
+      }
+    },
+    {
+      "id": "jp-8094",
+      "title": "Komatsu JTHB210S-3",
+      "category": "Навесное",
+      "equipment_kind": "Гидромолот",
+      "asset_type": "equipment",
+      "serial": "11024",
+      "serial_type": "Заводской номер",
+      "year": 2014,
+      "country": "JP",
+      "location": "Канагава, Япония",
+      "specs": "Класс экскаватора 0,7 м³. Палец Ø110 мм; ширина 340 мм. Продавец указывает исполнение Ultra Low Noise.",
+      "condition_description": "Состояние и комплектность согласуются по актуальному осмотру.",
+      "source_url": "https://toku-world.com/en/stock/attachments/8094",
+      "source_currency": "JPY",
+      "source_price": 1380000,
+      "customer_price_rub": 795369.36,
+      "images": [
+        "/assets/catalog/jp-1.webp"
+      ],
+      "destinations": [
+        "KG"
+      ],
+      "priority": 200,
+      "price_kind": "unified_estimate",
+      "pricing": {
+        "mode": "equipment_import",
+        "currency": "JPY",
+        "amount": 1380000,
+        "fixed_rub": 0,
+        "duty_percent": 0
+      }
+    },
+    {
+      "id": "jp-161683",
+      "title": "Denyo DCA-25LSKE",
+      "category": "Генераторы",
+      "equipment_kind": "Дизельный генератор",
+      "asset_type": "equipment",
+      "serial": "5913598",
+      "serial_type": "Заводской номер",
+      "year": 2023,
+      "country": "JP",
+      "location": "Куруме, Фукуока, Япония",
+      "specs": "20/25 кВА при 50/60 Гц. Трёхфазные 200/220 и 400/440 В; однофазные 100–200 В. Габариты 1 540 × 700 × 1 045 мм.",
+      "condition_description": "Состояние и комплектность согласуются по актуальному осмотру.",
+      "source_url": "https://biglemon.kenkey.jp/en/item/161683",
+      "source_currency": "JPY",
+      "source_price": 1450000,
+      "customer_price_rub": 835714.17,
+      "images": [
+        "/assets/catalog/jp-2.webp"
+      ],
+      "destinations": [
+        "KG"
+      ],
+      "priority": 200,
+      "price_kind": "unified_estimate",
+      "pricing": {
+        "mode": "equipment_import",
+        "currency": "JPY",
+        "amount": 1450000,
+        "fixed_rub": 0,
+        "duty_percent": 0
+      }
+    },
+    {
+      "id": "jp-164203",
+      "title": "Nippon Sharyo NES45TY2",
+      "category": "Генераторы",
+      "equipment_kind": "Дизельный генератор",
+      "asset_type": "equipment",
+      "serial": "AV028000",
+      "serial_type": "Заводской номер",
+      "year": 2014,
+      "country": "JP",
+      "location": "Айти, Япония",
+      "specs": "Класс до 45 кВА. Однофазный и трёхфазный режимы, малошумное исполнение, маслозащитный поддон. 1 740 × 880 × 1 350 мм; 1 170 кг.",
+      "condition_description": "Состояние и комплектность согласуются по актуальному осмотру.",
+      "source_url": "https://biglemon.kenkey.jp/en/item/164203",
+      "source_currency": "JPY",
+      "source_price": 1499000,
+      "customer_price_rub": 863955.55,
+      "images": [
+        "/assets/catalog/jp-3.webp"
+      ],
+      "destinations": [
+        "KG"
+      ],
+      "priority": 200,
+      "price_kind": "unified_estimate",
+      "pricing": {
+        "mode": "equipment_import",
+        "currency": "JPY",
+        "amount": 1499000,
+        "fixed_rub": 0,
+        "duty_percent": 0
+      }
+    },
+    {
+      "id": "jp-west655",
+      "title": "Airman PDS655S",
+      "category": "Компрессоры",
+      "equipment_kind": "Дизельный компрессор",
+      "asset_type": "equipment",
+      "serial": "68-4B22051",
+      "serial_type": "Заводской номер",
+      "year": 2010,
+      "country": "JP",
+      "location": "Япония · склад уточняется",
+      "specs": "Передвижной компрессор; в заголовке продавца указано 190 HP. На странице есть фотографии конкретного экземпляра и заводской номер.",
+      "condition_description": "Состояние и комплектность согласуются по актуальному осмотру.",
+      "source_url": "https://west-management.com/machine/engine-compressor/engine-compressor-190hp-airman-pds655s-68-4b22051-2010year-7418h/",
+      "source_currency": "JPY",
+      "source_price": 1600000,
+      "customer_price_rub": 922167.36,
+      "images": [
+        "/assets/catalog/jp-4.webp"
+      ],
+      "destinations": [
+        "KG"
+      ],
+      "priority": 200,
+      "price_kind": "unified_estimate",
+      "pricing": {
+        "mode": "equipment_import",
+        "currency": "JPY",
+        "amount": 1600000,
+        "fixed_rub": 0,
+        "duty_percent": 0
+      }
+    },
+    {
+      "id": "jp-147829",
+      "title": "Airman PDSF530S",
+      "category": "Компрессоры",
+      "equipment_kind": "Компрессор высокого давления",
+      "asset_type": "equipment",
+      "serial": "80-4C10053",
+      "serial_type": "Заводской номер",
+      "year": 2012,
+      "country": "JP",
+      "location": "Кобе, Хёго, Япония",
+      "specs": "Давление 1,03 МПа; продавец прямо указывает исполнение Trailer. Находится на площадке продавца в Кобе, доступен осмотр по объявлению.",
+      "condition_description": "Состояние и комплектность согласуются по актуальному осмотру.",
+      "source_url": "https://biglemon.kenkey.jp/en/item/147829",
+      "source_currency": "JPY",
+      "source_price": 2000000,
+      "customer_price_rub": 1152709.21,
+      "images": [
+        "/assets/catalog/jp-5.webp"
+      ],
+      "destinations": [
+        "KG"
+      ],
+      "priority": 200,
+      "price_kind": "unified_estimate",
+      "pricing": {
+        "mode": "equipment_import",
+        "currency": "JPY",
+        "amount": 2000000,
+        "fixed_rub": 0,
+        "duty_percent": 0
+      }
+    },
+    {
+      "id": "jp-139245",
+      "title": "Airman PDSF315S-5C1",
+      "category": "Компрессоры",
+      "equipment_kind": "Компрессор высокого давления",
+      "asset_type": "equipment",
+      "serial": "79-5C10106",
+      "serial_type": "Заводской номер",
+      "year": 2015,
+      "country": "JP",
+      "location": "Кобе, Хёго, Япония",
+      "specs": "Давление 1,03 МПа. Габариты 2 680 × 1 300 × 1 400 мм; масса 1 700 кг. Продавец допускает осмотр в Кобе.",
+      "condition_description": "Состояние и комплектность согласуются по актуальному осмотру.",
+      "source_url": "https://biglemon.kenkey.jp/en/item/139245",
+      "source_currency": "JPY",
+      "source_price": 2100000,
+      "customer_price_rub": 1210344.67,
+      "images": [
+        "/assets/catalog/jp-6.webp"
+      ],
+      "destinations": [
+        "KG"
+      ],
+      "priority": 200,
+      "price_kind": "unified_estimate",
+      "pricing": {
+        "mode": "equipment_import",
+        "currency": "JPY",
+        "amount": 2100000,
+        "fixed_rub": 0,
+        "duty_percent": 0
+      }
+    },
+    {
+      "id": "jp-149111",
+      "title": "Airman PDS670SD-4C5",
+      "category": "Компрессоры",
+      "equipment_kind": "Дизельный компрессор",
+      "asset_type": "equipment",
+      "serial": "68A4C50101",
+      "serial_type": "Заводской номер",
+      "year": 2015,
+      "country": "JP",
+      "location": "Канагава, Япония",
+      "specs": "Категория свыше 100 HP. 3 690 × 1 680 × 2 120 мм; 2 980 кг. В заголовке указаны новая батарея и замена моторного масла.",
+      "condition_description": "Состояние и комплектность согласуются по актуальному осмотру.",
+      "source_url": "https://biglemon.kenkey.jp/en/item/149111",
+      "source_currency": "JPY",
+      "source_price": 2100000,
+      "customer_price_rub": 1210344.67,
+      "images": [
+        "/assets/catalog/jp-7.webp"
+      ],
+      "destinations": [
+        "KG"
+      ],
+      "priority": 200,
+      "price_kind": "unified_estimate",
+      "pricing": {
+        "mode": "equipment_import",
+        "currency": "JPY",
+        "amount": 2100000,
+        "fixed_rub": 0,
+        "duty_percent": 0
+      }
+    },
+    {
+      "id": "jp-165441",
+      "title": "Denyo DCA-100LSIE",
+      "category": "Генераторы",
+      "equipment_kind": "Дизельный генератор",
+      "asset_type": "equipment",
+      "serial": "3919166",
+      "serial_type": "Заводской номер",
+      "year": 2017,
+      "country": "JP",
+      "location": "Нагасаки, Япония",
+      "specs": "Категория объявления до 120 кВА. Габариты 2 550 × 1 080 × 1 600 мм; масса 2 150 кг. Продавец допускает осмотр и пробный запуск.",
+      "condition_description": "Состояние и комплектность согласуются по актуальному осмотру.",
+      "source_url": "https://biglemon.kenkey.jp/en/item/165441",
+      "source_currency": "JPY",
+      "source_price": 2100000,
+      "customer_price_rub": 1210344.67,
+      "images": [
+        "/assets/catalog/jp-8.webp"
+      ],
+      "destinations": [
+        "KG"
+      ],
+      "priority": 200,
+      "price_kind": "unified_estimate",
+      "pricing": {
+        "mode": "equipment_import",
+        "currency": "JPY",
+        "amount": 2100000,
+        "fixed_rub": 0,
+        "duty_percent": 0
+      }
+    },
+    {
+      "id": "jp-166033",
+      "title": "Airman PDS655SD",
+      "category": "Компрессоры",
+      "equipment_kind": "Дизельный компрессор",
+      "asset_type": "equipment",
+      "serial": "68A4C10080",
+      "serial_type": "Заводской номер",
+      "year": 2012,
+      "country": "JP",
+      "location": "Тотиги, Япония",
+      "specs": "Габариты 3 650 × 1 685 × 2 070 мм; масса 3 460 кг. Конкретный экземпляр с опубликованной наработкой и заводским номером.",
+      "condition_description": "Состояние и комплектность согласуются по актуальному осмотру.",
+      "source_url": "https://biglemon.kenkey.jp/en/item/166033",
+      "source_currency": "JPY",
+      "source_price": 2320000,
+      "customer_price_rub": 1337142.68,
+      "images": [
+        "/assets/catalog/jp-9.webp"
+      ],
+      "destinations": [
+        "KG"
+      ],
+      "priority": 200,
+      "price_kind": "unified_estimate",
+      "pricing": {
+        "mode": "equipment_import",
+        "currency": "JPY",
+        "amount": 2320000,
+        "fixed_rub": 0,
+        "duty_percent": 0
+      }
+    },
+    {
+      "id": "jp-original-0",
+      "title": "Komatsu JASC200M-1",
+      "category": "Навесное",
+      "equipment_kind": "Бетонолом с магнитом",
+      "asset_type": "equipment",
+      "serial": "16147",
+      "serial_type": "Заводской номер",
+      "year": 2015,
+      "country": "JP",
+      "location": "Япония · склад уточняется",
+      "specs": "Класс экскаватора 0,7 м³; палец Ø100 мм; ширина 370 мм; питание магнита 24 В.",
+      "condition_description": "Состояние и комплектность согласуются по актуальному осмотру.",
+      "source_url": "https://toku-world.com/en/stock/attachments/8200",
+      "source_currency": "JPY",
+      "source_price": 2880000,
+      "customer_price_rub": 1659901.26,
+      "images": [
+        "/assets/catalog/jp-10.webp"
+      ],
+      "destinations": [
+        "KG"
+      ],
+      "priority": 200,
+      "price_kind": "unified_estimate",
+      "pricing": {
+        "mode": "equipment_import",
+        "currency": "JPY",
+        "amount": 2880000,
+        "fixed_rub": 0,
+        "duty_percent": 0
+      }
+    },
+    {
+      "id": "jp-original-1",
+      "title": "NPK SV140",
+      "category": "Навесное",
+      "equipment_kind": "Гидравлические ножницы для демонтажа",
+      "asset_type": "equipment",
+      "serial": "141871",
+      "serial_type": "Заводской номер",
+      "year": 2022,
+      "country": "JP",
+      "location": "Япония · склад уточняется",
+      "specs": "Класс экскаватора 0,45 м³; палец Ø65 мм; ширина рукояти 255 мм.",
+      "condition_description": "Состояние и комплектность согласуются по актуальному осмотру.",
+      "source_url": "https://toku-world.com/en/stock/attachments/9884",
+      "source_currency": "JPY",
+      "source_price": 2980000,
+      "customer_price_rub": 1717536.72,
+      "images": [
+        "/assets/catalog/jp-11.webp"
+      ],
+      "destinations": [
+        "KG"
+      ],
+      "priority": 200,
+      "price_kind": "unified_estimate",
+      "pricing": {
+        "mode": "equipment_import",
+        "currency": "JPY",
+        "amount": 2980000,
+        "fixed_rub": 0,
+        "duty_percent": 0
+      }
+    },
+    {
+      "id": "jp-original-2",
+      "title": "Okada TS-W1100",
+      "category": "Навесное",
+      "equipment_kind": "Демонтажные гидроножницы",
+      "asset_type": "equipment",
+      "serial": "5200",
+      "serial_type": "Заводской номер",
+      "year": 2008,
+      "country": "JP",
+      "location": "Япония · склад уточняется",
+      "specs": "Класс экскаватора 0,7 м³; палец Ø80 мм; ширина рукояти 315 мм.",
+      "condition_description": "Состояние и комплектность согласуются по актуальному осмотру.",
+      "source_url": "https://toku-world.com/en/stock/attachments/9800",
+      "source_currency": "JPY",
+      "source_price": 2680000,
+      "customer_price_rub": 1544630.34,
+      "images": [
+        "/assets/catalog/jp-12.webp"
+      ],
+      "destinations": [
+        "KG"
+      ],
+      "priority": 200,
+      "price_kind": "unified_estimate",
+      "pricing": {
+        "mode": "equipment_import",
+        "currency": "JPY",
+        "amount": 2680000,
+        "fixed_rub": 0,
+        "duty_percent": 0
+      }
+    },
+    {
+      "id": "jp-original-3",
+      "title": "Miyamoto RK2000L",
+      "category": "Навесное",
+      "equipment_kind": "Гидроножницы • экземпляр 1",
+      "asset_type": "equipment",
+      "serial": "ZBR839L",
+      "serial_type": "Заводской номер",
+      "year": 2017,
+      "country": "JP",
+      "location": "Япония · склад уточняется",
+      "specs": "Класс экскаватора 0,7 м³; палец Ø105 мм; ширина рукояти 350 мм.",
+      "condition_description": "Состояние и комплектность согласуются по актуальному осмотру.",
+      "source_url": "https://toku-world.com/en/stock/attachments/9917",
+      "source_currency": "JPY",
+      "source_price": 2680000,
+      "customer_price_rub": 1544630.34,
+      "images": [
+        "/assets/catalog/jp-13.webp"
+      ],
+      "destinations": [
+        "KG"
+      ],
+      "priority": 200,
+      "price_kind": "unified_estimate",
+      "pricing": {
+        "mode": "equipment_import",
+        "currency": "JPY",
+        "amount": 2680000,
+        "fixed_rub": 0,
+        "duty_percent": 0
+      }
+    },
+    {
+      "id": "jp-original-4",
+      "title": "Miyamoto RK2000L",
+      "category": "Навесное",
+      "equipment_kind": "Гидроножницы • экземпляр 2",
+      "asset_type": "equipment",
+      "serial": "ZBR802L",
+      "serial_type": "Заводской номер",
+      "year": 2014,
+      "country": "JP",
+      "location": "Япония · склад уточняется",
+      "specs": "Класс экскаватора 0,7 м³; палец Ø105 мм; ширина рукояти 255 мм — так указал продавец.",
+      "condition_description": "Состояние и комплектность согласуются по актуальному осмотру.",
+      "source_url": "https://toku-world.com/en/stock/attachments/9911",
+      "source_currency": "JPY",
+      "source_price": 2880000,
+      "customer_price_rub": 1659901.26,
+      "images": [
+        "/assets/catalog/jp-14.webp"
+      ],
+      "destinations": [
+        "KG"
+      ],
+      "priority": 200,
+      "price_kind": "unified_estimate",
+      "pricing": {
+        "mode": "equipment_import",
+        "currency": "JPY",
+        "amount": 2880000,
+        "fixed_rub": 0,
+        "duty_percent": 0
+      }
+    },
+    {
+      "id": "jp-original-5",
+      "title": "NPK HP-2SX",
+      "category": "Навесное",
+      "equipment_kind": "Навесной сваепогружатель A Piler",
+      "asset_type": "equipment",
+      "serial": "112865",
+      "serial_type": "Заводской номер",
+      "year": null,
+      "country": "JP",
+      "location": "Япония · склад уточняется",
+      "specs": "Класс экскаватора 0,25 м³; палец Ø70 мм; ширина рукояти 240 мм.",
+      "condition_description": "Состояние и комплектность согласуются по актуальному осмотру.",
+      "source_url": "https://toku-world.com/en/stock/attachments/9264",
+      "source_currency": "JPY",
+      "source_price": 2980000,
+      "customer_price_rub": 1717536.72,
+      "images": [
+        "/assets/catalog/jp-15.webp"
+      ],
+      "destinations": [
+        "KG"
+      ],
+      "priority": 200,
+      "price_kind": "unified_estimate",
+      "pricing": {
+        "mode": "equipment_import",
+        "currency": "JPY",
+        "amount": 2980000,
+        "fixed_rub": 0,
+        "duty_percent": 5
+      }
+    },
+    {
+      "id": "new-6686",
+      "title": "Osumi WP800G",
+      "category": "Навесное",
+      "equipment_kind": "Лесной резак",
+      "asset_type": "equipment",
+      "serial": "0820",
+      "serial_type": "Заводской номер",
+      "year": 2010,
+      "hours": null,
+      "country": "JP",
+      "location": "Япония · площадка уточняется",
+      "specs": "Навесной Wood Cutter для экскаватора класса 0,45 м³; палец Ø115 мм, ширина крепления 330 мм.",
+      "condition_description": "Б/у. Продавец сообщает о проверке основных движений.",
+      "client_note": "Совместимость, состояние и состав поставки согласуются перед оформлением.",
+      "source_url": "https://toku-world.com/en/stock/attachments/6686",
+      "source_currency": "JPY",
+      "source_price": 980000,
+      "customer_price_rub": 564828,
+      "images": [
+        "/assets/catalog/new-0.webp"
+      ],
+      "destinations": [
+        "KG"
+      ],
+      "priority": 300,
+      "price_kind": "unified_estimate",
+      "pricing": {
+        "mode": "equipment_import",
+        "currency": "JPY",
+        "amount": 980000,
+        "fixed_rub": 0,
+        "duty_percent": 0
+      }
+    },
+    {
+      "id": "new-8052",
+      "title": "TOKU TNB-6M-US",
+      "category": "Навесное",
+      "equipment_kind": "Гидромолот",
+      "asset_type": "equipment",
+      "serial": "10146",
+      "serial_type": "Заводской номер",
+      "year": 2014,
+      "hours": null,
+      "country": "JP",
+      "location": "Хёго, Япония",
+      "specs": "Малошумное исполнение Ultra Low Noise; экскаватор класса 0,25 м³; палец Ø75 мм, ширина крепления 230 мм.",
+      "condition_description": "Б/у. Основные движения проверены продавцом.",
+      "client_note": "Совместимость, состояние и состав поставки согласуются перед оформлением.",
+      "source_url": "https://toku-world.com/en/stock/attachments/8052",
+      "source_currency": "JPY",
+      "source_price": 460000,
+      "customer_price_rub": 265123,
+      "images": [
+        "/assets/catalog/new-1.webp"
+      ],
+      "destinations": [
+        "KG"
+      ],
+      "priority": 300,
+      "price_kind": "unified_estimate",
+      "pricing": {
+        "mode": "equipment_import",
+        "currency": "JPY",
+        "amount": 460000,
+        "fixed_rub": 0,
+        "duty_percent": 0
+      }
+    },
+    {
+      "id": "new-165215",
+      "title": "Furukawa FX55SS",
+      "category": "Навесное",
+      "equipment_kind": "Гидромолот",
+      "asset_type": "equipment",
+      "serial": "0230908480",
+      "serial_type": "Заводской номер",
+      "year": 2018,
+      "hours": null,
+      "country": "JP",
+      "location": "Тотиги, Япония",
+      "specs": "Для экскаваторов 4–6 т, совместимость с PC40–50; палец Ø45 мм, внутренняя ширина крепления 160 мм.",
+      "condition_description": "Б/у, самооценка продавца B.",
+      "client_note": "Совместимость, состояние и состав поставки согласуются перед оформлением.",
+      "source_url": "https://biglemon.kenkey.jp/en/item/165215",
+      "source_currency": "JPY",
+      "source_price": 313000,
+      "customer_price_rub": 180399,
+      "images": [
+        "/assets/catalog/new-2.webp"
+      ],
+      "destinations": [
+        "KG"
+      ],
+      "priority": 300,
+      "price_kind": "unified_estimate",
+      "pricing": {
+        "mode": "equipment_import",
+        "currency": "JPY",
+        "amount": 313000,
+        "fixed_rub": 0,
+        "duty_percent": 0
+      }
+    },
+    {
+      "id": "new-164859",
+      "title": "Maruzen AG-2000",
+      "category": "Навесное",
+      "equipment_kind": "Гидравлический бур",
+      "asset_type": "equipment",
+      "serial": "3135697",
+      "serial_type": "Заводской номер",
+      "year": null,
+      "hours": null,
+      "country": "JP",
+      "location": "Тиба, Япония",
+      "specs": "Навесной гидробур для экскаватора 6–8 т; палец Ø45 мм, ширина рукояти 170 мм.",
+      "condition_description": "Б/у, самооценка продавца B.",
+      "client_note": "Совместимость, состояние и состав поставки согласуются перед оформлением.",
+      "source_url": "https://biglemon.kenkey.jp/en/item/164859",
+      "source_currency": "JPY",
+      "source_price": 450000,
+      "customer_price_rub": 259360,
+      "images": [
+        "/assets/catalog/new-3.webp"
+      ],
+      "destinations": [
+        "KG"
+      ],
+      "priority": 300,
+      "price_kind": "unified_estimate",
+      "pricing": {
+        "mode": "equipment_import",
+        "currency": "JPY",
+        "amount": 450000,
+        "fixed_rub": 0,
+        "duty_percent": 0
+      }
+    },
+    {
+      "id": "new-155637",
+      "title": "NPK SV-24XR",
+      "category": "Навесное",
+      "equipment_kind": "Демонтажные гидроножницы",
+      "asset_type": "equipment",
+      "serial": "122969",
+      "serial_type": "Заводской номер",
+      "year": 2017,
+      "hours": null,
+      "country": "JP",
+      "location": "Айти, Япония",
+      "specs": "Для экскаватора 20–25 т / класса 0,7 м³; палец Ø100 мм, ширина крепления 370 мм. ",
+      "condition_description": "Б/у, самооценка продавца B; рабочие движения проверены по заявлению продавца.",
+      "client_note": "Совместимость, состояние и состав поставки согласуются перед оформлением.",
+      "source_url": "https://biglemon.kenkey.jp/en/item/155637",
+      "source_currency": "JPY",
+      "source_price": 4200000,
+      "customer_price_rub": 2420689,
+      "images": [
+        "/assets/catalog/new-4.webp"
+      ],
+      "destinations": [
+        "KG"
+      ],
+      "priority": 300,
+      "price_kind": "unified_estimate",
+      "pricing": {
+        "mode": "equipment_import",
+        "currency": "JPY",
+        "amount": 4200000,
+        "fixed_rub": 0,
+        "duty_percent": 0
+      }
+    },
+    {
+      "id": "new-165514",
+      "title": "Denyo DCA-60LSIE",
+      "category": "Генераторы",
+      "equipment_kind": "Дизельный генератор",
+      "asset_type": "equipment",
+      "serial": "30007578",
+      "serial_type": "Заводской номер",
+      "year": 2025,
+      "hours": 7,
+      "country": "JP",
+      "location": "Тотиги, Япония",
+      "specs": "60 кВА ; 2 090 × 980 × 1 350 мм; масса 1 410 кг.",
+      "condition_description": "Б/у, самооценка продавца B. Наработка 7 ч не означает статус нового.",
+      "client_note": "Совместимость, состояние и состав поставки согласуются перед оформлением.",
+      "source_url": "https://biglemon.kenkey.jp/en/item/165514",
+      "source_currency": "JPY",
+      "source_price": 2500000,
+      "customer_price_rub": 1440887,
+      "images": [
+        "/assets/catalog/new-5.webp"
+      ],
+      "destinations": [
+        "KG"
+      ],
+      "priority": 300,
+      "price_kind": "unified_estimate",
+      "pricing": {
+        "mode": "equipment_import",
+        "currency": "JPY",
+        "amount": 2500000,
+        "fixed_rub": 0,
+        "duty_percent": 0
+      }
+    },
+    {
+      "id": "new-165992",
+      "title": "Airman PDS655S-4C1",
+      "category": "Компрессоры",
+      "equipment_kind": "Дизельный компрессор",
+      "asset_type": "equipment",
+      "serial": "68-4C10339",
+      "serial_type": "Заводской номер",
+      "year": 2015,
+      "hours": 2133,
+      "country": "JP",
+      "location": "Тотиги, Япония",
+      "specs": "Промышленный дизельный компрессор; ",
+      "condition_description": "Б/у, самооценка продавца B.",
+      "client_note": "Совместимость, состояние и состав поставки согласуются перед оформлением.",
+      "source_url": "https://biglemon.kenkey.jp/en/item/165992",
+      "source_currency": "JPY",
+      "source_price": 2400000,
+      "customer_price_rub": 1383251,
+      "images": [
+        "/assets/catalog/new-6.webp"
+      ],
+      "destinations": [
+        "KG"
+      ],
+      "priority": 300,
+      "price_kind": "unified_estimate",
+      "pricing": {
+        "mode": "equipment_import",
+        "currency": "JPY",
+        "amount": 2400000,
+        "fixed_rub": 0,
+        "duty_percent": 0
+      }
+    },
+    {
+      "id": "new-153687",
+      "title": "Hitachi ZV-350PR-DE",
+      "category": "Уплотнение",
+      "equipment_kind": "Реверсивная виброплита",
+      "asset_type": "equipment",
+      "serial": "0010329",
+      "serial_type": "Заводской номер",
+      "year": 2016,
+      "hours": 235,
+      "country": "JP",
+      "location": "Ибараки, Япония",
+      "specs": "Реверсивная несамоходная виброплита: масса 350 кг; 920 × 450 × 1 250 мм.",
+      "condition_description": "Б/у, самооценка продавца B.",
+      "client_note": "Совместимость, состояние и состав поставки согласуются перед оформлением.",
+      "source_url": "https://biglemon.kenkey.jp/en/item/153687",
+      "source_currency": "JPY",
+      "source_price": 300000,
+      "customer_price_rub": 172906,
+      "images": [
+        "/assets/catalog/new-7.webp"
+      ],
+      "destinations": [],
+      "priority": 300,
+      "price_kind": "unified_estimate",
+      "pricing": {
+        "mode": "equipment_import",
+        "currency": "JPY",
+        "amount": 300000,
+        "fixed_rub": 0,
+        "duty_percent": 5
+      }
+    },
+    {
+      "id": "new-155149",
+      "title": "Denyo DCA-60LSIB",
+      "category": "Генераторы",
+      "equipment_kind": "Дизельный генератор",
+      "asset_type": "equipment",
+      "serial": "3930471",
+      "serial_type": "Заводской номер",
+      "year": 2018,
+      "hours": 2289,
+      "country": "JP",
+      "location": "Ибараки, Япония",
+      "specs": "Промышленный дизельный генератор в кожухе; 2 090 × 980 × 1 540 мм, масса 1 690 кг. Выходные напряжения и номинальную мощность закрепить по паспорту.",
+      "condition_description": "Б/у, самооценка продавца B. Фото показывает аккуратный корпус без видимой сильной коррозии; это не независимая диагностика.",
+      "client_note": "Совместимость, состояние и состав поставки согласуются перед оформлением.",
+      "source_url": "https://biglemon.kenkey.jp/en/item/155149",
+      "source_currency": "JPY",
+      "source_price": 2000000,
+      "customer_price_rub": 1152709,
+      "images": [
+        "/assets/catalog/new-8.webp"
+      ],
+      "destinations": [],
+      "priority": 300,
+      "price_kind": "unified_estimate",
+      "pricing": {
+        "mode": "equipment_import",
+        "currency": "JPY",
+        "amount": 2000000,
+        "fixed_rub": 0,
+        "duty_percent": 0
+      }
+    },
+    {
+      "id": "new-141072",
+      "title": "Okada AIYON ASG-130RDF",
+      "category": "Навесное",
+      "equipment_kind": "Поворотный гидрозахват",
+      "asset_type": "equipment",
+      "serial": "1178D",
+      "serial_type": "Заводской номер",
+      "year": null,
+      "hours": null,
+      "country": "JP",
+      "location": "Оита, Япония",
+      "specs": "Поворотный гидрозахват ASG-130RDF, класс 0,45 м³ . В таблице указана совместимость с экскаваторами 12–20 т.",
+      "condition_description": "Продавец заявляет «не использовался на объекте» и самооценку A+. Год не опубликован; не называть техникой текущего года.",
+      "client_note": "Совместимость, состояние и состав поставки согласуются перед оформлением.",
+      "source_url": "https://biglemon.kenkey.jp/en/item/141072",
+      "source_currency": "JPY",
+      "source_price": 2920000,
+      "customer_price_rub": 1682955,
+      "images": [
+        "/assets/catalog/new-9.webp"
+      ],
+      "destinations": [],
+      "priority": 300,
+      "price_kind": "unified_estimate",
+      "pricing": {
+        "mode": "equipment_import",
+        "currency": "JPY",
+        "amount": 2920000,
+        "fixed_rub": 0,
+        "duty_percent": 0
+      }
+    }
+  ]
+}

@@ -4,7 +4,7 @@ const root=path.resolve(__dirname,'..');
 if(!process.env.TE_SOURCE_DIR)throw Error('Set TE_SOURCE_DIR to the non-public editable source directory.');
 const source=path.resolve(process.env.TE_SOURCE_DIR);
 if(source===root)throw Error('Use a separate source directory to avoid obfuscating compiled files.');
-const own=['app','payment-instructions','premium-pdf','local-documents','pdf-preview','public-config','https-only','document-flow','balance-invoice','balance-ui'];
+const own=['app','payment-instructions','premium-pdf','local-documents','pdf-preview','public-config','https-only','document-flow','balance-invoice','balance-ui','order-documents','order-balance'];
 const settings={target:'browser-no-eval',compact:true,controlFlowFlattening:false,deadCodeInjection:false,debugProtection:false,disableConsoleOutput:false,identifierNamesGenerator:'hexadecimal',renameGlobals:false,renameProperties:false,selfDefending:false,simplify:true,sourceMap:false,stringArray:true,stringArrayEncoding:['base64'],stringArrayThreshold:.7,unicodeEscapeSequence:false,seed:20261012};
 async function protect(code,name){
  const min=await minify(code,{compress:{passes:2},mangle:true,format:{comments:false},sourceMap:false});
@@ -17,6 +17,9 @@ async function protect(code,name){
   if(name==='app')code=code.replace(/^\$\('documentTestFill'\)\.addEventListener\([^\n]+\n/m,'');
   fs.writeFileSync(path.join(root,'auto-src',name+'.js'),await protect(code,name));
  }
+ const docFiles=['vendor','settings','watermark-assets','premium-pdf','local-documents','order-documents','pdf-preview','document-flow'];
+ const integrity=Object.fromEntries(docFiles.map(n=>['/auto-src/'+n+'.js','sha384-'+crypto.createHash('sha384').update(fs.readFileSync(path.join(root,'auto-src',n+'.js'))).digest('base64')]));
+ fs.writeFileSync(path.join(root,'assets/document-manifest.js'),'window.TEDocumentIntegrity='+JSON.stringify(integrity)+';\n');
  // Extract existing site logic without changing global handlers used by markup.
  for(const rel of ['goods/index.html','china-import/index.html','turkey-import/index.html','uae-import/index.html','israel-import/index.html','customs-clearance/index.html']){
   let html=fs.readFileSync(path.join(source,rel),'utf8');
@@ -47,7 +50,7 @@ async function protect(code,name){
  // This obsolete review HTML is not a public entry point.
  if(fs.existsSync(path.join(root,'auto-src/index.html')))fs.unlinkSync(path.join(root,'auto-src/index.html'));
  const files=own.map(n=>'auto-src/'+n+'.js');
- fs.writeFileSync(path.join(root,'production-build.json'),JSON.stringify({version:'20261023-5',sourceCommit:require('child_process').execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),tools:{'javascript-obfuscator':'5.9.0',terser:'5.51.2'},sourceMaps:false,eval:false,files:Object.fromEntries(files.map(f=>[f,crypto.createHash('sha256').update(fs.readFileSync(path.join(root,f))).digest('hex')]))},null,2)+'\n');
+ fs.writeFileSync(path.join(root,'production-build.json'),JSON.stringify({version:'20261023-6',sourceCommit:require('child_process').execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),tools:{'javascript-obfuscator':'5.9.0',terser:'5.51.2'},sourceMaps:false,eval:false,files:Object.fromEntries(files.map(f=>[f,crypto.createHash('sha256').update(fs.readFileSync(path.join(root,f))).digest('hex')]))},null,2)+'\n');
  // Early HTTPS upgrade on the production host. Edge redirect/HSTS still require domain access.
  const httpsBytes=fs.readFileSync(path.join(root,'auto-src/https-only.js'));
  const httpsSri=crypto.createHash('sha384').update(httpsBytes).digest('base64');
