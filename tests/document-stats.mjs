@@ -8,6 +8,7 @@ const root = new URL('../', import.meta.url);
 const catalog = JSON.parse(fs.readFileSync(new URL('server/document-stats/catalog.json', root)));
 const db = new DatabaseSync(':memory:');
 db.exec(fs.readFileSync(new URL('server/document-stats/schema.sql', root), 'utf8'));
+db.exec(fs.readFileSync(new URL('server/document-stats/model-report.sql', root), 'utf8'));
 const env = { STATS_DB: {
   prepare(sql) { return { bind(...values) { return { sql, values }; } }; },
   async batch(statements) {
@@ -33,6 +34,15 @@ assert.equal((await worker.fetch(request({...event,event_id:'TE-CUSTOMER-CONTRAC
 assert.equal((await worker.fetch(request(event,'https://example.test'),env)).status,403);
 assert.equal((await worker.fetch(request(null,'https://tegroup.cc','GET'),env)).status,405);
 assert.equal((await worker.fetch(request(event),{})).status,503);
+assert.equal((await worker.fetch(request(null,'https://tegroup.cc','OPTIONS'),env)).status,204);
+assert.equal((await worker.fetch(request({padding:'x'.repeat(5000)}),env)).status,400);
+assert.equal(db.prepare('SELECT model FROM model_statistics WHERE offer_id=?').get(catalog[0].id).model,catalog[0].title);
+assert.equal(db.prepare('SELECT COUNT(*) n FROM document_events').get().n,1);
+const secondEvent={event_id:randomUUID(),offer_ids:[catalog[0].id,catalog[0].id]};
+assert.equal((await worker.fetch(request(secondEvent),env)).status,204);
+assert.equal(db.prepare('SELECT COUNT(*) n FROM document_events').get().n,2);
+assert.equal(db.prepare('SELECT generated_document_sets FROM model_statistics WHERE offer_id=?').get(catalog[0].id).generated_document_sets,2);
+
 const requests=[];
 const ctx={location:{hostname:'tegroup.cc'},TEDocumentStatsEnabled:true,fetch:async (url,options)=>{requests.push({url,options});return{ok:true};},setTimeout,clearTimeout};ctx.window=ctx;vm.createContext(ctx);
 vm.runInContext(fs.readFileSync(new URL('assets/document-stats.js',root),'utf8'),ctx);
@@ -47,3 +57,13 @@ ctx.TEDocumentStatsEnabled=false;
 ctx.TEDocumentStats.record(randomUUID(),[{id:catalog[0].id}]);
 assert.equal(requests.length,1);
 console.log('Statistics: idempotent orders, multi-model counts, PII rejection, private reads and disabled-mode checks passed.');
+
+// Production pages load the counter with SRI, preserve same-origin CSP and use no browser storage.
+for(const page of ['cars/index.html','equipment/index.html']){
+ const html=fs.readFileSync(new URL(page,root),'utf8');
+ assert.match(html,/src="\/assets\/document-stats-config\.js\?v=[a-f0-9]+" integrity="sha384-/);
+ assert.match(html,/src="\/assets\/document-stats\.js\?v=[a-f0-9]+" integrity="sha384-/);
+ assert.match(html,/connect-src 'self' blob:/);
+}
+assert.doesNotMatch(fs.readFileSync(new URL('assets/document-stats.js',root),'utf8'),/localStorage|sessionStorage|document\.cookie/);
+console.log('Statistics production wiring, named-model report, fresh orders and oversized-body checks passed.');

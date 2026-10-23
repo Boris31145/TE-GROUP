@@ -1,6 +1,6 @@
 # Учёт сформированных комплектов
 
-Подготовлен, но пока НЕ включён. Требуется вход владельца в Cloudflare, создание D1 и публикация Worker. До этого флаг `TEDocumentStatsEnabled` отсутствует и браузер ничего не отправляет.
+Включён 24 октября 2026 года (МСК). Cloudflare Worker `tegroup-document-stats`, D1 с тем же именем. Клиент подключён в разделах cars/equipment, `TEDocumentStatsEnabled=true`.
 
 Считается успешное создание всего комплекта PDF. Это не доказательство подписания, оплаты, покупки или резерва. Исторических событий до запуска нет: прежняя версия работала только в браузере. Тестовые PDF не являются обращениями клиентов.
 
@@ -10,7 +10,7 @@
 
 ## Развёртывание
 
-1. Создать D1 `tegroup-document-stats`, применить `schema.sql`.
+1. Создать D1 `tegroup-document-stats`, применить `schema.sql` и `model-report.sql`.
 2. Записать настоящий database_id в wrangler.jsonc; привязать `STATS_DB`.
 3. Развернуть Worker и маршрут `tegroup.cc/api/document-events`. Маршрут требует проксируемого домена Cloudflare. Сам сайт остаётся на GitHub Pages.
 4. Проверить POST, повтор POST, запрет GET и отсутствие покупательских данных. Удалять только явно помеченные тестовые события.
@@ -28,10 +28,14 @@ FROM model_daily_statistics ORDER BY day DESC, generated_document_sets DESC;
 ```
 
 ```sql
-SELECT offer_id, COUNT(*) AS generated_document_sets
-FROM document_models GROUP BY offer_id ORDER BY generated_document_sets DESC;
+SELECT model, offer_id, generated_document_sets, last_day_utc
+FROM model_statistics ORDER BY generated_document_sets DESC;
 ```
 
-Названия моделей сопоставляются по `catalog.json`. Общее число комплектов — `SELECT COUNT(*) FROM document_events;`; сумма по моделям может быть больше из-за комплектных заказов.
+Названия моделей показаны в `model_statistics`; справочник — `catalog.json`. При изменении ассортимента обновлять allowlist Worker и представление `model_statistics` из этого справочника. Общее число комплектов — `SELECT COUNT(*) FROM document_events;`; сумма по моделям может быть больше из-за комплектных заказов.
 
 Проверка: `node tests/document-stats.mjs`.
+
+Прямой доступ владельца: https://dash.cloudflare.com/7995c2fc571d0fa3622f1eb84309f72d/workers/d1/databases/5c6cd632-11d6-4044-86d7-00051fc6eb19/console
+
+Рабочий маршрут только `/api/document-events`; workers.dev и preview URL выключены. Логи и трассировки Worker выключены. Обработчик не читает cookies, IP и Referer. Статистика не блокирует генерацию или скачивание при недоступности сети. Непереданное событие может потеряться после закрытия страницы: фонового хранилища/идентификатора посетителя нет.

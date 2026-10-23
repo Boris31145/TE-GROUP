@@ -5,5 +5,5 @@
   "workers_dev": false,
   "observability": { "enabled": false },
   "routes": [{ "pattern": "tegroup.cc/api/document-events", "zone_name": "tegroup.cc" }],
-  "d1_databases": [{ "binding": "STATS_DB", "database_name": "tegroup-document-stats", "database_id": "SET_AFTER_DATABASE_CREATION" }]
+  "d1_databases": [{ "binding": "STATS_DB", "database_name": "tegroup-document-stats", "database_id": "5c6cd632-11d6-4044-86d7-00051fc6eb19" }]
 }
