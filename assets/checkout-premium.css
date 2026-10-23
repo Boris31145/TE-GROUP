@@ -122,3 +122,31 @@
 @media(max-width:359px){#tegroup-mobile-review .checkout-brand span{display:none}#tegroup-mobile-review .document-steps>span{font-size:10px}#tegroup-mobile-review .document-steps b{font-size:9px}#tegroup-mobile-review .document-file-heading{flex-direction:column;gap:4px}#tegroup-mobile-review #documentDownloads .document-bundle .document-file-actions{grid-template-columns:1fr}#tegroup-mobile-review .payment-options{grid-template-columns:1fr}}
 
 #tegroup-mobile-review #documentDownloads .document-bundle .document-save-note{margin:12px 0 0;font-size:11px;line-height:1.6}#tegroup-mobile-review #documentDownloads .document-file-actions button{white-space:nowrap}#tegroup-mobile-review .document-progress{font-size:12px;color:#356247;padding:12px 14px;background:#f0f5ed;border-radius:6px;margin:16px 0} @media(max-width:600px){#tegroup-mobile-review #documentDownloads .document-file-actions,#tegroup-mobile-review #documentDownloads .document-bundle .document-file-actions{grid-template-columns:minmax(0,1fr) 96px}#tegroup-mobile-review #documentDownloads .document-bundle .document-save-note{font-size:10px;margin-top:10px}}@media(max-width:359px){#tegroup-mobile-review #documentDownloads .document-bundle .document-file-actions{grid-template-columns:1fr}}
+
+/* Compact company data: retain readable inputs and every required field. */
+#tegroup-mobile-review #documentForm[data-buyer-type="company"] #companyFields{margin:0}
+#tegroup-mobile-review #documentForm[data-buyer-type="company"] label:not(.check){margin-bottom:10px}
+#tegroup-mobile-review #documentForm[data-buyer-type="company"] .checkout-delivery-note{font-size:11px;line-height:1.45;margin:2px 0 10px;color:#617266}
+#tegroup-mobile-review #documentForm[data-buyer-type="company"] #transferFields{margin:12px 0 0;padding-top:12px}
+#tegroup-mobile-review #documentForm[data-buyer-type="company"] #transferFields p{font-size:11px;line-height:1.5;margin:0 0 8px}
+#tegroup-mobile-review #documentForm[data-buyer-type="company"] .check{padding:8px 0;min-height:44px}
+#tegroup-mobile-review #documentForm[data-buyer-type="company"] .document-actions{margin-top:12px;padding-top:12px}
+@media(max-width:600px){
+ #tegroup-mobile-review #documentBuyer:has([data-buyer-type="company"]){padding-top:14px}
+ #tegroup-mobile-review #documentBuyer:has([data-buyer-type="company"]) h2{font-size:22px;margin-bottom:4px}
+ #tegroup-mobile-review #documentBuyer:has([data-buyer-type="company"]) #buyerFormHelp{font-size:11px;line-height:1.4;margin-bottom:12px}
+ #tegroup-mobile-review #documentBuyer:has([data-buyer-type="company"]) .checkout-order{margin-bottom:12px;padding-bottom:10px}
+ #tegroup-mobile-review #documentForm[data-buyer-type="company"] .payment-choice{margin-bottom:14px}
+ #tegroup-mobile-review #documentForm[data-buyer-type="company"] .payment-choice legend{margin-bottom:6px;font-size:11px}
+ #tegroup-mobile-review #documentForm[data-buyer-type="company"] .payment-options{grid-template-columns:1fr 1fr}
+ #tegroup-mobile-review #documentForm[data-buyer-type="company"] .payment-options label{padding:9px 8px;gap:6px;margin-bottom:0;flex-wrap:nowrap}
+ #tegroup-mobile-review #documentForm[data-buyer-type="company"] .payment-options label span{min-width:0}
+ #tegroup-mobile-review #documentForm[data-buyer-type="company"] .payment-options input{width:16px;height:16px;min-width:16px}
+ #tegroup-mobile-review #documentForm[data-buyer-type="company"] .payment-options strong{font-size:11px;line-height:1.35}
+ #tegroup-mobile-review #documentForm[data-buyer-type="company"] .payment-options small{font-size:10px;line-height:1.4;margin-top:3px}
+ #tegroup-mobile-review #documentForm[data-buyer-type="company"] #paymentChoiceSummary{font-size:11px;line-height:1.45;margin-top:8px}
+ #tegroup-mobile-review #documentForm[data-buyer-type="company"] label:not(.check){font-size:11px;line-height:1.4;margin-bottom:10px}
+ #tegroup-mobile-review #documentForm[data-buyer-type="company"] input:not([type=radio]):not([type=checkbox]){height:44px;min-height:44px;font-size:16px;margin-top:3px;padding:9px 10px}
+}
+
+#tegroup-mobile-review .checkout-tax-note{font-size:11px;line-height:1.5;margin:8px 0 0;color:#53695b;border-left:2px solid #a28650;padding-left:10px}

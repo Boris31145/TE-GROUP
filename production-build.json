@@ -1,6 +1,6 @@
 {
   "version": "20261023-7",
-  "sourceCommit": "82a84d477290ffdefc6b1f050805f2ec1680d8e1",
+  "sourceCommit": "8f699650fc73e5f3376b67de75da52ee297def51",
   "tools": {
     "javascript-obfuscator": "5.9.0",
     "terser": "5.51.2"
@@ -10,15 +10,15 @@
   "files": {
     "auto-src/app.js": "4f507484c96b6b0a31c8fad3628a947d25ebf113153eff3c942b3e24f07bafaa",
     "auto-src/payment-instructions.js": "e7d050b1176fa1d00d663143ea936ecbce340d6932db8eeca9ceb15b8b745345",
-    "auto-src/premium-pdf.js": "ddad52fb85422dee351fe53d3858cfb5a2fc2a8fa7e3dd8dd76b8a61bbbc61b9",
-    "auto-src/local-documents.js": "e62feb16559f9d4046bad8db761f1ab226a2b8685e751be2f46a39588359b5d8",
+    "auto-src/premium-pdf.js": "ef44a80f72bcf879a7fc2e9883bccedfd0fbfabb64f698b793901d050c5263ee",
+    "auto-src/local-documents.js": "b2578d119e9b4e647a5885da3c3f3c34daf20393252e9161088432b392f1b1bd",
     "auto-src/pdf-preview.js": "fa0d7803e946a5a33f2069fcd3dfd8362f66792b91662f431745c33e38fee182",
     "auto-src/public-config.js": "424960332903079bd6e109635c7bcf04b044f5be4e7f5efa5c9ad76cb340d528",
     "auto-src/https-only.js": "04956835727d63a01d3bd6247be2190fad7cf0a9754547b35b1be4c4fe765abc",
-    "auto-src/document-flow.js": "92722da94553d6dfa6dc0d5970b68206bca19e1abeb400faab6f24c515f394ed",
+    "auto-src/document-flow.js": "3243f7e0c620e9687e60ad73a83e42afb65178b27cbec084a6d58b9d76072738",
     "auto-src/balance-invoice.js": "4db0eddc495a931c03d195dcfb082fa66410d3c691bf6825232f0dc919399d67",
     "auto-src/balance-ui.js": "e06fe697a7ffd4e596b7255fdae81f5285438ae01637e64e73898fbe438c4b02",
-    "auto-src/order-documents.js": "2b18f6f9393f88c7a56c1d9496dc612e9946a785fdd3e35214a5f9e8638baafa",
+    "auto-src/order-documents.js": "7a4c32d833ee59fb32100ed3a1179d1f028091eb6b2ca2142d76e80bf47e4fbd",
     "auto-src/order-balance.js": "b62e4311a75be092134bf4e2b5dae6d9198389eeb0c547a8b68d6be1f9f02a29"
   }
 }
