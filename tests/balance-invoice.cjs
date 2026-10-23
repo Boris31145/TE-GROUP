@@ -22,4 +22,13 @@ const parsed=api.parsePages(fixture,bank,'b'.repeat(64));assert.equal(parsed.tot
 const corrupt=JSON.parse(JSON.stringify(fixture));corrupt[1].find(i=>i.str==='2 800 000 руб.').str='2 900 000 руб.';assert.throws(()=>api.parsePages(corrupt,bank,'b'.repeat(64)));
 const wrong=JSON.parse(JSON.stringify(fixture));wrong[0].push({str:'TE-20261019-FFFFFFFF',transform:[1,0,0,1,47,700]});assert.throws(()=>api.parsePages(wrong,bank,'b'.repeat(64)));
 const receiver=JSON.parse(JSON.stringify(fixture));receiver[1].find(i=>i.str===bank.beneficiary_name).str='Другой получатель';assert.throws(()=>api.parsePages(receiver,bank,'b'.repeat(64)));
+// The original PDF freezes the gross advance, withheld VAT and net bank transfer.
+const taxFixture=structuredClone(fixture);
+for(const page of taxFixture)for(const item of page){if(item.str==='Тестов Иван Иванович')item.str='ООО «Проверка НДС»';if(item.str==='К оплате / первый аванс 50%')item.str='К перечислению Продавцу';if(item.str==='2 800 000 руб.')item.str='2 295 081,97 руб.';}
+for(const str of ['статьи 161 НК РФ','Ввоз техники в Российскую Федерацию в исполнение настоящего договора не предусматривается','Приобретение для предпринимательской деятельности не признается потребительской покупкой'])taxFixture[0].push({str,transform:[1,0,0,1,47,700]});
+for(const str of ['Аванс по договору 50%: 2 800 000 руб.','НДС удерживает Покупатель: 504 918,03 руб.'])taxFixture[1].push({str,transform:[1,0,0,1,47,700]});
+const taxable=api.parsePages(taxFixture,bank,'c'.repeat(64));assert.equal(taxable.first_kopecks,280000000);assert.equal(taxable.settlement.vat_kopecks,50491803);assert.equal(taxable.settlement.seller_kopecks,229508197);
+const taxBalance=api.makeBalance(taxable,input,settings,now);assert.equal(taxBalance.payment_terms.amount_kopecks,280000000);assert.equal(c.TEPaymentInstructions.invoiceAmount(taxBalance),229508197);assert.ok(c.TEPaymentInstructions.requisitesQr(taxBalance).includes('|Sum=229508197'));
+const brokenTax=structuredClone(taxFixture);brokenTax[1].find(x=>x.str==='2 295 081,97 руб.').str='2 295 081,98 руб.';assert.throws(()=>api.parsePages(brokenTax,bank,'c'.repeat(64)),/НДС/);
+const legacyCompany=structuredClone(fixture);for(const page of legacyCompany)for(const item of page)if(item.str==='Тестов Иван Иванович')item.str='ООО «Проверка НДС»';legacyCompany[0].push(...taxFixture[0].slice(-3));assert.throws(()=>api.parsePages(legacyCompany,bank,'d'.repeat(64)),/НДС/);
 console.log('PASS: frozen contract and balances, confirmations, VIN rules, amounts, dates, repeat invoice ID, and malformed/mixed/wrong-bank imports');
