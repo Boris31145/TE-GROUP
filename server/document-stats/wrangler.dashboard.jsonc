@@ -1,0 +1,45 @@
+{
+  "name": "tegroup-statistics-dashboard",
+  "main": "dashboard-worker.mjs",
+  "compatibility_date": "2026-10-24",
+  "workers_dev": false,
+  "preview_urls": false,
+  "observability": {
+    "enabled": false
+  },
+  "routes": [
+    {
+      "pattern": "tegroup.cc/owner/statistics*",
+      "zone_name": "tegroup.cc"
+    }
+  ],
+  "rules": [
+    {
+      "type": "Text",
+      "globs": [
+        "**/*.html",
+        "**/dashboard/style.css",
+        "**/dashboard/app.js",
+        "**/dashboard/login.js"
+      ],
+      "fallthrough": true
+    }
+  ],
+  "d1_databases": [
+    {
+      "binding": "STATS_DB",
+      "database_name": "tegroup-document-stats",
+      "database_id": "5c6cd632-11d6-4044-86d7-00051fc6eb19"
+    }
+  ],
+  "ratelimits": [
+    {
+      "name": "LOGIN_LIMITER",
+      "namespace_id": "2026102401",
+      "simple": {
+        "limit": 10,
+        "period": 60
+      }
+    }
+  ]
+}

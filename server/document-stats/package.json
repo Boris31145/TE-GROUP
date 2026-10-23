@@ -1,0 +1,1 @@
+{"name":"tegroup-private-statistics","private":true,"type":"module","scripts":{"build":"node build.mjs","test":"node ../../tests/stats-dashboard.mjs"},"devDependencies":{"esbuild":"0.28.2"}}

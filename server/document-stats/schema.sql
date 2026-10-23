@@ -14,3 +14,5 @@ CREATE VIEW IF NOT EXISTS model_daily_statistics AS
 SELECT e.day, m.offer_id, COUNT(*) AS generated_document_sets
 FROM document_events e JOIN document_models m USING(event_id)
 GROUP BY e.day, m.offer_id;
+-- Supports owner dashboard day/month queries without scanning historical rows.
+CREATE INDEX IF NOT EXISTS document_events_day ON document_events(day);
