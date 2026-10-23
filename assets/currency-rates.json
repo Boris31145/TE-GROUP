@@ -3,7 +3,7 @@
   "provider": "Банк России",
   "source_url": "https://www.cbr.ru/development/sxml/",
   "rate_date": "2026-10-24",
-  "fetched_at": "2026-10-24T01:30:38.084574+03:00",
+  "fetched_at": "2026-10-24T02:24:20.866019+03:00",
   "base": "RUB",
   "rates": {
     "USD": 80.5381,
