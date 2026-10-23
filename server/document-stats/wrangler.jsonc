@@ -1,0 +1,9 @@
+{
+  "name": "tegroup-document-stats",
+  "main": "worker.mjs",
+  "compatibility_date": "2026-10-23",
+  "workers_dev": false,
+  "observability": { "enabled": false },
+  "routes": [{ "pattern": "tegroup.cc/api/document-events", "zone_name": "tegroup.cc" }],
+  "d1_databases": [{ "binding": "STATS_DB", "database_name": "tegroup-document-stats", "database_id": "SET_AFTER_DATABASE_CREATION" }]
+}

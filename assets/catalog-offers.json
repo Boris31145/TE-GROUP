@@ -434,7 +434,7 @@
       "price_kind": "unified_estimate",
       "source_expired": false,
       "availability": "on_request",
-      "vin": null,
+      "vin": "KMHLN41EETU264141",
       "location": null,
       "asset_type": "car",
       "category": "Автомобили",
@@ -455,6 +455,18 @@
         "fixed_rub": 0,
         "base_rate": 0.0612037,
         "base_total_rub": 2390991
+      },
+      "vin_verification": {
+        "checked_on": "2026-10-23",
+        "source_url": "https://almasarkorea.com/cars/2026-hyundai-avante-14758601/",
+        "source_lot": "42852509",
+        "matched_fields": [
+          "source_lot",
+          "model",
+          "year",
+          "mileage_km"
+        ],
+        "method": "Public listing VIN matched to original listing and photos"
       }
     },
     {
@@ -650,7 +662,7 @@
       "price_kind": "unified_estimate",
       "source_expired": false,
       "availability": "on_request",
-      "vin": null,
+      "vin": "WAUZZZ4G0JN136185",
       "location": null,
       "asset_type": "car",
       "category": "Автомобили",
@@ -673,6 +685,18 @@
         "base_total_rub": 3663842,
         "eur_duty_base": 9523.199999999999,
         "base_eur_rate": 91.1364
+      },
+      "vin_verification": {
+        "checked_on": "2026-10-23",
+        "source_url": "https://encar.spb.ru/auto/42870742/",
+        "source_lot": "42870742",
+        "matched_fields": [
+          "source_lot",
+          "model",
+          "year",
+          "mileage_km"
+        ],
+        "method": "Public listing VIN matched to original listing and photos"
       }
     },
     {
@@ -1156,7 +1180,7 @@
       "price_kind": "unified_estimate",
       "source_expired": false,
       "availability": "on_request",
-      "vin": null,
+      "vin": "KMHR281ADRU762001",
       "location": null,
       "asset_type": "car",
       "category": "Автомобили",
@@ -1177,6 +1201,18 @@
         "fixed_rub": 0,
         "base_rate": 0.0612037,
         "base_total_rub": 5785160
+      },
+      "vin_verification": {
+        "checked_on": "2026-10-23",
+        "source_url": "https://trust-encar.ru/auto/42654370/",
+        "source_lot": "42654370",
+        "matched_fields": [
+          "source_lot",
+          "model",
+          "year",
+          "mileage_km"
+        ],
+        "method": "Public listing VIN matched to original listing and photos"
       }
     },
     {

@@ -13,6 +13,11 @@ async function protect(code,name){
  return '/* TE GROUP production build. Obfuscation is not access control. */\n'+result+'\n';
 }
 (async()=>{
+ // Catalog updates must invalidate browser/CDN caches just like document scripts.
+ const catalogFile=path.join(root,'assets/catalog-offers.json');
+ const catalogHash=crypto.createHash('sha256').update(fs.readFileSync(catalogFile)).digest('hex').slice(0,16);
+ const catalogUi=path.join(root,'assets/catalog-premium.js');
+ fs.writeFileSync(catalogUi,fs.readFileSync(catalogUi,'utf8').replace(/\/assets\/catalog-offers\.json(?:\?v=[a-f0-9]+)?/g,'/assets/catalog-offers.json?v='+catalogHash));
  for(const name of own){let code=fs.readFileSync(path.join(source,'auto-src',name+'.js'),'utf8');
   if(name==='app')code=code.replace(/^\$\('documentTestFill'\)\.addEventListener\([^\n]+\n/m,'');
   fs.writeFileSync(path.join(root,'auto-src',name+'.js'),await protect(code,name));

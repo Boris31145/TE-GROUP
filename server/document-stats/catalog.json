@@ -1,0 +1,380 @@
+[
+  {
+    "id": "dealer_retail:891832bc-40f3-4768-aabe-d477bc4fb751",
+    "title": "Honda Civic Sport",
+    "year": 2026,
+    "asset_type": "car"
+  },
+  {
+    "id": "dealer_retail:47a452f2-7f50-4a70-ad9b-5cd7000dc8ff",
+    "title": "Honda Accord LX",
+    "year": 2024,
+    "asset_type": "car"
+  },
+  {
+    "id": "dealer_retail:ab6cd3b6-824f-4697-b626-f461a99e1f87",
+    "title": "Mazda CX-5 Preferred",
+    "year": 2024,
+    "asset_type": "car"
+  },
+  {
+    "id": "dealer_retail:cd300da2-8a9a-47a4-9d59-7b8a71a42b32",
+    "title": "Volkswagen Tiguan Wolfsburg",
+    "year": 2024,
+    "asset_type": "car"
+  },
+  {
+    "id": "dealer_retail:0ee86766-5ef8-4445-bdbc-84870ae62ec3",
+    "title": "Toyota Camry SE",
+    "year": 2023,
+    "asset_type": "car"
+  },
+  {
+    "id": "dealer_retail:7b49d035-96db-4069-ba1e-6a98b369220c",
+    "title": "Toyota RAV4 LE",
+    "year": 2023,
+    "asset_type": "car"
+  },
+  {
+    "id": "dealer_retail:c280aead-49ab-4cba-a2b4-ed383e380355",
+    "title": "Subaru Forester Limited",
+    "year": 2023,
+    "asset_type": "car"
+  },
+  {
+    "id": "velauto:3934135",
+    "title": "Kia RAY",
+    "year": 2026,
+    "asset_type": "car"
+  },
+  {
+    "id": "velauto:3586334",
+    "title": "KG Mobility TIBOLI",
+    "year": 2026,
+    "asset_type": "car"
+  },
+  {
+    "id": "velauto:3252513",
+    "title": "Hyundai Sonata",
+    "year": 2026,
+    "asset_type": "car"
+  },
+  {
+    "id": "velauto:4027465",
+    "title": "Hyundai AVANTE",
+    "year": 2026,
+    "asset_type": "car"
+  },
+  {
+    "id": "velauto:4051220",
+    "title": "Volkswagen Tiguan",
+    "year": 2022,
+    "asset_type": "car"
+  },
+  {
+    "id": "velauto:4033692",
+    "title": "Kia Sorento HEV 1.6 2WD",
+    "year": 2022,
+    "asset_type": "car"
+  },
+  {
+    "id": "velauto:4051225",
+    "title": "Ford Ranger",
+    "year": 2024,
+    "asset_type": "car"
+  },
+  {
+    "id": "velauto:4051221",
+    "title": "Volvo XC90",
+    "year": 2019,
+    "asset_type": "car"
+  },
+  {
+    "id": "velauto:4051216",
+    "title": "Audi A6",
+    "year": 2018,
+    "asset_type": "car"
+  },
+  {
+    "id": "velauto:1666008",
+    "title": "Exeed LX (Zhuifeng)",
+    "year": 2026,
+    "asset_type": "car"
+  },
+  {
+    "id": "velauto:4044205",
+    "title": "Chery Tiggo 8",
+    "year": 2026,
+    "asset_type": "car"
+  },
+  {
+    "id": "velauto:2103236",
+    "title": "Nissan X-Trail",
+    "year": 2026,
+    "asset_type": "car"
+  },
+  {
+    "id": "velauto:3948288",
+    "title": "Geely Preface",
+    "year": 2025,
+    "asset_type": "car"
+  },
+  {
+    "id": "velauto:4050994",
+    "title": "BMW 3 Series",
+    "year": 2021,
+    "asset_type": "car"
+  },
+  {
+    "id": "velauto:4050998",
+    "title": "BMW 3 Series",
+    "year": 2023,
+    "asset_type": "car"
+  },
+  {
+    "id": "velauto:4050990",
+    "title": "BMW 3 Series",
+    "year": 2022,
+    "asset_type": "car"
+  },
+  {
+    "id": "velauto:4051000",
+    "title": "BMW 3 Series",
+    "year": 2025,
+    "asset_type": "car"
+  },
+  {
+    "id": "velauto:4050992",
+    "title": "BMW 3 Series",
+    "year": 2025,
+    "asset_type": "car"
+  },
+  {
+    "id": "velauto:3717297",
+    "title": "Zeekr 001",
+    "year": 2025,
+    "asset_type": "car"
+  },
+  {
+    "id": "velauto:3722766",
+    "title": "Audi Q5L",
+    "year": 2026,
+    "asset_type": "car"
+  },
+  {
+    "id": "velauto:3245327",
+    "title": "Hyundai Palisade",
+    "year": 2024,
+    "asset_type": "car"
+  },
+  {
+    "id": "velauto:3726851",
+    "title": "Land Rover Range Rover Velar",
+    "year": 2024,
+    "asset_type": "car"
+  },
+  {
+    "id": "velauto:4074077",
+    "title": "Volvo XC90",
+    "year": 2025,
+    "asset_type": "car"
+  },
+  {
+    "id": "velauto:3731888",
+    "title": "Kia Carnival",
+    "year": 2026,
+    "asset_type": "car"
+  },
+  {
+    "id": "velauto:3191981",
+    "title": "Lixiang L8",
+    "year": 2024,
+    "asset_type": "car"
+  },
+  {
+    "id": "sdlg-lg936l",
+    "title": "SDLG LG936L",
+    "year": 2022,
+    "asset_type": "equipment"
+  },
+  {
+    "id": "sany-sy200c-pro",
+    "title": "SANY SY200C PRO",
+    "year": 2024,
+    "asset_type": "equipment"
+  },
+  {
+    "id": "bizon-k150",
+    "title": "BIZON K150",
+    "year": 2024,
+    "asset_type": "equipment"
+  },
+  {
+    "id": "shacman-sx33186v366",
+    "title": "SHACMAN SX33186V366",
+    "year": 2024,
+    "asset_type": "equipment"
+  },
+  {
+    "id": "shacman-sx331863366",
+    "title": "SHACMAN SX331863366",
+    "year": 2023,
+    "asset_type": "equipment"
+  },
+  {
+    "id": "jp-5831",
+    "title": "Maeda APM-100",
+    "year": null,
+    "asset_type": "equipment"
+  },
+  {
+    "id": "jp-8094",
+    "title": "Komatsu JTHB210S-3",
+    "year": 2014,
+    "asset_type": "equipment"
+  },
+  {
+    "id": "jp-161683",
+    "title": "Denyo DCA-25LSKE",
+    "year": 2023,
+    "asset_type": "equipment"
+  },
+  {
+    "id": "jp-164203",
+    "title": "Nippon Sharyo NES45TY2",
+    "year": 2014,
+    "asset_type": "equipment"
+  },
+  {
+    "id": "jp-west655",
+    "title": "Airman PDS655S",
+    "year": 2010,
+    "asset_type": "equipment"
+  },
+  {
+    "id": "jp-147829",
+    "title": "Airman PDSF530S",
+    "year": 2012,
+    "asset_type": "equipment"
+  },
+  {
+    "id": "jp-139245",
+    "title": "Airman PDSF315S-5C1",
+    "year": 2015,
+    "asset_type": "equipment"
+  },
+  {
+    "id": "jp-149111",
+    "title": "Airman PDS670SD-4C5",
+    "year": 2015,
+    "asset_type": "equipment"
+  },
+  {
+    "id": "jp-165441",
+    "title": "Denyo DCA-100LSIE",
+    "year": 2017,
+    "asset_type": "equipment"
+  },
+  {
+    "id": "jp-166033",
+    "title": "Airman PDS655SD",
+    "year": 2012,
+    "asset_type": "equipment"
+  },
+  {
+    "id": "jp-original-0",
+    "title": "Komatsu JASC200M-1",
+    "year": 2015,
+    "asset_type": "equipment"
+  },
+  {
+    "id": "jp-original-1",
+    "title": "NPK SV140",
+    "year": 2022,
+    "asset_type": "equipment"
+  },
+  {
+    "id": "jp-original-2",
+    "title": "Okada TS-W1100",
+    "year": 2008,
+    "asset_type": "equipment"
+  },
+  {
+    "id": "jp-original-3",
+    "title": "Miyamoto RK2000L",
+    "year": 2017,
+    "asset_type": "equipment"
+  },
+  {
+    "id": "jp-original-4",
+    "title": "Miyamoto RK2000L",
+    "year": 2014,
+    "asset_type": "equipment"
+  },
+  {
+    "id": "jp-original-5",
+    "title": "NPK HP-2SX",
+    "year": null,
+    "asset_type": "equipment"
+  },
+  {
+    "id": "new-6686",
+    "title": "Osumi WP800G",
+    "year": 2010,
+    "asset_type": "equipment"
+  },
+  {
+    "id": "new-8052",
+    "title": "TOKU TNB-6M-US",
+    "year": 2014,
+    "asset_type": "equipment"
+  },
+  {
+    "id": "new-165215",
+    "title": "Furukawa FX55SS",
+    "year": 2018,
+    "asset_type": "equipment"
+  },
+  {
+    "id": "new-164859",
+    "title": "Maruzen AG-2000",
+    "year": null,
+    "asset_type": "equipment"
+  },
+  {
+    "id": "new-155637",
+    "title": "NPK SV-24XR",
+    "year": 2017,
+    "asset_type": "equipment"
+  },
+  {
+    "id": "new-165514",
+    "title": "Denyo DCA-60LSIE",
+    "year": 2025,
+    "asset_type": "equipment"
+  },
+  {
+    "id": "new-165992",
+    "title": "Airman PDS655S-4C1",
+    "year": 2015,
+    "asset_type": "equipment"
+  },
+  {
+    "id": "new-153687",
+    "title": "Hitachi ZV-350PR-DE",
+    "year": 2016,
+    "asset_type": "equipment"
+  },
+  {
+    "id": "new-155149",
+    "title": "Denyo DCA-60LSIB",
+    "year": 2018,
+    "asset_type": "equipment"
+  },
+  {
+    "id": "new-141072",
+    "title": "Okada AIYON ASG-130RDF",
+    "year": null,
+    "asset_type": "equipment"
+  }
+]
