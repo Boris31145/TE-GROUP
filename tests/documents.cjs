@@ -4,7 +4,7 @@ const c={console,TextEncoder,TextDecoder,Uint8Array,ArrayBuffer,Date,setTimeout,
 vm.createContext(c);
 for(const name of ['vendor','settings','watermark-assets','payment-instructions','premium-pdf','local-documents','catalog-data'])vm.runInContext(fs.readFileSync(path.join(root,'auto-src',name+'.js'),'utf8'),c,{filename:name+'.js'});
 const api=c.TEPaymentInstructions,offers=c.TECatalogSnapshot.actual.offers;
-const buyer={buyer_type:'individual',full_name:'Тестов Иван Иванович',phone:'+7 999 000-00-00',email:'review@example.test',address:'Тестовый адрес, Москва, ул. Примерная, 1',document_type:'Паспорт РФ',passport_series:'0000',passport_number:'000000',passport_issued_by:'Тестовый орган — вымышленные данные',passport_issue_date:'2020-01-15',passport_department_code:'000-000'};
+const buyer={transfer_deadline:'2099-12-31',transfer_place:'Москва, тестовый склад, ул. Примерная, 1',transfer_terms_confirmed:true,buyer_type:'individual',full_name:'Тестов Иван Иванович',phone:'+7 999 000-00-00',email:'review@example.test',address:'Тестовый адрес, Москва, ул. Примерная, 1',document_type:'Паспорт РФ',passport_series:'0000',passport_number:'000000',passport_issued_by:'Тестовый орган — вымышленные данные',passport_issue_date:'2020-01-15',passport_department_code:'000-000'};
 for(const v of [null,0,-1,NaN,Infinity,'2500000'])assert.throws(()=>api.invoiceAmount({offer:{source_price_rub:v}}));
 assert.equal(api.listingAmountRub({source_price_rub:2345678.6}),2345679);
 assert.equal(api.listingAmountRub({quote:{total_rub:3500000},source_price_rub:2200000}),3500000);

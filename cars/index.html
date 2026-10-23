@@ -151,8 +151,8 @@
 <button type="button" class="close cursor-interaction" data-close="documentDialog" aria-label="Закрыть оформление и очистить данные">×</button>
 <div class="document-steps" aria-label="Этапы оформления"><span id="docStep1">1 · Покупатель</span><span id="docStep2">2 · Данные</span><span id="docStep3">3 · Документы</span></div>
 <div id="documentConsent"><span class="eyebrow">TE GROUP · ОФОРМЛЕНИЕ</span><h2>Ваш автомобиль</h2>
-<div id="documentCar" class="document-selection"></div><fieldset class="buyer-choice"><legend>Кто покупатель?</legend><div class="buyer-options"><label class="buyer-option"><input type="radio" name="buyer_type" value="individual" form="documentForm" required><span><strong>Физическое лицо</strong><small>Покупка на своё имя</small></span></label><label class="buyer-option"><input type="radio" name="buyer_type" value="company" form="documentForm" required><span><strong>Юридическое лицо</strong><small>Покупка на организацию</small></span></label></div></fieldset>
-<p class="muted">Заполните данные и получите договор с инвойсом в одном PDF. Анкета обрабатывается на вашем устройстве.</p>
+<div id="documentCar" class="document-selection"></div><p id="documentBankNotice" class="notice">Получатель платежа сверяется со справкой банка. Пока доступен проект документов без платёжного QR. Подготовленный проект не предназначен для оплаты.</p><fieldset class="buyer-choice"><legend>Кто покупатель?</legend><div class="buyer-options"><label class="buyer-option"><input type="radio" name="buyer_type" value="individual" form="documentForm" required><span><strong>Физическое лицо</strong><small>Покупка на своё имя</small></span></label><label class="buyer-option"><input type="radio" name="buyer_type" value="company" form="documentForm" required><span><strong>Юридическое лицо</strong><small>Покупка на организацию</small></span></label></div></fieldset>
+<p class="muted">Заполните данные и получите проект договора со Спецификацией в одном PDF. Анкета обрабатывается на вашем устройстве.</p>
 <details class="consent-text"><summary>Согласие и условия обработки данных</summary><div id="localConsentText"></div><p><a href="/legal/privacy/" target="_blank" rel="noopener">Политика конфиденциальности и обработки данных</a></p><p>Правовые основания: <a href="https://mintrud.gov.ru/docs/laws/130" target="_blank" rel="noopener">Федеральный закон № 152-ФЗ, статьи 5, 6 и 9</a>.</p></details>
 <label class="check"><input id="documentConsentCheck" type="checkbox"><span>Даю <a href="/legal/local-consent/" target="_blank">отдельное согласие на обработку персональных данных</a> для подготовки документов и ознакомлен с <a href="/legal/privacy/" target="_blank">политикой обработки данных</a>.</span></label>
 <label class="check"><input id="documentIntent" type="checkbox"><span>Хочу приобрести выбранный автомобиль, оформить договор и получить инвойс для оплаты.</span></label>
@@ -173,11 +173,11 @@
 <label>Кем выдан<input name="passport_issued_by" minlength="5" maxlength="250" autocomplete="off" required></label>
 <div class="document-fields"><label>Дата выдачи<input name="passport_issue_date" type="date" autocomplete="off" required></label><label>Код подразделения<input name="passport_department_code" maxlength="7" placeholder="000-000 · при наличии" autocomplete="off"></label></div>
 </fieldset><p class="muted">Сканы документов не нужны. Срок поставки в договоре — 2–4 календарных месяца.</p>
-<p id="documentFormError" class="error" role="alert"></p><div class="document-actions"><button id="documentGenerate" class="primary cursor-interaction">Сформировать договор и инвойс</button><button id="documentBack" type="button" class="text-button cursor-interaction">← Назад</button></div>
+<fieldset id="transferFields" hidden disabled><legend>Условия передачи техники</legend><p class="muted">Укажите согласованные с TE GROUP срок и место. Эти данные одинаково попадут в договор и Спецификацию. Пустые условия для банка не формируются.</p><label>Предельная дата передачи<input name="transfer_deadline" type="date" required disabled></label><label>Место передачи<input name="transfer_place" minlength="8" maxlength="250" placeholder="Город, адрес склада или пункта передачи" required disabled></label><label class="check"><input name="transfer_terms_confirmed" type="checkbox" required disabled><span>Срок и место передачи согласованы с TE GROUP.</span></label></fieldset><p id="documentFormError" class="error" role="alert"></p><div class="document-actions"><button id="documentGenerate" class="primary cursor-interaction">Сформировать проект документов</button><button id="documentBack" type="button" class="text-button cursor-interaction">← Назад</button></div>
 </form></div>
-<div id="documentResult" hidden><span class="eyebrow">TE GROUP · ВАШИ ДОКУМЕНТЫ</span><h2>Договор и инвойс готовы</h2><p id="documentResultName"></p>
-<div id="documentDownloads" class="document-downloads"></div><p class="muted">Договор, спецификация, инвойс с QR и отдельное согласие — в одном файле.</p>
-<p class="notice">Документы для согласования. Полная стоимость заказа и сумма текущего платежа указаны в документах. QR содержит сумму текущего платежа и реквизиты TE GROUP. До оплаты подпишите договор.</p>
+<div id="documentResult" hidden><span class="eyebrow">TE GROUP · ВАШИ ДОКУМЕНТЫ</span><h2>Проект документов готов</h2><p id="documentResultName"></p>
+<div id="documentDownloads" class="document-downloads"></div><p class="muted">Договор, спецификация, проект счёта и отдельное согласие — в одном файле. До сверки получателя платежный QR не формируется.</p>
+<p class="notice">Документы для согласования. Полная стоимость заказа и сумма текущего платежа указаны в документах. Получатель требует сверки со справкой банка. Проект не является основанием для оплаты; после сверки реквизитов и подписания договора получите утверждённый счёт TE GROUP.</p>
 <p class="muted">Передайте договор в TE GROUP для завершения оформления. Сайт не отправляет документы автоматически.</p><a href="mailto:oootegroup@gmail.com" class="outline">Написать TE GROUP</a>
 <div class="document-actions"><button type="button" id="documentEdit" class="outline cursor-interaction">Изменить данные</button><button type="button" id="documentClear" class="text-button cursor-interaction">Очистить и закрыть</button></div>
 </div></section>
@@ -199,13 +199,13 @@
 </style>
 <script src="/auto-src/public-config.js?v=20261012-5" integrity="sha384-v+gmOmnkBULmmuqUu/+UUM4Io6HFhq4GthkGMRvzCRFvGJ80ZSMQ3SHGpkkfEzIE" crossorigin="anonymous"></script>
 <script src="/auto-src/vendor.js?v=20261012-5" integrity="sha384-8qzevZMCicQPiWstfJeFlVpJKFXAMojL704ERSty/bri3PkAnep97BIkY5XvV47e" crossorigin="anonymous"></script>
-<script src="/auto-src/settings.js?v=20261012-5" integrity="sha384-t9lxfTED4CbYGs3pjWB2GCU9CGifXPIoJdhOBNAsI2O/BJ5JtpWDiGreVi0YoU7O" crossorigin="anonymous"></script>
+<script src="/auto-src/settings.js?v=20261023-1" integrity="sha384-w3mNCCoDhqky0aTMqMPY+ygOm1nZGwlNT9kKH0F8hXJefDJkDnAd/r+Qi+AddujF" crossorigin="anonymous"></script>
 <script src="/auto-src/watermark-assets.js?v=20261012-5" integrity="sha384-0UHcWd1uUbYxAadiIKYb0w01r0XRbM52lNIoY4Y/fJhq3lqxyPEqrEbwQ89pV9po" crossorigin="anonymous"></script>
-<script src="/auto-src/payment-instructions.js?v=20261020-1" integrity="sha384-pjCcNv1vMVPVnv3yCNU4e/Sz1ztZ98k3g9AF4rPODWY4ez+EkcwO/vRBs4IU53FQ" crossorigin="anonymous"></script>
-<script src="/auto-src/premium-pdf.js?v=20261020-2" integrity="sha384-IOHElFghEsaZ2wab2DMj1QF88/5bGssqDQ3NAiB+X9tFycP3qf4N/3O1w/jjoHfs" crossorigin="anonymous"></script>
-<script src="/auto-src/local-documents.js?v=20261020-2" integrity="sha384-CQvKzPCJ0D4jDoTUX7hvCvXoLSs509sM1d8PTkLJpo+LfyX/ORbWmiUD4UcN1bLy" crossorigin="anonymous"></script>
+<script src="/auto-src/payment-instructions.js?v=20261023-1" integrity="sha384-WX2p0K/lQ7/b/N6vNdaZvWAk9mYuBaqTws3JD5FL0I+2j/9c1x0vkXg+MjD+SntT" crossorigin="anonymous"></script>
+<script src="/auto-src/premium-pdf.js?v=20261023-1" integrity="sha384-r7dLV9Ms5wQ+mcNxLI0d2s/Cw11l+Q8MYmwpDiL5nGskRmrH7VLx6StqsVh1JzzE" crossorigin="anonymous"></script>
+<script src="/auto-src/local-documents.js?v=20261023-1" integrity="sha384-Ew0CCSm7fedi+HwhtHaHwoaqyKTp0Tb03l9hl3grjhnfBfZUw17Op++XuLSCNQez" crossorigin="anonymous"></script>
 <script src="/auto-src/catalog-data.js?v=20261019-6" integrity="sha384-Nn3RbGtOCD2sNRN4KE5u6ymcPMlZdlXEf8khf5ziF/6rALlyqqgmx2dtNYntkEXk" crossorigin="anonymous"></script>
 <script src="/auto-src/pdf-preview.js?v=20261020-1" integrity="sha384-ZfvdKuemFyhpnKXSqrNCg6EWLvPTsCgKL3OFkV4PCFNw3KCe6vFejoSj2tUUYr8g" crossorigin="anonymous"></script>
-<script src="/auto-src/document-flow.js?v=20261020-2" integrity="sha384-VgmsoWR4eTj9LP0Hf2OsFQC7EWkgG7EoDq72crahngKZx3xe5Awvc6blAd++4sjX" crossorigin="anonymous"></script>
+<script src="/auto-src/document-flow.js?v=20261023-1" integrity="sha384-49sqnEw8G55dzdn/e8+pFKOzd5+Oe3ZK64L+tsceCq7AaX5wnGXC35Iv8lVYsvg5" crossorigin="anonymous"></script>
 <script src="/auto-src/app.js?v=20261019-7" integrity="sha384-rbDOpulfhTW7XK1iq/ffsJqxACMvpEyNANic0WPTA5Kl3u1ykqF3sNsWJ5Jelg7R" crossorigin="anonymous"></script>
 </body></html>
