@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "checked_on": "2026-10-23",
+  "checked_on": "2026-10-24",
   "offers": [
     {
       "id": "dealer_retail:891832bc-40f3-4768-aabe-d477bc4fb751",
@@ -5179,6 +5179,461 @@
           "value": "140 мм"
         }
       ]
+    },
+    {
+      "id": "budget24-42978558",
+      "title": "Kia Morning Signature",
+      "brand": "Kia",
+      "year": 2023,
+      "country": "KR",
+      "mileage_km": 71062,
+      "power_hp": 76,
+      "fuel": "Бензин",
+      "engine_cc": 998,
+      "transmission": "Автомат",
+      "source_url": "https://encarexport.com/ru/cars/kia-morning-ja-42978558",
+      "source_currency": "KRW",
+      "source_price": 12900000,
+      "source_price_rub": 784343,
+      "customer_price_rub": 1915702,
+      "display_price_rub": 1915702,
+      "price_kind": "unified_estimate",
+      "source_expired": false,
+      "availability": "on_request",
+      "vin": "KNAB3518BRT171768",
+      "location": "Южная Корея",
+      "asset_type": "car",
+      "category": "Автомобили",
+      "destinations": [
+        "RU",
+        "KG"
+      ],
+      "images": [
+        "/assets/catalog/budget24-42978558-0.webp",
+        "/assets/catalog/budget24-42978558-1.webp",
+        "/assets/catalog/budget24-42978558-2.webp",
+        "/assets/catalog/budget24-42978558-3.webp"
+      ],
+      "priority": 2300,
+      "description": "Компактный пятидверный хетчбэк с атмосферным двигателем и автоматом. Небольшой кузов удобен для города и парковки.",
+      "complectation": "Исполнение Signature. Дополнительные опции уточняются по осмотру экземпляра.",
+      "condition_description": "В опубликованном отчёте отмечена замена крышки багажника. История и состояние проверяются до выкупа.",
+      "specs": "Бензин · 998 см³ · 76 л.с. · автомат · передний привод",
+      "card_specs": [
+        {
+          "label": "Двигатель",
+          "value": "1,0 л · 76 л.с."
+        },
+        {
+          "label": "Коробка",
+          "value": "Автомат"
+        }
+      ],
+      "technical_specs": [
+        {
+          "label": "Кузов",
+          "value": "Хетчбэк"
+        },
+        {
+          "label": "Привод",
+          "value": "Передний"
+        },
+        {
+          "label": "Места",
+          "value": "5"
+        }
+      ],
+      "technical_sources": [
+        "https://encarexport.com/ru/cars/kia-morning-ja-42978558"
+      ],
+      "client_note": "Стоимость с импортными платежами. Доставка отдельно. Цена и комплектация фиксируются в договоре.",
+      "vin_verification": {
+        "checked_on": "2026-10-24",
+        "source_url": "https://import-motor.com/v/KNAB3518BRT171768/42978558-12",
+        "source_lot": "42978558",
+        "matched_fields": [
+          "source_lot",
+          "model",
+          "year",
+          "mileage_km"
+        ],
+        "method": "VIN and exact lot verified in rendered source page, mileage matched to exporter listing"
+      },
+      "pricing": {
+        "mode": "vehicle_components",
+        "currency": "KRW",
+        "amount": 12900000,
+        "fixed_rub": 210500,
+        "duty_percent": 20,
+        "vat_percent": 22,
+        "util_rub": 552000,
+        "excise_rub": 0,
+        "customs_fee": true
+      }
+    },
+    {
+      "id": "budget24-42853701",
+      "title": "Kia Morning Prestige",
+      "brand": "Kia",
+      "year": 2023,
+      "country": "KR",
+      "mileage_km": 13989,
+      "power_hp": 76,
+      "fuel": "Бензин",
+      "engine_cc": 998,
+      "transmission": "Автомат",
+      "source_url": "https://encarexport.com/ru/cars/kia-morning-ja-42853701",
+      "source_currency": "KRW",
+      "source_price": 13900000,
+      "source_price_rub": 845145,
+      "customer_price_rub": 2004716,
+      "display_price_rub": 2004716,
+      "price_kind": "unified_estimate",
+      "source_expired": false,
+      "availability": "on_request",
+      "vin": "KNAB2518BRT176896",
+      "location": "Южная Корея",
+      "asset_type": "car",
+      "category": "Автомобили",
+      "destinations": [
+        "RU",
+        "KG"
+      ],
+      "images": [
+        "/assets/catalog/budget24-42853701-0.webp",
+        "/assets/catalog/budget24-42853701-1.webp",
+        "/assets/catalog/budget24-42853701-2.webp",
+        "/assets/catalog/budget24-42853701-3.webp"
+      ],
+      "priority": 2299,
+      "description": "Городской пятидверный автомобиль с пробегом 13 989 км. Первая регистрация — сентябрь 2023 года; модельный год — 2024.",
+      "complectation": "Камера заднего вида, задние парктроники, LED-фары, климат-контроль, навигация, Bluetooth, круиз-контроль, подогрев передних сидений и вентиляция водительского сиденья.",
+      "condition_description": "По отчёту заменено правое переднее крыло. В истории есть страховые обращения, в том числе ремонт в марте 2025 года на 0,7 млн KRW. Состояние проверяется до выкупа.",
+      "specs": "Бензин · 998 см³ · 76 л.с. · автомат · передний привод",
+      "card_specs": [
+        {
+          "label": "Двигатель",
+          "value": "1,0 л · 76 л.с."
+        },
+        {
+          "label": "Коробка",
+          "value": "Автомат"
+        }
+      ],
+      "technical_specs": [
+        {
+          "label": "Кузов",
+          "value": "Хетчбэк"
+        },
+        {
+          "label": "Привод",
+          "value": "Передний"
+        },
+        {
+          "label": "Места",
+          "value": "5"
+        }
+      ],
+      "technical_sources": [
+        "https://encarexport.com/ru/cars/kia-morning-ja-42853701"
+      ],
+      "client_note": "Стоимость с импортными платежами. Доставка отдельно. Цена и комплектация фиксируются в договоре.",
+      "vin_verification": {
+        "checked_on": "2026-10-24",
+        "source_url": "https://import-motor.com/v/KNAB2518BRT176896/42853701-12",
+        "source_lot": "42853701",
+        "matched_fields": [
+          "source_lot",
+          "model",
+          "year",
+          "mileage_km"
+        ],
+        "method": "VIN and exact lot verified in rendered source page, mileage matched to exporter listing"
+      },
+      "pricing": {
+        "mode": "vehicle_components",
+        "currency": "KRW",
+        "amount": 13900000,
+        "fixed_rub": 210500,
+        "duty_percent": 20,
+        "vat_percent": 22,
+        "util_rub": 552000,
+        "excise_rub": 0,
+        "customs_fee": true
+      }
+    },
+    {
+      "id": "budget24-42611852",
+      "title": "Kia Ray Signature",
+      "brand": "Kia",
+      "year": 2023,
+      "country": "KR",
+      "mileage_km": 28286,
+      "power_hp": 76,
+      "fuel": "Бензин",
+      "engine_cc": 998,
+      "transmission": "Автомат",
+      "source_url": "https://encarexport.com/ru/cars/kia-kia-ray-42611852",
+      "source_currency": "KRW",
+      "source_price": 16000000,
+      "source_price_rub": 972829,
+      "customer_price_rub": 2191645,
+      "display_price_rub": 2191645,
+      "price_kind": "unified_estimate",
+      "source_expired": false,
+      "availability": "on_request",
+      "vin": "KNACH811BPT346618",
+      "location": "Южная Корея",
+      "asset_type": "car",
+      "category": "Автомобили",
+      "destinations": [
+        "RU",
+        "KG"
+      ],
+      "images": [
+        "/assets/catalog/budget24-42611852-0.webp",
+        "/assets/catalog/budget24-42611852-1.webp",
+        "/assets/catalog/budget24-42611852-2.webp",
+        "/assets/catalog/budget24-42611852-3.webp"
+      ],
+      "priority": 2298,
+      "description": "Компактвэн с высоким салоном и сдвижной задней дверью. Удобная посадка и практичное пространство для пассажиров и повседневного багажа.",
+      "complectation": "Камера заднего вида, парктроники, контроль слепых зон, навигация, климат-контроль, круиз-контроль, подогрев передних и задних сидений, вентиляция водительского сиденья, обогрев руля.",
+      "condition_description": "По опубликованному акту осмотра замена кузовных панелей и ремонт силовых элементов не зафиксированы. Состояние уточняется при осмотре до выкупа.",
+      "specs": "Бензин · 998 см³ · 76 л.с. · автомат · передний привод",
+      "card_specs": [
+        {
+          "label": "Двигатель",
+          "value": "1,0 л · 76 л.с."
+        },
+        {
+          "label": "Коробка",
+          "value": "Автомат"
+        }
+      ],
+      "technical_specs": [
+        {
+          "label": "Кузов",
+          "value": "Компактвэн"
+        },
+        {
+          "label": "Привод",
+          "value": "Передний"
+        },
+        {
+          "label": "Места",
+          "value": "5"
+        }
+      ],
+      "technical_sources": [
+        "https://encarexport.com/ru/cars/kia-kia-ray-42611852"
+      ],
+      "client_note": "Стоимость с импортными платежами. Доставка отдельно. Цена и комплектация фиксируются в договоре.",
+      "vin_verification": {
+        "checked_on": "2026-10-24",
+        "source_url": "https://encarexport.com/ru/cars/kia-kia-ray-42611852",
+        "source_lot": "42611852",
+        "matched_fields": [
+          "source_lot",
+          "model",
+          "year",
+          "mileage_km"
+        ],
+        "method": "VIN and exact lot verified in rendered source page, mileage matched to exporter listing"
+      },
+      "pricing": {
+        "mode": "vehicle_components",
+        "currency": "KRW",
+        "amount": 16000000,
+        "fixed_rub": 210500,
+        "duty_percent": 20,
+        "vat_percent": 22,
+        "util_rub": 552000,
+        "excise_rub": 0,
+        "customs_fee": true
+      }
+    },
+    {
+      "id": "budget24-42609443",
+      "title": "Hyundai Casper Turbo Inspiration",
+      "brand": "Hyundai",
+      "year": 2023,
+      "country": "KR",
+      "mileage_km": 43315,
+      "power_hp": 100,
+      "fuel": "Бензин",
+      "engine_cc": 998,
+      "transmission": "Автомат",
+      "source_url": "https://encarexport.com/ru/cars/hyundai-casper-42609443",
+      "source_currency": "KRW",
+      "source_price": 16500000,
+      "source_price_rub": 1003230,
+      "customer_price_rub": 2243960,
+      "display_price_rub": 2243960,
+      "price_kind": "unified_estimate",
+      "source_expired": false,
+      "availability": "on_request",
+      "vin": "KMHB5516BPW059132",
+      "location": "Южная Корея",
+      "asset_type": "car",
+      "category": "Автомобили",
+      "destinations": [
+        "RU",
+        "KG"
+      ],
+      "images": [
+        "/assets/catalog/budget24-42609443-0.webp",
+        "/assets/catalog/budget24-42609443-1.webp",
+        "/assets/catalog/budget24-42609443-2.webp",
+        "/assets/catalog/budget24-42609443-3.webp"
+      ],
+      "priority": 2297,
+      "description": "Четырёхместный городской кроссовер с турбированным двигателем 1,0 л, автоматической коробкой и передним приводом. Высокая посадка и богатое оснащение Inspiration.",
+      "complectation": "Камера заднего вида, задние парктроники, контроль слепых зон и полосы, адаптивный круиз-контроль, климат-контроль, навигация, подогрев сидений и руля, вентиляция водительского сиденья, рейлинги.",
+      "condition_description": "По опубликованному акту осмотра замена кузовных панелей и ремонт силовых элементов не зафиксированы. Состояние уточняется при осмотре до выкупа.",
+      "specs": "Бензин · 998 см³ · 100 л.с. · автомат · передний привод",
+      "card_specs": [
+        {
+          "label": "Двигатель",
+          "value": "1,0 л · 100 л.с."
+        },
+        {
+          "label": "Коробка",
+          "value": "Автомат"
+        }
+      ],
+      "technical_specs": [
+        {
+          "label": "Кузов",
+          "value": "Городской кроссовер"
+        },
+        {
+          "label": "Привод",
+          "value": "Передний"
+        },
+        {
+          "label": "Места",
+          "value": "4"
+        }
+      ],
+      "technical_sources": [
+        "https://encarexport.com/ru/cars/hyundai-casper-42609443"
+      ],
+      "client_note": "Стоимость с импортными платежами. Доставка отдельно. Цена и комплектация фиксируются в договоре.",
+      "vin_verification": {
+        "checked_on": "2026-10-24",
+        "source_url": "https://carsbat.com/en/detail/kmhb5516bpw059132-mbyfao/",
+        "source_lot": "42609443",
+        "matched_fields": [
+          "source_lot",
+          "model",
+          "year",
+          "mileage_km"
+        ],
+        "method": "VIN and exact lot verified in rendered source page, mileage matched to exporter listing"
+      },
+      "pricing": {
+        "mode": "vehicle_components",
+        "currency": "KRW",
+        "amount": 16500000,
+        "fixed_rub": 210500,
+        "duty_percent": 20,
+        "vat_percent": 22,
+        "util_rub": 552000,
+        "excise_rub": 6400,
+        "customs_fee": true
+      }
+    },
+    {
+      "id": "budget24-42748997",
+      "title": "Kia Ray Signature X-Line",
+      "brand": "Kia",
+      "year": 2026,
+      "country": "KR",
+      "mileage_km": 54,
+      "power_hp": 76,
+      "fuel": "Бензин",
+      "engine_cc": 998,
+      "transmission": "Автомат",
+      "source_url": "https://encarexport.com/ru/cars/kia-kia-ray-42748997",
+      "source_currency": "KRW",
+      "source_price": 22790000,
+      "source_price_rub": 1385673,
+      "customer_price_rub": 2465740,
+      "display_price_rub": 2465740,
+      "price_kind": "unified_estimate",
+      "source_expired": false,
+      "availability": "on_request",
+      "vin": "KNACH811BVT487899",
+      "location": "Южная Корея",
+      "asset_type": "car",
+      "category": "Автомобили",
+      "destinations": [
+        "RU",
+        "KG"
+      ],
+      "images": [
+        "/assets/catalog/budget24-42748997-0.webp",
+        "/assets/catalog/budget24-42748997-1.webp",
+        "/assets/catalog/budget24-42748997-2.webp",
+        "/assets/catalog/budget24-42748997-3.webp"
+      ],
+      "priority": 2296,
+      "description": "Компактвэн Signature X-Line с пробегом 54 км. Первая регистрация — сентябрь 2026 года, модельный год — 2027. Высокий салон и сдвижная дверь удобны для семьи.",
+      "complectation": "Пакет Black Two-Tone, навигация 8″, камера заднего вида, парктроники, контроль слепых зон и полосы, климат-контроль, подогрев сидений и руля, вентиляция водительского сиденья, электронный стояночный тормоз.",
+      "condition_description": "По опубликованному акту осмотра замена кузовных панелей и ремонт силовых элементов не зафиксированы. Состояние уточняется при осмотре до выкупа.",
+      "specs": "Бензин · 998 см³ · 76 л.с. · автомат · передний привод",
+      "card_specs": [
+        {
+          "label": "Двигатель",
+          "value": "1,0 л · 76 л.с."
+        },
+        {
+          "label": "Коробка",
+          "value": "Автомат"
+        }
+      ],
+      "technical_specs": [
+        {
+          "label": "Кузов",
+          "value": "Компактвэн"
+        },
+        {
+          "label": "Привод",
+          "value": "Передний"
+        },
+        {
+          "label": "Места",
+          "value": "5"
+        }
+      ],
+      "technical_sources": [
+        "https://encarexport.com/ru/cars/kia-kia-ray-42748997"
+      ],
+      "client_note": "Стоимость с импортными платежами. Доставка отдельно. Цена и комплектация фиксируются в договоре.",
+      "vin_verification": {
+        "checked_on": "2026-10-24",
+        "source_url": "https://import-motor.com/v/KNACH811BVT487899/42748997-12",
+        "source_lot": "42748997",
+        "matched_fields": [
+          "source_lot",
+          "model",
+          "year",
+          "mileage_km"
+        ],
+        "method": "VIN and exact lot verified in rendered source page, mileage matched to exporter listing"
+      },
+      "pricing": {
+        "mode": "vehicle_components",
+        "currency": "KRW",
+        "amount": 22790000,
+        "fixed_rub": 210500,
+        "duty_percent": 15,
+        "vat_percent": 22,
+        "util_rub": 297600,
+        "excise_rub": 0,
+        "customs_fee": true
+      }
     }
   ]
 }

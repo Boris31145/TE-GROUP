@@ -496,5 +496,35 @@
     "title": "Furukawa FX35SS",
     "year": 2017,
     "asset_type": "equipment"
+  },
+  {
+    "id": "budget24-42978558",
+    "title": "Kia Morning Signature",
+    "year": 2023,
+    "asset_type": "car"
+  },
+  {
+    "id": "budget24-42853701",
+    "title": "Kia Morning Prestige",
+    "year": 2023,
+    "asset_type": "car"
+  },
+  {
+    "id": "budget24-42611852",
+    "title": "Kia Ray Signature",
+    "year": 2023,
+    "asset_type": "car"
+  },
+  {
+    "id": "budget24-42609443",
+    "title": "Hyundai Casper Turbo Inspiration",
+    "year": 2023,
+    "asset_type": "car"
+  },
+  {
+    "id": "budget24-42748997",
+    "title": "Kia Ray Signature X-Line",
+    "year": 2026,
+    "asset_type": "car"
   }
 ]

@@ -4,6 +4,7 @@ for(const n of ['vendor','settings','watermark-assets','payment-instructions','p
 vm.runInContext(fs.readFileSync(path.join(root,'assets/live-pricing.js'),'utf8'),c);
 const catalog=JSON.parse(fs.readFileSync(path.join(root,'assets/catalog-offers.json'))).offers,rates=JSON.parse(fs.readFileSync(path.join(root,'assets/currency-rates.json')));
 const expected={'velauto:4027465':'KMHLN41EETU264141','velauto:4051216':'WAUZZZ4G0JN136185','velauto:3245327':'KMHR281ADRU762001'};
+for(const o of catalog.filter(x=>x.id.startsWith('budget24-')))expected[o.id]=o.vin;
 const buyer={buyer_type:'company',company_name:'ООО «Тест VIN»',company_inn:'7701234567',company_address:'Москва, Тестовая, 1',full_name:'Тестов Иван Иванович',signatory_basis:'Устава',phone:'+79990000000',email:'vin@example.test',destination_country:'RU',transfer_terms_confirmed:true,payment_option:'split'};
 const decode=v=>Uint8Array.from(Buffer.from(v,'base64')),settings=c.TEDocumentSettings,resources={PDFLib:c.PDFLib,fontkit:c.fontkit,font:decode(settings.font_base64),fontBold:decode(settings.font_bold_base64),signatureMarks:decode(settings.signature_marks_base64),qrcode:c.qrcode};
 (async()=>{
