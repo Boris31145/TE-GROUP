@@ -7,3 +7,12 @@ for(const o of added){assert.ok(o.serial&&!/[?*]|--/.test(o.serial),o.id);assert
 const c={structuredClone,TEPaymentInstructions:{listingAmountRub:o=>o.customer_price_rub}};vm.createContext(c);vm.runInContext(fs.readFileSync('assets/live-pricing.js','utf8'),c);const rates=JSON.parse(fs.readFileSync('assets/currency-rates.json'));c.TELivePricing.setRates(rates);
 for(const o of added){for(const country of ['RU','KG']){const p=c.TELivePricing.amount(o,rates,country);assert.ok(Number.isSafeInteger(p.rub)&&p.rub>o.source_price*rates.rates.JPY);const next=structuredClone(rates);next.rates.JPY*=1.05;assert.ok(c.TELivePricing.amount(o,next,country).rub>p.rub);}}
 console.log('PASS: 20 distinct numbered offers; all equipment has technical data, local photos, pricing and statistics mapping.');
+
+// Destination selects the price and documents, never eligibility to order.
+const ui=fs.readFileSync('assets/catalog-premium.js','utf8');
+const available=vm.runInNewContext('('+ui.match(/function available\(o\)\{[^}]+\}/)[0]+')');
+for(const o of equipment)assert.equal(available(o),!o.source_expired&&o.availability!=='reserved',o.id);
+for(const destinations of [[],['KG'],['RU'],undefined])assert.equal(available({destinations}),true);
+assert.equal(available({source_expired:true}),false);assert.equal(available({availability:'reserved'}),false);
+assert.ok(!ui.includes('destinations?.includes(destination)'));
+console.log('PASS: order eligibility is independent of destination, including the three previously held offers.');
