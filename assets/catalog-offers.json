@@ -41,7 +41,8 @@
         "amount": 27500,
         "fixed_rub": 0
       },
-      "client_note": "Указана стоимость автомобиля. Доставка и импортные платежи рассчитываются отдельно."
+      "client_note": "Указана стоимость автомобиля. Доставка и импортные платежи рассчитываются отдельно.",
+      "max_order_quantity": 1
     },
     {
       "id": "dealer_retail:47a452f2-7f50-4a70-ad9b-5cd7000dc8ff",
@@ -82,7 +83,8 @@
         "amount": 25600,
         "fixed_rub": 0
       },
-      "client_note": "Указана стоимость автомобиля. Доставка и импортные платежи рассчитываются отдельно."
+      "client_note": "Указана стоимость автомобиля. Доставка и импортные платежи рассчитываются отдельно.",
+      "max_order_quantity": 1
     },
     {
       "id": "dealer_retail:ab6cd3b6-824f-4697-b626-f461a99e1f87",
@@ -123,7 +125,8 @@
         "amount": 27348,
         "fixed_rub": 0
       },
-      "client_note": "Указана стоимость автомобиля. Доставка и импортные платежи рассчитываются отдельно."
+      "client_note": "Указана стоимость автомобиля. Доставка и импортные платежи рассчитываются отдельно.",
+      "max_order_quantity": 1
     },
     {
       "id": "dealer_retail:cd300da2-8a9a-47a4-9d59-7b8a71a42b32",
@@ -164,7 +167,8 @@
         "amount": 29998,
         "fixed_rub": 0
       },
-      "client_note": "Указана стоимость автомобиля. Доставка и импортные платежи рассчитываются отдельно."
+      "client_note": "Указана стоимость автомобиля. Доставка и импортные платежи рассчитываются отдельно.",
+      "max_order_quantity": 1
     },
     {
       "id": "dealer_retail:0ee86766-5ef8-4445-bdbc-84870ae62ec3",
@@ -205,7 +209,8 @@
         "amount": 26284,
         "fixed_rub": 0
       },
-      "client_note": "Указана стоимость автомобиля. Доставка и импортные платежи рассчитываются отдельно."
+      "client_note": "Указана стоимость автомобиля. Доставка и импортные платежи рассчитываются отдельно.",
+      "max_order_quantity": 1
     },
     {
       "id": "dealer_retail:7b49d035-96db-4069-ba1e-6a98b369220c",
@@ -246,7 +251,8 @@
         "amount": 27055,
         "fixed_rub": 0
       },
-      "client_note": "Указана стоимость автомобиля. Доставка и импортные платежи рассчитываются отдельно."
+      "client_note": "Указана стоимость автомобиля. Доставка и импортные платежи рассчитываются отдельно.",
+      "max_order_quantity": 1
     },
     {
       "id": "dealer_retail:c280aead-49ab-4cba-a2b4-ed383e380355",
@@ -287,7 +293,8 @@
         "amount": 28093,
         "fixed_rub": 0
       },
-      "client_note": "Указана стоимость автомобиля. Доставка и импортные платежи рассчитываются отдельно."
+      "client_note": "Указана стоимость автомобиля. Доставка и импортные платежи рассчитываются отдельно.",
+      "max_order_quantity": 1
     },
     {
       "id": "velauto:3934135",
@@ -329,7 +336,8 @@
         "fixed_rub": 0,
         "base_rate": 0.0612037,
         "base_total_rub": 2000015
-      }
+      },
+      "max_order_quantity": 1
     },
     {
       "id": "velauto:3586334",
@@ -371,7 +379,8 @@
         "fixed_rub": 0,
         "base_rate": 0.0612037,
         "base_total_rub": 2257499
-      }
+      },
+      "max_order_quantity": 1
     },
     {
       "id": "velauto:3252513",
@@ -413,7 +422,8 @@
         "fixed_rub": 0,
         "base_rate": 0.0612037,
         "base_total_rub": 2304222
-      }
+      },
+      "max_order_quantity": 1
     },
     {
       "id": "velauto:4027465",
@@ -467,7 +477,8 @@
           "mileage_km"
         ],
         "method": "Public listing VIN matched to original listing and photos"
-      }
+      },
+      "max_order_quantity": 1
     },
     {
       "id": "velauto:4051220",
@@ -511,7 +522,8 @@
         "base_total_rub": 3330072,
         "eur_duty_base": 5313.6,
         "base_eur_rate": 91.1364
-      }
+      },
+      "max_order_quantity": 1
     },
     {
       "id": "velauto:4033692",
@@ -555,7 +567,8 @@
         "base_total_rub": 3778015,
         "eur_duty_base": 3995,
         "base_eur_rate": 91.1364
-      }
+      },
+      "max_order_quantity": 1
     },
     {
       "id": "velauto:4051225",
@@ -597,7 +610,8 @@
         "fixed_rub": 0,
         "base_rate": 0.0612037,
         "base_total_rub": 5478606
-      }
+      },
+      "max_order_quantity": 1
     },
     {
       "id": "velauto:4051221",
@@ -641,7 +655,8 @@
         "base_total_rub": 4714396,
         "eur_duty_base": 9451.199999999999,
         "base_eur_rate": 91.1364
-      }
+      },
+      "max_order_quantity": 1
     },
     {
       "id": "velauto:4051216",
@@ -697,7 +712,8 @@
           "mileage_km"
         ],
         "method": "Public listing VIN matched to original listing and photos"
-      }
+      },
+      "max_order_quantity": 1
     },
     {
       "id": "velauto:1666008",
@@ -739,7 +755,8 @@
         "fixed_rub": 0,
         "base_rate": 12.146,
         "base_total_rub": 1711661
-      }
+      },
+      "max_order_quantity": 1
     },
     {
       "id": "velauto:4044205",
@@ -781,7 +798,8 @@
         "fixed_rub": 0,
         "base_rate": 12.146,
         "base_total_rub": 1719423
-      }
+      },
+      "max_order_quantity": 1
     },
     {
       "id": "velauto:2103236",
@@ -823,7 +841,8 @@
         "fixed_rub": 0,
         "base_rate": 12.146,
         "base_total_rub": 2297735
-      }
+      },
+      "max_order_quantity": 1
     },
     {
       "id": "velauto:3948288",
@@ -865,7 +884,8 @@
         "fixed_rub": 0,
         "base_rate": 12.146,
         "base_total_rub": 2311918
-      }
+      },
+      "max_order_quantity": 1
     },
     {
       "id": "velauto:4050994",
@@ -907,7 +927,8 @@
         "fixed_rub": 0,
         "base_rate": 12.146,
         "base_total_rub": 2690788
-      }
+      },
+      "max_order_quantity": 1
     },
     {
       "id": "velauto:4050998",
@@ -949,7 +970,8 @@
         "fixed_rub": 0,
         "base_rate": 12.146,
         "base_total_rub": 3197450
-      }
+      },
+      "max_order_quantity": 1
     },
     {
       "id": "velauto:4050990",
@@ -991,7 +1013,8 @@
         "fixed_rub": 0,
         "base_rate": 12.146,
         "base_total_rub": 3093958
-      }
+      },
+      "max_order_quantity": 1
     },
     {
       "id": "velauto:4051000",
@@ -1033,7 +1056,8 @@
         "fixed_rub": 0,
         "base_rate": 12.146,
         "base_total_rub": 4509596
-      }
+      },
+      "max_order_quantity": 1
     },
     {
       "id": "velauto:4050992",
@@ -1075,7 +1099,8 @@
         "fixed_rub": 0,
         "base_rate": 12.146,
         "base_total_rub": 4867171
-      }
+      },
+      "max_order_quantity": 1
     },
     {
       "id": "velauto:3717297",
@@ -1117,7 +1142,8 @@
         "fixed_rub": 0,
         "base_rate": 12.146,
         "base_total_rub": 5635504
-      }
+      },
+      "max_order_quantity": 1
     },
     {
       "id": "velauto:3722766",
@@ -1159,7 +1185,8 @@
         "fixed_rub": 0,
         "base_rate": 12.146,
         "base_total_rub": 5622046
-      }
+      },
+      "max_order_quantity": 1
     },
     {
       "id": "velauto:3245327",
@@ -1213,7 +1240,8 @@
           "mileage_km"
         ],
         "method": "Public listing VIN matched to original listing and photos"
-      }
+      },
+      "max_order_quantity": 1
     },
     {
       "id": "velauto:3726851",
@@ -1255,7 +1283,8 @@
         "fixed_rub": 0,
         "base_rate": 12.146,
         "base_total_rub": 5700546
-      }
+      },
+      "max_order_quantity": 1
     },
     {
       "id": "velauto:4074077",
@@ -1297,7 +1326,8 @@
         "fixed_rub": 0,
         "base_rate": 12.146,
         "base_total_rub": 5679646
-      }
+      },
+      "max_order_quantity": 1
     },
     {
       "id": "velauto:3731888",
@@ -1339,7 +1369,8 @@
         "fixed_rub": 0,
         "base_rate": 0.0612037,
         "base_total_rub": 5592976
-      }
+      },
+      "max_order_quantity": 1
     },
     {
       "id": "velauto:3191981",
@@ -1381,7 +1412,8 @@
         "fixed_rub": 0,
         "base_rate": 12.146,
         "base_total_rub": 5721266
-      }
+      },
+      "max_order_quantity": 1
     },
     {
       "id": "sdlg-lg936l",
@@ -1446,7 +1478,8 @@
           "label": "Рабочий орган",
           "value": "Фронтальный ковш"
         }
-      ]
+      ],
+      "max_order_quantity": 1
     },
     {
       "id": "sany-sy200c-pro",
@@ -1511,7 +1544,8 @@
           "label": "Масса по объявлению",
           "value": "21 т"
         }
-      ]
+      ],
+      "max_order_quantity": 1
     },
     {
       "id": "bizon-k150",
@@ -1572,7 +1606,8 @@
           "label": "Двигатель",
           "value": "4,2 л"
         }
-      ]
+      ],
+      "max_order_quantity": 1
     },
     {
       "id": "shacman-sx33186v366",
@@ -1637,7 +1672,8 @@
           "label": "Объём кузова",
           "value": "35 м³"
         }
-      ]
+      ],
+      "max_order_quantity": 1
     },
     {
       "id": "shacman-sx331863366",
@@ -1698,7 +1734,8 @@
           "label": "Мощность",
           "value": "544 л.с."
         }
-      ]
+      ],
+      "max_order_quantity": 1
     },
     {
       "id": "jp-5831",
@@ -1773,7 +1810,8 @@
           "label": "Диаметр пальца",
           "value": "50 мм"
         }
-      ]
+      ],
+      "max_order_quantity": 2
     },
     {
       "id": "jp-8094",
@@ -1844,7 +1882,8 @@
           "label": "Диаметр пальца",
           "value": "110 мм"
         }
-      ]
+      ],
+      "max_order_quantity": 2
     },
     {
       "id": "jp-161683",
@@ -1916,7 +1955,8 @@
           "label": "Трёхфазное напряжение",
           "value": "200 / 220 В и 400 / 440 В"
         }
-      ]
+      ],
+      "max_order_quantity": 2
     },
     {
       "id": "jp-164203",
@@ -1988,7 +2028,8 @@
           "label": "Режимы",
           "value": "Однофазный / трёхфазный"
         }
-      ]
+      ],
+      "max_order_quantity": 2
     },
     {
       "id": "jp-west655",
@@ -2064,7 +2105,8 @@
           "label": "Мощность в заголовке продавца",
           "value": "190 HP"
         }
-      ]
+      ],
+      "max_order_quantity": 2
     },
     {
       "id": "jp-147829",
@@ -2140,7 +2182,8 @@
           "label": "Давление по объявлению",
           "value": "1,03 МПа"
         }
-      ]
+      ],
+      "max_order_quantity": 1
     },
     {
       "id": "jp-139245",
@@ -2221,7 +2264,8 @@
           "label": "Рабочее давление",
           "value": "1,03 МПа"
         }
-      ]
+      ],
+      "max_order_quantity": 1
     },
     {
       "id": "jp-149111",
@@ -2298,7 +2342,8 @@
           "label": "Рабочее давление",
           "value": "0,7 МПа"
         }
-      ]
+      ],
+      "max_order_quantity": 1
     },
     {
       "id": "jp-165441",
@@ -2379,7 +2424,8 @@
           "label": "Трёхфазное напряжение",
           "value": "200 / 220 В; 400 / 440 В"
         }
-      ]
+      ],
+      "max_order_quantity": 1
     },
     {
       "id": "jp-166033",
@@ -2455,7 +2501,8 @@
           "label": "Габариты по объявлению",
           "value": "3 650 × 1 685 × 2 070 мм"
         }
-      ]
+      ],
+      "max_order_quantity": 1
     },
     {
       "id": "jp-original-0",
@@ -2526,7 +2573,8 @@
           "label": "Диаметр пальца",
           "value": "100 мм"
         }
-      ]
+      ],
+      "max_order_quantity": 2
     },
     {
       "id": "jp-original-1",
@@ -2593,7 +2641,8 @@
           "label": "Диаметр пальца",
           "value": "65 мм"
         }
-      ]
+      ],
+      "max_order_quantity": 2
     },
     {
       "id": "jp-original-2",
@@ -2660,7 +2709,8 @@
           "label": "Диаметр пальца",
           "value": "80 мм"
         }
-      ]
+      ],
+      "max_order_quantity": 2
     },
     {
       "id": "jp-original-3",
@@ -2727,7 +2777,8 @@
           "label": "Диаметр пальца",
           "value": "105 мм"
         }
-      ]
+      ],
+      "max_order_quantity": 2
     },
     {
       "id": "jp-original-4",
@@ -2794,7 +2845,8 @@
           "label": "Диаметр пальца",
           "value": "105 мм"
         }
-      ]
+      ],
+      "max_order_quantity": 2
     },
     {
       "id": "jp-original-5",
@@ -2861,7 +2913,8 @@
           "label": "Диаметр пальца",
           "value": "70 мм"
         }
-      ]
+      ],
+      "max_order_quantity": 2
     },
     {
       "id": "new-6686",
@@ -2934,7 +2987,8 @@
           "label": "Класс экскаватора",
           "value": "0,45 м³"
         }
-      ]
+      ],
+      "max_order_quantity": 2
     },
     {
       "id": "new-8052",
@@ -3007,7 +3061,8 @@
           "label": "Диаметр пальца",
           "value": "75 мм"
         }
-      ]
+      ],
+      "max_order_quantity": 2
     },
     {
       "id": "new-165215",
@@ -3080,7 +3135,8 @@
           "label": "Совместимость продавца",
           "value": "Komatsu PC40–50"
         }
-      ]
+      ],
+      "max_order_quantity": 2
     },
     {
       "id": "new-164859",
@@ -3153,7 +3209,8 @@
           "label": "Диаметр пальца",
           "value": "45 мм"
         }
-      ]
+      ],
+      "max_order_quantity": 2
     },
     {
       "id": "new-155637",
@@ -3226,7 +3283,8 @@
           "label": "Диаметр пальца",
           "value": "100 мм"
         }
-      ]
+      ],
+      "max_order_quantity": 2
     },
     {
       "id": "new-165514",
@@ -3309,7 +3367,8 @@
           "label": "Трёхфазное напряжение",
           "value": "200 / 220 В; 400 / 440 В"
         }
-      ]
+      ],
+      "max_order_quantity": 1
     },
     {
       "id": "new-165992",
@@ -3383,7 +3442,8 @@
           "label": "Наработка",
           "value": "2133 м/ч"
         }
-      ]
+      ],
+      "max_order_quantity": 1
     },
     {
       "id": "new-153687",
@@ -3451,7 +3511,8 @@
           "label": "Масса",
           "value": "350 кг"
         }
-      ]
+      ],
+      "max_order_quantity": 3
     },
     {
       "id": "new-155149",
@@ -3532,7 +3593,8 @@
           "label": "Трёхфазное напряжение",
           "value": "200 / 220 В; 400 / 440 В"
         }
-      ]
+      ],
+      "max_order_quantity": 1
     },
     {
       "id": "new-141072",
@@ -3599,7 +3661,8 @@
           "label": "Класс экскаватора",
           "value": "12–20 т"
         }
-      ]
+      ],
+      "max_order_quantity": 2
     },
     {
       "id": "exp24-164531",
@@ -3681,7 +3744,8 @@
           "label": "Напряжение, 50 / 60 Гц",
           "value": "200 / 220 В; 400 / 440 В — по исполнению"
         }
-      ]
+      ],
+      "max_order_quantity": 2
     },
     {
       "id": "exp24-164492",
@@ -3771,7 +3835,8 @@
           "label": "Трёхфазное напряжение",
           "value": "200 / 220 В или 400 / 440 В"
         }
-      ]
+      ],
+      "max_order_quantity": 1
     },
     {
       "id": "exp24-166011",
@@ -3853,7 +3918,8 @@
           "label": "Два поста, ток каждого",
           "value": "30–140 / 30–150 А при 50 / 60 Гц"
         }
-      ]
+      ],
+      "max_order_quantity": 2
     },
     {
       "id": "exp24-154409",
@@ -3930,7 +3996,8 @@
           "label": "Дополнительная функция",
           "value": "Источник переменного тока"
         }
-      ]
+      ],
+      "max_order_quantity": 2
     },
     {
       "id": "exp24-164881",
@@ -4007,7 +4074,8 @@
           "label": "Габариты по объявлению",
           "value": "1 550 × 1 600 × 2 360 мм"
         }
-      ]
+      ],
+      "max_order_quantity": 4
     },
     {
       "id": "exp24-166533",
@@ -4096,7 +4164,8 @@
           "label": "Глубина резания",
           "value": "70–170 мм, зависит от диска"
         }
-      ]
+      ],
+      "max_order_quantity": 3
     },
     {
       "id": "exp24-166210",
@@ -4173,7 +4242,8 @@
           "label": "Частота вибрации",
           "value": "10,7–11,6 Гц"
         }
-      ]
+      ],
+      "max_order_quantity": 5
     },
     {
       "id": "exp24-164166",
@@ -4250,7 +4320,8 @@
           "label": "Класс базовой машины",
           "value": "30–45 т"
         }
-      ]
+      ],
+      "max_order_quantity": 2
     },
     {
       "id": "exp24-164151",
@@ -4327,7 +4398,8 @@
           "label": "Класс экскаватора",
           "value": "20–25 т"
         }
-      ]
+      ],
+      "max_order_quantity": 2
     },
     {
       "id": "exp24-164144",
@@ -4404,7 +4476,8 @@
           "label": "Класс экскаватора",
           "value": "20–25 т"
         }
-      ]
+      ],
+      "max_order_quantity": 2
     },
     {
       "id": "exp24-166875",
@@ -4481,7 +4554,8 @@
           "label": "Диаметр пальца",
           "value": "70 мм"
         }
-      ]
+      ],
+      "max_order_quantity": 2
     },
     {
       "id": "exp24-166661",
@@ -4558,7 +4632,8 @@
           "label": "Класс экскаватора",
           "value": "3–4 т — по заголовку продавца"
         }
-      ]
+      ],
+      "max_order_quantity": 2
     },
     {
       "id": "exp24-166400",
@@ -4635,7 +4710,8 @@
           "label": "Класс экскаватора",
           "value": "20–25 т"
         }
-      ]
+      ],
+      "max_order_quantity": 2
     },
     {
       "id": "exp24-165817",
@@ -4712,7 +4788,8 @@
           "label": "Тип",
           "value": "Плита с вибрационным механизмом"
         }
-      ]
+      ],
+      "max_order_quantity": 6
     },
     {
       "id": "exp24-162643",
@@ -4789,7 +4866,8 @@
           "label": "Электропитание",
           "value": "AC 100 В"
         }
-      ]
+      ],
+      "max_order_quantity": 4
     },
     {
       "id": "exp24-162617",
@@ -4870,7 +4948,8 @@
           "label": "Потребляемая мощность",
           "value": "1 130 Вт"
         }
-      ]
+      ],
+      "max_order_quantity": 3
     },
     {
       "id": "exp24-166407",
@@ -4947,7 +5026,8 @@
           "label": "Класс экскаватора",
           "value": "6–8 т"
         }
-      ]
+      ],
+      "max_order_quantity": 2
     },
     {
       "id": "exp24-166379",
@@ -5024,7 +5104,8 @@
           "label": "Класс экскаватора",
           "value": "20–25 т"
         }
-      ]
+      ],
+      "max_order_quantity": 2
     },
     {
       "id": "exp24-165218",
@@ -5101,7 +5182,8 @@
           "label": "Класс экскаватора",
           "value": "2–3,5 т"
         }
-      ]
+      ],
+      "max_order_quantity": 2
     },
     {
       "id": "exp24-164549",
@@ -5178,7 +5260,8 @@
           "label": "Внутренняя ширина крепления",
           "value": "140 мм"
         }
-      ]
+      ],
+      "max_order_quantity": 2
     },
     {
       "id": "budget24-42978558",
@@ -5269,7 +5352,8 @@
         "util_rub": 552000,
         "excise_rub": 0,
         "customs_fee": true
-      }
+      },
+      "max_order_quantity": 1
     },
     {
       "id": "budget24-42853701",
@@ -5360,7 +5444,8 @@
         "util_rub": 552000,
         "excise_rub": 0,
         "customs_fee": true
-      }
+      },
+      "max_order_quantity": 1
     },
     {
       "id": "budget24-42611852",
@@ -5451,7 +5536,8 @@
         "util_rub": 552000,
         "excise_rub": 0,
         "customs_fee": true
-      }
+      },
+      "max_order_quantity": 1
     },
     {
       "id": "budget24-42609443",
@@ -5542,7 +5628,8 @@
         "util_rub": 552000,
         "excise_rub": 6400,
         "customs_fee": true
-      }
+      },
+      "max_order_quantity": 1
     },
     {
       "id": "budget24-42748997",
@@ -5633,7 +5720,8 @@
         "util_rub": 297600,
         "excise_rub": 0,
         "customs_fee": true
-      }
+      },
+      "max_order_quantity": 1
     }
   ]
 }

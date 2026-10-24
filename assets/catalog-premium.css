@@ -23,3 +23,5 @@
 
 /* Quantity controls: large enough for touch, stable on narrow screens. */
 .quantity-control{display:flex;align-items:center;justify-content:flex-end;gap:4px;margin-top:14px}.quantity-control button{width:44px;height:44px;border:1px solid #ccd6cd;border-radius:6px;background:#f6f7f2;color:#194b3e;font-size:24px;font-weight:600;line-height:1;cursor:pointer}.quantity-control button:disabled{opacity:.35;cursor:default}.quantity-control output{min-width:70px;text-align:center;font-size:15px;font-weight:600}.quantity-unit{font-size:12px!important;margin:6px 0!important}.quantity-control button:focus-visible{outline:3px solid #ad965e;outline-offset:2px}@media(max-width:720px){.quantity-control{justify-content:flex-start}.cart-line>div:last-child{text-align:left}}
+
+.order-quantity-limit{font-size:12px;line-height:1.5;color:var(--green,#284d38);font-weight:600;margin:8px 0 14px}.cart-line .order-quantity-limit{margin:6px 0 12px;font-size:12px}.quantity-control button:disabled{opacity:.35;cursor:default}
