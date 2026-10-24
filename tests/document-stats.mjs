@@ -67,3 +67,13 @@ for(const page of ['cars/index.html','equipment/index.html']){
 }
 assert.doesNotMatch(fs.readFileSync(new URL('assets/document-stats.js',root),'utf8'),/localStorage|sessionStorage|document\.cookie/);
 console.log('Statistics production wiring, named-model report, fresh orders and oversized-body checks passed.');
+
+// New catalogue entries are accepted and repeated downloads do not create orders.
+for(const offer of catalog.filter(o=>o.id.startsWith('exp24-'))){
+ const fresh={event_id:randomUUID(),offer_ids:[offer.id]};
+ assert.equal((await worker.fetch(request(fresh),env)).status,204);
+ assert.equal((await worker.fetch(request(fresh),env)).status,204);
+ assert.equal(db.prepare('SELECT generated_document_sets FROM model_statistics WHERE offer_id=?').get(offer.id).generated_document_sets,1);
+ assert.equal(db.prepare('SELECT model FROM model_statistics WHERE offer_id=?').get(offer.id).model,offer.title);
+}
+console.log('All 20 new models accepted with correct report names and duplicate suppression.');

@@ -376,5 +376,125 @@
     "title": "Okada AIYON ASG-130RDF",
     "year": null,
     "asset_type": "equipment"
+  },
+  {
+    "id": "exp24-164531",
+    "title": "Nippon Sharyo NES60TKL2",
+    "year": 2016,
+    "asset_type": "equipment"
+  },
+  {
+    "id": "exp24-164492",
+    "title": "Denyo DCA-100ESI",
+    "year": 2016,
+    "asset_type": "equipment"
+  },
+  {
+    "id": "exp24-166011",
+    "title": "Denyo DLW-300ESW",
+    "year": 2005,
+    "asset_type": "equipment"
+  },
+  {
+    "id": "exp24-154409",
+    "title": "Denyo DCW-350ES",
+    "year": 2007,
+    "asset_type": "equipment"
+  },
+  {
+    "id": "exp24-164881",
+    "title": "Yanmar LB1130FBD-1",
+    "year": null,
+    "asset_type": "equipment"
+  },
+  {
+    "id": "exp24-166533",
+    "title": "Mikasa MCD-218VDXS",
+    "year": null,
+    "asset_type": "equipment"
+  },
+  {
+    "id": "exp24-166210",
+    "title": "Mikasa MT-55L",
+    "year": 2013,
+    "asset_type": "equipment"
+  },
+  {
+    "id": "exp24-164166",
+    "title": "Okada AIYON SE350",
+    "year": null,
+    "asset_type": "equipment"
+  },
+  {
+    "id": "exp24-164151",
+    "title": "NPK K-23J",
+    "year": null,
+    "asset_type": "equipment"
+  },
+  {
+    "id": "exp24-164144",
+    "title": "Okada AIYON TSWB1100V",
+    "year": null,
+    "asset_type": "equipment"
+  },
+  {
+    "id": "exp24-166875",
+    "title": "Maruzen AG-7000",
+    "year": null,
+    "asset_type": "equipment"
+  },
+  {
+    "id": "exp24-166661",
+    "title": "Okada AIYON OSC20V",
+    "year": null,
+    "asset_type": "equipment"
+  },
+  {
+    "id": "exp24-166400",
+    "title": "Okada AIYON OSC-200B",
+    "year": null,
+    "asset_type": "equipment"
+  },
+  {
+    "id": "exp24-165817",
+    "title": "Mikasa MVC-50GB",
+    "year": 2017,
+    "asset_type": "equipment"
+  },
+  {
+    "id": "exp24-162643",
+    "title": "Shizuoka Seiki HOTGUN HG NX",
+    "year": null,
+    "asset_type": "equipment"
+  },
+  {
+    "id": "exp24-162617",
+    "title": "Makita 4000",
+    "year": null,
+    "asset_type": "equipment"
+  },
+  {
+    "id": "exp24-166407",
+    "title": "Marujun IFZ70",
+    "year": null,
+    "asset_type": "equipment"
+  },
+  {
+    "id": "exp24-166379",
+    "title": "Okada AIYON TS-W650XCV-FH",
+    "year": 2020,
+    "asset_type": "equipment"
+  },
+  {
+    "id": "exp24-165218",
+    "title": "Furukawa FX25SS",
+    "year": 2018,
+    "asset_type": "equipment"
+  },
+  {
+    "id": "exp24-164549",
+    "title": "Furukawa FX35SS",
+    "year": 2017,
+    "asset_type": "equipment"
   }
 ]
