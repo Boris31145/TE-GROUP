@@ -7,6 +7,6 @@
   "private": true,
   "scripts": {
     "build": "node scripts/build-production.cjs",
-    "test": "node tests/documents.cjs && node tests/balance-invoice.cjs && node tests/readiness-documents.cjs && node tests/bank-contract-review.cjs && node tests/live-pricing.cjs && node tests/order-documents.cjs && node tests/payment-options.cjs && node tests/financial-model.cjs && node tests/build-cache.cjs && node tests/document-stats.mjs && node tests/vin-documents.cjs && node tests/catalog-equipment.cjs"
+    "test": "node tests/documents.cjs && node tests/balance-invoice.cjs && node tests/readiness-documents.cjs && node tests/bank-contract-review.cjs && node tests/live-pricing.cjs && node tests/order-documents.cjs && node tests/payment-options.cjs && node tests/financial-model.cjs && node tests/build-cache.cjs && node tests/document-stats.mjs && node tests/vin-documents.cjs && node tests/catalog-equipment.cjs && node tests/checkout-quantity.cjs"
   }
 }
