@@ -7,10 +7,10 @@ import {authConfig,checkCredentials,createSession,verifySession,sessionCookie,CO
 import {createDashboardHandler} from '../server/document-stats/dist/dashboard.mjs';
 const db=new DatabaseSync(':memory:');db.exec(fs.readFileSync(new URL('../server/document-stats/schema.sql',import.meta.url),'utf8'));
 const envDb={prepare(sql){return{bind(...values){return{sql,values}}};},async batch(stmts){return stmts.map(s=>({results:db.prepare(s.sql).all(...s.values)}));}};
-function event(day,ids){const id=randomUUID();db.prepare('INSERT INTO document_events VALUES(?,?,?)').run(id,day,JSON.stringify(ids));for(const offer of ids)db.prepare('INSERT INTO document_models VALUES(?,?)').run(id,offer);return id;}
+function event(day,ids){const id=randomUUID();db.prepare('INSERT INTO document_events(event_id,day,selection) VALUES(?,?,?)').run(id,day,JSON.stringify(ids));for(const offer of ids)db.prepare('INSERT INTO document_models VALUES(?,?)').run(id,offer);return id;}
 event('2026-09-30',['shacman-sx33186v366']);event('2026-10-01',['velauto:4027465']);const pair=event('2026-10-24',['velauto:4027465','jp-5831']);
 // The same event cannot create another document/model row.
-db.prepare('INSERT OR IGNORE INTO document_events VALUES(?,?,?)').run(pair,'2026-10-24','[]');db.prepare('INSERT OR IGNORE INTO document_models VALUES(?,?)').run(pair,'jp-5831');
+db.prepare('INSERT OR IGNORE INTO document_events(event_id,day,selection) VALUES(?,?,?)').run(pair,'2026-10-24','[]');db.prepare('INSERT OR IGNORE INTO document_models VALUES(?,?)').run(pair,'jp-5831');
 const now=new Date('2026-10-24T10:00:00Z');
 let report=await readReport(envDb,new URLSearchParams('mode=month&period=2026-10'),now);
 assert.deepEqual(report.summary,{today:1,month:2,total:3,period:2,first_day:'2026-09-30'});assert.equal(report.series.length,31);assert.equal(report.models.reduce((n,x)=>n+x.count,0),3);assert.equal(report.models.find(x=>x.id==='velauto:4027465').count,2);assert.equal(report.models.find(x=>x.id==='jp-5831').count,1);assert.doesNotMatch(JSON.stringify(report),new RegExp(pair));

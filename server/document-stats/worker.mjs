@@ -1,3 +1,4 @@
+import {moscowDay, REPORT_TIMEZONE} from './time.mjs';
 import catalog from './catalog.json' with { type: 'json' };
 const allowedIds = new Set(catalog.map(x => x.id));
 const origins = new Set(['https://tegroup.cc', 'https://www.tegroup.cc']);
@@ -41,10 +42,10 @@ export default {
     try { event = validate(await boundedJson(request)); } catch { return reply(400); }
     if (!event) return reply(400);
     if (!env.STATS_DB) return reply(503);
-    const selection = JSON.stringify(event.offer_ids), day = new Date().toISOString().slice(0, 10);
+    const selection = JSON.stringify(event.offer_ids), day = moscowDay();
     try {
       await env.STATS_DB.batch([
-        env.STATS_DB.prepare('INSERT OR IGNORE INTO document_events(event_id, day, selection) VALUES (?, ?, ?)').bind(event.event_id, day, selection),
+        env.STATS_DB.prepare('INSERT OR IGNORE INTO document_events(event_id, day, selection, day_timezone) VALUES (?, ?, ?, ?)').bind(event.event_id, day, selection, REPORT_TIMEZONE),
         ...event.offer_ids.map(id => env.STATS_DB.prepare('INSERT OR IGNORE INTO document_models(event_id, offer_id) SELECT event_id, ? FROM document_events WHERE event_id = ? AND selection = ?').bind(id, event.event_id, selection))
       ]);
       return reply(204);

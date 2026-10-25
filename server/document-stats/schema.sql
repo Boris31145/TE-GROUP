@@ -2,7 +2,8 @@
 CREATE TABLE IF NOT EXISTS document_events (
   event_id TEXT PRIMARY KEY,
   day TEXT NOT NULL,
-  selection TEXT NOT NULL
+  selection TEXT NOT NULL,
+  day_timezone TEXT NOT NULL DEFAULT 'UTC'
 );
 CREATE TABLE IF NOT EXISTS document_models (
   event_id TEXT NOT NULL REFERENCES document_events(event_id),

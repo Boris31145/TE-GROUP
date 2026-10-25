@@ -1,6 +1,9 @@
 (()=>{'use strict';
 const $=id=>document.getElementById(id),fmt=new Intl.NumberFormat('ru-RU');
-const today=()=>new Date().toISOString().slice(0,10);
+const moscowDay=(now=new Date())=>{const parts=Object.fromEntries(new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Moscow',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(now).map(p=>[p.type,p.value]));return parts.year+'-'+parts.month+'-'+parts.day;};
+const today=()=>moscowDay();
+let followCurrent=true;
+const currentPeriod=()=>mode==='day'?today():today().slice(0,7);
 let mode='month',category='all',data=null,sequence=0,controller=null;
 $('logout').addEventListener('click',async()=>{try{const res=await fetch('/owner/statistics/logout',{method:'POST',credentials:'same-origin',cache:'no-store'});if(!res.ok)throw Error();location.replace('/owner/statistics/login');}catch{setError('Не удалось выйти. Повторите попытку.');}});
 $('period').value=today().slice(0,7);
@@ -32,16 +35,22 @@ function renderChart(){
  $('chart').innerHTML=svg+'</svg>';
  $('chart').setAttribute('aria-label',rows.map(x=>dateText(x.day)+': '+x.count+' оформлений').join('; '));
  $('chartTitle').textContent=data.period.mode==='day'?'Оформления за день':'Оформления по дням';
- $('chartNote').textContent=data.summary.period===0?'За этот период оформлений пока нет.':'Даты по UTC. Повторные скачивания и два счёта не увеличивают число оформлений.';
+ $('chartNote').textContent=data.summary.period===0?'За этот период оформлений пока нет.':'Московское время (UTC+3). Повторные скачивания и два счёта не увеличивают число оформлений.';
 }
 function render(){
+ const reportDay=moscowDay(new Date(data.updated_at));
+ $('todayDate').textContent=dateText(reportDay,{day:'numeric',month:'short'});
+ $('monthName').textContent=dateText(reportDay,{month:'long'});
+ $('legacyNote').hidden=!data.legacy?.utc_day_only;
+ $('legacyNote').textContent='Оформлений до перехода на МСК: '+fmt.format(data.legacy?.utc_day_only||0)+'. Для них сохранены прежние даты UTC: точное время ранее не записывалось.';
  $('todayTotal').textContent=fmt.format(data.summary.today);$('monthTotal').textContent=fmt.format(data.summary.month);$('periodTotal').textContent=fmt.format(data.summary.period);
  $('periodCaption').textContent=data.period.mode==='day'?dateText(data.period.from):dateText(data.period.from,{month:'long',year:'numeric'});
  $('periodSubtitle').textContent='за выбранный '+(data.period.mode==='day'?'день':'месяц');
- const time=new Intl.DateTimeFormat('ru-RU',{hour:'2-digit',minute:'2-digit'}).format(new Date(data.updated_at));$('updated').textContent='Обновлено в '+time;
+ const time=new Intl.DateTimeFormat('ru-RU',{hour:'2-digit',minute:'2-digit',timeZone:'Europe/Moscow'}).format(new Date(data.updated_at));$('updated').textContent='Обновлено в '+time+' МСК';
  renderChart();renderModels();
 }
 async function load(){
+ if(followCurrent)$('period').value=currentPeriod();
  if(!$('period').value||!$('period').checkValidity()){setError('Выберите корректный '+(mode==='day'?'день.':'месяц.'));return;}
  const current=++sequence;controller?.abort();const active=new AbortController();controller=active;document.body.dataset.loading='true';
  const timer=setTimeout(()=>active.abort(),15000);
@@ -55,10 +64,10 @@ async function load(){
  }catch(e){if(current===sequence){setError(data?'Не удалось обновить. Ниже показаны данные на момент последнего успешного обновления.':'Не удалось загрузить статистику. Проверьте соединение или войдите снова.');$('relogin').hidden=false;$('updated').textContent=data?'Данные не обновлены':'Нет соединения';}}
  finally{clearTimeout(timer);if(current===sequence)document.body.dataset.loading='false';}
 }
-function setMode(next){if(mode===next)return;const old=$('period').value;mode=next;$('modeDay').setAttribute('aria-pressed',String(mode==='day'));$('modeMonth').setAttribute('aria-pressed',String(mode==='month'));$('period').type=mode==='day'?'date':'month';$('period').value=mode==='day'?(old===today().slice(0,7)?today():old+'-01'):old.slice(0,7);document.querySelector('label[for="period"]').textContent=mode==='day'?'Выберите день':'Выберите месяц';void load();}
-$('modeDay').addEventListener('click',()=>setMode('day'));$('modeMonth').addEventListener('click',()=>setMode('month'));$('period').addEventListener('change',()=>void load());$('refresh').addEventListener('click',()=>void load());$('retry').addEventListener('click',()=>void load());$('search').addEventListener('input',renderModels);
+function setMode(next){if(mode===next)return;const old=$('period').value;mode=next;$('modeDay').setAttribute('aria-pressed',String(mode==='day'));$('modeMonth').setAttribute('aria-pressed',String(mode==='month'));$('period').type=mode==='day'?'date':'month';$('period').value=mode==='day'?(old===today().slice(0,7)?today():old+'-01'):old.slice(0,7);document.querySelector('label[for="period"]').textContent=mode==='day'?'Выберите день':'Выберите месяц';followCurrent=$('period').value===currentPeriod();void load();}
+$('modeDay').addEventListener('click',()=>setMode('day'));$('modeMonth').addEventListener('click',()=>setMode('month'));$('period').addEventListener('change',()=>{followCurrent=$('period').value===currentPeriod();void load();});$('refresh').addEventListener('click',()=>void load());$('retry').addEventListener('click',()=>void load());$('search').addEventListener('input',renderModels);
 for(const button of document.querySelectorAll('[data-type]'))button.addEventListener('click',()=>{category=button.dataset.type;for(const b of document.querySelectorAll('[data-type]'))b.setAttribute('aria-pressed',String(b===button));renderModels();});
-$('export').addEventListener('click',()=>{if(!data)return;const quote=x=>'"'+String(x??'').replace(/^[=+@-]/,"'").replaceAll('"','""')+'"';const rows=[['Период с (UTC)','Период по (UTC)','Модель','Код предложения','Категория','Оформлений'],...filtered().map(x=>[data.period.from,data.period.to,x.model,x.id,x.type==='car'?'Автомобили':x.type==='product'?'Дооснащение и товары':'Оборудование',x.count])];const url=URL.createObjectURL(new Blob(['\uFEFF'+rows.map(r=>r.map(quote).join(';')).join('\r\n')],{type:'text/csv;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='TE-GROUP-statistics-'+data.period.value+'.csv';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);});
+$('export').addEventListener('click',()=>{if(!data)return;const quote=x=>'"'+String(x??'').replace(/^[=+@-]/,"'").replaceAll('"','""')+'"';const rows=[['Период с (МСК)','Период по (МСК)','Модель','Код предложения','Категория','Оформлений'],...filtered().map(x=>[data.period.from,data.period.to,x.model,x.id,x.type==='car'?'Автомобили':x.type==='product'?'Дооснащение и товары':'Оборудование',x.count])];const url=URL.createObjectURL(new Blob(['\uFEFF'+rows.map(r=>r.map(quote).join(';')).join('\r\n')],{type:'text/csv;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='TE-GROUP-statistics-'+data.period.value+'.csv';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);});
 new ResizeObserver(()=>{if(data)renderChart();}).observe($('chart'));
 setInterval(()=>{if(!document.hidden)void load();},60000);document.addEventListener('visibilitychange',()=>{if(!document.hidden)void load();});void load();
 })();
