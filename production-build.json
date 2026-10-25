@@ -1,6 +1,6 @@
 {
   "version": "20261023-7",
-  "sourceCommit": "8d75e0f76642d2d821894e3704b9c40c0a87f5ed",
+  "sourceCommit": "0496879bb859c4ce829742299a601877fc6ece7d",
   "tools": {
     "javascript-obfuscator": "5.9.0",
     "terser": "5.51.2"
@@ -18,7 +18,7 @@
     "auto-src/document-flow.js": "f77846b9476feb32395e550ecde06e0e0e952bb7e007d30edbf16e8860295389",
     "auto-src/balance-invoice.js": "4db0eddc495a931c03d195dcfb082fa66410d3c691bf6825232f0dc919399d67",
     "auto-src/balance-ui.js": "e06fe697a7ffd4e596b7255fdae81f5285438ae01637e64e73898fbe438c4b02",
-    "auto-src/order-documents.js": "fc6254c42d4da16635fb223332ebc5af57e749b98467a81a95faa2d1053c1149",
+    "auto-src/order-documents.js": "3f562f90c99933f904fa2f5c8740cddfc10b0cc3f66f26bec0b4823195a6f114",
     "auto-src/order-balance.js": "58b020335d192d1ffac36eb449ce7f057b39b041f9e8126035162a0550f70600"
   }
 }
