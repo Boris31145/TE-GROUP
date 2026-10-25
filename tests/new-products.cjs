@@ -15,10 +15,12 @@ const normalize=s=>s.normalize('NFKC').replace(/[\u2011-\u2014]/g,'-').replace(/
  cases.push(['verified-closure','RU','company','split',[['new25:ikon-e70',2],['new25:semi-esge',1]]]);
  cases.push(['factory-kits','RU','company','split',[['new25:plant-ms',1],['new25:mixer-bhs',2],['new25:pump-ls450',1]]],['vip-complete','KG','company','split',[['new25:vip-w447',1],['new25:vip-multivan',1],['new25:vip-maybach',1]]],['photo-replacements','RU','company','full',[['new25:ethos',1],['new25:qian-tp06b',1]]],['remaining-equipment','RU','company','split',[['new25:semi-frigo',1],['new25:pump-bsa',1],['new25:pump-sp750',1],['new25:pump-tk',1]]],['factory-dosing','KG','company','split',[['new25:plant-turmac',1],['new25:plant-jr',1],['new25:plant-rex',1],['new25:mixer-conele',2]]]);
  cases.push(['bulk-accessories','RU','company','split',[['new25:rotopax',125],['new25:maxtrax',70]]],['bulk-full','KG','company','full',[['new25:rotopax',100]]]);
+ cases.push(['mass-market-split','RU','company','split',[['mass25:camry70-21',2],['mass25:corolla12',1],['mass25:civic11',2],['mass25:k5-gtline',1]]],['mass-market-full','KG','individual','full',[['mass25:camry70-18',1],['mass25:rav4-5',1],['mass25:mazda6-gj',1],['mass25:accord10',1]]],['mass-market-parts','RU','company','split',[['mass25:civic11-front',10],['mass25:civic11-side',5],['mass25:civic11-rear',3]]]);
  const results=[];
  for(const [name,destination_country,buyer_type,payment_option,selection] of cases){
   const items=selection.map(([id,n])=>select(id,n,destination_country)),total=items.reduce((s,o)=>s+api.listingAmountRub(o)*100,0),now=Date.now();
   const snapshot=local.makeSnapshot({id:'test-order',order_items:items},{...buyer,buyer_type,destination_country,payment_option},settings,now,now),frozen=JSON.stringify(snapshot),docs=[snapshot,...(payment_option==='split'?[api.scheduledBalance(snapshot)]:[])];
+  if(name==='mass-market-split'){assert.equal(snapshot.order_items.length,4);assert.ok(snapshot.order_groups.every(g=>g.compact));}
   assert.equal(api.orderAmount(snapshot),total);assert.equal(docs.reduce((s,x)=>s+api.invoiceAmount(x),0),total);
   assert.deepEqual(Array.from(snapshot.order_groups,g=>g.quantity),selection.map(x=>x[1]));
   const expectedQr=docs.map(s=>api.requisitesQr(s)),actualQr=[];

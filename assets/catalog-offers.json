@@ -15460,6 +15460,1340 @@
       ],
       "source_checked_at": "2026-10-25",
       "price_confirmation": "public_supplier_price_with_approved_import_budget"
+    },
+    {
+      "id": "mass25:camry70-21",
+      "title": "Toyota Camry XV70 · YOFER V1 · 2021–2024",
+      "brand": "YOFER / KBTuning",
+      "asset_type": "product",
+      "catalog_section": "upgrades",
+      "catalog_category": "body-conversion",
+      "category": "Toyota",
+      "equipment_kind": "Комплект накладок",
+      "description": "Toyota Camry XV70 · YOFER V1 · 2021–2024. Camry XV70 2021–2024 · только SE / XSE. Передняя накладка, боковые накладки порогов и задний диффузор; вариант 21–24 Pearl White / Red Diffuser Light.",
+      "complectation": "Передняя накладка, боковые накладки порогов и задний диффузор; вариант 21–24 Pearl White / Red Diffuser Light.",
+      "technical_specs": [
+        {
+          "label": "Применимость",
+          "value": "Camry XV70 2021–2024 · только SE / XSE"
+        },
+        {
+          "label": "Состав",
+          "value": "Передняя накладка, боковые накладки порогов и задний диффузор; вариант 21–24 Pearl White / Red Diffuser Light."
+        },
+        {
+          "label": "Исполнение",
+          "value": "Pearl White · красный свет диффузора"
+        }
+      ],
+      "technical_note": "Монтаж отдельно. Автомобиль, колёса и подвеска не входят в комплект. Не подходит для LE / XLE / TRD. Цвет Pearl White может отличаться от цвета кузова; подбор и перекраска отдельно.",
+      "technical_sources": [
+        "https://kbtuning.shop/products/2018-2024-toyota-camry-se-xse-yofer-v1-body-kit-bundle?variant=50380199035072"
+      ],
+      "source_url": "https://kbtuning.shop/products/2018-2024-toyota-camry-se-xse-yofer-v1-body-kit-bundle?variant=50380199035072",
+      "source_currency": "USD",
+      "source_price": 1099.99,
+      "source_expired": false,
+      "availability": "supplier_listed",
+      "country": "INT",
+      "location": "Зарубежная закупка",
+      "images": [
+        "/assets/upgrades/mass-camry-1.webp",
+        "/assets/upgrades/mass-camry-2.webp",
+        "/assets/upgrades/mass-camry-3.webp"
+      ],
+      "reference_id": "TG-MASS-CAMRY70-21",
+      "reference_label": "Код комплектации",
+      "source_status": "public_price_checked",
+      "price_kind": "unified_estimate",
+      "customer_price_rub": 270000,
+      "display_price_rub": 270000,
+      "pricing": {
+        "mode": "goods_import_budget",
+        "currency": "USD",
+        "amount": 1099.99,
+        "freight_basis_rub": 80000,
+        "duty_percent": 5,
+        "specific_duty_eur": 0,
+        "operations_rub": 70000,
+        "markup_percent": 30,
+        "util_ru": 0
+      },
+      "client_note": "",
+      "priority": 90,
+      "max_order_quantity": 4,
+      "catalog_added": true,
+      "product_code": "TG-MASS-CAMRY70-21",
+      "identity_kind": "catalog_configuration",
+      "checkout_ready": true,
+      "purchase_notes": [
+        "Монтаж отдельно. Автомобиль, колёса и подвеска не входят в комплект.",
+        "Не подходит для LE / XLE / TRD. Цвет Pearl White может отличаться от цвета кузова; подбор и перекраска отдельно."
+      ],
+      "specs": "Применимость: Camry XV70 2021–2024 · только SE / XSE; Состав: Передняя накладка, боковые накладки порогов и задний диффузор; вариант 21–24 Pearl White / Red Diffuser Light.; Исполнение: Pearl White · красный свет диффузора",
+      "configuration": "Передняя накладка, боковые накладки порогов и задний диффузор; вариант 21–24 Pearl White / Red Diffuser Light.",
+      "configuration_version": "2026-10-25-mass-v1",
+      "card_specs": [
+        {
+          "label": "Совместимость",
+          "value": "Camry XV70 2021–2024 · только SE / XSE"
+        },
+        {
+          "label": "Комплект",
+          "value": "Комплект накладок"
+        },
+        {
+          "label": "Отделка",
+          "value": "Pearl White · красный свет диффузора"
+        }
+      ],
+      "condition_description": "Новое, без установки",
+      "comparison_specs": [
+        {
+          "label": "Применимость",
+          "value": "Camry XV70 2021–2024 · только SE / XSE"
+        },
+        {
+          "label": "Состав",
+          "value": "Передняя накладка, боковые накладки порогов и задний диффузор; вариант 21–24 Pearl White / Red Diffuser Light."
+        },
+        {
+          "label": "Исполнение",
+          "value": "Pearl White · красный свет диффузора"
+        }
+      ],
+      "photo_note": "Фото поставщика показывает пример установки. Цвет автомобиля, колёса, подвеска и детали вне указанного состава в поставку не входят. Отделка комплекта указана в характеристиках.",
+      "source_checked_at": "2026-10-25",
+      "quantity_policy": "order_batch",
+      "search_aliases": "тойота тоёта камри камри70 xv70",
+      "source_components": [
+        {
+          "source_url": "https://kbtuning.shop/products/2018-2024-toyota-camry-se-xse-yofer-v1-body-kit-bundle?variant=50380199035072",
+          "variant_id": 50380199035072,
+          "variant": "21-24 Pearl White/Red Diffuser Light",
+          "price": 1099.99,
+          "currency": "USD",
+          "sku": null,
+          "source_key": "camry"
+        }
+      ]
+    },
+    {
+      "id": "mass25:camry70-18",
+      "title": "Toyota Camry XV70 · YOFER V1 · 2018–2020",
+      "brand": "YOFER / KBTuning",
+      "asset_type": "product",
+      "catalog_section": "upgrades",
+      "catalog_category": "body-conversion",
+      "category": "Toyota",
+      "equipment_kind": "Комплект накладок",
+      "description": "Toyota Camry XV70 · YOFER V1 · 2018–2020. Camry XV70 2018–2020 · только SE / XSE. Передняя накладка, боковые накладки порогов и задний диффузор; вариант 18–20 Pearl White / Red Diffuser Light.",
+      "complectation": "Передняя накладка, боковые накладки порогов и задний диффузор; вариант 18–20 Pearl White / Red Diffuser Light.",
+      "technical_specs": [
+        {
+          "label": "Применимость",
+          "value": "Camry XV70 2018–2020 · только SE / XSE"
+        },
+        {
+          "label": "Состав",
+          "value": "Передняя накладка, боковые накладки порогов и задний диффузор; вариант 18–20 Pearl White / Red Diffuser Light."
+        },
+        {
+          "label": "Исполнение",
+          "value": "Pearl White · красный свет диффузора"
+        }
+      ],
+      "technical_note": "Монтаж отдельно. Автомобиль, колёса и подвеска не входят в комплект. Не подходит для LE / XLE / TRD и рестайлинга 2021–2024. Цвет Pearl White может отличаться от цвета кузова; подбор и перекраска отдельно.",
+      "technical_sources": [
+        "https://kbtuning.shop/products/2018-2024-toyota-camry-se-xse-yofer-v1-body-kit-bundle?variant=50380198838464"
+      ],
+      "source_url": "https://kbtuning.shop/products/2018-2024-toyota-camry-se-xse-yofer-v1-body-kit-bundle?variant=50380198838464",
+      "source_currency": "USD",
+      "source_price": 1099.99,
+      "source_expired": false,
+      "availability": "supplier_listed",
+      "country": "INT",
+      "location": "Зарубежная закупка",
+      "images": [
+        "/assets/upgrades/mass-camry-2.webp",
+        "/assets/upgrades/mass-camry-1.webp",
+        "/assets/upgrades/mass-camry-3.webp"
+      ],
+      "reference_id": "TG-MASS-CAMRY70-18",
+      "reference_label": "Код комплектации",
+      "source_status": "public_price_checked",
+      "price_kind": "unified_estimate",
+      "customer_price_rub": 270000,
+      "display_price_rub": 270000,
+      "pricing": {
+        "mode": "goods_import_budget",
+        "currency": "USD",
+        "amount": 1099.99,
+        "freight_basis_rub": 80000,
+        "duty_percent": 5,
+        "specific_duty_eur": 0,
+        "operations_rub": 70000,
+        "markup_percent": 30,
+        "util_ru": 0
+      },
+      "client_note": "",
+      "priority": 90,
+      "max_order_quantity": 4,
+      "catalog_added": true,
+      "product_code": "TG-MASS-CAMRY70-18",
+      "identity_kind": "catalog_configuration",
+      "checkout_ready": true,
+      "purchase_notes": [
+        "Монтаж отдельно. Автомобиль, колёса и подвеска не входят в комплект.",
+        "Не подходит для LE / XLE / TRD и рестайлинга 2021–2024. Цвет Pearl White может отличаться от цвета кузова; подбор и перекраска отдельно."
+      ],
+      "specs": "Применимость: Camry XV70 2018–2020 · только SE / XSE; Состав: Передняя накладка, боковые накладки порогов и задний диффузор; вариант 18–20 Pearl White / Red Diffuser Light.; Исполнение: Pearl White · красный свет диффузора",
+      "configuration": "Передняя накладка, боковые накладки порогов и задний диффузор; вариант 18–20 Pearl White / Red Diffuser Light.",
+      "configuration_version": "2026-10-25-mass-v1",
+      "card_specs": [
+        {
+          "label": "Совместимость",
+          "value": "Camry XV70 2018–2020 · только SE / XSE"
+        },
+        {
+          "label": "Комплект",
+          "value": "Комплект накладок"
+        },
+        {
+          "label": "Отделка",
+          "value": "Pearl White · красный свет диффузора"
+        }
+      ],
+      "condition_description": "Новое, без установки",
+      "comparison_specs": [
+        {
+          "label": "Применимость",
+          "value": "Camry XV70 2018–2020 · только SE / XSE"
+        },
+        {
+          "label": "Состав",
+          "value": "Передняя накладка, боковые накладки порогов и задний диффузор; вариант 18–20 Pearl White / Red Diffuser Light."
+        },
+        {
+          "label": "Исполнение",
+          "value": "Pearl White · красный свет диффузора"
+        }
+      ],
+      "photo_note": "Фото поставщика показывает пример установки. Цвет автомобиля, колёса, подвеска и детали вне указанного состава в поставку не входят. Отделка комплекта указана в характеристиках.",
+      "source_checked_at": "2026-10-25",
+      "quantity_policy": "order_batch",
+      "search_aliases": "тойота тоёта камри камри70 xv70",
+      "source_components": [
+        {
+          "source_url": "https://kbtuning.shop/products/2018-2024-toyota-camry-se-xse-yofer-v1-body-kit-bundle?variant=50380198838464",
+          "variant_id": 50380198838464,
+          "variant": "18-20 Pearl White/Red Diffuser Light",
+          "price": 1099.99,
+          "currency": "USD",
+          "sku": null,
+          "source_key": "camry"
+        }
+      ]
+    },
+    {
+      "id": "mass25:corolla12",
+      "title": "Toyota Corolla XII Sedan · Maxton",
+      "brand": "Maxton Design",
+      "asset_type": "product",
+      "catalog_section": "upgrades",
+      "catalog_category": "body-conversion",
+      "category": "Toyota",
+      "equipment_kind": "Комплект из 5 групп деталей",
+      "description": "Toyota Corolla XII Sedan · Maxton. Corolla XII · седан · 2019–2023. Передний сплиттер, накладки порогов, задняя накладка, задние боковые сплиттеры и накладка спойлера. Артикул TO-CO-12-S-SET.",
+      "complectation": "Передний сплиттер, накладки порогов, задняя накладка, задние боковые сплиттеры и накладка спойлера. Артикул TO-CO-12-S-SET.",
+      "technical_specs": [
+        {
+          "label": "Применимость",
+          "value": "Corolla XII · седан · 2019–2023"
+        },
+        {
+          "label": "Состав",
+          "value": "Передний сплиттер, накладки порогов, задняя накладка, задние боковые сплиттеры и накладка спойлера. Артикул TO-CO-12-S-SET."
+        },
+        {
+          "label": "Исполнение",
+          "value": "Чёрный · под штатные бамперы"
+        },
+        {
+          "label": "Материал",
+          "value": "ABS-пластик"
+        }
+      ],
+      "technical_note": "Монтаж отдельно. Автомобиль, колёса и подвеска не входят в комплект. Для седана; не для хетчбэка, Touring Sports или GR Corolla. Бамперы не заменяются.",
+      "technical_sources": [
+        "https://maxtondesign.com/products/set-of-splitters-suitable-for-toyota-corolla-mk12-sedan?variant=56956275949951"
+      ],
+      "source_url": "https://maxtondesign.com/products/set-of-splitters-suitable-for-toyota-corolla-mk12-sedan?variant=56956275949951",
+      "source_currency": "USD",
+      "source_price": 720,
+      "source_expired": false,
+      "availability": "made_to_order",
+      "country": "INT",
+      "location": "Зарубежная закупка",
+      "images": [
+        "/assets/upgrades/mass-corolla-1.webp",
+        "/assets/upgrades/mass-corolla-2.webp",
+        "/assets/upgrades/mass-corolla-3.webp"
+      ],
+      "reference_id": "TG-MASS-COROLLA12",
+      "reference_label": "Код комплектации",
+      "source_status": "public_price_checked",
+      "price_kind": "unified_estimate",
+      "customer_price_rub": 219000,
+      "display_price_rub": 219000,
+      "pricing": {
+        "mode": "goods_import_budget",
+        "currency": "USD",
+        "amount": 720,
+        "freight_basis_rub": 80000,
+        "duty_percent": 5,
+        "specific_duty_eur": 0,
+        "operations_rub": 70000,
+        "markup_percent": 30,
+        "util_ru": 0
+      },
+      "client_note": "",
+      "priority": 90,
+      "max_order_quantity": 5,
+      "catalog_added": true,
+      "product_code": "TG-MASS-COROLLA12",
+      "identity_kind": "catalog_configuration",
+      "checkout_ready": true,
+      "purchase_notes": [
+        "Монтаж отдельно. Автомобиль, колёса и подвеска не входят в комплект.",
+        "Для седана; не для хетчбэка, Touring Sports или GR Corolla. Бамперы не заменяются."
+      ],
+      "specs": "Применимость: Corolla XII · седан · 2019–2023; Состав: Передний сплиттер, накладки порогов, задняя накладка, задние боковые сплиттеры и накладка спойлера. Артикул TO-CO-12-S-SET.; Исполнение: Чёрный · под штатные бамперы; Материал: ABS-пластик",
+      "configuration": "Передний сплиттер, накладки порогов, задняя накладка, задние боковые сплиттеры и накладка спойлера. Артикул TO-CO-12-S-SET.",
+      "configuration_version": "2026-10-25-mass-v1",
+      "card_specs": [
+        {
+          "label": "Совместимость",
+          "value": "Corolla XII · седан · 2019–2023"
+        },
+        {
+          "label": "Комплект",
+          "value": "Комплект из 5 групп деталей"
+        },
+        {
+          "label": "Отделка",
+          "value": "Чёрный · под штатные бамперы"
+        }
+      ],
+      "condition_description": "Новое, без установки",
+      "comparison_specs": [
+        {
+          "label": "Применимость",
+          "value": "Corolla XII · седан · 2019–2023"
+        },
+        {
+          "label": "Состав",
+          "value": "Передний сплиттер, накладки порогов, задняя накладка, задние боковые сплиттеры и накладка спойлера. Артикул TO-CO-12-S-SET."
+        },
+        {
+          "label": "Исполнение",
+          "value": "Чёрный · под штатные бамперы"
+        },
+        {
+          "label": "Материал",
+          "value": "ABS-пластик"
+        }
+      ],
+      "photo_note": "Фото поставщика показывает пример установки. Цвет автомобиля, колёса, подвеска и детали вне указанного состава в поставку не входят. Отделка комплекта указана в характеристиках.",
+      "source_checked_at": "2026-10-25",
+      "quantity_policy": "order_batch",
+      "search_aliases": "тойота тоёта королла корола е210 e210",
+      "source_components": [
+        {
+          "source_url": "https://maxtondesign.com/products/set-of-splitters-suitable-for-toyota-corolla-mk12-sedan?variant=56956275949951",
+          "variant_id": 56956275949951,
+          "variant": "Default Title",
+          "price": 720,
+          "currency": "USD",
+          "sku": "TO-CO-12-S-SET",
+          "source_key": "corolla"
+        }
+      ]
+    },
+    {
+      "id": "mass25:rav4-5",
+      "title": "Toyota RAV4 V · Maxton",
+      "brand": "Maxton Design",
+      "asset_type": "product",
+      "catalog_section": "upgrades",
+      "catalog_category": "body-conversion",
+      "category": "Toyota",
+      "equipment_kind": "Комплект из 4 групп деталей",
+      "description": "Toyota RAV4 V · Maxton. RAV4 V 2019–2022 · Standard. Передний сплиттер TO-RAV4-5-FD1G+FD1RG, накладки порогов TO-RAV4-5-SD1G, задний сплиттер TO-RAV4-5-RD1G+RD2G и накладка спойлера TO-RAV4-5-CAP1G. Артикул комплекта TO-RAV4-5-SET.",
+      "complectation": "Передний сплиттер TO-RAV4-5-FD1G+FD1RG, накладки порогов TO-RAV4-5-SD1G, задний сплиттер TO-RAV4-5-RD1G+RD2G и накладка спойлера TO-RAV4-5-CAP1G. Артикул комплекта TO-RAV4-5-SET.",
+      "technical_specs": [
+        {
+          "label": "Применимость",
+          "value": "RAV4 V 2019–2022 · Standard"
+        },
+        {
+          "label": "Состав",
+          "value": "Передний сплиттер TO-RAV4-5-FD1G+FD1RG, накладки порогов TO-RAV4-5-SD1G, задний сплиттер TO-RAV4-5-RD1G+RD2G и накладка спойлера TO-RAV4-5-CAP1G. Артикул комплекта TO-RAV4-5-SET."
+        },
+        {
+          "label": "Исполнение",
+          "value": "Чёрный · под штатные бамперы"
+        },
+        {
+          "label": "Материал",
+          "value": "ABS-пластик"
+        }
+      ],
+      "technical_note": "Монтаж отдельно. Автомобиль, колёса и подвеска не входят в комплект. Для стандартных бамперов. Комплект не заявлен для Adventure / GR Sport и рестайлинга.",
+      "technical_sources": [
+        "https://maxtondesign.com/products/set-of-splitters-suitable-for-toyota-rav4-mk5?variant=56948371292543"
+      ],
+      "source_url": "https://maxtondesign.com/products/set-of-splitters-suitable-for-toyota-rav4-mk5?variant=56948371292543",
+      "source_currency": "USD",
+      "source_price": 766,
+      "source_expired": false,
+      "availability": "made_to_order",
+      "country": "INT",
+      "location": "Зарубежная закупка",
+      "images": [
+        "/assets/upgrades/mass-rav4-1.webp",
+        "/assets/upgrades/mass-rav4-2.webp",
+        "/assets/upgrades/mass-rav4-3.webp"
+      ],
+      "reference_id": "TG-MASS-RAV4-5",
+      "reference_label": "Код комплектации",
+      "source_status": "public_price_checked",
+      "price_kind": "unified_estimate",
+      "customer_price_rub": 225000,
+      "display_price_rub": 225000,
+      "pricing": {
+        "mode": "goods_import_budget",
+        "currency": "USD",
+        "amount": 766,
+        "freight_basis_rub": 80000,
+        "duty_percent": 5,
+        "specific_duty_eur": 0,
+        "operations_rub": 70000,
+        "markup_percent": 30,
+        "util_ru": 0
+      },
+      "client_note": "",
+      "priority": 90,
+      "max_order_quantity": 4,
+      "catalog_added": true,
+      "product_code": "TG-MASS-RAV4-5",
+      "identity_kind": "catalog_configuration",
+      "checkout_ready": true,
+      "purchase_notes": [
+        "Монтаж отдельно. Автомобиль, колёса и подвеска не входят в комплект.",
+        "Для стандартных бамперов. Комплект не заявлен для Adventure / GR Sport и рестайлинга."
+      ],
+      "specs": "Применимость: RAV4 V 2019–2022 · Standard; Состав: Передний сплиттер TO-RAV4-5-FD1G+FD1RG, накладки порогов TO-RAV4-5-SD1G, задний сплиттер TO-RAV4-5-RD1G+RD2G и накладка спойлера TO-RAV4-5-CAP1G. Артикул комплекта TO-RAV4-5-SET.; Исполнение: Чёрный · под штатные бамперы; Материал: ABS-пластик",
+      "configuration": "Передний сплиттер TO-RAV4-5-FD1G+FD1RG, накладки порогов TO-RAV4-5-SD1G, задний сплиттер TO-RAV4-5-RD1G+RD2G и накладка спойлера TO-RAV4-5-CAP1G. Артикул комплекта TO-RAV4-5-SET.",
+      "configuration_version": "2026-10-25-mass-v1",
+      "card_specs": [
+        {
+          "label": "Совместимость",
+          "value": "RAV4 V 2019–2022 · Standard"
+        },
+        {
+          "label": "Комплект",
+          "value": "Комплект из 4 групп деталей"
+        },
+        {
+          "label": "Отделка",
+          "value": "Чёрный · под штатные бамперы"
+        }
+      ],
+      "condition_description": "Новое, без установки",
+      "comparison_specs": [
+        {
+          "label": "Применимость",
+          "value": "RAV4 V 2019–2022 · Standard"
+        },
+        {
+          "label": "Состав",
+          "value": "Передний сплиттер TO-RAV4-5-FD1G+FD1RG, накладки порогов TO-RAV4-5-SD1G, задний сплиттер TO-RAV4-5-RD1G+RD2G и накладка спойлера TO-RAV4-5-CAP1G. Артикул комплекта TO-RAV4-5-SET."
+        },
+        {
+          "label": "Исполнение",
+          "value": "Чёрный · под штатные бамперы"
+        },
+        {
+          "label": "Материал",
+          "value": "ABS-пластик"
+        }
+      ],
+      "photo_note": "Фото поставщика показывает пример установки. Цвет автомобиля, колёса, подвеска и детали вне указанного состава в поставку не входят. Отделка комплекта указана в характеристиках.",
+      "source_checked_at": "2026-10-25",
+      "quantity_policy": "order_batch",
+      "search_aliases": "тойота тоёта рав4 рав 4 рав-4",
+      "source_components": [
+        {
+          "source_url": "https://maxtondesign.com/products/set-of-splitters-suitable-for-toyota-rav4-mk5?variant=56948371292543",
+          "variant_id": 56948371292543,
+          "variant": "Default Title",
+          "price": 766,
+          "currency": "USD",
+          "sku": "TO-RAV4-5-SET",
+          "source_key": "rav4"
+        }
+      ]
+    },
+    {
+      "id": "mass25:mazda6-gj",
+      "title": "Mazda 6 GJ Sedan · Maxton",
+      "brand": "Maxton Design",
+      "asset_type": "product",
+      "catalog_section": "upgrades",
+      "catalog_category": "body-conversion",
+      "category": "Mazda",
+      "equipment_kind": "Комплект из 5 групп деталей",
+      "description": "Mazda 6 GJ Sedan · Maxton. Mazda 6 GJ · седан · рестайлинг 2017–2023. Передний сплиттер MA-6-3F-K-FD1G, накладки порогов MA-6-3F2-SD1G, задний сплиттер MA-6-3F2-RD1G+RD2G, задние боковые сплиттеры MA-6-3F2-RSD1G и накладка спойлера MA-6-3F-CAP1G. Артикул комплекта MA-6-3F2-SET.",
+      "complectation": "Передний сплиттер MA-6-3F-K-FD1G, накладки порогов MA-6-3F2-SD1G, задний сплиттер MA-6-3F2-RD1G+RD2G, задние боковые сплиттеры MA-6-3F2-RSD1G и накладка спойлера MA-6-3F-CAP1G. Артикул комплекта MA-6-3F2-SET.",
+      "technical_specs": [
+        {
+          "label": "Применимость",
+          "value": "Mazda 6 GJ · седан · рестайлинг 2017–2023"
+        },
+        {
+          "label": "Состав",
+          "value": "Передний сплиттер MA-6-3F-K-FD1G, накладки порогов MA-6-3F2-SD1G, задний сплиттер MA-6-3F2-RD1G+RD2G, задние боковые сплиттеры MA-6-3F2-RSD1G и накладка спойлера MA-6-3F-CAP1G. Артикул комплекта MA-6-3F2-SET."
+        },
+        {
+          "label": "Исполнение",
+          "value": "Чёрный · под штатные бамперы"
+        },
+        {
+          "label": "Материал",
+          "value": "ABS-пластик"
+        }
+      ],
+      "technical_note": "Монтаж отдельно. Автомобиль, колёса и подвеска не входят в комплект. Только седан указанного рестайлинга; не универсал. Декоративные цветные полосы не включены.",
+      "technical_sources": [
+        "https://maxtondesign.com/products/set-of-splitters-suitable-for-mazda-6-sedan-mk3-facelift?variant=56953899942271"
+      ],
+      "source_url": "https://maxtondesign.com/products/set-of-splitters-suitable-for-mazda-6-sedan-mk3-facelift?variant=56953899942271",
+      "source_currency": "USD",
+      "source_price": 802,
+      "source_expired": false,
+      "availability": "made_to_order",
+      "country": "INT",
+      "location": "Зарубежная закупка",
+      "images": [
+        "/assets/upgrades/mass-mazda-2.webp",
+        "/assets/upgrades/mass-mazda-1.webp",
+        "/assets/upgrades/mass-mazda-3.webp"
+      ],
+      "reference_id": "TG-MASS-MAZDA6-GJ",
+      "reference_label": "Код комплектации",
+      "source_status": "public_price_checked",
+      "price_kind": "unified_estimate",
+      "customer_price_rub": 230000,
+      "display_price_rub": 230000,
+      "pricing": {
+        "mode": "goods_import_budget",
+        "currency": "USD",
+        "amount": 802,
+        "freight_basis_rub": 80000,
+        "duty_percent": 5,
+        "specific_duty_eur": 0,
+        "operations_rub": 70000,
+        "markup_percent": 30,
+        "util_ru": 0
+      },
+      "client_note": "",
+      "priority": 90,
+      "max_order_quantity": 4,
+      "catalog_added": true,
+      "product_code": "TG-MASS-MAZDA6-GJ",
+      "identity_kind": "catalog_configuration",
+      "checkout_ready": true,
+      "purchase_notes": [
+        "Монтаж отдельно. Автомобиль, колёса и подвеска не входят в комплект.",
+        "Только седан указанного рестайлинга; не универсал. Декоративные цветные полосы не включены."
+      ],
+      "specs": "Применимость: Mazda 6 GJ · седан · рестайлинг 2017–2023; Состав: Передний сплиттер MA-6-3F-K-FD1G, накладки порогов MA-6-3F2-SD1G, задний сплиттер MA-6-3F2-RD1G+RD2G, задние боковые сплиттеры MA-6-3F2-RSD1G и накладка спойлера MA-6-3F-CAP1G. Артикул комплекта MA-6-3F2-SET.; Исполнение: Чёрный · под штатные бамперы; Материал: ABS-пластик",
+      "configuration": "Передний сплиттер MA-6-3F-K-FD1G, накладки порогов MA-6-3F2-SD1G, задний сплиттер MA-6-3F2-RD1G+RD2G, задние боковые сплиттеры MA-6-3F2-RSD1G и накладка спойлера MA-6-3F-CAP1G. Артикул комплекта MA-6-3F2-SET.",
+      "configuration_version": "2026-10-25-mass-v1",
+      "card_specs": [
+        {
+          "label": "Совместимость",
+          "value": "Mazda 6 GJ · седан · рестайлинг 2017–2023"
+        },
+        {
+          "label": "Комплект",
+          "value": "Комплект из 5 групп деталей"
+        },
+        {
+          "label": "Отделка",
+          "value": "Чёрный · под штатные бамперы"
+        }
+      ],
+      "condition_description": "Новое, без установки",
+      "comparison_specs": [
+        {
+          "label": "Применимость",
+          "value": "Mazda 6 GJ · седан · рестайлинг 2017–2023"
+        },
+        {
+          "label": "Состав",
+          "value": "Передний сплиттер MA-6-3F-K-FD1G, накладки порогов MA-6-3F2-SD1G, задний сплиттер MA-6-3F2-RD1G+RD2G, задние боковые сплиттеры MA-6-3F2-RSD1G и накладка спойлера MA-6-3F-CAP1G. Артикул комплекта MA-6-3F2-SET."
+        },
+        {
+          "label": "Исполнение",
+          "value": "Чёрный · под штатные бамперы"
+        },
+        {
+          "label": "Материал",
+          "value": "ABS-пластик"
+        }
+      ],
+      "photo_note": "Фото поставщика показывает пример установки. Цвет автомобиля, колёса, подвеска и детали вне указанного состава в поставку не входят. Отделка комплекта указана в характеристиках.",
+      "source_checked_at": "2026-10-25",
+      "quantity_policy": "order_batch",
+      "search_aliases": "мазда мазда6 мазда 6",
+      "source_components": [
+        {
+          "source_url": "https://maxtondesign.com/products/set-of-splitters-suitable-for-mazda-6-sedan-mk3-facelift?variant=56953899942271",
+          "variant_id": 56953899942271,
+          "variant": "Default Title",
+          "price": 802,
+          "currency": "USD",
+          "sku": "MA-6-3F2-SET",
+          "source_key": "mazda"
+        }
+      ]
+    },
+    {
+      "id": "mass25:k5-gtline",
+      "title": "Kia K5 GT-Line · VELOCE GT Aero",
+      "brand": "VELOCE",
+      "asset_type": "product",
+      "catalog_section": "upgrades",
+      "catalog_category": "body-conversion",
+      "category": "Kia",
+      "equipment_kind": "Комплект из 10 деталей",
+      "description": "Kia K5 GT-Line · VELOCE GT Aero. K5 DL3 · GT-Line · 2021–2024. Передний сплиттер (1), боковые сплиттеры (2), задние боковые накладки (2), задний диффузор (1), плавники диффузора (4), наклейки VELOCE и крепёж. Артикул VELK504.",
+      "complectation": "Передний сплиттер (1), боковые сплиттеры (2), задние боковые накладки (2), задний диффузор (1), плавники диффузора (4), наклейки VELOCE и крепёж. Артикул VELK504.",
+      "technical_specs": [
+        {
+          "label": "Применимость",
+          "value": "K5 DL3 · GT-Line · 2021–2024"
+        },
+        {
+          "label": "Состав",
+          "value": "Передний сплиттер (1), боковые сплиттеры (2), задние боковые накладки (2), задний диффузор (1), плавники диффузора (4), наклейки VELOCE и крепёж. Артикул VELK504."
+        },
+        {
+          "label": "Исполнение",
+          "value": "Матовый чёрный"
+        },
+        {
+          "label": "Материал",
+          "value": "Жёсткий автомобильный пластик"
+        }
+      ],
+      "technical_note": "Монтаж отдельно. Автомобиль, колёса и подвеска не входят в комплект. Полный комплект только для GT-Line. Для K5 GT и стандартных версий полный набор не заявлен.",
+      "technical_sources": [
+        "https://www.kdmholic.com/products/kia-k5-lip-kit-type-gt-aero-splitters-diffuser-2021-2024-gt-line-only?variant=41764779655257"
+      ],
+      "source_url": "https://www.kdmholic.com/products/kia-k5-lip-kit-type-gt-aero-splitters-diffuser-2021-2024-gt-line-only?variant=41764779655257",
+      "source_currency": "USD",
+      "source_price": 797.5,
+      "source_expired": false,
+      "availability": "supplier_listed",
+      "country": "INT",
+      "location": "Зарубежная закупка",
+      "images": [
+        "/assets/upgrades/mass-k5-1.webp",
+        "/assets/upgrades/mass-k5-2.webp",
+        "/assets/upgrades/mass-k5-3.webp"
+      ],
+      "reference_id": "TG-MASS-K5-GTLINE",
+      "reference_label": "Код комплектации",
+      "source_status": "public_price_checked",
+      "price_kind": "unified_estimate",
+      "customer_price_rub": 229000,
+      "display_price_rub": 229000,
+      "pricing": {
+        "mode": "goods_import_budget",
+        "currency": "USD",
+        "amount": 797.5,
+        "freight_basis_rub": 80000,
+        "duty_percent": 5,
+        "specific_duty_eur": 0,
+        "operations_rub": 70000,
+        "markup_percent": 30,
+        "util_ru": 0
+      },
+      "client_note": "",
+      "priority": 90,
+      "max_order_quantity": 3,
+      "catalog_added": true,
+      "product_code": "TG-MASS-K5-GTLINE",
+      "identity_kind": "catalog_configuration",
+      "checkout_ready": true,
+      "purchase_notes": [
+        "Монтаж отдельно. Автомобиль, колёса и подвеска не входят в комплект.",
+        "Полный комплект только для GT-Line. Для K5 GT и стандартных версий полный набор не заявлен."
+      ],
+      "specs": "Применимость: K5 DL3 · GT-Line · 2021–2024; Состав: Передний сплиттер (1), боковые сплиттеры (2), задние боковые накладки (2), задний диффузор (1), плавники диффузора (4), наклейки VELOCE и крепёж. Артикул VELK504.; Исполнение: Матовый чёрный; Материал: Жёсткий автомобильный пластик",
+      "configuration": "Передний сплиттер (1), боковые сплиттеры (2), задние боковые накладки (2), задний диффузор (1), плавники диффузора (4), наклейки VELOCE и крепёж. Артикул VELK504.",
+      "configuration_version": "2026-10-25-mass-v1",
+      "card_specs": [
+        {
+          "label": "Совместимость",
+          "value": "K5 DL3 · GT-Line · 2021–2024"
+        },
+        {
+          "label": "Комплект",
+          "value": "Комплект из 10 деталей"
+        },
+        {
+          "label": "Отделка",
+          "value": "Матовый чёрный"
+        }
+      ],
+      "condition_description": "Новое, без установки",
+      "comparison_specs": [
+        {
+          "label": "Применимость",
+          "value": "K5 DL3 · GT-Line · 2021–2024"
+        },
+        {
+          "label": "Состав",
+          "value": "Передний сплиттер (1), боковые сплиттеры (2), задние боковые накладки (2), задний диффузор (1), плавники диффузора (4), наклейки VELOCE и крепёж. Артикул VELK504."
+        },
+        {
+          "label": "Исполнение",
+          "value": "Матовый чёрный"
+        },
+        {
+          "label": "Материал",
+          "value": "Жёсткий автомобильный пластик"
+        }
+      ],
+      "photo_note": "Фото поставщика показывает пример установки. Цвет автомобиля, колёса, подвеска и детали вне указанного состава в поставку не входят. Отделка комплекта указана в характеристиках.",
+      "source_checked_at": "2026-10-25",
+      "quantity_policy": "order_batch",
+      "search_aliases": "киа кия к5 к 5 optima оптима",
+      "source_components": [
+        {
+          "source_url": "https://www.kdmholic.com/products/kia-k5-lip-kit-type-gt-aero-splitters-diffuser-2021-2024-gt-line-only?variant=41764779655257",
+          "variant_id": 41764779655257,
+          "variant": "United States (Lower 48 States)",
+          "price": 797.5,
+          "currency": "USD",
+          "sku": "VELK504",
+          "source_key": "k5"
+        }
+      ]
+    },
+    {
+      "id": "mass25:accord10",
+      "title": "Honda Accord X · YOFER V2",
+      "brand": "YOFER / SWA",
+      "asset_type": "product",
+      "catalog_section": "upgrades",
+      "catalog_category": "body-conversion",
+      "category": "Honda",
+      "equipment_kind": "Комплект накладок с LED",
+      "description": "Honda Accord X · YOFER V2. Accord X · 2021–2022 · кроме Hybrid. Передняя накладка из 3 элементов, две накладки порогов, задняя накладка с диффузором из 7 элементов, дополнительный стоп-сигнал и необходимый крепёж.",
+      "complectation": "Передняя накладка из 3 элементов, две накладки порогов, задняя накладка с диффузором из 7 элементов, дополнительный стоп-сигнал и необходимый крепёж.",
+      "technical_specs": [
+        {
+          "label": "Применимость",
+          "value": "Accord X · 2021–2022 · кроме Hybrid"
+        },
+        {
+          "label": "Состав",
+          "value": "Передняя накладка из 3 элементов, две накладки порогов, задняя накладка с диффузором из 7 элементов, дополнительный стоп-сигнал и необходимый крепёж."
+        },
+        {
+          "label": "Исполнение",
+          "value": "Crystal Gloss Black"
+        }
+      ],
+      "technical_note": "Монтаж отдельно. Автомобиль, колёса и подвеска не входят в комплект. Не подходит для Hybrid. Комплект рассчитан на рестайлинг 2021–2022; бамперы не заменяются.",
+      "technical_sources": [
+        "https://swaautosports.com/products/swa-yofer-2021-22-10th-gen-honda-accord-v2-full-body-kit?variant=43171901669575"
+      ],
+      "source_url": "https://swaautosports.com/products/swa-yofer-2021-22-10th-gen-honda-accord-v2-full-body-kit?variant=43171901669575",
+      "source_currency": "USD",
+      "source_price": 649,
+      "source_expired": false,
+      "availability": "supplier_listed",
+      "country": "INT",
+      "location": "Зарубежная закупка",
+      "images": [
+        "/assets/upgrades/mass-accord-1.webp",
+        "/assets/upgrades/mass-accord-2.webp",
+        "/assets/upgrades/mass-accord-3.webp"
+      ],
+      "reference_id": "TG-MASS-ACCORD10",
+      "reference_label": "Код комплектации",
+      "source_status": "public_price_checked",
+      "price_kind": "unified_estimate",
+      "customer_price_rub": 209000,
+      "display_price_rub": 209000,
+      "pricing": {
+        "mode": "goods_import_budget",
+        "currency": "USD",
+        "amount": 649,
+        "freight_basis_rub": 80000,
+        "duty_percent": 5,
+        "specific_duty_eur": 0,
+        "operations_rub": 70000,
+        "markup_percent": 30,
+        "util_ru": 0
+      },
+      "client_note": "",
+      "priority": 90,
+      "max_order_quantity": 4,
+      "catalog_added": true,
+      "product_code": "TG-MASS-ACCORD10",
+      "identity_kind": "catalog_configuration",
+      "checkout_ready": true,
+      "purchase_notes": [
+        "Монтаж отдельно. Автомобиль, колёса и подвеска не входят в комплект.",
+        "Не подходит для Hybrid. Комплект рассчитан на рестайлинг 2021–2022; бамперы не заменяются."
+      ],
+      "specs": "Применимость: Accord X · 2021–2022 · кроме Hybrid; Состав: Передняя накладка из 3 элементов, две накладки порогов, задняя накладка с диффузором из 7 элементов, дополнительный стоп-сигнал и необходимый крепёж.; Исполнение: Crystal Gloss Black",
+      "configuration": "Передняя накладка из 3 элементов, две накладки порогов, задняя накладка с диффузором из 7 элементов, дополнительный стоп-сигнал и необходимый крепёж.",
+      "configuration_version": "2026-10-25-mass-v1",
+      "card_specs": [
+        {
+          "label": "Совместимость",
+          "value": "Accord X · 2021–2022 · кроме Hybrid"
+        },
+        {
+          "label": "Комплект",
+          "value": "Комплект накладок с LED"
+        },
+        {
+          "label": "Отделка",
+          "value": "Crystal Gloss Black"
+        }
+      ],
+      "condition_description": "Новое, без установки",
+      "comparison_specs": [
+        {
+          "label": "Применимость",
+          "value": "Accord X · 2021–2022 · кроме Hybrid"
+        },
+        {
+          "label": "Состав",
+          "value": "Передняя накладка из 3 элементов, две накладки порогов, задняя накладка с диффузором из 7 элементов, дополнительный стоп-сигнал и необходимый крепёж."
+        },
+        {
+          "label": "Исполнение",
+          "value": "Crystal Gloss Black"
+        }
+      ],
+      "photo_note": "Фото поставщика показывает пример установки. Цвет автомобиля, колёса, подвеска и детали вне указанного состава в поставку не входят. Отделка комплекта указана в характеристиках.",
+      "source_checked_at": "2026-10-25",
+      "quantity_policy": "order_batch",
+      "search_aliases": "хонда аккорд акорд accord10",
+      "source_components": [
+        {
+          "source_url": "https://swaautosports.com/products/swa-yofer-2021-22-10th-gen-honda-accord-v2-full-body-kit?variant=43171901669575",
+          "variant_id": 43171901669575,
+          "variant": "Crystal Gloss Black (Black)",
+          "price": 649,
+          "currency": "USD",
+          "sku": "",
+          "source_key": "accord"
+        }
+      ]
+    },
+    {
+      "id": "mass25:civic11",
+      "title": "Honda Civic XI Sedan · YOFER Night Shadow",
+      "brand": "YOFER / SWA",
+      "asset_type": "product",
+      "catalog_section": "upgrades",
+      "catalog_category": "body-conversion",
+      "category": "Honda",
+      "equipment_kind": "Комплект из 3 товаров",
+      "description": "Honda Civic XI Sedan · YOFER Night Shadow. Civic XI · седан · 2022–2024. Передняя накладка YOFER V3 из 4 частей с лентой, фиксаторами и винтами; две накладки порогов YOFER V2 с крепежом; задний диффузор YOFER V2 с центральным LED-сигналом, лентой и винтами.",
+      "complectation": "Передняя накладка YOFER V3 из 4 частей с лентой, фиксаторами и винтами; две накладки порогов YOFER V2 с крепежом; задний диффузор YOFER V2 с центральным LED-сигналом, лентой и винтами.",
+      "technical_specs": [
+        {
+          "label": "Применимость",
+          "value": "Civic XI · седан · 2022–2024"
+        },
+        {
+          "label": "Состав",
+          "value": "Передняя накладка YOFER V3 из 4 частей с лентой, фиксаторами и винтами; две накладки порогов YOFER V2 с крепежом; задний диффузор YOFER V2 с центральным LED-сигналом, лентой и винтами."
+        },
+        {
+          "label": "Исполнение",
+          "value": "Crystal Black Pearl / Gloss Black"
+        }
+      ],
+      "technical_note": "Монтаж отдельно. Автомобиль, колёса и подвеска не входят в комплект. Только седан 2022–2024; не хетчбэк, Type R или рестайлинг 2025+. Задние угловые накладки и спойлер не включены. Цвет деталей может отличаться от цвета кузова.",
+      "technical_sources": [
+        "https://swaautosports.com/products/2022-11th-gen-civic-yofer-4-pc-night-shadow-front-lip-painted?variant=42907233091783",
+        "https://swaautosports.com/products/2022-11th-gen-civic-sedan-yofer-v2-night-shadow-side-skirts-painted?variant=42966865903815",
+        "https://swaautosports.com/products/2022-11th-gen-civic-sedan-yofer-v2-night-shadow-diffuser-with-led-3rd-brake-light?variant=42907226341575"
+      ],
+      "source_url": "https://swaautosports.com/products/2022-11th-gen-civic-yofer-4-pc-night-shadow-front-lip-painted?variant=42907233091783",
+      "source_currency": "USD",
+      "source_price": 737,
+      "source_expired": false,
+      "availability": "supplier_listed",
+      "country": "INT",
+      "location": "Зарубежная закупка",
+      "images": [
+        "/assets/upgrades/mass-civic-front-1.webp",
+        "/assets/upgrades/mass-civic-side-1.webp",
+        "/assets/upgrades/mass-civic-rear-1.webp"
+      ],
+      "reference_id": "TG-MASS-CIVIC11",
+      "reference_label": "Код комплектации",
+      "source_status": "public_price_checked",
+      "price_kind": "unified_estimate",
+      "customer_price_rub": 221000,
+      "display_price_rub": 221000,
+      "pricing": {
+        "mode": "goods_import_budget",
+        "currency": "USD",
+        "amount": 737,
+        "freight_basis_rub": 80000,
+        "duty_percent": 5,
+        "specific_duty_eur": 0,
+        "operations_rub": 70000,
+        "markup_percent": 30,
+        "util_ru": 0
+      },
+      "client_note": "",
+      "priority": 90,
+      "max_order_quantity": 5,
+      "catalog_added": true,
+      "product_code": "TG-MASS-CIVIC11",
+      "identity_kind": "catalog_configuration",
+      "checkout_ready": true,
+      "purchase_notes": [
+        "Монтаж отдельно. Автомобиль, колёса и подвеска не входят в комплект.",
+        "Только седан 2022–2024; не хетчбэк, Type R или рестайлинг 2025+. Задние угловые накладки и спойлер не включены. Цвет деталей может отличаться от цвета кузова."
+      ],
+      "specs": "Применимость: Civic XI · седан · 2022–2024; Состав: Передняя накладка YOFER V3 из 4 частей с лентой, фиксаторами и винтами; две накладки порогов YOFER V2 с крепежом; задний диффузор YOFER V2 с центральным LED-сигналом, лентой и винтами.; Исполнение: Crystal Black Pearl / Gloss Black",
+      "configuration": "Передняя накладка YOFER V3 из 4 частей с лентой, фиксаторами и винтами; две накладки порогов YOFER V2 с крепежом; задний диффузор YOFER V2 с центральным LED-сигналом, лентой и винтами.",
+      "configuration_version": "2026-10-25-mass-v1",
+      "card_specs": [
+        {
+          "label": "Совместимость",
+          "value": "Civic XI · седан · 2022–2024"
+        },
+        {
+          "label": "Комплект",
+          "value": "Комплект из 3 товаров"
+        },
+        {
+          "label": "Отделка",
+          "value": "Crystal Black Pearl / Gloss Black"
+        }
+      ],
+      "condition_description": "Новое, без установки",
+      "comparison_specs": [
+        {
+          "label": "Применимость",
+          "value": "Civic XI · седан · 2022–2024"
+        },
+        {
+          "label": "Состав",
+          "value": "Передняя накладка YOFER V3 из 4 частей с лентой, фиксаторами и винтами; две накладки порогов YOFER V2 с крепежом; задний диффузор YOFER V2 с центральным LED-сигналом, лентой и винтами."
+        },
+        {
+          "label": "Исполнение",
+          "value": "Crystal Black Pearl / Gloss Black"
+        }
+      ],
+      "photo_note": "Фото поставщика показывает пример установки. Цвет автомобиля, колёса, подвеска и детали вне указанного состава в поставку не входят. Отделка комплекта указана в характеристиках.",
+      "source_checked_at": "2026-10-25",
+      "quantity_policy": "order_batch",
+      "search_aliases": "хонда цивик сивик civic11",
+      "source_components": [
+        {
+          "source_url": "https://swaautosports.com/products/2022-11th-gen-civic-yofer-4-pc-night-shadow-front-lip-painted?variant=42907233091783",
+          "variant_id": 42907233091783,
+          "variant": "Crystal Black Pearl",
+          "price": 199,
+          "currency": "USD",
+          "sku": "",
+          "source_key": "civic-front"
+        },
+        {
+          "source_url": "https://swaautosports.com/products/2022-11th-gen-civic-sedan-yofer-v2-night-shadow-side-skirts-painted?variant=42966865903815",
+          "variant_id": 42966865903815,
+          "variant": "Crystal Black Pearl",
+          "price": 289,
+          "currency": "USD",
+          "sku": "",
+          "source_key": "civic-side"
+        },
+        {
+          "source_url": "https://swaautosports.com/products/2022-11th-gen-civic-sedan-yofer-v2-night-shadow-diffuser-with-led-3rd-brake-light?variant=42907226341575",
+          "variant_id": 42907226341575,
+          "variant": "Gloss Black",
+          "price": 249,
+          "currency": "USD",
+          "sku": "",
+          "source_key": "civic-rear"
+        }
+      ]
+    },
+    {
+      "id": "mass25:civic11-front",
+      "title": "Honda Civic XI · передняя накладка YOFER V3",
+      "brand": "YOFER / SWA",
+      "asset_type": "product",
+      "catalog_section": "upgrades",
+      "catalog_category": "body-conversion",
+      "category": "Honda",
+      "equipment_kind": "Передняя накладка из 4 частей",
+      "description": "Honda Civic XI · передняя накладка YOFER V3. Civic XI · седан / хетчбэк · 2022–2024. Передняя накладка YOFER V3 из четырёх частей, двусторонняя лента, пластиковые фиксаторы и винты.",
+      "complectation": "Передняя накладка YOFER V3 из четырёх частей, двусторонняя лента, пластиковые фиксаторы и винты.",
+      "technical_specs": [
+        {
+          "label": "Применимость",
+          "value": "Civic XI · седан / хетчбэк · 2022–2024"
+        },
+        {
+          "label": "Состав",
+          "value": "Передняя накладка YOFER V3 из четырёх частей, двусторонняя лента, пластиковые фиксаторы и винты."
+        },
+        {
+          "label": "Исполнение",
+          "value": "Crystal Black Pearl"
+        }
+      ],
+      "technical_note": "Монтаж отдельно. Автомобиль, колёса и подвеска не входят в комплект. Не для Type R и рестайлинга 2025+. Это передняя накладка, без порогов и заднего диффузора. Цвет может отличаться от кузова.",
+      "technical_sources": [
+        "https://swaautosports.com/products/2022-11th-gen-civic-yofer-4-pc-night-shadow-front-lip-painted?variant=42907233091783"
+      ],
+      "source_url": "https://swaautosports.com/products/2022-11th-gen-civic-yofer-4-pc-night-shadow-front-lip-painted?variant=42907233091783",
+      "source_currency": "USD",
+      "source_price": 199,
+      "source_expired": false,
+      "availability": "supplier_listed",
+      "country": "INT",
+      "location": "Зарубежная закупка",
+      "images": [
+        "/assets/upgrades/mass-civic-front-1.webp",
+        "/assets/upgrades/mass-civic-front-2.webp",
+        "/assets/upgrades/mass-civic-front-3.webp"
+      ],
+      "reference_id": "TG-MASS-CIVIC11-FRONT",
+      "reference_label": "Код комплектации",
+      "source_status": "public_price_checked",
+      "price_kind": "unified_estimate",
+      "customer_price_rub": 149000,
+      "display_price_rub": 149000,
+      "pricing": {
+        "mode": "goods_import_budget",
+        "currency": "USD",
+        "amount": 199,
+        "freight_basis_rub": 80000,
+        "duty_percent": 5,
+        "specific_duty_eur": 0,
+        "operations_rub": 70000,
+        "markup_percent": 30,
+        "util_ru": 0
+      },
+      "client_note": "",
+      "priority": 90,
+      "catalog_added": true,
+      "product_code": "TG-MASS-CIVIC11-FRONT",
+      "identity_kind": "catalog_configuration",
+      "checkout_ready": true,
+      "purchase_notes": [
+        "Монтаж отдельно. Автомобиль, колёса и подвеска не входят в комплект.",
+        "Не для Type R и рестайлинга 2025+. Это передняя накладка, без порогов и заднего диффузора. Цвет может отличаться от кузова."
+      ],
+      "specs": "Применимость: Civic XI · седан / хетчбэк · 2022–2024; Состав: Передняя накладка YOFER V3 из четырёх частей, двусторонняя лента, пластиковые фиксаторы и винты.; Исполнение: Crystal Black Pearl",
+      "configuration": "Передняя накладка YOFER V3 из четырёх частей, двусторонняя лента, пластиковые фиксаторы и винты.",
+      "configuration_version": "2026-10-25-mass-v1",
+      "card_specs": [
+        {
+          "label": "Совместимость",
+          "value": "Civic XI · седан / хетчбэк · 2022–2024"
+        },
+        {
+          "label": "Комплект",
+          "value": "Передняя накладка из 4 частей"
+        },
+        {
+          "label": "Отделка",
+          "value": "Crystal Black Pearl"
+        }
+      ],
+      "condition_description": "Новое, без установки",
+      "comparison_specs": [
+        {
+          "label": "Применимость",
+          "value": "Civic XI · седан / хетчбэк · 2022–2024"
+        },
+        {
+          "label": "Состав",
+          "value": "Передняя накладка YOFER V3 из четырёх частей, двусторонняя лента, пластиковые фиксаторы и винты."
+        },
+        {
+          "label": "Исполнение",
+          "value": "Crystal Black Pearl"
+        }
+      ],
+      "photo_note": "Фото поставщика показывает пример установки. Цвет автомобиля, колёса, подвеска и детали вне указанного состава в поставку не входят. Отделка комплекта указана в характеристиках.",
+      "source_checked_at": "2026-10-25",
+      "quantity_policy": "unrestricted",
+      "search_aliases": "хонда цивик сивик передний сплиттер",
+      "source_components": [
+        {
+          "source_url": "https://swaautosports.com/products/2022-11th-gen-civic-yofer-4-pc-night-shadow-front-lip-painted?variant=42907233091783",
+          "variant_id": 42907233091783,
+          "variant": "Crystal Black Pearl",
+          "price": 199,
+          "currency": "USD",
+          "sku": "",
+          "source_key": "civic-front"
+        }
+      ]
+    },
+    {
+      "id": "mass25:civic11-side",
+      "title": "Honda Civic XI · пороги YOFER V2",
+      "brand": "YOFER / SWA",
+      "asset_type": "product",
+      "catalog_section": "upgrades",
+      "catalog_category": "body-conversion",
+      "category": "Honda",
+      "equipment_kind": "Две накладки порогов",
+      "description": "Honda Civic XI · пороги YOFER V2. Civic XI · седан / хетчбэк · 2022–2026. Две боковые накладки порогов YOFER V2 и необходимый крепёж.",
+      "complectation": "Две боковые накладки порогов YOFER V2 и необходимый крепёж.",
+      "technical_specs": [
+        {
+          "label": "Применимость",
+          "value": "Civic XI · седан / хетчбэк · 2022–2026"
+        },
+        {
+          "label": "Состав",
+          "value": "Две боковые накладки порогов YOFER V2 и необходимый крепёж."
+        },
+        {
+          "label": "Исполнение",
+          "value": "Crystal Black Pearl"
+        }
+      ],
+      "technical_note": "Монтаж отдельно. Автомобиль, колёса и подвеска не входят в комплект. Не для Type R. Передняя и задняя накладки отдельно. Цвет может отличаться от кузова.",
+      "technical_sources": [
+        "https://swaautosports.com/products/2022-11th-gen-civic-sedan-yofer-v2-night-shadow-side-skirts-painted?variant=42966865903815"
+      ],
+      "source_url": "https://swaautosports.com/products/2022-11th-gen-civic-sedan-yofer-v2-night-shadow-side-skirts-painted?variant=42966865903815",
+      "source_currency": "USD",
+      "source_price": 289,
+      "source_expired": false,
+      "availability": "supplier_listed",
+      "country": "INT",
+      "location": "Зарубежная закупка",
+      "images": [
+        "/assets/upgrades/mass-civic-side-1.webp"
+      ],
+      "reference_id": "TG-MASS-CIVIC11-SIDE",
+      "reference_label": "Код комплектации",
+      "source_status": "public_price_checked",
+      "price_kind": "unified_estimate",
+      "customer_price_rub": 161000,
+      "display_price_rub": 161000,
+      "pricing": {
+        "mode": "goods_import_budget",
+        "currency": "USD",
+        "amount": 289,
+        "freight_basis_rub": 80000,
+        "duty_percent": 5,
+        "specific_duty_eur": 0,
+        "operations_rub": 70000,
+        "markup_percent": 30,
+        "util_ru": 0
+      },
+      "client_note": "",
+      "priority": 90,
+      "catalog_added": true,
+      "product_code": "TG-MASS-CIVIC11-SIDE",
+      "identity_kind": "catalog_configuration",
+      "checkout_ready": true,
+      "purchase_notes": [
+        "Монтаж отдельно. Автомобиль, колёса и подвеска не входят в комплект.",
+        "Не для Type R. Передняя и задняя накладки отдельно. Цвет может отличаться от кузова."
+      ],
+      "specs": "Применимость: Civic XI · седан / хетчбэк · 2022–2026; Состав: Две боковые накладки порогов YOFER V2 и необходимый крепёж.; Исполнение: Crystal Black Pearl",
+      "configuration": "Две боковые накладки порогов YOFER V2 и необходимый крепёж.",
+      "configuration_version": "2026-10-25-mass-v1",
+      "card_specs": [
+        {
+          "label": "Совместимость",
+          "value": "Civic XI · седан / хетчбэк · 2022–2026"
+        },
+        {
+          "label": "Комплект",
+          "value": "Две накладки порогов"
+        },
+        {
+          "label": "Отделка",
+          "value": "Crystal Black Pearl"
+        }
+      ],
+      "condition_description": "Новое, без установки",
+      "comparison_specs": [
+        {
+          "label": "Применимость",
+          "value": "Civic XI · седан / хетчбэк · 2022–2026"
+        },
+        {
+          "label": "Состав",
+          "value": "Две боковые накладки порогов YOFER V2 и необходимый крепёж."
+        },
+        {
+          "label": "Исполнение",
+          "value": "Crystal Black Pearl"
+        }
+      ],
+      "photo_note": "Фото поставщика показывает пример установки. Цвет автомобиля, колёса, подвеска и детали вне указанного состава в поставку не входят. Отделка комплекта указана в характеристиках.",
+      "source_checked_at": "2026-10-25",
+      "quantity_policy": "unrestricted",
+      "search_aliases": "хонда цивик сивик боковые пороги",
+      "source_components": [
+        {
+          "source_url": "https://swaautosports.com/products/2022-11th-gen-civic-sedan-yofer-v2-night-shadow-side-skirts-painted?variant=42966865903815",
+          "variant_id": 42966865903815,
+          "variant": "Crystal Black Pearl",
+          "price": 289,
+          "currency": "USD",
+          "sku": "",
+          "source_key": "civic-side"
+        }
+      ]
+    },
+    {
+      "id": "mass25:civic11-rear",
+      "title": "Honda Civic XI Sedan · диффузор YOFER V2",
+      "brand": "YOFER / SWA",
+      "asset_type": "product",
+      "catalog_section": "upgrades",
+      "catalog_category": "body-conversion",
+      "category": "Honda",
+      "equipment_kind": "Задний диффузор с LED",
+      "description": "Honda Civic XI Sedan · диффузор YOFER V2. Civic XI · седан · 2022–2025. Задний диффузор YOFER V2, центральный LED-сигнал, двусторонняя лента и винты.",
+      "complectation": "Задний диффузор YOFER V2, центральный LED-сигнал, двусторонняя лента и винты.",
+      "technical_specs": [
+        {
+          "label": "Применимость",
+          "value": "Civic XI · седан · 2022–2025"
+        },
+        {
+          "label": "Состав",
+          "value": "Задний диффузор YOFER V2, центральный LED-сигнал, двусторонняя лента и винты."
+        },
+        {
+          "label": "Исполнение",
+          "value": "Gloss Black"
+        }
+      ],
+      "technical_note": "Монтаж отдельно. Автомобиль, колёса и подвеска не входят в комплект. Не для хетчбэка и Type R. Задние угловые накладки не включены.",
+      "technical_sources": [
+        "https://swaautosports.com/products/2022-11th-gen-civic-sedan-yofer-v2-night-shadow-diffuser-with-led-3rd-brake-light?variant=42907226341575"
+      ],
+      "source_url": "https://swaautosports.com/products/2022-11th-gen-civic-sedan-yofer-v2-night-shadow-diffuser-with-led-3rd-brake-light?variant=42907226341575",
+      "source_currency": "USD",
+      "source_price": 249,
+      "source_expired": false,
+      "availability": "supplier_listed",
+      "country": "INT",
+      "location": "Зарубежная закупка",
+      "images": [
+        "/assets/upgrades/mass-civic-rear-1.webp",
+        "/assets/upgrades/mass-civic-rear-2.webp",
+        "/assets/upgrades/mass-civic-rear-3.webp"
+      ],
+      "reference_id": "TG-MASS-CIVIC11-REAR",
+      "reference_label": "Код комплектации",
+      "source_status": "public_price_checked",
+      "price_kind": "unified_estimate",
+      "customer_price_rub": 156000,
+      "display_price_rub": 156000,
+      "pricing": {
+        "mode": "goods_import_budget",
+        "currency": "USD",
+        "amount": 249,
+        "freight_basis_rub": 80000,
+        "duty_percent": 5,
+        "specific_duty_eur": 0,
+        "operations_rub": 70000,
+        "markup_percent": 30,
+        "util_ru": 0
+      },
+      "client_note": "",
+      "priority": 90,
+      "catalog_added": true,
+      "product_code": "TG-MASS-CIVIC11-REAR",
+      "identity_kind": "catalog_configuration",
+      "checkout_ready": true,
+      "purchase_notes": [
+        "Монтаж отдельно. Автомобиль, колёса и подвеска не входят в комплект.",
+        "Не для хетчбэка и Type R. Задние угловые накладки не включены."
+      ],
+      "specs": "Применимость: Civic XI · седан · 2022–2025; Состав: Задний диффузор YOFER V2, центральный LED-сигнал, двусторонняя лента и винты.; Исполнение: Gloss Black",
+      "configuration": "Задний диффузор YOFER V2, центральный LED-сигнал, двусторонняя лента и винты.",
+      "configuration_version": "2026-10-25-mass-v1",
+      "card_specs": [
+        {
+          "label": "Совместимость",
+          "value": "Civic XI · седан · 2022–2025"
+        },
+        {
+          "label": "Комплект",
+          "value": "Задний диффузор с LED"
+        },
+        {
+          "label": "Отделка",
+          "value": "Gloss Black"
+        }
+      ],
+      "condition_description": "Новое, без установки",
+      "comparison_specs": [
+        {
+          "label": "Применимость",
+          "value": "Civic XI · седан · 2022–2025"
+        },
+        {
+          "label": "Состав",
+          "value": "Задний диффузор YOFER V2, центральный LED-сигнал, двусторонняя лента и винты."
+        },
+        {
+          "label": "Исполнение",
+          "value": "Gloss Black"
+        }
+      ],
+      "photo_note": "Фото поставщика показывает пример установки. Цвет автомобиля, колёса, подвеска и детали вне указанного состава в поставку не входят. Отделка комплекта указана в характеристиках.",
+      "source_checked_at": "2026-10-25",
+      "quantity_policy": "unrestricted",
+      "search_aliases": "хонда цивик сивик диффузор задний",
+      "source_components": [
+        {
+          "source_url": "https://swaautosports.com/products/2022-11th-gen-civic-sedan-yofer-v2-night-shadow-diffuser-with-led-3rd-brake-light?variant=42907226341575",
+          "variant_id": 42907226341575,
+          "variant": "Gloss Black",
+          "price": 249,
+          "currency": "USD",
+          "sku": "",
+          "source_key": "civic-rear"
+        }
+      ]
     }
   ]
 }

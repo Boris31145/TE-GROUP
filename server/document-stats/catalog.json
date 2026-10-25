@@ -1048,5 +1048,71 @@
     "title": "Advantage Series Transit Mix · 3 бункера / 2 силоса",
     "year": null,
     "asset_type": "product"
+  },
+  {
+    "id": "mass25:camry70-21",
+    "title": "Toyota Camry XV70 · YOFER V1 · 2021–2024",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "mass25:camry70-18",
+    "title": "Toyota Camry XV70 · YOFER V1 · 2018–2020",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "mass25:corolla12",
+    "title": "Toyota Corolla XII Sedan · Maxton",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "mass25:rav4-5",
+    "title": "Toyota RAV4 V · Maxton",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "mass25:mazda6-gj",
+    "title": "Mazda 6 GJ Sedan · Maxton",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "mass25:k5-gtline",
+    "title": "Kia K5 GT-Line · VELOCE GT Aero",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "mass25:accord10",
+    "title": "Honda Accord X · YOFER V2",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "mass25:civic11",
+    "title": "Honda Civic XI Sedan · YOFER Night Shadow",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "mass25:civic11-front",
+    "title": "Honda Civic XI · передняя накладка YOFER V3",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "mass25:civic11-side",
+    "title": "Honda Civic XI · пороги YOFER V2",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "mass25:civic11-rear",
+    "title": "Honda Civic XI Sedan · диффузор YOFER V2",
+    "year": null,
+    "asset_type": "product"
   }
 ]
