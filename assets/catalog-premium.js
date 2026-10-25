@@ -38,7 +38,7 @@ function reference(o){return o.catalog_added?o.reference_label+': '+o.reference_
 function render(){
  const base=all.filter(x=>inPage(x)&&!x.source_expired&&x.availability!=='reserved');
  const query=$('catalogSearch').value.trim().toLocaleLowerCase('ru-RU'),kind=$('catalogKind').value,country=$('origin').value,min=Number($('priceMin').value)||0,max=Number($('priceMax').value)||Infinity;
- const rows=base.filter(o=>(kind==='all'||o.category===kind)&&(country==='all'||o.country===country)&&[o.title,o.brand,o.equipment_kind,o.category,o.serial,o.vin,o.specs,o.search_aliases].some(x=>String(x||'').toLocaleLowerCase('ru-RU').includes(query))&&(price(o)==null||price(o)>=min&&price(o)<=max));
+ const rows=base.filter(o=>(kind==='all'||o.category===kind)&&(country==='all'||o.country===country)&&[o.title,o.brand,o.equipment_kind,o.category,o.serial,o.vin,o.product_code,o.reference_id,o.specs,o.search_aliases].some(x=>String(x||'').toLocaleLowerCase('ru-RU').includes(query))&&(price(o)==null||price(o)>=min&&price(o)<=max));
  const sort=$('catalogSort').value;rows.sort((a,b)=>sort==='price-asc'?(price(a)??Infinity)-(price(b)??Infinity):sort==='price-desc'?(price(b)??-1)-(price(a)??-1):sort==='year'?(Number(b.year)||0)-(Number(a.year)||0):Number(available(b))-Number(available(a))||(b.priority||0)-(a.priority||0)||(Number(b.year)||0)-(Number(a.year)||0));
  $('resultCount').textContent='Показано '+rows.length+' из '+base.length;$('compareOpen').textContent='Сравнение'+(compared.size?' · '+compared.size:'');
  const rates=g.TELivePricing.getRates();$('rateStatus').textContent=rates?'Курс ЦБ на '+rates.rate_date.split('-').reverse().join('.')+' · доставка отдельно':'Стоимость на дату предложения';
