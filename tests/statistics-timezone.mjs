@@ -53,7 +53,7 @@ try{
  }
  // Run the actual dashboard script against a small DOM adapter and mocked network.
  const elements=new Map(),listeners={},timers=[];
- const element=id=>{if(!elements.has(id))elements.set(id,{value:'',hidden:false,textContent:'',clientWidth:800,clientHeight:200,dataset:{},children:[],listeners:{},setAttribute(){},append(...x){this.children.push(...x)},replaceChildren(){this.children=[]},checkValidity(){return !!this.value},addEventListener(k,f){this.listeners[k]=f}});return elements.get(id)};
+ const element=id=>{if(!elements.has(id))elements.set(id,{value:'',parentElement:{hidden:false},hidden:false,textContent:'',clientWidth:800,clientHeight:200,dataset:{},children:[],listeners:{},setAttribute(){},append(...x){this.children.push(...x)},replaceChildren(){this.children=[]},checkValidity(){return !!this.value},addEventListener(k,f){this.listeners[k]=f}});return elements.get(id)};
  const queries=[];let pending=[];clock='2026-10-31T20:59:59.999Z';
  const context={Date:TestDate,Intl,URLSearchParams,AbortController,Blob,URL,console,setTimeout,clearTimeout,setInterval:f=>timers.push(f),ResizeObserver:class{observe(){}},document:{body:{dataset:{}},hidden:false,getElementById:element,querySelector:()=>element('periodLabel'),querySelectorAll:()=>[],createElement:tag=>element('created'+Math.random()),addEventListener:(k,f)=>listeners[k]=f},fetch:async url=>{queries.push(url);const p=report(url.split('?')[1]);pending.push(p);return{ok:true,status:200,headers:new Headers({'content-type':'application/json'}),json:()=>p};}};
  vm.createContext(context);vm.runInContext(fs.readFileSync(new URL('../server/document-stats/dashboard/app.js',import.meta.url),'utf8'),context);
@@ -64,5 +64,12 @@ try{
  element('period').value='2026-10';element('period').listeners.change();await flush();clock='2026-11-30T21:00:00Z';timers[0]();await flush();assert.equal(element('period').value,'2026-10');
  assert.match(element('legacyNote').textContent,/1/);assert.equal(element('legacyNote').hidden,false);
  assert.ok(queries.some(q=>q.includes('period=2026-11-01')));
+ element('modeRange').listeners.click();await flush();
+ element('rangeFrom').value='2026-10-30';element('rangeTo').value='2026-11-01';element('rangeTo').listeners.change();await flush();
+ assert.equal(element('periodTotal').textContent,'4');assert.equal(element('export').disabled,false);
+ clock='2026-12-31T21:00:00Z';timers[0]();await flush();assert.equal(element('rangeFrom').value,'2026-10-30');assert.equal(element('rangeTo').value,'2026-11-01');
+ element('rangeFrom').value='2026-11-02';element('rangeFrom').listeners.change();await flush();assert.equal(element('export').disabled,true);assert.match(element('errorText').textContent,/не позже/);
+ element('search').listeners.input();assert.equal(element('export').disabled,true);
+ element('rangeFrom').value='2026-10-31';element('rangeFrom').listeners.change();await flush();assert.equal(element('periodTotal').textContent,'3');assert.equal(element('export').disabled,false);
  console.log('PASS: MSK midnight, month/year/leap-day boundaries; day totals sum to month; retries keep first date; legacy rows retained; actual dashboard rollover and historical period selection.');
 }finally{globalThis.Date=NativeDate;db.close();}

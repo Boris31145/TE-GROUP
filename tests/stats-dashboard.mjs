@@ -61,3 +61,16 @@ res=await handler.fetch(request('/logout',{method:'POST',headers:{Origin:'https:
 event('2026-11-01',['velauto:4050994','velauto:4050998']);event('2026-11-02',['velauto:4050990']);
 const grouped=await readReport(envDb,new URLSearchParams('mode=month&period=2026-11'),now);assert.equal(grouped.models.length,1);assert.equal(grouped.models[0].model,'BMW 3 Series');assert.equal(grouped.models[0].count,2);assert.equal(grouped.models[0].offer_count,3);assert.equal(grouped.summary.period,2);
 console.log('PASS: owner password/session, tampered/expired/rotated session denial, CSRF and rate limiting, fail-closed configuration, private no-store APIs, day/month/leap-year totals, multi-model dedupe and empty periods.');
+
+// Inclusive arbitrary ranges, weeks crossing months/years, leap dates and no double counts.
+const ranged=await readReport(envDb,new URLSearchParams('mode=range&from=2026-09-30&to=2026-10-24'),now);
+assert.equal(ranged.summary.period,3);assert.equal(ranged.series.length,25);
+assert.equal(ranged.series[0].day,'2026-09-30');assert.equal(ranged.series.at(-1).day,'2026-10-24');
+assert.equal(ranged.models.find(x=>x.id==='velauto:4027465').count,2);
+const sameDay=await readReport(envDb,new URLSearchParams('mode=range&from=2026-10-24&to=2026-10-24'),now);assert.equal(sameDay.summary.period,1);
+const week=await readReport(envDb,new URLSearchParams('mode=week&period=2026-10-02'),now);assert.equal(week.period.from,'2026-09-26');assert.equal(week.period.to,'2026-10-02');assert.equal(week.summary.period,2);assert.equal(week.series.length,7);
+assert.equal(periodFor(new URLSearchParams('mode=week&period=2027-01-03'),now).from,'2026-12-28');
+assert.equal(periodFor(new URLSearchParams('mode=range&from=2028-02-28&to=2028-03-01'),now).days,3);
+for(const q of ['mode=range','mode=range&from=2026-10-24','mode=range&from=2026-11-01&to=2026-10-24','mode=range&from=2026-02-30&to=2026-03-01','mode=week&period=2026-13-01']){assert.throws(()=>periodFor(new URLSearchParams(q),now));assert.equal((await handler.fetch(authenticated('/report?'+q),env)).status,400);}
+res=await handler.fetch(authenticated('/report?mode=range&from=2026-09-30&to=2026-10-24'),env);assert.equal(res.status,200);assert.equal((await res.json()).summary.period,3);
+console.log('PASS: inclusive custom ranges and week, cross-month/year/leap dates, model totals, authenticated range API and invalid dates.');
