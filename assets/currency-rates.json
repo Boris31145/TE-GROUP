@@ -11,7 +11,11 @@
     "KGS": 0.920976,
     "CNY": 12.0557,
     "KRW": 0.0608018,
-    "JPY": 0.514785
+    "JPY": 0.514785,
+    "AUD": 56.425
   },
-  "frequency": "official_reference_daily"
+  "frequency": "official_reference_daily",
+  "supplemental_rates_checked_at": {
+    "AUD": "2026-10-24T23:37:05.781410+03:00"
+  }
 }

@@ -13,11 +13,11 @@ def parse_rates(raw, fetched_at):
     result={}
     for node in root.findall('Valute'):
         code=node.findtext('CharCode')
-        if code not in ['USD','CNY','JPY','KRW','EUR','KGS']:continue
+        if code not in ['USD','CNY','JPY','KRW','EUR','KGS','AUD']:continue
         nominal=Decimal(node.findtext('Nominal'));value=Decimal(node.findtext('Value').replace(',','.'))
         if nominal<=0 or not value.is_finite() or value<=0:raise ValueError('Invalid currency value')
         result[code]=float(value/nominal)
-    if set(result)!=set(['USD','CNY','JPY','KRW','EUR','KGS']):raise ValueError('Missing currencies')
+    if set(result)!=set(['USD','CNY','JPY','KRW','EUR','KGS','AUD']):raise ValueError('Missing currencies')
     return dict(version=1,provider='Банк России',source_url='https://www.cbr.ru/development/sxml/',rate_date=effective.isoformat(),fetched_at=fetched_at.isoformat(),base='RUB',rates=result,frequency='official_reference_daily')
 
 def main():

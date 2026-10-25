@@ -43,16 +43,20 @@ async function protect(code,name){
   result=result.replace('</head>','<meta name="referrer" content="no-referrer">\n</head>');
   fs.writeFileSync(path.join(root,rel),result);
  }
+ fs.writeFileSync(path.join(root,'assets/scripts/goods-5.js'),await protect(fs.readFileSync(path.join(source,'legacy-goods-calculator.js'),'utf8'),'goods-5.js'));
  // Sensitive-data page retains strict no-eval CSP. Add immutable integrity checks for external JS.
- for(const rel of ['cars/index.html','equipment/index.html','documents/balance/index.html']){
-  let page=fs.readFileSync(path.join(source,rel),'utf8');
+ for(const rel of JSON.parse(fs.readFileSync(path.join(root,'scripts/page-routes.json')))){
+  fs.mkdirSync(path.dirname(path.join(root,rel)),{recursive:true});let page=fs.readFileSync(path.join(source,rel),'utf8');
   page=page.replace(/<script\b([^>]*?)src="([^"?]+)([^\"]*)"[^>]*><\/script>/g,(_,attrs,url,query)=>{
-    const bytes=fs.readFileSync(path.join(root,url));const sri=crypto.createHash('sha384').update(bytes).digest('base64');query='?v='+crypto.createHash('sha256').update(bytes).digest('hex').slice(0,16);
+    if(!url.startsWith('/'))return _;const bytes=fs.readFileSync(path.join(root,url));const sri=crypto.createHash('sha384').update(bytes).digest('base64');query='?v='+crypto.createHash('sha256').update(bytes).digest('hex').slice(0,16);
     return `<script ${attrs.includes('defer')?'defer ':''}src="${url}${query}" integrity="sha384-${sri}" crossorigin="anonymous"></script>`;
   });
   page=page.replace(/(<link\b[^>]*href=")([^"?]+\.css)([^"]*)/g,(_,prefix,url)=>{const hash=crypto.createHash('sha256').update(fs.readFileSync(path.join(root,url))).digest('hex').slice(0,16);return prefix+url+'?v='+hash;});
   fs.writeFileSync(path.join(root,rel),page);
  }
+ // Keep the legacy goods page on the same immutable asset cache policy.
+ {const file=path.join(root,'goods/index.html');let html=fs.readFileSync(file,'utf8');
+ html=html.replace(/(src|href)="(\/assets\/[^"?]+\.(?:js|css))(?:\?[^" ]*)?"/g,(_,attr,url)=>attr+'="'+url+'?v='+crypto.createHash('sha256').update(fs.readFileSync(path.join(root,url))).digest('hex').slice(0,16)+'"');fs.writeFileSync(file,html);}
  // This obsolete review HTML is not a public entry point.
  if(fs.existsSync(path.join(root,'auto-src/index.html')))fs.unlinkSync(path.join(root,'auto-src/index.html'));
  const files=own.map(n=>'auto-src/'+n+'.js');
@@ -61,7 +65,7 @@ async function protect(code,name){
  const httpsBytes=fs.readFileSync(path.join(root,'auto-src/https-only.js'));
  const httpsSri=crypto.createHash('sha384').update(httpsBytes).digest('base64');
  const upgrade=`<script src="/auto-src/https-only.js?v=20261012-5" integrity="sha384-${httpsSri}" crossorigin="anonymous"></script>`;
- for(const rel of ['index.html','cars/index.html','equipment/index.html','documents/balance/index.html','goods/index.html','china-import/index.html','turkey-import/index.html','uae-import/index.html','israel-import/index.html','customs-clearance/index.html']){
+ for(const rel of [...new Set([...JSON.parse(fs.readFileSync(path.join(root,'scripts/page-routes.json'))),'goods/index.html','china-import/index.html','turkey-import/index.html','uae-import/index.html','israel-import/index.html','customs-clearance/index.html'])]){
   const file=path.join(root,rel);let html=fs.readFileSync(file,'utf8');
   html=html.replace(/<script src="\/auto-src\/https-only\.js[^>]*><\/script>/g,'');
   html=html.replace(/<meta charset="utf-8"\s*\/?\s*>/i,match=>match+upgrade).replaceAll('20261012-4','20261012-5');

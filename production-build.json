@@ -1,6 +1,6 @@
 {
   "version": "20261023-7",
-  "sourceCommit": "b65eadfc29b6403c69c8021955256d37b6df6568",
+  "sourceCommit": "3c9dc05bc6d74ef6bc6c00bdef994d276ae8394b",
   "tools": {
     "javascript-obfuscator": "5.9.0",
     "terser": "5.51.2"
@@ -9,16 +9,16 @@
   "eval": false,
   "files": {
     "auto-src/app.js": "4f507484c96b6b0a31c8fad3628a947d25ebf113153eff3c942b3e24f07bafaa",
-    "auto-src/payment-instructions.js": "7311defa68b5ba9224bdb7a9347db4e1178464a36bc22a1a3ecf5dc42dd539d3",
-    "auto-src/premium-pdf.js": "7ccffdfa6bc8f864ae3e7e52d274112ce0e9db4adeb51105cef88070e27d692a",
-    "auto-src/local-documents.js": "f0d24051e830cf5ed2edd7f23984ec3b9bb751c99a20a597332415a67965362c",
+    "auto-src/payment-instructions.js": "607560e27341345a664534439e94eb0e97ac504cb9d515cac85242c92ae79ee9",
+    "auto-src/premium-pdf.js": "9877ed5e46b6e0390839db88b6bdf19cc5b20b1320bc18014abf6d4bd6ba9b5d",
+    "auto-src/local-documents.js": "b322d1ccaec79b0171d48834151654da113f0162961de730792d4892f5a66819",
     "auto-src/pdf-preview.js": "5168ac32a6cda29ef9adebd9070803f683d2eb1e0240f5336f419c3636db865a",
     "auto-src/public-config.js": "424960332903079bd6e109635c7bcf04b044f5be4e7f5efa5c9ad76cb340d528",
     "auto-src/https-only.js": "04956835727d63a01d3bd6247be2190fad7cf0a9754547b35b1be4c4fe765abc",
-    "auto-src/document-flow.js": "dd4a25e2c23c2dee256b6e1a4c47bb6fdb629c5580ff2397f3c6de8238c5e039",
+    "auto-src/document-flow.js": "f77846b9476feb32395e550ecde06e0e0e952bb7e007d30edbf16e8860295389",
     "auto-src/balance-invoice.js": "4db0eddc495a931c03d195dcfb082fa66410d3c691bf6825232f0dc919399d67",
     "auto-src/balance-ui.js": "e06fe697a7ffd4e596b7255fdae81f5285438ae01637e64e73898fbe438c4b02",
-    "auto-src/order-documents.js": "c27de48cfa2fe83aefef8fa5b56c6395e965b08dfebf3c13d7bbd9b90d13159b",
-    "auto-src/order-balance.js": "f5ff91313ff4bc0ffe7cd80533b718cd6ed95b00f7fd3f4428f059e9bbc58130"
+    "auto-src/order-documents.js": "bdba2fb9bca201ab0ced5fbbc5509abd7c08e305212d9b14abf7ce4bd6abe7af",
+    "auto-src/order-balance.js": "d89e57756d0e5cae6716fb2e558e6b142e2b754ae2cb8fb7eb756783e8906e86"
   }
 }

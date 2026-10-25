@@ -526,5 +526,527 @@
     "title": "Kia Ray Signature X-Line",
     "year": 2026,
     "asset_type": "car"
+  },
+  {
+    "id": "new25:capri-cowboy",
+    "title": "Capri Camper Capri Camper Cowboy",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:capri-retreat",
+    "title": "Capri Camper Capri Camper Retreat",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:fwc-swift",
+    "title": "Four Wheel Campers Four Wheel Campers Swift BASE",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:fwc-raven",
+    "title": "Four Wheel Campers Four Wheel Campers Raven BASE",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:capri-2024-retreat",
+    "title": "Capri Camper Capri Camper Retreat Short Bed · 2024",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:capri-2025-cowboy",
+    "title": "Capri Camper Capri Camper Cowboy Short Bed · 2025",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:suntrek-550",
+    "title": "Sunset Park RV Sunset Park RV Sun Trek 550 · 2026",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:qian-tp06a",
+    "title": "Qian Camper Qian Camper TP06A",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:qian-tp06b",
+    "title": "OPENROAD Integrated Camper · Tacoma 2016–2023",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:qian-tp07b",
+    "title": "Qian Camper Qian Camper TP07B",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:fwc-project-m",
+    "title": "Four Wheel Campers Four Wheel Campers Project M · Midsize 5 ft",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:radica-moonlander",
+    "title": "RADICA RADICA MoonLander · Tacoma 5 ft",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:radica-moonlander-x",
+    "title": "RADICA RADICA MoonLander X · F-150 5.5 ft",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:super-pacific-tacoma",
+    "title": "Super Pacific Super Pacific X1 · Tacoma 6 ft",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:super-pacific-ford",
+    "title": "Super Pacific Super Pacific X1 · F-150 / Raptor 5.5 ft",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:ququq-kombi",
+    "title": "QUQUQ QUQUQ KombiBox-1",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:freeway-sienna",
+    "title": "Freeway Camper Kit Freeway Camper Kit Sienna · Standard",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:vanlab-nv200",
+    "title": "VanLab VanLab Nissan NV200 · DIY",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:ququq-bus",
+    "title": "QUQUQ QUQUQ BusBox-1",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:freeway-connect",
+    "title": "Freeway Camper Kit Freeway Camper Kit Transit Connect · LWB",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:vanlab-sprinter",
+    "title": "VanLab VanLab Sprinter 144 · DIY",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:timber-sprinter",
+    "title": "Timber Van Kits Timber Van Kits Sprinter 144 · Base",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:timber-transit",
+    "title": "Timber Van Kits Timber Van Kits Transit 148 · Base",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:royal",
+    "title": "Kubay Design Kubay Design Royal Executive",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:sofa",
+    "title": "Kubay Design Kubay Design Executive Sofa · Vito / V-Class",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:ethos",
+    "title": "Scheel-Mann Vario F · пара, Black Basketweave",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:kubay-five",
+    "title": "Kubay Design Kubay Design Royal + Executive Sofa · 2+3",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:kbd-e46",
+    "title": "KBD KBD ISB · BMW E46",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:ikamper",
+    "title": "iKamper iKamper Skycamp 4.0 Quad",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:goose",
+    "title": "Goose Gear Goose Gear LC250 Stealth Sleep",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:prinsu",
+    "title": "Prinsu Prinsu Pro · Land Cruiser 250",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:yakima",
+    "title": "Yakima Yakima RoadShower 4G",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:rotopax",
+    "title": "RotopaX RotopaX Water GEN 2 · Black",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:maxtrax",
+    "title": "MAXTRAX MAXTRAX MKII · Signature Orange",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:awning",
+    "title": "iKamper iKamper Awning · Skycamp Quad",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:semi-container-new",
+    "title": "KRONE SD · телескопический",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:semi-tipper",
+    "title": "SCHMITZ CARGOBULL Alukastenmulde 25 м³",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:body-f30",
+    "title": "KITT BMW 3 F30 · M-Technik",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:body-f10",
+    "title": "KITT BMW 5 F10 → G30 M5 style",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:body-g20",
+    "title": "UMPARTS BMW 3 G20/G28 LCI · M3 widebody",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:body-g60",
+    "title": "UMPARTS BMW 5 G60/G68 · M5 style",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:body-g11",
+    "title": "Bajrami / aftermarket BMW 7 G11 LCI · M Packet",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:body-g12",
+    "title": "UMPARTS BMW 7 G12 → G70 style",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:body-w205",
+    "title": "UMPARTS Mercedes-Benz C W205 → W206",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:body-w212",
+    "title": "UMPARTS Mercedes-Benz E W212 → W214 E53 style",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:body-w213",
+    "title": "UMPARTS Mercedes-Benz E W213 → W214 E53 style",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:body-w221",
+    "title": "UMPARTS Mercedes-Benz S W221 → W223 S450 style",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:body-w222",
+    "title": "UMPARTS Mercedes-Benz S W222 → W223 Maybach style",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:body-w214",
+    "title": "Bajrami / aftermarket Mercedes-Benz E W214 · AMG Line",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:body-camry80",
+    "title": "YOFER / Invoke Toyota Camry XV80 · YOFER",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:body-mark130",
+    "title": "AIMGAIN Toyota Mark X GRX130 · Pure VIP",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:body-mark120",
+    "title": "AIMGAIN Toyota Mark X GRX120 · Euro",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:body-crown210",
+    "title": "AIMGAIN Toyota Crown GRS210 · Pure VIP GT",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:body-crown200",
+    "title": "AIMGAIN Toyota Crown GRS200 · Euro",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:body-majesta",
+    "title": "AIMGAIN Toyota Crown Majesta URS206",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:body-a4b8",
+    "title": "ABT / CarGym Audi A4 B8 · ABT",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:body-a6c7",
+    "title": "KITT Audi A6 C7 · рестайлинг 2018",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:body-a8",
+    "title": "KITT Audi A8 D5 → S8 2022 style",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:body-a7lb",
+    "title": "Liberty Walk Audi A7 4G8 · LB-WORKS",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:body-fuga",
+    "title": "AIMGAIN Nissan Fuga Y51 · Pure VIP GT",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:body-skyline",
+    "title": "AIMGAIN Nissan Skyline V37 · Pure VIP GT",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:body-ls430",
+    "title": "AIMGAIN Lexus LS430 2001–2003 · Euro",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:body-ls460",
+    "title": "AIMGAIN Lexus LS460 2013–2017 · GT widebody",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:body-macan",
+    "title": "UMPARTS Porsche Macan 95B · 95B.3 style",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:mixer-sicoma",
+    "title": "SICOMA MP 1875/1250 · 2015",
+    "year": 2015,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:dometic",
+    "title": "Dometic CFX5 35 · 36 л",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:body-taycan",
+    "title": "UMPARTS Taycan 9J1 · Turbo GT style",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:body-a3",
+    "title": "UMPARTS A3 8Y facelift Sedan · RS3 style",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:body-a7-bkm",
+    "title": "BKM A7 / S7 C8 · RS style",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:plant-portapour",
+    "title": "Port-A-Pour Series II · 12 yd³",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:semi-berger",
+    "title": "BERGER Curtainsider Standard · 2026",
+    "year": 2026,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:semi-esge",
+    "title": "ES-GE 4STL · раздвижной низкорамный",
+    "year": 2006,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:ikon-e70",
+    "title": "IKON MOTORSPORTS AERO · BMW X5 E70 2007–2010",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:semi-frigo",
+    "title": "Schmitz Cargobull S.CU dc85 · Fleischhang · 2026",
+    "year": 2026,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:vip-w447",
+    "title": "Kubay Design W221 → W223 · Brown LHD",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:vip-multivan",
+    "title": "Kubay Design W463 → W463A · Orange",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:vip-maybach",
+    "title": "Kubay Design W463A · VIP Rear Lounge",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:pump-bsa",
+    "title": "Putzmeister TK50 · 2007 · восстановленный",
+    "year": 2007,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:pump-sp750",
+    "title": "Putzmeister TK50 · 2016 · Deutz",
+    "year": 2016,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:pump-ls450",
+    "title": "IMER Booster 15 · 21,2 кВт",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:pump-tk",
+    "title": "Putzmeister TK 1005 · Ergonic 3 PS",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:mixer-bhs",
+    "title": "IMER MIX 360 · 400 В",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:mixer-conele",
+    "title": "SoRoTo 300L · 400 В",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:plant-turmac",
+    "title": "Advantage Series HRM · 1,3 yd³",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:plant-ms",
+    "title": "Advantage Series Central Mix 120 · Twin Shaft",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:plant-jr",
+    "title": "Advantage Series Transit Mix · 2 бункера / 1 силос",
+    "year": null,
+    "asset_type": "product"
+  },
+  {
+    "id": "new25:plant-rex",
+    "title": "Advantage Series Transit Mix · 3 бункера / 2 силоса",
+    "year": null,
+    "asset_type": "product"
   }
 ]

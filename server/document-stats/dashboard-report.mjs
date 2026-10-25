@@ -1,5 +1,5 @@
 import catalog from './catalog.json' with {type:'json'};
-const mapping=JSON.stringify(catalog.map(x=>({id:x.id,model:x.title,year:x.year||null,type:x.asset_type==='car'?'car':'equipment'})));
+const mapping=JSON.stringify(catalog.map(x=>({id:x.id,model:x.title,year:x.year||null,type:x.asset_type==='car'?'car':x.asset_type==='product'?'product':'equipment'})));
 export function periodFor(search, now=new Date()) {
  const mode=search.get('mode')||'month', today=now.toISOString().slice(0,10);
  const value=search.get('period')||(mode==='day'?today:today.slice(0,7));

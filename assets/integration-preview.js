@@ -1,0 +1,1 @@
+(()=>{for(const a of document.querySelectorAll('.integration-nav a'))if(location.pathname.startsWith('/cars/upgrades/')?a.pathname==='/cars/upgrades/':a.pathname===location.pathname)a.setAttribute('aria-current','page');})();

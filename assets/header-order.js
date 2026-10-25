@@ -1,1 +1,1 @@
-(function(){const e=document.querySelector('[data-home-order]');if(!e)return;try{const ids=JSON.parse(sessionStorage.getItem('te-order-ids')||'[]');e.textContent='Заказ'+(ids.length?' · '+ids.length:'')}catch{}})();
+(()=>{try{const n=JSON.parse(sessionStorage.getItem('te-order-ids')||'[]').length;document.querySelectorAll('[data-home-order]').forEach(e=>e.textContent='Заказ'+(n?' · '+n:''));}catch{}})();
