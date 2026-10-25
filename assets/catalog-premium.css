@@ -27,3 +27,5 @@
 .order-quantity-limit{font-size:12px;line-height:1.5;color:var(--green,#284d38);font-weight:600;margin:8px 0 14px}.cart-line .order-quantity-limit{margin:6px 0 12px;font-size:12px}.quantity-control button:disabled{opacity:.35;cursor:default}
 
 .photo-caption{font-size:11px;line-height:1.55;color:var(--muted);margin:12px 0 0;max-width:640px}.spec-line:empty{display:none}
+
+.quantity-control .quantity-input{width:76px;min-height:44px;text-align:center;padding:6px;border:1px solid var(--line);border-radius:4px;background:white;color:var(--ink);font:inherit}

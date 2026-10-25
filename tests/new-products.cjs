@@ -14,6 +14,7 @@ const normalize=s=>s.normalize('NFKC').replace(/[\u2011-\u2014]/g,'-').replace(/
  cases.push(['completed-assortment','RU','company','split',[['new25:dometic',2],['new25:body-a7-bkm',1],['new25:body-a3',1],['new25:body-taycan',1]]],['industrial-assortment','KG','company','split',[['new25:plant-portapour',1],['new25:semi-berger',1]]]);
  cases.push(['verified-closure','RU','company','split',[['new25:ikon-e70',2],['new25:semi-esge',1]]]);
  cases.push(['factory-kits','RU','company','split',[['new25:plant-ms',1],['new25:mixer-bhs',2],['new25:pump-ls450',1]]],['vip-complete','KG','company','split',[['new25:vip-w447',1],['new25:vip-multivan',1],['new25:vip-maybach',1]]],['photo-replacements','RU','company','full',[['new25:ethos',1],['new25:qian-tp06b',1]]],['remaining-equipment','RU','company','split',[['new25:semi-frigo',1],['new25:pump-bsa',1],['new25:pump-sp750',1],['new25:pump-tk',1]]],['factory-dosing','KG','company','split',[['new25:plant-turmac',1],['new25:plant-jr',1],['new25:plant-rex',1],['new25:mixer-conele',2]]]);
+ cases.push(['bulk-accessories','RU','company','split',[['new25:rotopax',125],['new25:maxtrax',70]]],['bulk-full','KG','company','full',[['new25:rotopax',100]]]);
  const results=[];
  for(const [name,destination_country,buyer_type,payment_option,selection] of cases){
   const items=selection.map(([id,n])=>select(id,n,destination_country)),total=items.reduce((s,o)=>s+api.listingAmountRub(o)*100,0),now=Date.now();
@@ -32,6 +33,7 @@ const normalize=s=>s.normalize('NFKC').replace(/[\u2011-\u2014]/g,'-').replace(/
    const imported=await c.TEBalanceInvoice.importPdf(bytes,settings,pdfjs);assert.equal(imported.total_kopecks,total);
    const today=c.TEBalanceInvoice.today(now),balance=c.TEBalanceInvoice.makeBalance(imported,{contract_signed:true,advance_confirmed:true,ready_confirmed:true,balance_unpaid:true,advance_date:today,ready_date:today,advance_reference:'Тестовый платёж',ready_reference:'Тестовое подтверждение',notice_received_date:today,notice_receipt_reference:'Тестовое получение'},settings,now);
    assert.equal(api.invoiceAmount(balance),total/2);assert.equal(balance.invoice_number,snapshot.document_number+'-INV-2');
+   if(name==='bulk-accessories'){assert.equal(snapshot.order_items.length,2);assert.ok(pdf.numPages<=10);const altered=structuredClone(meta);altered.groups[0].quantity++;assert.throws(()=>c.TEOrderBalance.verify(altered,text,settings));}
    const bad=structuredClone(meta);bad.items.find(x=>x.offer.asset_type==='product').offer.configuration='Подменённый комплект';assert.throws(()=>c.TEOrderBalance.verify(bad,text,settings));
   }
   fs.writeFileSync(path.join(out,name+'.pdf'),bytes);assert.equal(JSON.stringify(snapshot),frozen);
@@ -39,6 +41,6 @@ const normalize=s=>s.normalize('NFKC').replace(/[\u2011-\u2014]/g,'-').replace(/
  }
  const aud=data.find(x=>x.pricing?.currency==='AUD'),without=structuredClone(rates);delete without.rates.AUD;
  for(const destination of ['RU','KG']){assert.equal(c.TELivePricing.amount(aud,without,destination).rub,null);assert.equal(api.listingAmountRub(c.TELivePricing.priced(aud,destination,without)),null);assert.throws(()=>api.paymentSchedule(c.TELivePricing.priced(aud,destination,without),'full'));}
- assert.throws(()=>api.listingAmountRub({...data.find(x=>x.id==='new25:maxtrax'),quantity:99}));
+ assert.equal(api.listingAmountRub({...data.find(x=>x.id==='new25:maxtrax'),quantity:99}),api.listingAmountRub(data.find(x=>x.id==='new25:maxtrax'))*99);
  fs.writeFileSync(path.join(out,'checks.json'),JSON.stringify(results,null,2));console.log(JSON.stringify({passed:true,cases:results}));
 })().catch(e=>{console.error(e);process.exit(1)});

@@ -10,6 +10,7 @@ for(const quantity of [0,-1,1.5,7,50,51,1000000,'5',NaN])assert.throws(()=>api.p
 assert.throws(()=>api.paymentSchedule({...unit,asset_type:'car',quantity:2},'full'));
 const offers=JSON.parse(fs.readFileSync(path.join(root,'assets/catalog-offers.json'))).offers;
 for(const offer of offers){
+ if(offer.quantity_policy==='unrestricted'){assert.equal(api.orderQuantityLimit(offer),Infinity);assert.equal(api.listingAmountRub({...offer,quantity:100}),api.listingAmountRub({...offer,quantity:1})*100);assert.throws(()=>api.listingAmountRub({...offer,quantity:Number.MAX_SAFE_INTEGER}));continue;}
  assert.ok(Number.isInteger(offer.max_order_quantity)&&offer.max_order_quantity>=1&&offer.max_order_quantity<=6,offer.title);
  const limit=api.orderQuantityLimit(offer),one=api.listingAmountRub({...offer,quantity:1});
  assert.equal(api.listingAmountRub({...offer,quantity:limit}),one*limit);
