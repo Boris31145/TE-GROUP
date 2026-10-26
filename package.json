@@ -7,7 +7,7 @@
   "private": true,
   "scripts": {
     "build": "node scripts/build-production.cjs",
-    "test": "node tests/documents.cjs && node tests/balance-invoice.cjs && node tests/readiness-documents.cjs && node tests/bank-contract-review.cjs && node tests/live-pricing.cjs && node tests/order-documents.cjs && node tests/payment-options.cjs && node tests/financial-model.cjs && node tests/build-cache.cjs && node tests/document-stats.mjs && node tests/vin-documents.cjs && node tests/catalog-equipment.cjs && node tests/checkout-quantity.cjs && node tests/pdf-layout.cjs && node tests/mixed-quantity.cjs && node tests/order-recalculation.cjs && node tests/new-products.cjs && node tests/stats-dashboard.mjs && node tests/statistics-timezone.mjs && node tests/assortment-content.cjs && npm run test:selection",
+    "test": "node tests/documents.cjs && node tests/balance-invoice.cjs && node tests/readiness-documents.cjs && node tests/bank-contract-review.cjs && node tests/live-pricing.cjs && node tests/order-documents.cjs && node tests/payment-options.cjs && node tests/financial-model.cjs && node tests/build-cache.cjs && node tests/document-stats.mjs && node tests/vin-documents.cjs && node tests/catalog-equipment.cjs && node tests/checkout-quantity.cjs && node tests/pdf-layout.cjs && node tests/invoice-nomenclature.cjs && node tests/mixed-quantity.cjs && node tests/order-recalculation.cjs && node tests/new-products.cjs && node tests/stats-dashboard.mjs && node tests/statistics-timezone.mjs && node tests/assortment-content.cjs && npm run test:selection",
     "test:selection": "node tests/catalog-selection.cjs && python3 tests/currency-publish.py"
   }
 }
