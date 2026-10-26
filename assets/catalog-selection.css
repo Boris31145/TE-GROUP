@@ -1,0 +1,43 @@
+/* Vehicle fitment and equipment parameters share the existing green / ivory palette. */
+.selection-panel{border-bottom:1px solid var(--line);padding:2px 0 18px;margin-bottom:17px}
+.selection-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:15px}
+.selection-heading .eyebrow{font-size:9px;letter-spacing:1.5px;margin:0 0 6px}
+.selection-heading h2{font-size:24px;letter-spacing:-.7px;line-height:1.2;margin:0;font-weight:650}
+.selection-reset{border:0;background:none;color:var(--muted);font-size:12px;min-height:44px;padding:8px 0 8px 12px;text-decoration:underline;text-underline-offset:4px}
+.selection-fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.selection-fields label{min-width:0}
+.selection-fields select{height:46px;padding-right:28px;text-overflow:ellipsis;color:var(--ink)}
+.selection-fields select:disabled{background:var(--soft);color:var(--muted);opacity:1}
+.selection-note{font-size:11px;line-height:1.5;color:var(--muted);margin:12px 0 0}
+.has-selection .filter-fields{grid-template-columns:1.4fr 1fr 1fr 1fr auto}
+.has-selection .destination-row{display:block}
+.destination-row>label{display:grid;grid-template-columns:1fr 180px;align-items:center;gap:12px}
+.destination-row .field-label{margin:0}
+.active-filters{display:flex;flex-wrap:wrap;gap:7px;margin-top:13px;padding-top:13px;border-top:1px solid var(--line)}
+.filter-chip{display:inline-flex;align-items:center;min-height:44px;max-width:100%;padding:8px 13px;border:1px solid #cbd7cf;border-radius:5px;background:#edf3ee;color:var(--ink);font-size:12px;line-height:1.4;text-align:left;overflow-wrap:anywhere}
+.selection-reset:focus-visible,.filter-chip:focus-visible,.selection-fields select:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+@media(min-width:1000px){.selection-fields:has(#fitModel){grid-template-columns:1fr 1.8fr 1fr}.selection-fields:has(>label:nth-child(4):not([hidden])):has(#fitModel){grid-template-columns:1fr 1.8fr 1fr 1fr}.has-selection .filter-panel summary{display:list-item}.has-selection .filter-panel{border-top:0;margin-top:12px;padding-top:0}.has-selection .filter-panel:not([open]){padding:0}.has-selection .filter-fields label:first-child{grid-column:auto}}
+@media(max-width:999px){.selection-fields{grid-template-columns:1fr 1fr}.has-selection .filter-fields{grid-template-columns:1fr 1fr}.has-selection .filter-fields label:first-child{grid-column:auto}.has-selection .filter-fields .reset{grid-column:1/-1}}
+@media(max-width:720px){
+ .selection-panel{padding:2px 0 14px;margin-bottom:13px}
+ .selection-heading{margin-bottom:13px;gap:8px;align-items:center}
+ .selection-heading h2{font-size:21px;letter-spacing:-.5px}
+ .selection-heading .eyebrow{font-size:8px;margin-bottom:5px;letter-spacing:1.2px}
+ .selection-reset{font-size:11px;flex-shrink:0}
+ body[data-catalog="equipment"]:has(.has-selection) nav[aria-label="Новые категории оборудования"]{display:none}
+ .selection-fields{gap:10px}
+ .has-selection input,.has-selection select{font-size:16px;min-height:46px}
+ .selection-fields .field-label{font-size:9px;line-height:1.4;min-height:13px}
+ body[data-section="body-conversion"] .selection-fields>label:nth-child(1){order:0}
+ body[data-section="body-conversion"] .selection-fields>label:nth-child(2){order:2;grid-column:1/-1}
+ body[data-section="body-conversion"] .selection-fields>label:nth-child(3){order:1}
+ body[data-section="body-conversion"] .selection-fields>label:nth-child(4){order:3;grid-column:1/-1}
+ body[data-catalog="equipment"] .selection-fields>label:first-child{grid-column:1/-1}
+ .selection-note{font-size:11px;margin-top:10px}
+ .active-filters{gap:6px;margin-top:11px;padding-top:11px}
+ .has-selection .active-filters{display:none}
+ .filter-chip{font-size:11px;padding:8px 10px}
+ .has-selection .destination-row>label{grid-template-columns:1fr 155px}
+ .has-selection .filter-fields>label:has(#catalogSearch){grid-column:1/-1}
+ .has-selection .filter-panel summary{min-height:44px;padding:10px 0}
+}

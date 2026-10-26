@@ -26,12 +26,7 @@ jobs:
         run: python scripts/update-currency-rates.py
       - name: Save public rate snapshot
         if: steps.rates.outcome == 'success'
-        run: |
-          git config user.name 'TE GROUP rates'
-          git config user.email 'rates@users.noreply.github.com'
-          git add assets/currency-rates.json
-          git diff --cached --quiet || git commit -m 'Refresh official currency rates'
-          git push
+        run: python scripts/save-currency-snapshot.py
       # A GITHUB_TOKEN commit does not itself trigger a Pages branch build.
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
