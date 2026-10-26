@@ -21,7 +21,7 @@ const cases=[['equipment-full',by('Denyo DCA-60LSIE'),'full'],['single-equipment
   for(const [stage,s]of variants){
    const purpose=api.purpose(s),qr=api.requisitesQr(s);assert.ok(purpose.length<=210);assert.ok(!purpose.includes('товары по Спецификации'));assert.ok(qr.includes('|Purpose='+purpose+'|'));assert.equal(Number(qr.split('|Sum=')[1]),api.invoiceAmount(s));
    assert.match(purpose,stage==='2'?/^Доплата 50%/:option==='split'?/^Аванс 50%/:/^Оплата/);
-   if(label==='equipment-advance')assert.ok(purpose.includes('виброплита')&&purpose.includes('гидромолот')&&purpose.includes('генератор'));
+   if(label==='equipment-advance')assert.ok(/виброплит/.test(purpose)&&/гидромолот/.test(purpose)&&/генератор/.test(purpose));
    const bytes=await c.TELocalDocuments.createPdf(s,'invoice',resources),task=pdfjs.getDocument({data:bytes.slice(),isEvalSupported:false}),pdf=await task.promise;let text='';
    for(let i=1;i<=pdf.numPages;i++){const content=await(await pdf.getPage(i)).getTextContent();for(const item of content.items){assert.ok(item.transform[5]>=15&&item.transform[5]<=820,'text beyond print area');}text+=content.items.map(x=>x.str).join(' ')+'\n';}
    const compact=x=>x.normalize('NFKC').replace(/[\u2011-\u2014]/g,'-').replace(/\s/g,'');for(const row of lines){assert.ok(compact(text).includes(compact(row.title)),row.title);assert.ok(compact(text).includes(compact(row.category)),row.category);}
@@ -37,7 +37,7 @@ const cases=[['equipment-full',by('Denyo DCA-60LSIE'),'full'],['single-equipment
    let bundleText='';for(let page=1;page<=pdf.numPages;page++)bundleText+=(await(await pdf.getPage(page)).getTextContent()).items.map(x=>x.str).join(' ')+'\n';assert.ok(c.TEOrderBalance.verify(meta,bundleText,settings));
    assert.equal(meta.items[0].offer.equipment_kind,product.equipment_kind);assert.equal(meta.items[0].offer.category,product.category);assert.equal(meta.groups[0].quantity,2);await task.destroy();
    const restored=c.TEBalanceInvoice.makeBalance({...meta,source_sha256:'a'.repeat(64),offer:snapshot.offer},{contract_signed:true,advance_confirmed:true,ready_confirmed:true,balance_unpaid:true,advance_date:'2026-10-26',advance_reference:'Тестовый платёж',ready_date:'2026-10-26',ready_reference:'Тестовая готовность'},settings,now);
-   assert.equal(api.invoiceLines(restored)[0].category,product.equipment_kind);assert.equal(api.invoiceLines(restored)[0].quantity,2);assert.ok(api.purpose(restored).includes(product.equipment_kind.toLowerCase()));
+   assert.equal(api.invoiceLines(restored)[0].category,product.equipment_kind);assert.equal(api.invoiceLines(restored)[0].quantity,2);assert.ok(/кузовн(?:ой комплект|ые комплекты)/.test(api.purpose(restored)));
   }
  }
  if(output)fs.writeFileSync(path.join(output,'checks.json'),JSON.stringify(results,null,2));console.log(JSON.stringify({passed:true,cases:results}));

@@ -1,6 +1,6 @@
 {
   "version": "20261023-7",
-  "sourceCommit": "c34b605f44667e720d7105fde824b20444b6466d",
+  "sourceCommit": "af815ad74a6bf8c8aff93a252dd1a3b8eb053d36",
   "tools": {
     "javascript-obfuscator": "5.9.0",
     "terser": "5.51.2"
@@ -9,7 +9,7 @@
   "eval": false,
   "files": {
     "auto-src/app.js": "4f507484c96b6b0a31c8fad3628a947d25ebf113153eff3c942b3e24f07bafaa",
-    "auto-src/payment-instructions.js": "fcb6aec3eec25b45a1db7e0c44c5ad13dc1d40c05ac5154d5b398a25e9ee1d1c",
+    "auto-src/payment-instructions.js": "716020089bf229c75e171cdb9585d8e2c8e336468801043304e8177c2fc2f3fd",
     "auto-src/premium-pdf.js": "5c333e3497dd5e311049bfa9303d7a439e363d6274a2445c420b05ba375e4c2e",
     "auto-src/local-documents.js": "b322d1ccaec79b0171d48834151654da113f0162961de730792d4892f5a66819",
     "auto-src/pdf-preview.js": "5168ac32a6cda29ef9adebd9070803f683d2eb1e0240f5336f419c3636db865a",
