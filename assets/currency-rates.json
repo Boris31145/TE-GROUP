@@ -2,17 +2,17 @@
   "version": 1,
   "provider": "Банк России",
   "source_url": "https://www.cbr.ru/development/sxml/",
-  "rate_date": "2026-11-04",
-  "fetched_at": "2026-11-05T23:19:54.625181+03:00",
+  "rate_date": "2026-11-06",
+  "fetched_at": "2026-11-06T00:19:10.600517+03:00",
   "base": "RUB",
   "rates": {
-    "AUD": 56.9729,
-    "USD": 81.6699,
-    "EUR": 91.601,
-    "KGS": 0.933905,
-    "CNY": 12.1816,
-    "KRW": 0.0609022,
-    "JPY": 0.517553
+    "AUD": 57.3708,
+    "USD": 81.7947,
+    "EUR": 92.1581,
+    "KGS": 0.935339,
+    "CNY": 12.257,
+    "KRW": 0.061009,
+    "JPY": 0.518016
   },
   "frequency": "official_reference_daily"
 }
