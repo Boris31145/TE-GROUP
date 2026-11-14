@@ -3,7 +3,7 @@
   "provider": "Банк России",
   "source_url": "https://www.cbr.ru/development/sxml/",
   "rate_date": "2026-11-14",
-  "fetched_at": "2026-11-14T14:19:12.031284+03:00",
+  "fetched_at": "2026-11-14T15:21:55.108093+03:00",
   "base": "RUB",
   "rates": {
     "AUD": 55.8959,
